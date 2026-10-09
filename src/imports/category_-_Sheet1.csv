@@ -1,0 +1,25 @@
+Secure Access Service Edge,Nov ,Dec ,Jan ,Feb ,Mar,Apr
+Top performer,PA (92.6%),PA (94.7%),PA (95.3%),FT (94.1%),FT (96..7%),PA (96.9%)
+Fortinet,86.3%,89.6%,90.9%,PA (93.7%),PA (85.5%),96.30%
+,,,,,,
+OT Security,Nov ,Dec ,Jan ,Feb ,Mar,Apr
+Top performer,FT(86.8%),FT (90.3%),FT (91.4%),FT (92.4%),FT (89.0%),FT (92.1%)
+Fortinet,,,,,,
+ZTNA,Nov ,Dec ,Jan ,Feb ,Mar,Apr
+Top performer,PA (88.4%),PA (93.9%),PA (90.3%),PA (91.3%),PA (95.3%),PA (92.6%)
+Fortinet,67.4%,75.4%,74.1%,78.5%,87.90%,87.30%
+Cloud Security,Nov ,Dec ,Jan ,Feb ,Mar,Apr
+Top performer,PA (96.3%),PA (92.9%),PA (90.6%),PA (92.3%),PA (92.3%),PA (92.8%)
+Fortinet,52.0%,60.9%,64.4%,73.0%,73.70%,76.90%
+SecOps,Nov ,Dec ,Jan ,Feb ,Mar,Apr
+Top performer,CS (58.5%),CS (63.2%),CS (58.6%),CS (63.6%),CS (74.7%),CS (80.2%)
+Fortinet,23.8%,16.4%,18.7%,22.0%,18.00%,20.50%
+Firewall,Nov ,Dec ,Jan ,Feb ,Mar,Apr
+Top performer,,,,FT (100.0%),FT (99.6%),FT (100%)
+Fortinet,,,,CO (38.0%),PA (37.8%),PA (36%)
+Quantum Security,Nov ,Dec ,Jan ,Feb ,Mar,Apr
+Top performer,,,,FT (96.9%),FT (88.0%),FT (39.7%)
+Fortinet,,,,PA (14.7%),PA (10.7%),PA (16.7%)
+AI Cybersecurity,Nov ,Dec ,Jan ,Feb ,Mar,Apr
+Top performer,,,,FT (75.4%),FT (88.9%),FT (89.6%)
+Fortinet,,,,CS (20.5%),CS (26.0%),CS (30.1%)

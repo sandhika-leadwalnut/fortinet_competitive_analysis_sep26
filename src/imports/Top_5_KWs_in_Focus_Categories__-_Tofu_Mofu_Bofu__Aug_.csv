@@ -1,0 +1,189 @@
+Firewall,,,Fortinet,Cisco,Paloaltonetworks,Checkpoint,Crowdstrike,,Fortinet,Cisco,Paloaltonetworks,Checkpoint,Crowdstrike
+Keywords (TOFU),SV,KD,,,,,,,,,,,
+firewall,33000,69,1,1,-,7,-,,firewallFortinet,firewallCisco,firewallPaloaltonetworks,firewallCheckpoint,firewallCrowdstrike
+what is firewall,2200,65,1,1,1,7,-,,what is firewallFortinet,what is firewallCisco,what is firewallPaloaltonetworks,what is firewallCheckpoint,what is firewallCrowdstrike
+firewall definition,2900,51,2,1,6,18,-,,firewall definitionFortinet,firewall definitionCisco,firewall definitionPaloaltonetworks,firewall definitionCheckpoint,firewall definitionCrowdstrike
+network firewall,8200,50,7,4,13,-,-,,network firewallFortinet,network firewallCisco,network firewallPaloaltonetworks,network firewallCheckpoint,network firewallCrowdstrike
+how does a firewall work,700,52,3,7,6,11,-,,how does a firewall workFortinet,how does a firewall workCisco,how does a firewall workPaloaltonetworks,how does a firewall workCheckpoint,how does a firewall workCrowdstrike
+types of firewall,400,29,2,10,1,1,-,,types of firewallFortinet,types of firewallCisco,types of firewallPaloaltonetworks,types of firewallCheckpoint,types of firewallCrowdstrike
+firewall benefits,40,2,2,7,3,-,-,,firewall benefitsFortinet,firewall benefitsCisco,firewall benefitsPaloaltonetworks,firewall benefitsCheckpoint,firewall benefitsCrowdstrike
+,,,,,,,,,,,,,
+MOFU,SV,KD,,,,,,,,,,,
+software firewalls,600,46,4,16,2,26,-,,software firewallsFortinet,software firewallsCisco,software firewallsPaloaltonetworks,software firewallsCheckpoint,software firewallsCrowdstrike
+firewall comparison,70,14,-,9,1,-,-,,firewall comparisonFortinet,firewall comparisonCisco,firewall comparisonPaloaltonetworks,firewall comparisonCheckpoint,firewall comparisonCrowdstrike
+enterprise firewall,500,12,15,22,-,11,-,,enterprise firewallFortinet,enterprise firewallCisco,enterprise firewallPaloaltonetworks,enterprise firewallCheckpoint,enterprise firewallCrowdstrike
+firewall devices,150,8,1,7,1,-,-,,firewall devicesFortinet,firewall devicesCisco,firewall devicesPaloaltonetworks,firewall devicesCheckpoint,firewall devicesCrowdstrike
+network firewall device,150,0,6,11,10,-,-,,network firewall deviceFortinet,network firewall deviceCisco,network firewall devicePaloaltonetworks,network firewall deviceCheckpoint,network firewall deviceCrowdstrike
+,,,,,,,,,,,,,
+BOFU ,SV,KD,,,,,,,,,,,
+firewall solutions,450,46,4,3,10,-,-,,firewall solutionsFortinet,firewall solutionsCisco,firewall solutionsPaloaltonetworks,firewall solutionsCheckpoint,firewall solutionsCrowdstrike
+enterprise firewall solutions,200,42,5,4,8,-,-,,enterprise firewall solutionsFortinet,enterprise firewall solutionsCisco,enterprise firewall solutionsPaloaltonetworks,enterprise firewall solutionsCheckpoint,enterprise firewall solutionsCrowdstrike
+best firewall solution,-,-,-,-,-,-,-,,best firewall solutionFortinet,best firewall solutionCisco,best firewall solutionPaloaltonetworks,best firewall solutionCheckpoint,best firewall solutionCrowdstrike
+leading firewall services,-,-,-,-,-,-,-,,leading firewall servicesFortinet,leading firewall servicesCisco,leading firewall servicesPaloaltonetworks,leading firewall servicesCheckpoint,leading firewall servicesCrowdstrike
+firewall solutions for small business,100,1,3,2,-,-,-,,firewall solutions for small businessFortinet,firewall solutions for small businessCisco,firewall solutions for small businessPaloaltonetworks,firewall solutions for small businessCheckpoint,firewall solutions for small businessCrowdstrike
+SD-WAN,,,,,,,,,,,,,
+Keywords (TOFU),SV,KD,,,,,,,,,,,
+sd-wan,6900,62,4,6,1,23,-,,sd-wanFortinet,sd-wanCisco,sd-wanPaloaltonetworks,sd-wanCheckpoint,sd-wanCrowdstrike
+what is sd-wan,1300,30,4,1,1,14,-,,what is sd-wanFortinet,what is sd-wanCisco,what is sd-wanPaloaltonetworks,what is sd-wanCheckpoint,what is sd-wanCrowdstrike
+sd wan defined,100,35,4,1,1,-,-,,sd wan definedFortinet,sd wan definedCisco,sd wan definedPaloaltonetworks,sd wan definedCheckpoint,sd wan definedCrowdstrike
+sd wan meaning,1000,28,4,1,1,12,-,,sd wan meaningFortinet,sd wan meaningCisco,sd wan meaningPaloaltonetworks,sd wan meaningCheckpoint,sd wan meaningCrowdstrike
+software defined wan,600,37,1,2,1,16,-,,software defined wanFortinet,software defined wanCisco,software defined wanPaloaltonetworks,software defined wanCheckpoint,software defined wanCrowdstrike
+,,,,,,,,,,,,,
+MOFU,SV,KD,,,,,,,,,,,
+sd wan software,350,44,3,1,1,-,-,,sd wan softwareFortinet,sd wan softwareCisco,sd wan softwarePaloaltonetworks,sd wan softwareCheckpoint,sd wan softwareCrowdstrike
+sd wan device,200,40,1,1,1,-,-,,sd wan deviceFortinet,sd wan deviceCisco,sd wan devicePaloaltonetworks,sd wan deviceCheckpoint,sd wan deviceCrowdstrike
+secure sd wan,250,10,1,-,1,-,-,,secure sd wanFortinet,secure sd wanCisco,secure sd wanPaloaltonetworks,secure sd wanCheckpoint,secure sd wanCrowdstrike
+sd-wan software,150,45,1,1,6,-,-,,sd-wan softwareFortinet,sd-wan softwareCisco,sd-wan softwarePaloaltonetworks,sd-wan softwareCheckpoint,sd-wan softwareCrowdstrike
+sd wan security,700,2,1,1,1,-,-,,sd wan securityFortinet,sd wan securityCisco,sd wan securityPaloaltonetworks,sd wan securityCheckpoint,sd wan securityCrowdstrike
+,,,,,,,,,,,,,
+BOFU ,SV,KD,,,,,,,,,,,
+sd-wan solutions,600,33,1,1,1,19,-,,sd-wan solutionsFortinet,sd-wan solutionsCisco,sd-wan solutionsPaloaltonetworks,sd-wan solutionsCheckpoint,sd-wan solutionsCrowdstrike
+sd wan service,350,1,2,4,5,-,-,,sd wan serviceFortinet,sd wan serviceCisco,sd wan servicePaloaltonetworks,sd wan serviceCheckpoint,sd wan serviceCrowdstrike
+sd wan services,300,12,3,1,1,-,-,,sd wan servicesFortinet,sd wan servicesCisco,sd wan servicesPaloaltonetworks,sd wan servicesCheckpoint,sd wan servicesCrowdstrike
+sd-wan platform,40,31,10,3,-,-,-,,sd-wan platformFortinet,sd-wan platformCisco,sd-wan platformPaloaltonetworks,sd-wan platformCheckpoint,sd-wan platformCrowdstrike
+sd-wan vendors,150,2,-,9,-,-,-,,sd-wan vendorsFortinet,sd-wan vendorsCisco,sd-wan vendorsPaloaltonetworks,sd-wan vendorsCheckpoint,sd-wan vendorsCrowdstrike
+sd-wan providers,200,2,-,-,1,11,-,,sd-wan providersFortinet,sd-wan providersCisco,sd-wan providersPaloaltonetworks,sd-wan providersCheckpoint,sd-wan providersCrowdstrike
+,,,,,,,,,,,,,
+OT Security,,,,,,,,,,,,,
+Keywords (TOFU),SV,KD,,,,,,,,,,,
+OT security,2400,24,2,4,10,-,-,,OT securityFortinet,OT securityCisco,OT securityPaloaltonetworks,OT securityCheckpoint,OT securityCrowdstrike
+operational technology,1800,24,1,11,29,-,-,,operational technologyFortinet,operational technologyCisco,operational technologyPaloaltonetworks,operational technologyCheckpoint,operational technologyCrowdstrike
+ot technology,400,13,1,1,-,-,-,,ot technologyFortinet,ot technologyCisco,ot technologyPaloaltonetworks,ot technologyCheckpoint,ot technologyCrowdstrike
+what is ot security,600,11,2,1,8,-,-,,what is ot securityFortinet,what is ot securityCisco,what is ot securityPaloaltonetworks,what is ot securityCheckpoint,what is ot securityCrowdstrike
+ot components,10,,-,-,-,-,-,,ot componentsFortinet,ot componentsCisco,ot componentsPaloaltonetworks,ot componentsCheckpoint,ot componentsCrowdstrike
+ot best practices,-,-,-,-,-,-,-,,ot best practicesFortinet,ot best practicesCisco,ot best practicesPaloaltonetworks,ot best practicesCheckpoint,ot best practicesCrowdstrike
+ot challenges,-,-,-,-,-,-,-,,ot challengesFortinet,ot challengesCisco,ot challengesPaloaltonetworks,ot challengesCheckpoint,ot challengesCrowdstrike
+ot vs it,1100,6,1,1,1,-,-,,ot vs itFortinet,ot vs itCisco,ot vs itPaloaltonetworks,ot vs itCheckpoint,ot vs itCrowdstrike
+,,,,,,,,,,,,,
+MOFU,SV,KD,,,,,,,,,,,
+ot devices,300,9,6,1,2,-,-,,ot devicesFortinet,ot devicesCisco,ot devicesPaloaltonetworks,ot devicesCheckpoint,ot devicesCrowdstrike
+ot systems,500,28,4,1,1,-,-,,ot systemsFortinet,ot systemsCisco,ot systemsPaloaltonetworks,ot systemsCheckpoint,ot systemsCrowdstrike
+ot platform,90,44,-,-,-,-,-,,ot platformFortinet,ot platformCisco,ot platformPaloaltonetworks,ot platformCheckpoint,ot platformCrowdstrike
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+BOFU ,SV,KD,,,,,,,,,,,
+ot security solutions,250,9,1,1,1,-,-,,ot security solutionsFortinet,ot security solutionsCisco,ot security solutionsPaloaltonetworks,ot security solutionsCheckpoint,ot security solutionsCrowdstrike
+operational technology solutions,80,31,9,2,-,-,-,,operational technology solutionsFortinet,operational technology solutionsCisco,operational technology solutionsPaloaltonetworks,operational technology solutionsCheckpoint,operational technology solutionsCrowdstrike
+ot security companies,80,31,1,-,-,-,-,,ot security companiesFortinet,ot security companiesCisco,ot security companiesPaloaltonetworks,ot security companiesCheckpoint,ot security companiesCrowdstrike
+ot security vendors,150,5,-,-,-,-,-,,ot security vendorsFortinet,ot security vendorsCisco,ot security vendorsPaloaltonetworks,ot security vendorsCheckpoint,ot security vendorsCrowdstrike
+industrial cybersecurity,1700,34,-,-,1,-,-,,industrial cybersecurityFortinet,industrial cybersecurityCisco,industrial cybersecurityPaloaltonetworks,industrial cybersecurityCheckpoint,industrial cybersecurityCrowdstrike
+,,,,,,,,,,,,,
+SASE,,,,,,,,,,,,,
+Keywords (TOFU),SV,KD,,,,,,,,,,,
+sase,19000,58,1,23,1,10,-,,saseFortinet,saseCisco,sasePaloaltonetworks,saseCheckpoint,saseCrowdstrike
+sase meaning,4900,51,3,12,4,-,-,,sase meaningFortinet,sase meaningCisco,sase meaningPaloaltonetworks,sase meaningCheckpoint,sase meaningCrowdstrike
+what is sase,2600,54,1,8,1,26,-,,what is saseFortinet,what is saseCisco,what is sasePaloaltonetworks,what is saseCheckpoint,what is saseCrowdstrike
+secure access service edge,2000,55,1,8,1,14,26,,secure access service edgeFortinet,secure access service edgeCisco,secure access service edgePaloaltonetworks,secure access service edgeCheckpoint,secure access service edgeCrowdstrike
+sase definition,700,57,1,12,5,-,-,,sase definitionFortinet,sase definitionCisco,sase definitionPaloaltonetworks,sase definitionCheckpoint,sase definitionCrowdstrike
+sase benefits,600,2,1,-,1,-,-,,sase benefitsFortinet,sase benefitsCisco,sase benefitsPaloaltonetworks,sase benefitsCheckpoint,sase benefitsCrowdstrike
+sase architecture,800,48,1,1,1,15,-,,sase architectureFortinet,sase architectureCisco,sase architecturePaloaltonetworks,sase architectureCheckpoint,sase architectureCrowdstrike
+sase technology,250,60,1,1,1,-,-,,sase technologyFortinet,sase technologyCisco,sase technologyPaloaltonetworks,sase technologyCheckpoint,sase technologyCrowdstrike
+,,,,,,,,,,,,,
+MOFU,SV,KD,,,,,,,,,,,
+sase security,1600,42,1,13,1,14,-,,sase securityFortinet,sase securityCisco,sase securityPaloaltonetworks,sase securityCheckpoint,sase securityCrowdstrike
+sase platform,600,54,1,14,1,20,-,,sase platformFortinet,sase platformCisco,sase platformPaloaltonetworks,sase platformCheckpoint,sase platformCrowdstrike
+sase network,300,53,1,10,1,-,3,,sase networkFortinet,sase networkCisco,sase networkPaloaltonetworks,sase networkCheckpoint,sase networkCrowdstrike
+sase products,200,37,1,6,1,4,-,,sase productsFortinet,sase productsCisco,sase productsPaloaltonetworks,sase productsCheckpoint,sase productsCrowdstrike
+sase network security,150,57,1,7,3,-,-,,sase network securityFortinet,sase network securityCisco,sase network securityPaloaltonetworks,sase network securityCheckpoint,sase network securityCrowdstrike
+,,,,,,,,,,,,,
+BOFU ,SV,KD,,,,,,,,,,,
+sase solutions,1600,55,1,10,1,16,-,,sase solutionsFortinet,sase solutionsCisco,sase solutionsPaloaltonetworks,sase solutionsCheckpoint,sase solutionsCrowdstrike
+sase services,250,57,1,1,1,-,-,,sase servicesFortinet,sase servicesCisco,sase servicesPaloaltonetworks,sase servicesCheckpoint,sase servicesCrowdstrike
+secure access service edge vendors,150,56,6,10,3,-,-,,secure access service edge vendorsFortinet,secure access service edge vendorsCisco,secure access service edge vendorsPaloaltonetworks,secure access service edge vendorsCheckpoint,secure access service edge vendorsCrowdstrike
+sase vendor,200,0,8,-,6,9,-,,sase vendorFortinet,sase vendorCisco,sase vendorPaloaltonetworks,sase vendorCheckpoint,sase vendorCrowdstrike
+sase providers,450,1,1,-,-,1,3,,sase providersFortinet,sase providersCisco,sase providersPaloaltonetworks,sase providersCheckpoint,sase providersCrowdstrike
+,,,,,,,,,,,,,
+Zero Trust,,,,,,,,,,,,,
+Keywords (TOFU),SV,KD,,,,,,,,,,,
+zero trust,9600,83,12,-,11,18,9,,zero trustFortinet,zero trustCisco,zero trustPaloaltonetworks,zero trustCheckpoint,zero trustCrowdstrike
+what is zero trust,2400,78,1,28,15,13,7,,what is zero trustFortinet,what is zero trustCisco,what is zero trustPaloaltonetworks,what is zero trustCheckpoint,what is zero trustCrowdstrike
+zero trust definition,500,74,1,-,1,1,1,,zero trust definitionFortinet,zero trust definitionCisco,zero trust definitionPaloaltonetworks,zero trust definitionCheckpoint,zero trust definitionCrowdstrike
+zero trust network,1900,78,9,1,7,25,16,,zero trust networkFortinet,zero trust networkCisco,zero trust networkPaloaltonetworks,zero trust networkCheckpoint,zero trust networkCrowdstrike
+zero trust network security,500,65,1,1,1,21,16,,zero trust network securityFortinet,zero trust network securityCisco,zero trust network securityPaloaltonetworks,zero trust network securityCheckpoint,zero trust network securityCrowdstrike
+zero trust principles,900,82,-,-,1,17,10,,zero trust principlesFortinet,zero trust principlesCisco,zero trust principlesPaloaltonetworks,zero trust principlesCheckpoint,zero trust principlesCrowdstrike
+zero trust architecture,6500,57,18,-,4,20,-,,zero trust architectureFortinet,zero trust architectureCisco,zero trust architecturePaloaltonetworks,zero trust architectureCheckpoint,zero trust architectureCrowdstrike
+zero trust network access,3200,59,1,10,1,-,20,,zero trust network accessFortinet,zero trust network accessCisco,zero trust network accessPaloaltonetworks,zero trust network accessCheckpoint,zero trust network accessCrowdstrike
+,,,,,,,,,,,,,
+MOFU,SV,KD,,,,,,,,,,,
+zero trust software,400,33,-,-,9,10,1,,zero trust softwareFortinet,zero trust softwareCisco,zero trust softwarePaloaltonetworks,zero trust softwareCheckpoint,zero trust softwareCrowdstrike
+zero trust system,50,77,8,-,-,-,1,,zero trust systemFortinet,zero trust systemCisco,zero trust systemPaloaltonetworks,zero trust systemCheckpoint,zero trust systemCrowdstrike
+zero trust access software,40,-,-,-,-,-,-,,zero trust access softwareFortinet,zero trust access softwareCisco,zero trust access softwarePaloaltonetworks,zero trust access softwareCheckpoint,zero trust access softwareCrowdstrike
+zero trust network access software,40,-,-,-,-,-,-,,zero trust network access softwareFortinet,zero trust network access softwareCisco,zero trust network access softwarePaloaltonetworks,zero trust network access softwareCheckpoint,zero trust network access softwareCrowdstrike
+,,,,,,,,,,,,,
+BOFU ,SV,KD,,,,,,,,,,,
+zero trust solutions,800,52,22,-,1,-,27,,zero trust solutionsFortinet,zero trust solutionsCisco,zero trust solutionsPaloaltonetworks,zero trust solutionsCheckpoint,zero trust solutionsCrowdstrike
+ztna solutions,900,47,1,-,1,-,12,,ztna solutionsFortinet,ztna solutionsCisco,ztna solutionsPaloaltonetworks,ztna solutionsCheckpoint,ztna solutionsCrowdstrike
+zero trust network access solutions,100,31,1,-,1,-,6,,zero trust network access solutionsFortinet,zero trust network access solutionsCisco,zero trust network access solutionsPaloaltonetworks,zero trust network access solutionsCheckpoint,zero trust network access solutionsCrowdstrike
+zero trust security platform,400,51,12,-,10,11,20,,zero trust security platformFortinet,zero trust security platformCisco,zero trust security platformPaloaltonetworks,zero trust security platformCheckpoint,zero trust security platformCrowdstrike
+zero trust network access platform,,,-,-,-,-,-,,zero trust network access platformFortinet,zero trust network access platformCisco,zero trust network access platformPaloaltonetworks,zero trust network access platformCheckpoint,zero trust network access platformCrowdstrike
+zero trust vendor,200,6,-,-,9,-,-,,zero trust vendorFortinet,zero trust vendorCisco,zero trust vendorPaloaltonetworks,zero trust vendorCheckpoint,zero trust vendorCrowdstrike
+zero trust security solutions,700,58,16,-,21,19,11,,zero trust security solutionsFortinet,zero trust security solutionsCisco,zero trust security solutionsPaloaltonetworks,zero trust security solutionsCheckpoint,zero trust security solutionsCrowdstrike
+ztna vendor,30,-,-,-,-,-,-,,ztna vendorFortinet,ztna vendorCisco,ztna vendorPaloaltonetworks,ztna vendorCheckpoint,ztna vendorCrowdstrike
+zero trust platform,500,54,1,-,11,11,1,,zero trust platformFortinet,zero trust platformCisco,zero trust platformPaloaltonetworks,zero trust platformCheckpoint,zero trust platformCrowdstrike
+,,,,,,,,,,,,,
+Cloud Security,,,,,,,,,,,,,
+Keywords (TOFU),SV,KD,,,,,,,,,,,
+cloud security,23000,52,24,9,23,12,25,,cloud securityFortinet,cloud securityCisco,cloud securityPaloaltonetworks,cloud securityCheckpoint,cloud securityCrowdstrike
+what is cloud security,2400,39,27,26,1,7,21,,what is cloud securityFortinet,what is cloud securityCisco,what is cloud securityPaloaltonetworks,what is cloud securityCheckpoint,what is cloud securityCrowdstrike
+cloud security posture management,4100,26,18,-,12,-,30,,cloud security posture managementFortinet,cloud security posture managementCisco,cloud security posture managementPaloaltonetworks,cloud security posture managementCheckpoint,cloud security posture managementCrowdstrike
+cloud security architecture,1700,3,9,-,-,15,27,,cloud security architectureFortinet,cloud security architectureCisco,cloud security architecturePaloaltonetworks,cloud security architectureCheckpoint,cloud security architectureCrowdstrike
+cloud security challenges,700,22,-,-,13,28,10,,cloud security challengesFortinet,cloud security challengesCisco,cloud security challengesPaloaltonetworks,cloud security challengesCheckpoint,cloud security challengesCrowdstrike
+cloud security best practices,3700,22,24,11,10,23,9,,cloud security best practicesFortinet,cloud security best practicesCisco,cloud security best practicesPaloaltonetworks,cloud security best practicesCheckpoint,cloud security best practicesCrowdstrike
+MOFU,SV,KD,,,,,,,,,,,
+cloud security software,1000,12,6,-,22,18,26,,cloud security softwareFortinet,cloud security softwareCisco,cloud security softwarePaloaltonetworks,cloud security softwareCheckpoint,cloud security softwareCrowdstrike
+cloud security comparison,-,-,-,-,-,-,-,,cloud security comparisonFortinet,cloud security comparisonCisco,cloud security comparisonPaloaltonetworks,cloud security comparisonCheckpoint,cloud security comparisonCrowdstrike
+enterprise cloud security,1800,9,8,-,30,-,-,,enterprise cloud securityFortinet,enterprise cloud securityCisco,enterprise cloud securityPaloaltonetworks,enterprise cloud securityCheckpoint,enterprise cloud securityCrowdstrike
+cloud security for small business,200,0,-,-,-,-,-,,cloud security for small businessFortinet,cloud security for small businessCisco,cloud security for small businessPaloaltonetworks,cloud security for small businessCheckpoint,cloud security for small businessCrowdstrike
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+BOFU ,SV,KD,,,,,,,,,,,
+cloud security solutions,6100,34,21,1,24,10,-,,cloud security solutionsFortinet,cloud security solutionsCisco,cloud security solutionsPaloaltonetworks,cloud security solutionsCheckpoint,cloud security solutionsCrowdstrike
+cloud security services,8800,38,25,4,18,27,26,,cloud security servicesFortinet,cloud security servicesCisco,cloud security servicesPaloaltonetworks,cloud security servicesCheckpoint,cloud security servicesCrowdstrike
+cloud security company,700,45,14,-,-,15,10,,cloud security companyFortinet,cloud security companyCisco,cloud security companyPaloaltonetworks,cloud security companyCheckpoint,cloud security companyCrowdstrike
+cloud security providers,800,10,-,-,-,4,11,,cloud security providersFortinet,cloud security providersCisco,cloud security providersPaloaltonetworks,cloud security providersCheckpoint,cloud security providersCrowdstrike
+cloud security vendors,500,22,8,-,-,1,1,,cloud security vendorsFortinet,cloud security vendorsCisco,cloud security vendorsPaloaltonetworks,cloud security vendorsCheckpoint,cloud security vendorsCrowdstrike
+cnapp solutions,300,11,1,-,4,-,-,,cnapp solutionsFortinet,cnapp solutionsCisco,cnapp solutionsPaloaltonetworks,cnapp solutionsCheckpoint,cnapp solutionsCrowdstrike
+cnapp provider,,,-,-,-,-,-,,cnapp providerFortinet,cnapp providerCisco,cnapp providerPaloaltonetworks,cnapp providerCheckpoint,cnapp providerCrowdstrike
+,,,,,,,,,,,,,
+AI Cybersecurity,,,,,,,,,,,,,
+Keywords (TOFU),SV,KD,,,,,,,,,,,
+ai in cybersecurity,11000,72,3,7,10,-,27,,ai in cybersecurityFortinet,ai in cybersecurityCisco,ai in cybersecurityPaloaltonetworks,ai in cybersecurityCheckpoint,ai in cybersecurityCrowdstrike
+artificial intelligence in cybersecurity,300,70,1,8,7,-,-,,artificial intelligence in cybersecurityFortinet,artificial intelligence in cybersecurityCisco,artificial intelligence in cybersecurityPaloaltonetworks,artificial intelligence in cybersecurityCheckpoint,artificial intelligence in cybersecurityCrowdstrike
+ai security,4600,45,17,-,27,15,28,,ai securityFortinet,ai securityCisco,ai securityPaloaltonetworks,ai securityCheckpoint,ai securityCrowdstrike
+ai for security,900,61,17,22,11,1,-,,ai for securityFortinet,ai for securityCisco,ai for securityPaloaltonetworks,ai for securityCheckpoint,ai for securityCrowdstrike
+how generative ai in used in cybersecurity,,,-,-,-,-,-,,how generative ai in used in cybersecurityFortinet,how generative ai in used in cybersecurityCisco,how generative ai in used in cybersecurityPaloaltonetworks,how generative ai in used in cybersecurityCheckpoint,how generative ai in used in cybersecurityCrowdstrike
+aiops,9000,48,25,28,-,-,-,,aiopsFortinet,aiopsCisco,aiopsPaloaltonetworks,aiopsCheckpoint,aiopsCrowdstrike
+,,,,,,,,,,,,,
+MOFU,SV,KD,,,,,,,,,,,
+ai security system,450,51,1,-,-,-,-,,ai security systemFortinet,ai security systemCisco,ai security systemPaloaltonetworks,ai security systemCheckpoint,ai security systemCrowdstrike
+ai cybersecurity tools,500,61,7,-,-,-,18,,ai cybersecurity toolsFortinet,ai cybersecurity toolsCisco,ai cybersecurity toolsPaloaltonetworks,ai cybersecurity toolsCheckpoint,ai cybersecurity toolsCrowdstrike
+ai cybersecurity platform,80,73,-,-,-,-,-,,ai cybersecurity platformFortinet,ai cybersecurity platformCisco,ai cybersecurity platformPaloaltonetworks,ai cybersecurity platformCheckpoint,ai cybersecurity platformCrowdstrike
+ai cybersecurity software,200,59,7,-,-,-,-,,ai cybersecurity softwareFortinet,ai cybersecurity softwareCisco,ai cybersecurity softwarePaloaltonetworks,ai cybersecurity softwareCheckpoint,ai cybersecurity softwareCrowdstrike
+ai security software,500,56,1,-,10,-,-,,ai security softwareFortinet,ai security softwareCisco,ai security softwarePaloaltonetworks,ai security softwareCheckpoint,ai security softwareCrowdstrike
+ai security platform,500,79,-,-,1,-,-,,ai security platformFortinet,ai security platformCisco,ai security platformPaloaltonetworks,ai security platformCheckpoint,ai security platformCrowdstrike
+BOFU ,SV,KD,,,,,,,,,,,
+ai security solutions,2200,55,-,6,4,-,24,,ai security solutionsFortinet,ai security solutionsCisco,ai security solutionsPaloaltonetworks,ai security solutionsCheckpoint,ai security solutionsCrowdstrike
+ai security services,200,33,8,9,-,1,1,,ai security servicesFortinet,ai security servicesCisco,ai security servicesPaloaltonetworks,ai security servicesCheckpoint,ai security servicesCrowdstrike
+ai cybersecurity solutions,1200,58,1,21,14,-,-,,ai cybersecurity solutionsFortinet,ai cybersecurity solutionsCisco,ai cybersecurity solutionsPaloaltonetworks,ai cybersecurity solutionsCheckpoint,ai cybersecurity solutionsCrowdstrike
+ai cybersecurity companies,600,5,27,-,-,23,-,,ai cybersecurity companiesFortinet,ai cybersecurity companiesCisco,ai cybersecurity companiesPaloaltonetworks,ai cybersecurity companiesCheckpoint,ai cybersecurity companiesCrowdstrike
+ai security companies,250,47,-,-,1,-,-,,ai security companiesFortinet,ai security companiesCisco,ai security companiesPaloaltonetworks,ai security companiesCheckpoint,ai security companiesCrowdstrike
+,,,,,,,,,,,,,
+Quantum security,,,,,,,,,,,,,
+Keywords (TOFU),SV,KD,,,,,,,,,,,
+quantum security,600,29,1,-,1,-,-,,quantum securityFortinet,quantum securityCisco,quantum securityPaloaltonetworks,quantum securityCheckpoint,quantum securityCrowdstrike
+quantum safe encryption,250,53,1,-,8,-,-,,quantum safe encryptionFortinet,quantum safe encryptionCisco,quantum safe encryptionPaloaltonetworks,quantum safe encryptionCheckpoint,quantum safe encryptionCrowdstrike
+post-quantum cryptography,9400,74,20,28,9,-,-,,post-quantum cryptographyFortinet,post-quantum cryptographyCisco,post-quantum cryptographyPaloaltonetworks,post-quantum cryptographyCheckpoint,post-quantum cryptographyCrowdstrike
+pqc,1200,67,16,7,1,-,-,,pqcFortinet,pqcCisco,pqcPaloaltonetworks,pqcCheckpoint,pqcCrowdstrike
+quantum computing security,150,14,1,-,1,-,-,,quantum computing securityFortinet,quantum computing securityCisco,quantum computing securityPaloaltonetworks,quantum computing securityCheckpoint,quantum computing securityCrowdstrike
+quantum key distribution,900,23,1,-,1,-,-,,quantum key distributionFortinet,quantum key distributionCisco,quantum key distributionPaloaltonetworks,quantum key distributionCheckpoint,quantum key distributionCrowdstrike
+qkd,600,1,1,-,1,-,-,,qkdFortinet,qkdCisco,qkdPaloaltonetworks,qkdCheckpoint,qkdCrowdstrike
+MOFU,SV,KD,,,,,,,,,,,
+quantum security system,30,18,2,-,7,-,-,,quantum security systemFortinet,quantum security systemCisco,quantum security systemPaloaltonetworks,quantum security systemCheckpoint,quantum security systemCrowdstrike
+quantum security software,,,-,-,-,-,-,,quantum security softwareFortinet,quantum security softwareCisco,quantum security softwarePaloaltonetworks,quantum security softwareCheckpoint,quantum security softwareCrowdstrike
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+BOFU ,SV,KD,,,,,,,,,,,
+quantum security solutions,100,-,-,-,-,-,-,,quantum security solutionsFortinet,quantum security solutionsCisco,quantum security solutionsPaloaltonetworks,quantum security solutionsCheckpoint,quantum security solutionsCrowdstrike
+quantum security services,30,-,-,-,-,-,-,,quantum security servicesFortinet,quantum security servicesCisco,quantum security servicesPaloaltonetworks,quantum security servicesCheckpoint,quantum security servicesCrowdstrike
+quantum security companies,100,-,-,-,-,-,-,,quantum security companiesFortinet,quantum security companiesCisco,quantum security companiesPaloaltonetworks,quantum security companiesCheckpoint,quantum security companiesCrowdstrike
+quantum security platform,20,-,-,-,-,-,-,,quantum security platformFortinet,quantum security platformCisco,quantum security platformPaloaltonetworks,quantum security platformCheckpoint,quantum security platformCrowdstrike

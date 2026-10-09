@@ -1,0 +1,12 @@
+Keyword,Intents,Volume,KD,CPC,CD,FT,PA,CP,CISCO,CS
+threat detection,Informational,1900,48,11.91,0.28,0,8,77,6,2
+what is ci cd pipeline,Informational,1300,61,1.42,0.13,0,13,51,28,12
+cloud security management,Informational,1000,24,20.93,0.25,0,57,62,40,9
+how can generative ai be used in cybersecurity,Informational,720,28,3.98,0.37,0,2,24,51,75
+threat modelling,Informational,720,49,6.29,0.24,0,39,72,5,38
+container vulnerability scanning,Informational,590,18,24.36,0.09,0,34,61,71,29
+cybersecurity assessments,Informational,390,30,15.38,0.14,0,49,48,96,34
+kubernetes security posture management,Informational,320,23,14.51,0.13,0,2,24,40,3
+ai endpoint security,Informational,260,42,0,0.18,0,1,23,100,11
+patch management vs vulnerability management,"Commercial, Informational",260,21,10.97,0.22,0,1,82,89,85
+security development lifecycle,Informational,260,40,13.01,0.09,0,3,59,43,46

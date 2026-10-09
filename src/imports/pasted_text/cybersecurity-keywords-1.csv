@@ -1,0 +1,190 @@
+Firewall			Fortinet	Cisco	Paloaltonetworks	Checkpoint	Crowdstrike
+Keywords (TOFU)	SV	KD					
+firewall	33000	69	1	1	-	7	-
+what is firewall	2200	65	1	1	1	7	-
+firewall definition	2900	51	2	1	6	18	-
+network firewall	8200	50	7	4	13	-	-
+how does a firewall work	700	52	3	7	6	11	-
+types of firewall	400	29	2	10	1	1	-
+firewall benefits	40	2	2	7	3	-	-
+							
+MOFU	SV	KD					
+software firewalls	600	46	4	16	2	26	-
+firewall comparison	70	14	-	9	1	-	-
+enterprise firewall	500	12	15	22	-	11	-
+firewall devices	150	8	1	7	1	-	-
+network firewall device	150	0	6	11	10	-	-
+							
+BOFU 	SV	KD					
+firewall solutions	450	46	4	3	10	-	-
+enterprise firewall solutions	200	42	5	4	8	-	-
+best firewall solution	-	-	-	-	-	-	-
+leading firewall services	-	-	-	-	-	-	-
+firewall solutions for small business	100	1	3	2	-	-	-
+SD-WAN							
+Keywords (TOFU)	SV	KD					
+sd-wan	6900	62	4	6	1	23	-
+what is sd-wan	1300	30	4	1	1	14	-
+sd wan defined	100	35	4	1	1	-	-
+sd wan meaning	1000	28	4	1	1	12	-
+software defined wan	600	37	1	2	1	16	-
+							
+MOFU	SV	KD					
+sd wan software	350	44	3	1	1	-	-
+sd wan device	200	40	1	1	1	-	-
+secure sd wan	250	10	1	-	1	-	-
+sd-wan software	150	45	1	1	6	-	-
+sd wan security	700	2	1	1	1	-	-
+							
+BOFU 	SV	KD					
+sd-wan solutions	600	33	1	1	1	19	-
+sd wan service	350	1	2	4	5	-	-
+sd wan services	300	12	3	1	1	-	-
+sd-wan platform	40	31	10	3	-	-	-
+sd-wan vendors	150	2	-	9	-	-	-
+sd-wan providers	200	2	-	-	1	11	-
+							
+OT Security							
+Keywords (TOFU)	SV	KD					
+OT security	2400	24	2	4	10	-	-
+operational technology	1800	24	1	11	29	-	-
+ot technology	400	13	1	1	-	-	-
+what is ot security	600	11	2	1	8	-	-
+ot components	10		-	-	-	-	-
+ot best practices	-	-	-	-	-	-	-
+ot challenges	-	-	-	-	-	-	-
+ot vs it	1100	6	1	1	1	-	-
+							
+MOFU	SV	KD					
+ot devices	300	9	6	1	2	-	-
+ot systems	500	28	4	1	1	-	-
+ot platform	90	44	-	-	-	-	-
+							
+							
+BOFU 	SV	KD					
+ot security solutions	250	9	1	1	1	-	-
+operational technology solutions	80	31	9	2	-	-	-
+ot security companies	80	31	1	-	-	-	-
+ot security vendors	150	5	-	-	-	-	-
+industrial cybersecurity	1700	34	-	-	1	-	-
+							
+SASE							
+Keywords (TOFU)	SV	KD					
+sase	19000	58	1	23	1	10	-
+sase meaning	4900	51	3	12	4	-	-
+what is sase	2600	54	1	8	1	26	-
+secure access service edge	2000	55	1	8	1	14	26
+sase definition	700	57	1	12	5	-	-
+sase benefits	600	2	1	-	1	-	-
+sase architecture	800	48	1	1	1	15	-
+sase technology	250	60	1	1	1	-	-
+							
+MOFU	SV	KD					
+sase security	1600	42	1	13	1	14	-
+sase platform	600	54	1	14	1	20	-
+sase network	300	53	1	10	1	-	3
+sase products	200	37	1	6	1	4	-
+sase network security	150	57	1	7	3	-	-
+							
+BOFU 	SV	KD					
+sase solutions	1600	55	1	10	1	16	-
+sase services	250	57	1	1	1	-	-
+secure access service edge vendors	150	56	6	10	3	-	-
+sase vendor	200	0	8	-	6	9	-
+sase providers	450	1	1	-	-	1	3
+							
+Zero Trust							
+Keywords (TOFU)	SV	KD					
+zero trust	9600	83	12	-	11	18	9
+what is zero trust	2400	78	1	28	15	13	7
+zero trust definition	500	74	1	-	1	1	1
+zero trust network	1900	78	9	1	7	25	16
+zero trust network security	500	65	1	1	1	21	16
+zero trust principles	900	82	-	-	1	17	10
+zero trust architecture	6500	57	18	-	4	20	-
+zero trust network access	3200	59	1	10	1	-	20
+							
+MOFU	SV	KD					
+zero trust software	400	33	-	-	9	10	1
+zero trust system	50	77	8	-	-	-	1
+zero trust access software	40	-	-	-	-	-	-
+zero trust network access software	40	-	-	-	-	-	-
+							
+BOFU 	SV	KD					
+zero trust solutions	800	52	22	-	1	-	27
+ztna solutions	900	47	1	-	1	-	12
+zero trust network access solutions	100	31	1	-	1	-	6
+zero trust security platform	400	51	12	-	10	11	20
+zero trust network access platform			-	-	-	-	-
+zero trust vendor	200	6	-	-	9	-	-
+zero trust security solutions	700	58	16	-	21	19	11
+ztna vendor	30	-	-	-	-	-	-
+zero trust platform	500	54	1	-	11	11	1
+							
+Cloud Security							
+Keywords (TOFU)	SV	KD					
+cloud security	23000	52	24	9	23	12	25
+what is cloud security	2400	39	27	26	1	7	21
+cloud security posture management	4100	26	18	-	12	-	30
+cloud security architecture	1700	3	9	-	-	15	27
+cloud security challenges	700	22	-	-	13	28	10
+cloud security best practices	3700	22	24	11	10	23	9
+MOFU	SV	KD					
+cloud security software	1000	12	6	-	22	18	26
+cloud security comparison	-	-	-	-	-	-	-
+enterprise cloud security	1800	9	8	-	30	-	-
+cloud security for small business	200	0	-	-	-	-	-
+							
+							
+BOFU 	SV	KD					
+cloud security solutions	6100	34	21	1	24	10	-
+cloud security services	8800	38	25	4	18	27	26
+cloud security company	700	45	14	-	-	15	10
+cloud security providers	800	10	-	-	-	4	11
+cloud security vendors	500	22	8	-	-	1	1
+cnapp solutions	300	11	1	-	4	-	-
+cnapp provider			-	-	-	-	-
+							
+AI Cybersecurity							
+Keywords (TOFU)	SV	KD					
+ai in cybersecurity	11000	72	3	7	10	-	27
+artificial intelligence in cybersecurity	300	70	1	8	7	-	-
+ai security	4600	45	17	-	27	15	28
+ai for security	900	61	17	22	11	1	-
+how generative ai in used in cybersecurity			-	-	-	-	-
+aiops	9000	48	25	28	-	-	-
+							
+MOFU	SV	KD					
+ai security system	450	51	1	-	-	-	-
+ai cybersecurity tools	500	61	7	-	-	-	18
+ai cybersecurity platform	80	73	-	-	-	-	-
+ai cybersecurity software	200	59	7	-	-	-	-
+ai security software	500	56	1	-	10	-	-
+ai security platform	500	79	-	-	1	-	-
+BOFU 	SV	KD					
+ai security solutions	2200	55	-	6	4	-	24
+ai security services	200	33	8	9	-	1	1
+ai cybersecurity solutions	1200	58	1	21	14	-	-
+ai cybersecurity companies	600	5	27	-	-	23	-
+ai security companies	250	47	-	-	1	-	-
+							
+Quantum security							
+Keywords (TOFU)	SV	KD					
+quantum security	600	29	1	-	1	-	-
+quantum safe encryption	250	53	1	-	8	-	-
+post-quantum cryptography	9400	74	20	28	9	-	-
+pqc	1200	67	16	7	1	-	-
+quantum computing security	150	14	1	-	1	-	-
+quantum key distribution	900	23	1	-	1	-	-
+qkd	600	1	1	-	1	-	-
+MOFU	SV	KD					
+quantum security system	30	18	2	-	7	-	-
+quantum security software			-	-	-	-	-
+							
+							
+BOFU 	SV	KD					
+quantum security solutions	100	-	-	-	-	-	-
+quantum security services	30	-	-	-	-	-	-
+quantum security companies	100	-	-	-	-	-	-
+quantum security platform	20	-	-	-	-	-	-
+							

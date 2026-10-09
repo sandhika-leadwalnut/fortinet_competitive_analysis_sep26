@@ -1,0 +1,23 @@
+Keyword,Intents,,Volume,KD,CPC,CD,FT,PA,CP,CISCO,CD
+cloud computing explained,Informational,,27100,87,1.52,0.05,0,0,0,32,0
+cybersecurity best practices,Commercial,,27100,64,6.23,0.13,0,0,74,33,0
+quantum cryptography,Informational,,14800,71,2.11,0.13,0,0,0,17,0
+owasp top 10,"Informational, Navigational",,12100,68,3.88,0.13,0,0,58,0,0
+cloud ai,Informational,,9900,85,4.21,0.45,0,0,0,8,0
+nist cybersecurity framework,Informational,,9900,65,5.34,0.46,0,0,25,4,0
+quantum ai,Informational,,8100,57,2.45,0.16,0,0,73,0,0
+cloud migration,Informational,,5400,48,15.6,0.39,0,0,0,27,13
+cloud-native application development,Informational,,4400,54,0,0,0,0,0,92,0
+cybersecurity risk assessment,Informational,,2900,41,14,0.14,0,1,0,0,0
+iaas in cloud computing,Informational,,2400,63,4.3,0.03,0,0,0,0,15
+cloud computing providers,Informational,,1900,68,10.59,0.09,0,37,0,95,0
+network security monitoring,Informational,O - Network monitoring,1900,21,15.99,0.25,0,78,14,3,0
+quantum apocalypse,Informational,,1900,33,0,0,0,20,0,0,0
+cybersecurity for small business,Informational,,1600,62,30.03,0.26,0,4,0,19,3
+network security assessment,Informational,,1000,18,8.02,0.09,0,27,12,0,0
+devsecops best practices,Commercial,,880,14,11.21,0.24,0,0,0,0,15
+network security best practices,Commercial,O - ,880,28,7.7,0.15,0,0,24,5,0
+devsecops vs devops,"Commercial, Informational",,720,22,4.1,0.07,0,0,79,0,2
+enterprise cloud computing,Informational,,720,20,15.47,0.11,0,0,0,78,0
+cloud security posture management,Informational,,2900,45,22.65,0.2,0,4,28,0,11
+cloud security management,Informational,,1000,24,20.93,0.25,0,57,62,40,9
