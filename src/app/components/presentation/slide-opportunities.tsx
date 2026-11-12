@@ -280,13 +280,13 @@ export function SlideOpportunities({ onNavigateHome }: SlideOpportunitiesProps) 
             icon={TrendingUp}
             type="success"
             title="Fortinet"
-            content="From Jul 2025 to Sep 2026, total keywords fell 309K → 211K (−31.7%), Wiz also fell 41K → 28K (−32.3%)."
+            content="From Jul 2025 to Oct 2026, total keywords fell 309K → 227K (−26.5%), Wiz fell 41.4K → 28K (−32.3%); Fortinet Oct MoM +7.6% (211K → 227K)."
           />
           <InsightCard
             icon={TrendingDown}
             type="error"
             title="Competitions"
-            content="From Jul 2025 to Sep 2026, Cisco fell 833K → 574K (−31.1%), while Palo Alto grew 169K → 195K (+15.4%)."
+            content="From Jul 2025 to Oct 2026, Cisco fell 833K → 726K (−12.8%), Palo Alto grew 169K → 366K (+116.6%); Oct MoM: Cisco +26.5%, Palo Alto +87.7%."
           />
         </InsightsSection>
       );
@@ -297,13 +297,13 @@ export function SlideOpportunities({ onNavigateHome }: SlideOpportunitiesProps) 
             icon={TrendingUp}
             type="success"
             title="Fortinet"
-            content="From Jul 2025 to Sep 2026, page-1 rankings grew 39K → 46K (+16.5%), Palo Alto grew 19K → 31K (+61.3%)."
+            content="From Jul 2025 to Oct 2026, page-1 rankings grew 39.4K → 44K (+11.7%), Palo Alto grew 19.4K → 36.8K (+89.7%); Fortinet Oct MoM −4.1% (45.9K → 44K)."
           />
           <InsightCard
             icon={TrendingUp}
             type="success"
             title="Competitions"
-            content="From Jul 2025 to Sep 2026, SentinelOne surged 9.8K → 19.4K (+98.0%); Cisco grew 87K → 91K (+4.6%)."
+            content="From Jul 2025 to Oct 2026, SentinelOne grew 9.8K → 18.3K (+86.7%), Cisco grew 87.4K → 95K (+8.7%); Oct MoM: SentinelOne −5.7%, Cisco +3.9%."
           />
         </InsightsSection>
       );
@@ -311,7 +311,7 @@ export function SlideOpportunities({ onNavigateHome }: SlideOpportunitiesProps) 
   };
 
   const getPerformanceSummary = () => {
-    const latestIndex = 14; // Sep 2026
+    const latestIndex = 15; // Oct 2026
     const dataSource = activeTab === 'organic' ? editableOrganic : editablePageOne;
     const formatValue = (val: number) => formatNumber(val);
     const ordinal = (n: number) => n === 2 ? '2nd' : n === 3 ? '3rd' : `${n}th`;
@@ -377,7 +377,7 @@ export function SlideOpportunities({ onNavigateHome }: SlideOpportunitiesProps) 
     <SlideContainer slideNumber={6} onNavigateHome={onNavigateHome}>
       <SlideHeader
         title="Keyword Opportunities & Rankings"
-        subtitle="(Jul 2025 - Sep 2026)"
+        subtitle="(Jul 2025 - Oct 2026)"
       />
 
       {/* Tabs */}

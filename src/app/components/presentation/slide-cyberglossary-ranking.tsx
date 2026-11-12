@@ -18,27 +18,27 @@ const VENDORS = [
   { id: 'crowdstrike', name: 'CrowdStrike',  color: '#1F2937' },
 ];
 
-const MONTHS = ['2025-12','2026-01','2026-02','2026-03','2026-04','2026-05','2026-06','2026-07','2026-08','2026-09'];
+const MONTHS = ['2025-12','2026-01','2026-02','2026-03','2026-04','2026-05','2026-06','2026-07','2026-08','2026-09','2026-10'];
 
 const formatMonth = (key: string) => {
   const map: Record<string,string> = {
     '2025-12':'Dec-25','2026-01':'Jan-26','2026-02':'Feb-26','2026-03':'Mar-26',
-    '2026-04':'Apr-26','2026-05':'May-26','2026-06':'Jun-26','2026-07':'Jul-26','2026-08':'Aug-26','2026-09':'Sep-26',
+    '2026-04':'Apr-26','2026-05':'May-26','2026-06':'Jun-26','2026-07':'Jul-26','2026-08':'Aug-26','2026-09':'Sep-26','2026-10':'Oct-26',
   };
   return map[key] ?? key;
 };
 
 const RANK_DATA: Record<string, number[]> = {
-  fortinet:    [2210,2221,2201,2150,2131,2129,2132,2120,2136,2162],
-  cisco:       [ 556, 550, 557, 558, 558, 560, 561, 567, 571, 560],
-  hpe:         [2124,2137,2188,2152,2142,2133,2122,2108,2171,2188],
-  paloalto:    [3182,3070,2989,2969,2918,2866,2806,2717,2558,2455],
-  checkpoint:  [2105,2038,2024,2052,2006,1973,1934,1870,1885,1746],
-  crowdstrike: [4101,4047,3953,3829,3702,3703,3608,3586,3532,3376],
+  fortinet:    [2210,2221,2201,2150,2131,2129,2132,2120,2136,2162,2125],
+  cisco:       [ 556, 550, 557, 558, 558, 560, 561, 567, 571, 560, 566],
+  hpe:         [2124,2137,2188,2152,2142,2133,2122,2108,2171,2188,2203],
+  paloalto:    [3182,3070,2989,2969,2918,2866,2806,2717,2558,2455,2249],
+  checkpoint:  [2105,2038,2024,2052,2006,1973,1934,1870,1885,1746,1715],
+  crowdstrike: [4101,4047,3953,3829,3702,3703,3608,3586,3532,3376,3162],
 };
 
 const DA: Record<string, number> = {
-  fortinet: 89, cisco: 91, hpe: 89, paloalto: 87, checkpoint: 89, crowdstrike: 86,
+  fortinet: 89, cisco: 92, hpe: 89, paloalto: 89, checkpoint: 90, crowdstrike: 87,
 };
 
 const CustomTooltip = ({ active, payload, label }: any) => {
@@ -77,11 +77,12 @@ export function SlideCyberglossaryRanking({ onNavigateHome }: { onNavigateHome?:
     return dp;
   });
 
-  const ftLatest  = RANK_DATA.fortinet[9];   const ftFirst  = RANK_DATA.fortinet[0];
-  const csLatest  = RANK_DATA.crowdstrike[9];
-  const cpLatest  = RANK_DATA.checkpoint[9]; const cpFirst  = RANK_DATA.checkpoint[0];
-  const paLatest  = RANK_DATA.paloalto[9];   const paFirst  = RANK_DATA.paloalto[0];
-  const cisLatest = RANK_DATA.cisco[9];
+  const L = MONTHS.length - 1;
+  const ftLatest  = RANK_DATA.fortinet[L];
+  const csLatest  = RANK_DATA.crowdstrike[L];
+  const cpLatest  = RANK_DATA.checkpoint[L]; const cpFirst  = RANK_DATA.checkpoint[0];
+  const paLatest  = RANK_DATA.paloalto[L];
+  const cisLatest = RANK_DATA.cisco[L];
 
   // DA sorted
   const daSorted = VENDORS.map(v => ({ ...v, da: DA[v.id] })).sort((a,b) => b.da - a.da);
@@ -90,7 +91,7 @@ export function SlideCyberglossaryRanking({ onNavigateHome }: { onNavigateHome?:
     <SlideContainer slideNumber={30} onNavigateHome={onNavigateHome} source="Ahrefs">
       <SlideHeader
         title="Cyberglossary Ranking Performance"
-        subtitle="Dec 2025 – Sep 2026"
+        subtitle="Dec 2025 – Oct 2026"
       />
 
       <TimeRangeFilter value={timeRange} onChange={setTimeRange} />
@@ -142,19 +143,19 @@ export function SlideCyberglossaryRanking({ onNavigateHome }: { onNavigateHome?:
               icon={Trophy}
               type="success"
               title="Cisco #1 Ranked"
-              content={`Cisco holds the best global rank at #${cisLatest.toLocaleString()} in Sep 2026 — far ahead of all others. Consistent 550–571 range shows stable, dominant cyberglossary presence.`}
+              content={`Cisco holds the best global rank at #${cisLatest.toLocaleString()} in Oct 2026, despite a slight MoM softening from #${RANK_DATA.cisco[L - 1].toLocaleString()}. Its consistent #550–#571 range remains the category benchmark.`}
             />
             <InsightCard
               icon={TrendingUp}
               type="success"
               title="Check Point Improving"
-              content={`Check Point rank improved from #${cpFirst.toLocaleString()} → #${cpLatest.toLocaleString()} Dec→Sep (${(((cpFirst - cpLatest) / cpFirst) * 100).toFixed(0)}% gain). Palo Alto also climbing: #${paFirst.toLocaleString()} → #${paLatest.toLocaleString()}.`}
+              content={`Check Point improved to #${cpLatest.toLocaleString()} in Oct (from #${RANK_DATA.checkpoint[L - 1].toLocaleString()} in Sep; ${(((cpFirst - cpLatest) / cpFirst) * 100).toFixed(0)}% better than Dec). Palo Alto made the largest MoM gain, reaching #${paLatest.toLocaleString()} from #${RANK_DATA.paloalto[L - 1].toLocaleString()}.`}
             />
             <InsightCard
               icon={AlertTriangle}
               type="warning"
               title="CrowdStrike Lags"
-              content={`CrowdStrike at #${csLatest.toLocaleString()} — lowest-ranked vendor. Fortinet at #${ftLatest.toLocaleString()} improved slightly from #${ftFirst.toLocaleString()} but remains mid-tier. Both have significant room to close the gap with Cisco.`}
+              content={`CrowdStrike remains lowest at #${csLatest.toLocaleString()}, although it improved 6% MoM. Fortinet improved to #${ftLatest.toLocaleString()} from #${RANK_DATA.fortinet[L - 1].toLocaleString()}, but still trails Check Point and remains far behind Cisco.`}
             />
           </InsightsSection>
 
@@ -183,7 +184,7 @@ export function SlideCyberglossaryRanking({ onNavigateHome }: { onNavigateHome?:
         </div>
       </div>
 
-      <SlideFooter source="Source: Ahrefs · Global Rank & Domain Authority · Dec 2025 – Sep 2026" />
+      <SlideFooter source="Source: Ahrefs · Global Rank & Domain Authority · Dec 2025 – Oct 2026" />
     </SlideContainer>
   );
 }

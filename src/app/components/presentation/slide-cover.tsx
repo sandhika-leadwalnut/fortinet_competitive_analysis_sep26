@@ -13,7 +13,7 @@ export function SlideCover({ onNavigateHome }: SlideCoverProps) {
             </div>
           </div>
           <h1 className="text-[56px] font-bold text-black leading-tight tracking-tight uppercase">
-            Monthly Performance Dashboard - Fortinet - Sep 2026
+            Monthly Performance Dashboard - Fortinet - Oct 2026
           </h1>
         </div>
       </div>

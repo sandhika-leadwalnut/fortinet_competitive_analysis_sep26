@@ -93,77 +93,11 @@ export function SlideCompetitiveIntel({ onNavigateHome }: { onNavigateHome?: () 
   ];
 
   const newPages = [
-    // ── Sep 2026 New Pages ───────────────────────────────────────────────────
-    {
-      title: 'What is AI Tool Sprawl',
-      url: 'https://www.paloaltonetworks.com/cyberpedia/what-is-ai-tool-sprawl',
-      category: 'AI Security'
-    },
-    {
-      title: 'What is an AI Gateway',
-      url: 'https://www.paloaltonetworks.com/cyberpedia/what-is-an-ai-gateway',
-      category: 'AI Security'
-    },
-    {
-      title: 'What is AI Auto-Instrumentation',
-      url: 'https://www.paloaltonetworks.com/cyberpedia/what-is-ai-auto-instrumentation',
-      category: 'AI Security'
-    },
-    {
-      title: 'Agentic Endpoint Security',
-      url: 'https://www.paloaltonetworks.com/cyberpedia/agentic-endpoint-security',
-      category: 'AI Security'
-    },
-    {
-      title: 'What is a Supply Chain Attack',
-      url: 'https://www.paloaltonetworks.com/cyberpedia/what-is-supply-chain-attack',
-      category: 'Technologies'
-    },
-    {
-      title: 'Logs vs Metrics vs Traces',
-      url: 'https://www.paloaltonetworks.com/cyberpedia/logs-vs-metrics-vs-traces',
-      category: 'Technologies'
-    },
-    {
-      title: 'What is AI Observability',
-      url: 'https://www.paloaltonetworks.com/cyberpedia/what-is-ai-observability',
-      category: 'AI Security'
-    },
-    {
-      title: 'AI Agent Attack Surface',
-      url: 'https://www.paloaltonetworks.com/cyberpedia/ai-agent-attack-surface',
-      category: 'AI Security'
-    },
-    {
-      title: 'Telemetry Pipeline',
-      url: 'https://www.paloaltonetworks.com/cyberpedia/telemetry-pipeline',
-      category: 'Technologies'
-    },
-    {
-      title: 'What is a Service Level Objective (SLO)',
-      url: 'https://www.paloaltonetworks.com/cyberpedia/what-is-service-level-objective-slo',
-      category: 'Technologies'
-    },
-    {
-      title: 'What is an Agent Registry',
-      url: 'https://www.paloaltonetworks.com/cyberpedia/what-is-an-agent-registry',
-      category: 'AI Security'
-    },
-    {
-      title: 'What is Agent Authorization',
-      url: 'https://www.paloaltonetworks.com/cyberpedia/what-is-agent-authorization',
-      category: 'AI Security'
-    },
-    {
-      title: 'AI Observability Metrics',
-      url: 'https://www.paloaltonetworks.com/cyberpedia/ai-observability-metrics',
-      category: 'AI Security'
-    },
-    {
-      title: 'What is AI Agent Hijacking',
-      url: 'https://www.paloaltonetworks.com/cyberpedia/what-is-ai-agent-hijacking',
-      category: 'AI Security'
-    },
+    { title: 'What is Virtual Patching', url: 'https://www.paloaltonetworks.com/cyberpedia/what-is-virtual-patching', category: 'Technologies' },
+    { title: 'VM-Series vs Cloud NGFW', url: 'https://www.paloaltonetworks.com/cyberpedia/vm-series-vs-cloud-ngfw', category: 'Technologies' },
+    { title: 'What is a Cryptography Bill of Materials', url: 'https://www.paloaltonetworks.com/cyberpedia/what-is-a-cryptography-bill-of-materials', category: 'AI Security' },
+    { title: 'AI Runtime Security', url: 'https://www.paloaltonetworks.com/cyberpedia/ai-runtime-security', category: 'AI Security' },
+    { title: '8 Signs Your Organization Needs MDR', url: 'https://www.paloaltonetworks.com/cyberpedia/8-signs-your-organization-needs-mdr', category: 'Technologies' },
   ];
 
   const pageCategories = [
@@ -183,20 +117,15 @@ export function SlideCompetitiveIntel({ onNavigateHome }: { onNavigateHome?: () 
   ];
 
   const crowdstrikePages = [
-    // ── Sep 2026 New Pages ───────────────────────────────────────────────────
-    { title: 'Frontier AI Resilience', url: 'https://www.crowdstrike.com/cybersecurity-101/artificial-intelligence/frontier-ai-resilience', category: 'Artificial Intelligence' },
-    { title: 'Frontier AI Resilience vs AIDR', url: 'https://www.crowdstrike.com/cybersecurity-101/artificial-intelligence/frontier-ai-resilience-vs-aidr', category: 'Artificial Intelligence' },
-    { title: 'Cyber Physical Systems', url: 'https://www.crowdstrike.com/cybersecurity-101/endpoint-security/cyber-physical-systems', category: 'Endpoint Security' },
-    { title: 'Internet of Medical Things (IoMT)', url: 'https://www.crowdstrike.com/cybersecurity-101/endpoint-security/internet-of-medical-things-iomt', category: 'Endpoint Security' },
-    { title: 'Modern Privileged Access', url: 'https://www.crowdstrike.com/cybersecurity-101/identity-security/modern-privileged-access', category: 'Identity Security' },
-    { title: 'Active Directory Federation Service (ADFS)', url: 'https://www.crowdstrike.com/cybersecurity-101/identity-security/active-directory-federation-service-adfs', category: 'Identity Security' },
-    { title: 'Active Directory Security', url: 'https://www.crowdstrike.com/cybersecurity-101/identity-security/active-directory-security', category: 'Identity Security' },
-    { title: 'Access Control', url: 'https://www.crowdstrike.com/cybersecurity-101/identity-protection/access-control', category: 'Identity Protection' },
-    { title: 'Active Directory (AD) Auditing', url: 'https://www.crowdstrike.com/cybersecurity-101/identity-protection/active-directory-ad-auditing', category: 'Identity Protection' },
-    { title: 'Secure Remote Access', url: 'https://www.crowdstrike.com/cybersecurity-101/browser-security/secure-remote-access', category: 'Browser Security' },
-    { title: 'Zero Standing Privileges', url: 'https://www.crowdstrike.com/cybersecurity-101/zero-trust-security/zero-standing-privileges', category: 'Zero Trust Security' },
-    { title: 'Data Security', url: 'https://www.crowdstrike.com/cybersecurity-101/data-security', category: 'Data Security' },
-    { title: 'Access Logs', url: 'https://www.crowdstrike.com/cybersecurity-101/observability/access-logs', category: 'Observability' },
+    { title: 'Granular Access Control', url: 'https://www.crowdstrike.com/cybersecurity-101/identity-security/granular-access-control', category: 'Identity Security' },
+    { title: 'Device Control', url: 'https://www.crowdstrike.com/cybersecurity-101/endpoint-security/device-control', category: 'Endpoint Security' },
+    { title: 'AI Agents', url: 'https://www.crowdstrike.com/cybersecurity-101/artificial-intelligence/ai-agents', category: 'Artificial Intelligence' },
+    { title: 'How to Secure AI Agents', url: 'https://www.crowdstrike.com/cybersecurity-101/artificial-intelligence/how-to-secure-ai-agents', category: 'Artificial Intelligence' },
+    { title: 'Device Posture Management', url: 'https://www.crowdstrike.com/cybersecurity-101/endpoint-security/device-posture-management', category: 'Endpoint Security' },
+    { title: 'Single Sign-On (SSO)', url: 'https://www.crowdstrike.com/cybersecurity-101/identity-security/single-sign-on-sso', category: 'Identity Security' },
+    { title: 'Dynamic Access Control', url: 'https://www.crowdstrike.com/cybersecurity-101/identity-security/dynamic-access-control', category: 'Identity Security' },
+    { title: 'VDI vs VPN', url: 'https://www.crowdstrike.com/cybersecurity-101/browser-security/vdi-vs-vpn', category: 'Browser Security' },
+    { title: 'Website Security', url: 'https://www.crowdstrike.com/cybersecurity-101/cybersecurity/website-security', category: 'Cybersecurity' },
   ];
 
   const crowdstrikeCategories = [
@@ -208,17 +137,18 @@ export function SlideCompetitiveIntel({ onNavigateHome }: { onNavigateHome?: () 
     { label: 'Zero Trust Security', color: 'bg-violet-100 text-violet-700 border-violet-200', dot: 'bg-violet-500' },
     { label: 'Data Security', color: 'bg-emerald-100 text-emerald-700 border-emerald-200', dot: 'bg-emerald-500' },
     { label: 'Observability', color: 'bg-sky-100 text-sky-700 border-sky-200', dot: 'bg-sky-500' },
+    { label: 'Cybersecurity', color: 'bg-rose-100 text-rose-700 border-rose-200', dot: 'bg-rose-500' },
   ];
 
   const sentinelOneData = [
     { category: 'cloud-security',       count: 277, color: 'bg-sky-100 text-sky-700 border-sky-200',       dot: 'bg-sky-500',    bar: 'bg-sky-400' },
-    { category: 'cybersecurity',         count: 392, color: 'bg-blue-100 text-blue-700 border-blue-200',     dot: 'bg-blue-500',   bar: 'bg-blue-400' },
-    { category: 'data-and-ai',           count: 95,  color: 'bg-violet-100 text-violet-700 border-violet-200', dot: 'bg-violet-500', bar: 'bg-violet-400' },
-    { category: 'endpoint-security',     count: 119, color: 'bg-orange-100 text-orange-700 border-orange-200', dot: 'bg-orange-500', bar: 'bg-orange-400' },
+    { category: 'cybersecurity',         count: 412, color: 'bg-blue-100 text-blue-700 border-blue-200',     dot: 'bg-blue-500',   bar: 'bg-blue-400' },
+    { category: 'data-and-ai',           count: 98,  color: 'bg-violet-100 text-violet-700 border-violet-200', dot: 'bg-violet-500', bar: 'bg-violet-400' },
+    { category: 'endpoint-security',     count: 120, color: 'bg-orange-100 text-orange-700 border-orange-200', dot: 'bg-orange-500', bar: 'bg-orange-400' },
     { category: 'identity-security',     count: 50,  color: 'bg-indigo-100 text-indigo-700 border-indigo-200', dot: 'bg-indigo-500', bar: 'bg-indigo-400' },
-    { category: 'services',              count: 35,  color: 'bg-teal-100 text-teal-700 border-teal-200',     dot: 'bg-teal-500',   bar: 'bg-teal-400' },
+    { category: 'services',              count: 28,  color: 'bg-teal-100 text-teal-700 border-teal-200',     dot: 'bg-teal-500',   bar: 'bg-teal-400' },
     { category: 'threat-intelligence',   count: 107, color: 'bg-red-100 text-red-700 border-red-200',       dot: 'bg-red-500',    bar: 'bg-red-400' },
-    { category: 'XDR',                   count: 16,  color: 'bg-amber-100 text-amber-700 border-amber-200', dot: 'bg-amber-500',  bar: 'bg-amber-400' },
+    { category: 'XDR',                   count: 8,  color: 'bg-amber-100 text-amber-700 border-amber-200', dot: 'bg-amber-500',  bar: 'bg-amber-400' },
   ];
 
   // data-and-ai pages from CSV (34 titled pages, parent hub excluded)
@@ -259,14 +189,44 @@ export function SlideCompetitiveIntel({ onNavigateHome }: { onNavigateHome?: () 
     { title: 'What Is AI Cybersecurity',            url: 'https://www.sentinelone.com/cybersecurity-101/data-and-ai/what-is-ai-cybersecurity/' },
   ];
 
-  const sentinelOneTotal = sentinelOneData.reduce((s, d) => s + d.count, 0); // 1,091 (Hub Page excluded)
+  const checkPointCategories = [
+    { label: 'Email Security Alternatives', color: 'bg-amber-100 text-amber-700 border-amber-200', dot: 'bg-amber-500', pages: [
+      { title: 'Best Barracuda Email Protection Alternatives', url: 'https://www.checkpoint.com/cyber-hub/threat-prevention/what-is-email-security/best-barracuda-email-protection-alternatives/' },
+      { title: 'Best Alternative to Microsoft Defender', url: 'https://www.checkpoint.com/cyber-hub/threat-prevention/what-is-email-security/best-alternative-to-microsoft-defender/' },
+      { title: 'Best Fortinet FortiMail Alternatives', url: 'https://www.checkpoint.com/cyber-hub/threat-prevention/what-is-email-security/best-fortinet-fortimail-alternatives/' },
+      { title: 'Best Ironscales Alternatives', url: 'https://www.checkpoint.com/cyber-hub/threat-prevention/what-is-email-security/best-ironscales-alternatives/' },
+    ]},
+    { label: 'Exposure Management', color: 'bg-orange-100 text-orange-700 border-orange-200', dot: 'bg-orange-500', pages: [
+      { title: 'What are Cyber Takedown Services?', url: 'https://www.checkpoint.com/cyber-hub/threat-prevention/what-is-endpoint-security/what-is-exposure-management/what-are-cyber-takedown-services/' },
+      { title: 'What is Security Integration?', url: 'https://www.checkpoint.com/cyber-hub/threat-prevention/what-is-endpoint-security/what-is-exposure-management/what-is-security-integration/' },
+      { title: 'What is Virtual Patching?', url: 'https://www.checkpoint.com/cyber-hub/threat-prevention/what-is-endpoint-security/what-is-exposure-management/what-is-virtual-patching/' },
+      { title: 'Exposure Management Resource', url: 'https://www.checkpoint.com/cyber-hub/threat-prevention/what-is-endpoint-security/what-is-exposure-management/299632/' },
+      { title: 'What is CVSS?', url: 'https://www.checkpoint.com/cyber-hub/threat-prevention/what-is-endpoint-security/what-is-exposure-management/what-is-cvss/' },
+      { title: 'What is an Attack Path?', url: 'https://www.checkpoint.com/cyber-hub/threat-prevention/what-is-endpoint-security/what-is-exposure-management/what-is-an-attack-path/' },
+      { title: 'What is Remediation in Cybersecurity?', url: 'https://www.checkpoint.com/cyber-hub/threat-prevention/what-is-endpoint-security/what-is-exposure-management/what-is-remediation-in-cyber-security/' },
+    ]},
+    { label: 'Tools & Vendors', color: 'bg-violet-100 text-violet-700 border-violet-200', dot: 'bg-violet-500', pages: [
+      { title: 'Best Attack Surface Management Platforms 2026', url: 'https://www.checkpoint.com/cyber-hub/tools-vendors/best-attack-surface-management-platforms-2026/' },
+    ]},
+  ];
+  const summaryMonths = ['Dec 2025','Jan 2026','Feb 2026','Mar 2026','Apr 2026','Jul 2026','Aug 2026','Sep 2026','Oct 2026'];
+  const summaryRows = [
+    { vendor:'Fortinet', color:'text-red-600', values:[593,593,611,612,615,618,622,624,633], growth:9 },
+    { vendor:'PAN', color:'text-blue-600', values:[667,672,697,728,764,790,795,809,814], growth:5 },
+    { vendor:'Checkpoint', color:'text-orange-600', values:[null,null,null,null,1020,1112,1124,1142,1154], growth:12 },
+    { vendor:'Crowdstrike', color:'text-red-700', values:[null,535,538,539,551,576,584,597,606], growth:9 },
+    { vendor:'Cisco', color:'text-sky-600', values:[null,null,null,272,267,300,300,309,318], growth:9 },
+    { vendor:'SentinelOne', color:'text-purple-600', values:[null,null,null,884,909,934,937,1091,1100], growth:9 },
+  ];
+
+  const sentinelOneTotal = sentinelOneData.reduce((s, d) => s + d.count, 0); // 1,100 (Oct 2026)
   const sentinelOneMax   = Math.max(...sentinelOneData.map(d => d.count));
 
   return (
-    <SlideContainer slideNumber={21} onNavigateHome={onNavigateHome} source="">
+    <SlideContainer slideNumber={44} onNavigateHome={onNavigateHome} source="Competitive URL Tracker · Oct 2026">
       <SlideHeader 
         title="Content Gap" 
-        subtitle="Key Insights & Strategic Actions"
+        subtitle="Oct 2026 Content Update · Key Insights & Strategic Actions"
       />
 
       {/* Tab Navigation */}
@@ -338,17 +298,17 @@ export function SlideCompetitiveIntel({ onNavigateHome }: { onNavigateHome?: () 
                     <span className="text-blue-600 underline decoration-2 decoration-blue-400">Palo Alto Networks</span> – Cyberpedia Pages
                   </h3>
                   <div className="flex-shrink-0 px-3 py-1 bg-blue-500 text-white text-[11px] font-bold rounded-full">
-                    809 TOTAL PAGES
+                    814 TOTAL PAGES
                   </div>
                 </div>
                 <ul className="space-y-2 mb-4 pl-1">
                   <li className="flex items-start gap-2 text-[14px] text-gray-700">
                     <span className="flex-shrink-0 mt-1.5 w-2 h-2 rounded-full bg-blue-500" />
-                    <span>Comprehensive Cyberpedia resource hub with <strong className="text-blue-700 bg-blue-100 px-1.5 py-0.5 rounded border border-blue-200">809 total pages</strong> covering AI security, threat intelligence, frameworks & more.</span>
+                    <span>Comprehensive Cyberpedia resource hub with <strong className="text-blue-700 bg-blue-100 px-1.5 py-0.5 rounded border border-blue-200">814 total pages</strong> covering AI security, threat intelligence, frameworks & more.</span>
                   </li>
                   <li className="flex items-start gap-2 text-[14px] text-gray-700">
                     <span className="flex-shrink-0 mt-1.5 w-2 h-2 rounded-full bg-blue-400" />
-                    <span><strong>14 new pages added in Sep 2026</strong>, led by <strong>AI Observability</strong>, <strong>AI Gateway</strong>, <strong>Agent Registry &amp; Authorization</strong>, <strong>AI Agent Hijacking</strong>, and <strong>Telemetry Pipelines</strong> — Palo Alto is doubling down on agentic AI security and observability.</span>
+                    <span><strong>5 new pages added in Oct 2026</strong> (809 → 814), covering virtual patching, Cloud NGFW, cryptography BOM, AI runtime security and MDR readiness.</span>
                   </li>
                 </ul>
                 <button
@@ -356,7 +316,7 @@ export function SlideCompetitiveIntel({ onNavigateHome }: { onNavigateHome?: () 
                   className="flex items-center gap-2 px-4 py-2.5 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors"
                 >
                   <FileText className="w-4 h-4" />
-                  <span className="text-[12px] font-bold">{showPagesDropdown ? 'Hide' : 'View'} 14 New Pages</span>
+                  <span className="text-[12px] font-bold">{showPagesDropdown ? 'Hide' : 'View'} 5 New Pages</span>
                 </button>
               </div>
             </div>
@@ -423,17 +383,17 @@ export function SlideCompetitiveIntel({ onNavigateHome }: { onNavigateHome?: () 
                     <span className="text-red-600 underline decoration-2 decoration-red-400">CrowdStrike</span> – Cybersecurity 101 Pages
                   </h3>
                   <div className="flex-shrink-0 px-3 py-1 bg-red-500 text-white text-[11px] font-bold rounded-full">
-                    597 TOTAL PAGES
+                    606 TOTAL PAGES
                   </div>
                 </div>
                 <ul className="space-y-2 mb-4 pl-1">
                   <li className="flex items-start gap-2 text-[14px] text-gray-700">
                     <span className="flex-shrink-0 mt-1.5 w-2 h-2 rounded-full bg-red-500" />
-                    <span>Comprehensive Cybersecurity 101 resource hub with <strong className="text-red-700 bg-red-100 px-1.5 py-0.5 rounded border border-red-200">597 total pages</strong> covering threat intel, cloud security, AI & automation.</span>
+                    <span>Comprehensive Cybersecurity 101 resource hub with <strong className="text-red-700 bg-red-100 px-1.5 py-0.5 rounded border border-red-200">606 total pages</strong> covering threat intel, cloud security, AI & automation.</span>
                   </li>
                   <li className="flex items-start gap-2 text-[14px] text-gray-700">
                     <span className="flex-shrink-0 mt-1.5 w-2 h-2 rounded-full bg-red-400" />
-                    <span><strong>13 new pages added in Sep 2026</strong> (584 → 597); the 13 new URLs span <strong>Frontier AI Resilience</strong>, <strong>Endpoint Security</strong> (Cyber Physical Systems, IoMT), <strong>Identity Security &amp; Protection</strong> (AD Security, ADFS, Access Control), <strong>Zero Trust</strong>, <strong>Data Security</strong>, and <strong>Observability</strong>.</span>
+                    <span><strong>9 new pages added in Oct 2026</strong> (597 → 606), focused on identity/access control, endpoint posture, AI-agent security, browser access and website security.</span>
                   </li>
                 </ul>
                 <button
@@ -441,7 +401,7 @@ export function SlideCompetitiveIntel({ onNavigateHome }: { onNavigateHome?: () 
                   className="flex items-center gap-2 px-4 py-2.5 bg-red-500 hover:bg-red-600 text-white rounded-lg transition-colors"
                 >
                   <FileText className="w-4 h-4" />
-                  <span className="text-[12px] font-bold">{showCrowdstrikeDropdown ? 'Hide' : 'View'} 13 New Pages</span>
+                  <span className="text-[12px] font-bold">{showCrowdstrikeDropdown ? 'Hide' : 'View'} 9 New Pages</span>
                 </button>
               </div>
             </div>
@@ -516,15 +476,15 @@ export function SlideCompetitiveIntel({ onNavigateHome }: { onNavigateHome?: () 
                   </li>
                   <li className="flex items-start gap-2 text-[14px] text-gray-700">
                     <span className="flex-shrink-0 mt-1.5 w-2 h-2 rounded-full bg-purple-400" />
-                    <span>Top three categories — <strong>Cybersecurity (392)</strong>, <strong>Cloud Security (277)</strong>, and <strong>Endpoint Security (119)</strong> — account for <strong>72%</strong> of all resource content, signalling heavy investment in core security topics.</span>
+                    <span>Top three categories — <strong>Cybersecurity (412)</strong>, <strong>Cloud Security (277)</strong>, and <strong>Endpoint Security (120)</strong> — account for <strong>74%</strong> of all resource content, signalling heavy investment in core security topics.</span>
                   </li>
                   <li className="flex items-start gap-2 text-[14px] text-gray-700">
                     <span className="flex-shrink-0 mt-1.5 w-2 h-2 rounded-full bg-purple-300" />
-                    <span>The <strong>data-and-ai category (95 pages)</strong> covers AI security topics from model security and LLM risks to generative AI — targeting the same high-intent AI queries Fortinet currently lacks dedicated glossary content for.</span>
+                    <span>The <strong>data-and-ai category (98 pages)</strong> covers AI security topics from model security and LLM risks to generative AI — targeting the same high-intent AI queries Fortinet currently lacks dedicated glossary content for.</span>
                   </li>
                   <li className="flex items-start gap-2 text-[14px] text-gray-700">
                     <span className="flex-shrink-0 mt-1.5 w-2 h-2 rounded-full bg-purple-200" />
-                    <span><strong>154 new pages added in Sep 2026</strong> (937 → 1,091), driven by <strong>Cybersecurity (+110)</strong>, <strong>Cloud Security (+23)</strong>, <strong>Services (+11)</strong>, and <strong>XDR (+5)</strong>.</span>
+                    <span><strong>9 net new pages added in Oct 2026</strong> (1,091 → 1,100), led by a category mix of Cybersecurity (412), Cloud Security (277) and Endpoint Security (120).</span>
                   </li>
                 </ul>
               </div>
@@ -661,158 +621,24 @@ export function SlideCompetitiveIntel({ onNavigateHome }: { onNavigateHome?: () 
                 <TrendingUp className="w-5 h-5 text-white" strokeWidth={2} />
               </div>
               <h3 className="text-[16px] font-bold text-gray-900">
-                Monthly Page Count & Sep 2026 Growth
+                Monthly Page Count & Oct 2026 Growth
               </h3>
             </div>
 
             <div className="bg-white rounded-xl border-2 border-emerald-100 overflow-hidden">
-              {/* Table Header */}
-              <div className="grid grid-cols-[140px_repeat(10,1fr)_100px_120px] gap-2 px-4 py-3 bg-emerald-600 text-white">
-                <span className="text-[11px] font-bold uppercase tracking-wider">Vendor</span>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-center">Dec 2025</span>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-center">Jan 2026</span>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-center">Feb 2026</span>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-center">Mar 2026</span>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-center">Apr 2026</span>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-center">May 2026</span>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-center">Jun 2026</span>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-center">Jul 2026</span>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-center">Aug 2026</span>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-center">Sep 2026</span>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-center">Sep Growth</span>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-center">Trendline</span>
+              <div className="grid grid-cols-[130px_repeat(9,minmax(58px,1fr))_76px] gap-1.5 px-4 py-3 bg-emerald-600 text-white">
+                <span className="text-[10px] font-bold uppercase">Vendor</span>
+                {summaryMonths.map(month => <span key={month} className="text-[9px] font-bold text-center">{month}</span>)}
+                <span className="text-[9px] font-bold text-center">Growth</span>
               </div>
-
-              {/* Table Rows */}
               <div className="divide-y divide-emerald-50">
-                {/* Fortinet */}
-                <div className="grid grid-cols-[140px_repeat(10,1fr)_100px_120px] gap-2 items-center px-4 py-3 hover:bg-emerald-50 transition-colors">
-                  <span className="text-[13px] font-bold text-red-600">Fortinet</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">593</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">593</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">611</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">612</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">615</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">616</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">616</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">618</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">622</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">624</span>
-                  <span className="text-[13px] font-bold text-emerald-700 text-center">+2</span>
-                  <div className="flex justify-center">
-                    <svg width="80" height="24" className="overflow-visible">
-                      <polyline points="0,22 9,22 18,9 27,9 36,6 44,6 53,6 62,4 71,1 80,0" fill="none" stroke="#EF4444" strokeWidth="2" />
-                    </svg>
+                {summaryRows.map(row => (
+                  <div key={row.vendor} className="grid grid-cols-[130px_repeat(9,minmax(58px,1fr))_76px] gap-1.5 items-center px-4 py-3 hover:bg-emerald-50">
+                    <span className={`text-[12px] font-bold ${row.color}`}>{row.vendor}</span>
+                    {row.values.map((value,index) => <span key={`${row.vendor}-${summaryMonths[index]}`} className={`text-[12px] text-center tabular-nums ${value == null ? 'text-gray-400 italic' : 'text-gray-700'}`}>{value == null ? '—' : value.toLocaleString()}</span>)}
+                    <span className="text-[12px] font-bold text-emerald-700 text-center">+{row.growth}</span>
                   </div>
-                </div>
-
-                {/* PAN */}
-                <div className="grid grid-cols-[140px_repeat(10,1fr)_100px_120px] gap-2 items-center px-4 py-3 hover:bg-emerald-50 transition-colors">
-                  <span className="text-[13px] font-bold text-blue-600">PAN</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">667</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">672</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">697</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">728</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">764</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">779</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">787</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">790</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">795</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">809</span>
-                  <span className="text-[13px] font-bold text-emerald-700 text-center">+14</span>
-                  <div className="flex justify-center">
-                    <svg width="80" height="24" className="overflow-visible">
-                      <polyline points="0,22 9,21 18,17 27,13 36,7 44,5 53,3 62,3 71,2 80,0" fill="none" stroke="#3B82F6" strokeWidth="2" />
-                    </svg>
-                  </div>
-                </div>
-
-                {/* Checkpoint */}
-                <div className="grid grid-cols-[140px_repeat(10,1fr)_100px_120px] gap-2 items-center px-4 py-3 hover:bg-emerald-50 transition-colors">
-                  <span className="text-[13px] font-bold text-orange-600">Checkpoint</span>
-                  <span className="text-[13px] text-gray-500 text-center italic">—</span>
-                  <span className="text-[13px] text-gray-500 text-center italic">—</span>
-                  <span className="text-[13px] text-gray-500 text-center italic">—</span>
-                  <span className="text-[13px] text-gray-500 text-center italic">—</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">1020</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">1021</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">1033</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">1112</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">1124</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">1142</span>
-                  <span className="text-[13px] font-bold text-emerald-700 text-center">+18</span>
-                  <div className="flex justify-center">
-                    <svg width="80" height="24" className="overflow-visible">
-                      <polyline points="36,22 44,22 53,20 62,5 71,3 80,0" fill="none" stroke="#F97316" strokeWidth="2" />
-                      <circle cx="36" cy="22" r="2" fill="#F97316" />
-                    </svg>
-                  </div>
-                </div>
-
-                {/* Crowdstrike */}
-                <div className="grid grid-cols-[140px_repeat(10,1fr)_100px_120px] gap-2 items-center px-4 py-3 hover:bg-emerald-50 transition-colors">
-                  <span className="text-[13px] font-bold text-red-700">Crowdstrike</span>
-                  <span className="text-[13px] text-gray-500 text-center italic">—</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">535</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">538</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">539</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">551</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">561</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">563</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">576</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">584</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">597</span>
-                  <span className="text-[13px] font-bold text-emerald-700 text-center">+13</span>
-                  <div className="flex justify-center">
-                    <svg width="80" height="24" className="overflow-visible">
-                      <polyline points="9,22 18,21 27,21 36,16 44,13 53,12 62,7 71,5 80,0" fill="none" stroke="#B91C1C" strokeWidth="2" />
-                    </svg>
-                  </div>
-                </div>
-
-                {/* Cisco */}
-                <div className="grid grid-cols-[140px_repeat(10,1fr)_100px_120px] gap-2 items-center px-4 py-3 hover:bg-emerald-50 transition-colors">
-                  <span className="text-[13px] font-bold text-sky-600">Cisco</span>
-                  <span className="text-[13px] text-gray-500 text-center italic">—</span>
-                  <span className="text-[13px] text-gray-500 text-center italic">—</span>
-                  <span className="text-[13px] text-gray-500 text-center italic">—</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">272</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">267</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">286</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">289</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">300</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">300</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">309</span>
-                  <span className="text-[13px] font-bold text-emerald-700 text-center">+9</span>
-                  <div className="flex justify-center">
-                    <svg width="80" height="24" className="overflow-visible">
-                      <polyline points="27,19 36,22 44,12 53,10 62,5 71,5 80,0" fill="none" stroke="#0EA5E9" strokeWidth="2" />
-                      <circle cx="27" cy="19" r="2" fill="#0EA5E9" />
-                    </svg>
-                  </div>
-                </div>
-
-                {/* SentinelOne */}
-                <div className="grid grid-cols-[140px_repeat(10,1fr)_100px_120px] gap-2 items-center px-4 py-3 hover:bg-emerald-50 transition-colors">
-                  <span className="text-[13px] font-bold text-purple-600">SentinelOne</span>
-                  <span className="text-[13px] text-gray-500 text-center italic">—</span>
-                  <span className="text-[13px] text-gray-500 text-center italic">—</span>
-                  <span className="text-[13px] text-gray-500 text-center italic">—</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">884</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">909</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">923</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">927</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">934</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">937</span>
-                  <span className="text-[13px] text-gray-700 text-center tabular-nums">1091</span>
-                  <span className="text-[13px] font-bold text-emerald-700 text-center">+154</span>
-                  <div className="flex justify-center">
-                    <svg width="80" height="24" className="overflow-visible">
-                      <polyline points="27,22 36,19 44,18 53,17 62,17 71,16 80,0" fill="none" stroke="#9333EA" strokeWidth="2" />
-                      <circle cx="27" cy="22" r="2" fill="#9333EA" />
-                    </svg>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
 
@@ -824,7 +650,7 @@ export function SlideCompetitiveIntel({ onNavigateHome }: { onNavigateHome?: () 
                   <span className="text-[11px] font-bold text-emerald-900 uppercase">Top Growth</span>
                 </div>
                 <p className="text-[13px] text-gray-700">
-                  <strong className="text-emerald-700">SentinelOne leads</strong> with <strong>+154 pages</strong> added in Sep 2026 (937 → 1,091)
+                  <strong className="text-emerald-700">Check Point leads Oct growth</strong> with <strong>+12 pages</strong>; Fortinet, CrowdStrike, Cisco and SentinelOne each added +9
                 </p>
               </div>
               <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
@@ -833,7 +659,7 @@ export function SlideCompetitiveIntel({ onNavigateHome }: { onNavigateHome?: () 
                   <span className="text-[11px] font-bold text-purple-900 uppercase">Largest Base</span>
                 </div>
                 <p className="text-[13px] text-gray-700">
-                  <strong className="text-purple-700">Checkpoint</strong> maintains <strong>1,142 total pages</strong>, with SentinelOne close behind at <strong>1,091</strong>
+                  <strong className="text-purple-700">Checkpoint</strong> maintains <strong>1,154 total pages</strong>, with SentinelOne close behind at <strong>1,091</strong>
                 </p>
               </div>
               <div className="bg-red-50 border border-red-200 rounded-lg p-4">
@@ -842,7 +668,7 @@ export function SlideCompetitiveIntel({ onNavigateHome }: { onNavigateHome?: () 
                   <span className="text-[11px] font-bold text-red-900 uppercase">Fortinet Gap</span>
                 </div>
                 <p className="text-[13px] text-gray-700">
-                  <strong className="text-red-700">Fortinet added only +2</strong> vs SentinelOne's <strong>+154</strong> and Checkpoint's <strong>+18</strong> in Sep 2026
+                  <strong className="text-red-700">Fortinet added +9</strong>, matching CrowdStrike, Cisco and SentinelOne but trailing Check Point's +12 in Oct 2026
                 </p>
               </div>
             </div>
@@ -865,17 +691,17 @@ export function SlideCompetitiveIntel({ onNavigateHome }: { onNavigateHome?: () 
                     <span className="text-orange-600 underline decoration-2 decoration-orange-400">Check Point</span> – Cyber Hub Pages
                   </h3>
                   <div className="flex-shrink-0 px-3 py-1 bg-orange-500 text-white text-[11px] font-bold rounded-full">
-                    1,142 TOTAL PAGES
+                    1,154 TOTAL PAGES
                   </div>
                 </div>
                 <ul className="space-y-2 mb-4 pl-1">
                   <li className="flex items-start gap-2 text-[14px] text-gray-700">
                     <span className="flex-shrink-0 mt-1.5 w-2 h-2 rounded-full bg-orange-500" />
-                    <span>Check Point's Cyber Hub holds <strong className="text-orange-700 bg-orange-100 px-1.5 py-0.5 rounded border border-orange-200">1,142 total pages</strong> — the largest indexed page count of any competitor in Sep 2026.</span>
+                    <span>Check Point's Cyber Hub holds <strong className="text-orange-700 bg-orange-100 px-1.5 py-0.5 rounded border border-orange-200">1,154 total pages</strong> — the largest indexed page count of any competitor in Oct 2026.</span>
                   </li>
                   <li className="flex items-start gap-2 text-[14px] text-gray-700">
                     <span className="flex-shrink-0 mt-1.5 w-2 h-2 rounded-full bg-orange-400" />
-                    <span><strong>18 new pages added in Sep 2026</strong>, spread across AI Security (7), Cloud Security (4), Tools &amp; Vendors (4), and Email / Network Security (3).</span>
+                    <span><strong>12 new pages added in Oct 2026</strong> (1,142 → 1,154), focused on email-security alternatives, exposure management, virtual patching, CVSS and attack-surface management.</span>
                   </li>
                   <li className="flex items-start gap-2 text-[14px] text-gray-700">
                     <span className="flex-shrink-0 mt-1.5 w-2 h-2 rounded-full bg-orange-300" />
@@ -887,7 +713,7 @@ export function SlideCompetitiveIntel({ onNavigateHome }: { onNavigateHome?: () 
                   className="flex items-center gap-2 px-4 py-2.5 bg-orange-500 hover:bg-orange-600 text-white rounded-lg transition-colors"
                 >
                   <FileText className="w-4 h-4" />
-                  <span className="text-[12px] font-bold">{showCheckPointDropdown ? 'Hide' : 'View'} 18 New Pages</span>
+                  <span className="text-[12px] font-bold">{showCheckPointDropdown ? 'Hide' : 'View'} 12 New Pages</span>
                 </button>
               </div>
             </div>
@@ -896,34 +722,7 @@ export function SlideCompetitiveIntel({ onNavigateHome }: { onNavigateHome?: () 
             {showCheckPointDropdown && (
               <div className="mt-5 pt-5 border-t-2 border-orange-200">
                 <div className="space-y-5 max-h-[320px] overflow-y-auto pr-2">
-                  {[
-                    { label: 'Cloud Security', color: 'bg-blue-100 text-blue-700 border-blue-200', dot: 'bg-blue-500', pages: [
-                      { title: 'What is Multi-Cloud Security Architecture', url: 'https://www.checkpoint.com/cyber-hub/cloud-security/what-is-cloud-security/what-is-multi-cloud-security-architecture/' },
-                      { title: 'Top Cloud Security Challenges in 2026', url: 'https://www.checkpoint.com/cyber-hub/cloud-security/what-is-cloud-security/top-cloud-security-challenges-in-2026/' },
-                      { title: 'Different Types of Cloud Security Tools', url: 'https://www.checkpoint.com/cyber-hub/cloud-security/what-is-cloud-security/different-types-of-cloud-security-tools/' },
-                      { title: 'Cloud Security for Financial Service Organizations', url: 'https://www.checkpoint.com/cyber-hub/cloud-security/what-is-cloud-security/understanding-cloud-security-for-financial-service-organizations/' },
-                    ]},
-                    { label: 'Network & Email Security', color: 'bg-amber-100 text-amber-700 border-amber-200', dot: 'bg-amber-500', pages: [
-                      { title: 'FWaaS Best Practices', url: 'https://www.checkpoint.com/cyber-hub/network-security/firewall-as-a-service-fwaas/fwaas-best-practices/' },
-                      { title: 'Best Email Security Platforms for Healthcare Organizations', url: 'https://www.checkpoint.com/cyber-hub/threat-prevention/what-is-email-security/best-email-security-platforms-for-healthcare-organizations/' },
-                      { title: 'Best Email Security Platforms for Financial Services', url: 'https://www.checkpoint.com/cyber-hub/threat-prevention/what-is-email-security/best-email-security-platforms-for-financial-services/' },
-                    ]},
-                    { label: 'AI Security', color: 'bg-red-100 text-red-700 border-red-200', dot: 'bg-red-500', pages: [
-                      { title: 'AI BOM', url: 'https://www.checkpoint.com/cyber-hub/cyber-security/what-is-ai-security/ai-bom/' },
-                      { title: 'Prompt Engineering', url: 'https://www.checkpoint.com/cyber-hub/cyber-security/what-is-ai-security/prompt-engineering/' },
-                      { title: 'AI Model Security', url: 'https://www.checkpoint.com/cyber-hub/cyber-security/what-is-ai-security/ai-model-security/' },
-                      { title: 'AI Security for Finance', url: 'https://www.checkpoint.com/cyber-hub/cyber-security/what-is-ai-security/ai-security-for-finance/' },
-                      { title: 'AI Security for Healthcare: Vulnerabilities &amp; How to Mitigate', url: 'https://www.checkpoint.com/cyber-hub/cyber-security/what-is-ai-security/ai-security-for-healthcare-vulnerabilities-how-to-mitigate/' },
-                      { title: 'Top Agentic AI Security Solutions in 2026', url: 'https://www.checkpoint.com/cyber-hub/cyber-security/what-is-ai-security/what-is-agentic-ai-security/top-agentic-ai-security-solutions-in-2026/' },
-                      { title: 'AI Data Leakage Prevention Techniques', url: 'https://www.checkpoint.com/cyber-hub/cyber-security/what-is-ai-security/what-is-ai-data-security/ai-data-leakage/ai-data-leakage-prevention-techniques/' },
-                    ]},
-                    { label: 'Tools & Vendors', color: 'bg-violet-100 text-violet-700 border-violet-200', dot: 'bg-violet-500', pages: [
-                      { title: 'Best CTEM &amp; Exposure Management Platforms 2026: 8 Vendors Compared', url: 'https://www.checkpoint.com/cyber-hub/tools-vendors/best-ctem-exposure-management-platforms-2026-8-vendors-compared/' },
-                      { title: 'Top Cloud Network Security Vendors for Multi-Cloud Environments', url: 'https://www.checkpoint.com/cyber-hub/tools-vendors/top-cloud-network-security-vendors-for-multi-cloud-environments/' },
-                      { title: 'Top Industrial Control Systems (ICS) Security Companies', url: 'https://www.checkpoint.com/cyber-hub/tools-vendors/the-top-industrial-control-systems-ics-security-companies/' },
-                      { title: '7 Essential Hybrid Cloud Security Tools', url: 'https://www.checkpoint.com/cyber-hub/tools-vendors/7-essential-hybrid-cloud-security-tools/' },
-                    ]},
-                  ].map((cat) => (
+                  {checkPointCategories.map((cat) => (
                     <div key={cat.label}>
                       <div className="flex items-center gap-2 mb-3">
                         <span className={`text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full border ${cat.color}`}>
@@ -956,7 +755,7 @@ export function SlideCompetitiveIntel({ onNavigateHome }: { onNavigateHome?: () 
         </div>
       )}
 
-      <SlideFooter source="Source: Semrush" />
+      <SlideFooter source="Source: Competitive URL Tracker · Oct 2026" />
     </SlideContainer>
   );
 }

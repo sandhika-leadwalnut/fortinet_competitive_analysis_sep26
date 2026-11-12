@@ -31,65 +31,65 @@ const OT_VENDORS = [
   { id: 'ibm',          name: 'IBM',           color: '#0EA5E9' },
 ];
 
-// OT Security full data - Jul 2025 to Sep 2026 (15 months)
+// OT Security full data - Jul 2025 to Oct 2026 (16 months)
 const TOTAL_KEYWORDS_DATA_INITIAL = {
-  fortinet:    [40, 46, 34, 30, 24, 29, 29, 28, 32, 27, 26, 26, 218, 211, 254],
-  cisco:       [40, 44, 24, 21, 18, 17, 18, 20, 24, 18, 14, 15, 13, 11, 15],
-  hpe:         [0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  paloalto:    [34, 43, 24, 19, 14, 20, 20, 20, 22, 18, 18, 17, 16, 17, 18],
-  checkpoint:  [25, 25, 8, 2, 6, 7, 9, 8, 8, 2, 1, 1, 1, 0, 1],
-  crowdstrike: [null, null, null, null, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1],
-  catonetworks:[null, null, null, null, null, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0],
-  sentinelone: [null, null, null, null, null, 9, 10, 9, 7, 4, 5, 3, 2, 5, 4],
-  wiz:         [null, null, null, null, null, null, null, null, 0, 0, 0, 0, 0, 1, 1],
-  dragos:      [null, null, null, null, null, null, null, null, null, null, null, null, 100, 101, 101], // Data starts Jul 2026
-  ibm:         [null, null, null, null, null, null, null, null, null, null, null, null, 256, 252, 133], // Data starts Jul 2026
+  fortinet:    [40, 46, 34, 30, 24, 29, 29, 28, 32, 27, 26, 26, 218, 211, 254, 130],
+  cisco:       [40, 44, 24, 21, 18, 17, 18, 20, 24, 18, 14, 15, 13, 11, 15, 13],
+  hpe:         [0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  paloalto:    [34, 43, 24, 19, 14, 20, 20, 20, 22, 18, 18, 17, 16, 17, 18, 16],
+  checkpoint:  [25, 25, 8, 2, 6, 7, 9, 8, 8, 2, 1, 1, 1, 0, 1, 1],
+  crowdstrike: [null, null, null, null, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2],
+  catonetworks:[null, null, null, null, null, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0],
+  sentinelone: [null, null, null, null, null, 9, 10, 9, 7, 4, 5, 3, 2, 5, 4, 5],
+  wiz:         [null, null, null, null, null, null, null, null, 0, 0, 0, 0, 0, 1, 1, 0],
+  dragos:      [null, null, null, null, null, null, null, null, null, null, null, null, 100, 101, 101, 63], // Data starts Jul 2026
+  ibm:         [null, null, null, null, null, null, null, null, null, null, null, null, 256, 252, 133, 84], // Data starts Jul 2026
 };
 
 
 const CUMULATIVE_TRAFFIC_DATA_INITIAL = {
-  fortinet:    [566, 872, 939, 1073, 1043, 1043, 1018, 1258, 1066, 925, 877, 839, 2913, 2944, 4935],
-  cisco:       [295, 330, 343, 392, 349, 480, 497, 438, 421, 394, 352, 340, 348, 243, 277],
-  hpe:         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  paloalto:    [302, 232, 270, 244, 267, 674, 642, 703, 763, 503, 424, 482, 454, 358, 368],
-  checkpoint:  [10, 4, 0, 0, 2, 0, 1, 1, 2, 0, 0, 3, 0, 0, 0],
-  crowdstrike: [null, null, null, null, 15, 16, 16, 14, 14, 14, 43, 43, 43, 23, 24],
-  catonetworks:[null, null, null, null, null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  sentinelone: [null, null, null, null, null, 6, 9, 12, 12, 18, 23, 18, 3, 18, 19],
-  wiz:         [null, null, null, null, null, null, null, null, 0, 0, 0, 0, 0, 8, 8],
-  dragos:      [null, null, null, null, null, null, null, null, null, null, null, null, 1218, 1417, 1152], // Data starts Jul 2026
-  ibm:         [null, null, null, null, null, null, null, null, null, null, null, null, 2103, 1838, 1637], // Data starts Jul 2026
+  fortinet:    [566, 872, 939, 1073, 1043, 1043, 1018, 1258, 1066, 925, 877, 839, 2913, 2944, 2820, 1713],
+  cisco:       [295, 330, 343, 392, 349, 480, 497, 438, 421, 394, 352, 340, 348, 243, 277, 231],
+  hpe:         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  paloalto:    [302, 232, 270, 244, 267, 674, 642, 703, 763, 503, 424, 482, 454, 358, 368, 263],
+  checkpoint:  [10, 4, 0, 0, 2, 0, 1, 1, 2, 0, 0, 3, 0, 0, 0, 23],
+  crowdstrike: [null, null, null, null, 15, 16, 16, 14, 14, 14, 43, 43, 43, 23, 24, 13],
+  catonetworks:[null, null, null, null, null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  sentinelone: [null, null, null, null, null, 6, 9, 12, 12, 18, 23, 18, 3, 18, 19, 45],
+  wiz:         [null, null, null, null, null, null, null, null, 0, 0, 0, 0, 0, 8, 8, 0],
+  dragos:      [null, null, null, null, null, null, null, null, null, null, null, null, 1218, 1417, 1152, 974], // Data starts Jul 2026
+  ibm:         [null, null, null, null, null, null, null, null, null, null, null, null, 2103, 1838, 1637, 619], // Data starts Jul 2026
 };
 
 const PAGE_ONE_KEYWORDS_DATA_INITIAL = {
-  fortinet:    [25, 27, 29, 28, 24, 28, 28, 28, 30, 27, 25, 25, 215, 207, 247],
-  cisco:       [14, 17, 20, 16, 17, 13, 14, 16, 20, 18, 12, 15, 12, 10, 14],
-  hpe:         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  paloalto:    [10, 18, 15, 15, 13, 18, 18, 19, 21, 18, 18, 17, 16, 17, 17],
-  checkpoint:  [1, 0, 0, 0, 0, 0, 2, 2, 1, 0, 0, 0, 0, 0, 0],
-  crowdstrike: [null, null, null, null, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-  catonetworks:[null, null, null, null, null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  sentinelone: [null, null, null, null, null, 1, 3, 3, 2, 1, 3, 1, 0, 2, 2],
-  wiz:         [null, null, null, null, null, null, null, null, 0, 0, 0, 0, 0, 1, 1],
-  dragos:      [null, null, null, null, null, null, null, null, null, null, null, null,  97,  99,  97], // Data starts Jul 2026
-  ibm:         [null, null, null, null, null, null, null, null, null, null, null, null, 239, 234, 128], // Data starts Jul 2026
+  fortinet:    [25, 27, 29, 28, 24, 28, 28, 28, 30, 27, 25, 25, 215, 207, 247, 129],
+  cisco:       [14, 17, 20, 16, 17, 13, 14, 16, 20, 18, 12, 15, 12, 10, 14, 13],
+  hpe:         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  paloalto:    [10, 18, 15, 15, 13, 18, 18, 19, 21, 18, 18, 17, 16, 17, 17, 15],
+  checkpoint:  [1, 0, 0, 0, 0, 0, 2, 2, 1, 0, 0, 0, 0, 0, 0, 1],
+  crowdstrike: [null, null, null, null, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+  catonetworks:[null, null, null, null, null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  sentinelone: [null, null, null, null, null, 1, 3, 3, 2, 1, 3, 1, 0, 2, 2, 5],
+  wiz:         [null, null, null, null, null, null, null, null, 0, 0, 0, 0, 0, 1, 1, 0],
+  dragos:      [null, null, null, null, null, null, null, null, null, null, null, null, 97, 99, 97, 61], // Data starts Jul 2026
+  ibm:         [null, null, null, null, null, null, null, null, null, null, null, null, 239, 234, 128, 82], // Data starts Jul 2026
 };
 
 const AIO_DATA_INITIAL = {
-  fortinet:    [19, 22, 17, 18, 13, 15, 16, 14, 20, 18, 18, 15, 175, 169, 192],
-  cisco:       [20, 21, 16, 14, 11, 12, 15, 14, 17, 15, 11, 10, 8, 7, 10],
-  hpe:         [null, null, null, null, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  paloalto:    [18, 22, 15, 13, 9, 13, 16, 14, 16, 14, 13, 11, 9, 10, 12],
-  checkpoint:  [15, 15, 6, 2, 6, 7, 9, 6, 6, 2, 1, 1, 1, 0, 1],
-  crowdstrike: [null, null, null, null, 0, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1],
-  catonetworks:[null, null, null, null, null, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0],
-  sentinelone: [null, null, null, null, null, 7, 8, 6, 4, 3, 4, 3, 2, 3, 1],
-  wiz:         [null, null, null, null, null, null, null, null, 0, 0, 0, 0, 0, 1, 1],
-  dragos:      [null, null, null, null, null, null, null, null, null, null, null, null, 65, 72, 79], // Data starts Jul 2026
-  ibm:         [null, null, null, null, null, null, null, null, null, null, null, null, 195, 190, 105], // Data starts Jul 2026
+  fortinet:    [19, 22, 17, 18, 13, 15, 16, 14, 20, 18, 18, 15, 175, 169, 192, 107],
+  cisco:       [20, 21, 16, 14, 11, 12, 15, 14, 17, 15, 11, 10, 8, 7, 10, 9],
+  hpe:         [null, null, null, null, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  paloalto:    [18, 22, 15, 13, 9, 13, 16, 14, 16, 14, 13, 11, 9, 10, 12, 12],
+  checkpoint:  [15, 15, 6, 2, 6, 7, 9, 6, 6, 2, 1, 1, 1, 0, 1, 0],
+  crowdstrike: [null, null, null, null, 0, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2],
+  catonetworks:[null, null, null, null, null, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0],
+  sentinelone: [null, null, null, null, null, 7, 8, 6, 4, 3, 4, 3, 2, 3, 1, 4],
+  wiz:         [null, null, null, null, null, null, null, null, 0, 0, 0, 0, 0, 1, 1, 0],
+  dragos:      [null, null, null, null, null, null, null, null, null, null, null, null, 65, 72, 79, 51], // Data starts Jul 2026
+  ibm:         [null, null, null, null, null, null, null, null, null, null, null, null, 195, 190, 105, 68], // Data starts Jul 2026
 };
 
-const MONTHS = ['2025-07', '2025-08', '2025-09', '2025-10', '2025-11', '2025-12', '2026-01', '2026-02', '2026-03', '2026-04', '2026-05', '2026-06', '2026-07', '2026-08', '2026-09'];
+const MONTHS = ['2025-07', '2025-08', '2025-09', '2025-10', '2025-11', '2025-12', '2026-01', '2026-02', '2026-03', '2026-04', '2026-05', '2026-06', '2026-07', '2026-08', '2026-09', '2026-10'];
 
 // Format function for month display
 const formatMonth = (monthKey: string) => {
@@ -102,10 +102,10 @@ type TabType = 'keywords' | 'page-one' | 'traffic' | 'aio' | 'keyword-gap';
 
 const KEYWORD_GAP_DATA = {
   tofu: [
-    { keyword: "OT security", sv: 2400, kd: 24, fortinet: 1, cisco: 1, paloalto: 1, checkpoint: null, crowdstrike: null },
+    { keyword: "OT security", sv: 2400, kd: 24, fortinet: 1, cisco: 1, paloalto: 1, checkpoint: null, crowdstrike: 1 },
     { keyword: "operational technology", sv: 1800, kd: 24, fortinet: 1, cisco: 1, paloalto: null, checkpoint: null, crowdstrike: null },
-    { keyword: "ot technology", sv: 400, kd: 13, fortinet: 1, cisco: 1, paloalto: null, checkpoint: null, crowdstrike: null },
-    { keyword: "what is ot security", sv: 600, kd: 11, fortinet: 2, cisco: 1, paloalto: 8, checkpoint: 31, crowdstrike: null },
+    { keyword: "ot technology", sv: 400, kd: 13, fortinet: 1, cisco: 1, paloalto: 1, checkpoint: null, crowdstrike: null },
+    { keyword: "what is ot security", sv: 600, kd: 11, fortinet: 1, cisco: 1, paloalto: 1, checkpoint: null, crowdstrike: null },
     { keyword: "ot components", sv: 10, kd: null, fortinet: null, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
     { keyword: "ot best practices", sv: null, kd: null, fortinet: null, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
     { keyword: "ot challenges", sv: null, kd: null, fortinet: null, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
@@ -113,15 +113,15 @@ const KEYWORD_GAP_DATA = {
   ],
   mofu: [
     { keyword: "ot devices", sv: 300, kd: 9, fortinet: null, cisco: null, paloalto: 2, checkpoint: null, crowdstrike: null },
-    { keyword: "ot systems", sv: 500, kd: 28, fortinet: 1, cisco: 1, paloalto: 7, checkpoint: null, crowdstrike: null },
-    { keyword: "ot platform", sv: 90, kd: 44, fortinet: null, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
+    { keyword: "ot systems", sv: 500, kd: 28, fortinet: 1, cisco: 1, paloalto: 1, checkpoint: null, crowdstrike: null },
+    { keyword: "ot platform", sv: 90, kd: 44, fortinet: null, cisco: 7, paloalto: null, checkpoint: null, crowdstrike: null },
   ],
   bofu: [
     { keyword: "ot security solutions", sv: 250, kd: 9, fortinet: 1, cisco: 1, paloalto: 1, checkpoint: null, crowdstrike: null },
     { keyword: "operational technology solutions", sv: 80, kd: 31, fortinet: null, cisco: 11, paloalto: null, checkpoint: null, crowdstrike: null },
-    { keyword: "ot security companies", sv: 80, kd: 31, fortinet: 1, cisco: null, paloalto: 1, checkpoint: null, crowdstrike: null },
-    { keyword: "ot security vendors", sv: 150, kd: 5, fortinet: 1, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
-    { keyword: "industrial cybersecurity", sv: 1700, kd: 34, fortinet: null, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
+    { keyword: "ot security companies", sv: 80, kd: 31, fortinet: null, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
+    { keyword: "ot security vendors", sv: 150, kd: 5, fortinet: null, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
+    { keyword: "industrial cybersecurity", sv: 1700, kd: 34, fortinet: 7, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
   ],
 };
 
@@ -297,13 +297,13 @@ export function SlideOTSecurity({ onNavigateHome }: { onNavigateHome?: () => voi
               icon={TrendingUp}
               type="success"
               title="Fortinet"
-              content="Keywords fell 40 → 26 (−35.0%) from Jul 2025 to Jun 2026, then the Jul 2026 data refresh lifted the count to 218; Sep 2026 is 254, leading IBM 133 and Dragos 101."
+              content="From Jul 2025 to Oct 2026, keywords grew 40 → 130 (+225.0%), leading IBM 84 and Dragos 63; Jul-26 data refresh step 26 → 218; Oct MoM −48.8% (254 → 130). Oct drop is uniform across Fortinet, IBM and Dragos (−35% to −49%) — validate the Ahrefs export before presenting."
             />
             <InsightCard
               icon={TrendingDown}
               type="error"
               title="Competitions"
-              content="From Jul 2025 to Sep 2026, Cisco declined 40 → 15 (−62.5%) and Check Point 25 → 1 (−96.0%); IBM declined 256 → 133 (−48.0%) since Jul 2026."
+              content="From Jul 2025 to Oct 2026, Cisco declined 40 → 13 (−67.5%), Check Point declined 25 → 1 (−96.0%), IBM declined 256 → 84 (−67.2%) since Jul 2026, Dragos declined 100 → 63 (−37.0%) since Jul 2026; Oct MoM: Cisco −13.3%, IBM −36.8%, Dragos −37.6%."
             />
           </InsightsSection>
         );
@@ -314,13 +314,13 @@ export function SlideOTSecurity({ onNavigateHome }: { onNavigateHome?: () => voi
               icon={TrendingUp}
               type="success"
               title="Fortinet"
-              content="Page 1 keywords were 25 in Jul 2025 and again in Jun 2026, then jumped after the Jul 2026 data refresh; Sep 2026 is 247, leading IBM 128, Dragos 97 and Cisco 14."
+              content="From Jul 2025 to Oct 2026, page-1 keywords grew 25 → 129 (+416.0%), leading IBM 82 and Dragos 61; Jul-26 data refresh step 25 → 215; Oct MoM −47.8% (247 → 129). Oct drop is uniform across Fortinet, IBM and Dragos (−35% to −49%) — validate the Ahrefs export before presenting."
             />
             <InsightCard
               icon={TrendingDown}
               type="error"
               title="Competitions"
-              content="From Jul 2025 to Sep 2026, Cisco held steady 14 → 14 (0.0%); since Jul 2026 IBM declined 239 → 128 (−46.4%) and Dragos held 97 → 97."
+              content="From Jul 2025 to Oct 2026, Cisco declined 14 → 13 (−7.1%), Check Point held flat at 1 → 1, IBM declined 239 → 82 (−65.7%) since Jul 2026, Dragos declined 97 → 61 (−37.1%) since Jul 2026; Oct MoM: Cisco −7.1%, IBM −35.9%, Dragos −37.1%."
             />
           </InsightsSection>
         );
@@ -331,13 +331,13 @@ export function SlideOTSecurity({ onNavigateHome }: { onNavigateHome?: () => voi
               icon={TrendingUp}
               type="success"
               title="Fortinet"
-              content="Traffic grew 566 → 839 (+48.2%) from Jul 2025 to Jun 2026, then rose to 2,913 in Jul 2026 and 4,935 in Sep 2026, leading IBM 1,637 and Dragos 1,152."
+              content="From Jul 2025 to Oct 2026, traffic grew 566 → 1,713 (+202.7%), leading Dragos 974 and IBM 619; Jul-26 data refresh step 839 → 2,913; Oct MoM −39.3% (2,820 → 1,713)."
             />
             <InsightCard
               icon={TrendingDown}
               type="error"
               title="Competitions"
-              content="From Jul 2025 to Sep 2026, Cisco declined 295 → 277 (−6.1%); since Jul 2026 IBM declined 2,103 → 1,637 (−22.2%) and Dragos 1,218 → 1,152 (−5.4%)."
+              content="From Jul 2025 to Oct 2026, Cisco declined 295 → 231 (−21.7%), Check Point grew 10 → 23 (+130.0%), IBM declined 2,103 → 619 (−70.6%) since Jul 2026, Dragos declined 1,218 → 974 (−20.0%) since Jul 2026; Oct MoM: Cisco −16.6%, IBM −62.2%, Dragos −15.5%."
             />
           </InsightsSection>
         );
@@ -348,13 +348,13 @@ export function SlideOTSecurity({ onNavigateHome }: { onNavigateHome?: () => voi
               icon={TrendingUp}
               type="success"
               title="Fortinet"
-              content="AIO fell 19 → 15 (−21.1%) from Jul 2025 to Jun 2026, then the Jul 2026 data refresh lifted it to 175; Sep 2026 is 192, leading IBM 105, Dragos 79 and Cisco 10."
+              content="From Jul 2025 to Oct 2026, AIO keywords grew 19 → 107 (+463.2%), leading IBM 68 and Dragos 51; Jul-26 data refresh step 15 → 175; Oct MoM −44.3% (192 → 107)."
             />
             <InsightCard
               icon={TrendingDown}
               type="error"
               title="Competitions"
-              content="From Jul 2025 to Sep 2026, Cisco declined 20 → 10 (−50.0%) and Check Point 15 → 1 (−93.3%); since Jul 2026 IBM declined 195 → 105 (−46.2%) while Dragos grew 65 → 79 (+21.5%)."
+              content="From Jul 2025 to Oct 2026, Cisco declined 20 → 9 (−55.0%), Check Point declined 15 → 0 (−100.0%), IBM declined 195 → 68 (−65.1%) since Jul 2026, Dragos declined 65 → 51 (−21.5%) since Jul 2026; Oct MoM: Cisco −10.0%, Check Point −100.0%, IBM −35.2%, Dragos −35.4%."
             />
           </InsightsSection>
         );
@@ -365,13 +365,13 @@ export function SlideOTSecurity({ onNavigateHome }: { onNavigateHome?: () => voi
               icon={TrendingUp}
               type="success"
               title="Fortinet"
-              content="Ranks #1 for 'OT security' (SV 2.4K), 'operational technology', 'ot technology', 'ot vs it' (SV 1.1K), 'ot systems' and all three tracked BOFU vendor terms (solutions, companies, vendors) — dominant OT coverage."
+              content="Fortinet ranks #1 across the core OT definition cluster and for 'ot security solutions'; it also reaches Page 1 for 'industrial cybersecurity' at #7."
             />
             <InsightCard
               icon={Target}
               type="warning"
               title="Competitions"
-              content="'industrial cybersecurity' (SV 1.7K) has no ranking vendor — an open opportunity; Cisco leads 'what is ot security' (Fortinet #2) and holds #11 for 'operational technology solutions' where Fortinet is unranked."
+              content="Commercial depth remains thin: Fortinet is absent for 'ot security companies', 'ot security vendors' and 'operational technology solutions'. Cisco also owns the only 'ot platform' ranking at #7."
             />
           </InsightsSection>
         );
@@ -381,7 +381,7 @@ export function SlideOTSecurity({ onNavigateHome }: { onNavigateHome?: () => voi
   };
 
   const getPerformanceSummary = () => {
-    const latestIndex = 14; // Sep 2026
+    const latestIndex = 15; // Oct 2026
     let dataSource: Record<string, number[]>;
     let formatValue: (val: number) => string;
 
@@ -500,7 +500,7 @@ export function SlideOTSecurity({ onNavigateHome }: { onNavigateHome?: () => voi
     <SlideContainer slideNumber={21} onNavigateHome={onNavigateHome} source="Ahrefs">
       <SlideHeader
         title="OT Security"
-        subtitle="(Jul 2025 – Sep 2026)"
+        subtitle="(Jul 2025 – Oct 2026)"
       />
       
       {!isEditing ? (
@@ -629,7 +629,7 @@ export function SlideOTSecurity({ onNavigateHome }: { onNavigateHome?: () => voi
       ) : (
         <div className="flex-1 overflow-auto">
           <div className="bg-white border border-gray-200 rounded-lg p-6">
-            <h3 className="text-sm font-bold text-gray-900 mb-4">Edit OT Security Metrics Data (Jul 2025 – Sep 2026)</h3>
+            <h3 className="text-sm font-bold text-gray-900 mb-4">Edit OT Security Metrics Data (Jul 2025 – Oct 2026)</h3>
             <div className="space-y-6">
               {OT_VENDORS.map((vendor) => (
                 <div key={vendor.id} className="bg-gray-50 rounded-lg p-4 border border-gray-200">

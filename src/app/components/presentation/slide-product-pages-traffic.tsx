@@ -28,7 +28,7 @@ const MONTHS = [
   '2025-07', '2025-08', '2025-09', '2025-10', '2025-11',
   '2025-12', '2026-01', '2026-02', '2026-03',
   '2026-04', '2026-05', '2026-06', '2026-07', '2026-08',
-  '2026-09',
+  '2026-09', '2026-10',
 ];
 
 const formatMonth = (key: string) => {
@@ -37,21 +37,21 @@ const formatMonth = (key: string) => {
     '2025-10': 'Oct-25', '2025-11': 'Nov-25',
     '2025-12': 'Dec-25', '2026-01': 'Jan-26', '2026-02': 'Feb-26',
     '2026-03': 'Mar-26', '2026-04': 'Apr-26', '2026-05': 'May-26',
-    '2026-06': 'Jun-26', '2026-07': 'Jul-26', '2026-08': 'Aug-26', '2026-09': 'Sep-26',
+    '2026-06': 'Jun-26', '2026-07': 'Jul-26', '2026-08': 'Aug-26', '2026-09': 'Sep-26', '2026-10': 'Oct-26',
   };
   return map[key] ?? key;
 };
 
 const GA_DATA = {
-  total:      [408039, 342460, 410885, 408338, 349104, 246024, 256421, 257635, 270038, 247690, 236793, 251193, 247495, 228826, 225367],
-  branded:    [379197, 316636, 383428, 382866, 328508, 231319, 240760, 240942, 252554, 230795, 221612, 236394, 233675, 217513, 213927],
-  nonBranded: [ 28842,  25824,  27457,  25596,  20596,  14705,  15661,  16693,  17484,  16895,  15181,  14799,  13820,  11313,  11440],
+  total:      [408039, 342460, 410885, 408338, 349104, 246024, 256421, 257635, 270038, 247690, 236793, 251193, 247495, 228826, 225367, 222762],
+  branded:    [379197, 316636, 383428, 382866, 328508, 231319, 240760, 240942, 252554, 230795, 221612, 236394, 233675, 217513, 213927, 212286],
+  nonBranded: [ 28842,  25824,  27457,  25596,  20596,  14705,  15661,  16693,  17484,  16895,  15181,  14799,  13820,  11313,  11440,  10476],
 };
 
 const GSC_DATA = {
-  total:      [62419, 55924, 61760, 59762, 56156, 42930, 46270, 46903, 49578, 44539, 41180, 40447, 36801, 45410, 40068],
-  branded:    [58007, 51707, 57633, 56034, 52843, 40364, 43444, 43864, 46368, 41501, 38540, 38064, 34746, 43165, 38034],
-  nonBranded: [ 4412,  4217,  4127,  3728,  3313,  2566,  2826,  3039,  3210,  3038,  2640,  2383,  2055,  2245,  2034],
+  total:      [62419, 55924, 61760, 59762, 56156, 42930, 46270, 46903, 49578, 44539, 41180, 40447, 36801, 45410, 40068, 38295],
+  branded:    [58007, 51707, 57633, 56034, 52843, 40364, 43444, 43864, 46368, 41501, 38540, 38064, 34746, 43165, 38034, 36494],
+  nonBranded: [ 4412,  4217,  4127,  3728,  3313,  2566,  2826,  3039,  3210,  3038,  2640,  2383,  2055,  2245,  2034,  1801],
 };
 
 type TabType = 'ga' | 'gsc';
@@ -116,19 +116,19 @@ export function SlideProductPagesTraffic({ onNavigateHome }: { onNavigateHome?: 
             icon={TrendingUp}
             type="success"
             title="Traffic Peak"
-            content={`Total GA product traffic peaked at ${formatNumber(totalPeak)} in ${formatMonth(MONTHS[totalPeakIdx])}. Branded traffic dominates at ~${((source.branded[totalPeakIdx] / totalPeak) * 100).toFixed(0)}% of total product page visits at peak (~${((brandedLatest / totalLatest) * 100).toFixed(0)}% in Sep 2026).`}
+            content={`Total GA product traffic peaked at ${formatNumber(totalPeak)} in ${formatMonth(MONTHS[totalPeakIdx])}. Branded traffic dominates at ~${((source.branded[totalPeakIdx] / totalPeak) * 100).toFixed(0)}% of total product page visits at peak (~${((brandedLatest / totalLatest) * 100).toFixed(0)}% in Oct 2026).`}
           />
           <InsightCard
             icon={TrendingDown}
             type="warning"
             title="Post-Peak Decline"
-            content={`Total traffic fell ${Math.abs(Number(peakDropPct))}% from the ${formatMonth(MONTHS[totalPeakIdx])} peak to ${formatNumber(totalLatest)} in Sep 2026. Branded dropped from ${formatNumber(source.branded[totalPeakIdx])} → ${formatNumber(brandedLatest)} (${(((brandedLatest - source.branded[totalPeakIdx]) / source.branded[totalPeakIdx]) * 100).toFixed(1)}%).`}
+            content={`Total traffic fell ${Math.abs(Number(peakDropPct))}% from the ${formatMonth(MONTHS[totalPeakIdx])} peak to ${formatNumber(totalLatest)} in Oct 2026. Branded dropped from ${formatNumber(source.branded[totalPeakIdx])} → ${formatNumber(brandedLatest)} (${(((brandedLatest - source.branded[totalPeakIdx]) / source.branded[totalPeakIdx]) * 100).toFixed(1)}%).`}
           />
           <InsightCard
             icon={AlertTriangle}
             type="error"
             title="Non-Branded Gap"
-            content={`Non-branded product traffic at ${formatNumber(nbLatest)} in Sep 2026 represents only ~${((nbLatest / totalLatest) * 100).toFixed(1)}% of total — highlighting a significant gap in organic discovery for product pages.`}
+            content={`Non-branded product traffic at ${formatNumber(nbLatest)} in Oct 2026 represents only ~${((nbLatest / totalLatest) * 100).toFixed(1)}% of total — highlighting a significant gap in organic discovery for product pages.`}
           />
         </InsightsSection>
       );
@@ -145,13 +145,13 @@ export function SlideProductPagesTraffic({ onNavigateHome }: { onNavigateHome?: 
           icon={TrendingDown}
           type="warning"
           title="Declining Trend"
-          content={`Total GSC clicks eased to ${formatNumber(totalLatest)} in Sep 2026 after the Aug rebound to ${formatNumber(GSC_DATA.total[13])} (${(((totalLatest - GSC_DATA.total[13]) / GSC_DATA.total[13]) * 100).toFixed(1)}%). Branded clicks retreated from ${formatNumber(GSC_DATA.branded[13])} → ${formatNumber(brandedLatest)}.`}
+          content={`Total GSC clicks eased to ${formatNumber(totalLatest)} in Oct 2026 from ${formatNumber(GSC_DATA.total[14])} in Sep (${(((totalLatest - GSC_DATA.total[14]) / GSC_DATA.total[14]) * 100).toFixed(1)}%). Branded clicks retreated from ${formatNumber(GSC_DATA.branded[14])} → ${formatNumber(brandedLatest)}.`}
         />
         <InsightCard
           icon={TrendingDown}
           type="error"
           title="Non-Branded Drop"
-          content={`Non-branded GSC clicks at ${formatNumber(nbLatest)} in Sep 2026 — down ${Math.abs(((nbLatest - Math.max(...GSC_DATA.nonBranded)) / Math.max(...GSC_DATA.nonBranded)) * 100).toFixed(0)}% from the ${formatMonth(MONTHS[GSC_DATA.nonBranded.indexOf(Math.max(...GSC_DATA.nonBranded))])} peak of ${formatNumber(Math.max(...GSC_DATA.nonBranded))}.`}
+          content={`Non-branded GSC clicks at ${formatNumber(nbLatest)} in Oct 2026 — down ${Math.abs(((nbLatest - Math.max(...GSC_DATA.nonBranded)) / Math.max(...GSC_DATA.nonBranded)) * 100).toFixed(0)}% from the ${formatMonth(MONTHS[GSC_DATA.nonBranded.indexOf(Math.max(...GSC_DATA.nonBranded))])} peak of ${formatNumber(Math.max(...GSC_DATA.nonBranded))}.`}
         />
       </InsightsSection>
     );
@@ -161,7 +161,7 @@ export function SlideProductPagesTraffic({ onNavigateHome }: { onNavigateHome?: 
     <SlideContainer slideNumber={6} onNavigateHome={onNavigateHome} source="GA & GSC">
       <SlideHeader
         title="Product Pages"
-        subtitle="Fortinet Product Pages · Branded, Non-Branded & Total · Jul 2025 – Sep 2026"
+        subtitle="Fortinet Product Pages · Branded, Non-Branded & Total · Jul 2025 – Oct 2026"
       />
 
       <div className="flex-1 flex flex-col gap-4">
@@ -228,7 +228,7 @@ export function SlideProductPagesTraffic({ onNavigateHome }: { onNavigateHome?: 
         </div>
       </div>
 
-      <SlideFooter source={`Source: ${activeTab === 'ga' ? 'GA' : 'GSC'} · Product Pages · Jul 2025 – Sep 2026`} />
+      <SlideFooter source={`Source: ${activeTab === 'ga' ? 'GA' : 'GSC'} · Product Pages · Jul 2025 – Oct 2026`} />
     </SlideContainer>
   );
 }

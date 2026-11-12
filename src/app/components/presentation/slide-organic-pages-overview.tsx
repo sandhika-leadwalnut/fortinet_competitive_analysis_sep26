@@ -22,27 +22,27 @@ const VENDORS = [
   { id: 'forcepoint',  name: 'Force Point',   color: '#EC4899' },
 ];
 
-const MONTHS = ['2025-12','2026-01','2026-02','2026-03','2026-04','2026-05','2026-06','2026-07','2026-08','2026-09'];
+const MONTHS = ['2025-12','2026-01','2026-02','2026-03','2026-04','2026-05','2026-06','2026-07','2026-08','2026-09','2026-10'];
 
 const formatMonth = (key: string) => {
   const map: Record<string,string> = {
     '2025-12':'Dec-25','2026-01':'Jan-26','2026-02':'Feb-26','2026-03':'Mar-26',
-    '2026-04':'Apr-26','2026-05':'May-26','2026-06':'Jun-26','2026-07':'Jul-26','2026-08':'Aug-26','2026-09':'Sep-26',
+    '2026-04':'Apr-26','2026-05':'May-26','2026-06':'Jun-26','2026-07':'Jul-26','2026-08':'Aug-26','2026-09':'Sep-26','2026-10':'Oct-26',
   };
   return map[key] ?? key;
 };
 
 const DATA: Record<string, number[]> = {
-  fortinet:    [36807, 36217, 36476, 38250, 38844, 39985, 37857, 30354, 31874, 34586],
-  cisco:       [141751,134391,133696,146240,152101,147884,139722,116813,111636,125416],
-  hpe:         [ 70164, 67403, 64944, 66992, 65079, 62480, 59152, 52283, 50693, 55400],
-  paloalto:    [ 24117, 23816, 23736, 26097, 26727, 26065, 24682, 21525, 20502, 23487],
-  checkpoint:  [ 14705, 14252, 14075, 15342, 15058, 14539, 14167, 13325, 12751, 14058],
-  crowdstrike: [  5155,  4718,  4569,  5018,  5237,  5310,  5296,  5107,  5128,  5426],
-  cato:        [  1622,  1678,  1741,  1908,  1948,  2020,  2077,  2110,  2255,  2348],
-  sentinelone: [  4006,  4539,  5336,  7336,  9751, 10955, 10815,  9708,  8798, 10061],
-  wiz:         [  5511,  5818,  5948,  5480,  4564,  3179,  2151,  2034,  2137,  2300],
-  forcepoint:  [  3684,  3337,  3328,  3498,  3417,  3402,  3294,  3171,  3133,  3146],
+  fortinet:    [36807, 36217, 36476, 38250, 38844, 39985, 37857, 30354, 31874, 34586,37668],
+  cisco:       [141751,134391,133696,146240,152101,147884,139722,116813,111636,125416,138922],
+  hpe:         [ 70164, 67403, 64944, 66992, 65079, 62480, 59152, 52283, 50693, 55400,61981],
+  paloalto:    [ 24117, 23816, 23736, 26097, 26727, 26065, 24682, 21525, 20502, 23487,25938],
+  checkpoint:  [ 14705, 14252, 14075, 15342, 15058, 14539, 14167, 13325, 12751, 14058,14849],
+  crowdstrike: [  5155,  4718,  4569,  5018,  5237,  5310,  5296,  5107,  5128,  5426,5789],
+  cato:        [  1622,  1678,  1741,  1908,  1948,  2020,  2077,  2110,  2255,  2348,2081],
+  sentinelone: [  4006,  4539,  5336,  7336,  9751, 10955, 10815,  9708,  8798, 10061,10732],
+  wiz:         [  5511,  5818,  5948,  5480,  4564,  3179,  2151,  2034,  2137,  2300,2413],
+  forcepoint:  [  3684,  3337,  3328,  3498,  3417,  3402,  3294,  3171,  3133,  3146,3129],
 };
 
 const formatAxis = (v: number) => {
@@ -96,7 +96,7 @@ export function SlideOrganicPagesOverview({ onNavigateHome }: { onNavigateHome?:
     <SlideContainer slideNumber={17} onNavigateHome={onNavigateHome} source="SEMrush">
       <SlideHeader
         title="Organic Pages Performance Overview"
-        subtitle="Indexed Organic Pages · Dec 2025 – Sep 2026"
+        subtitle="Indexed Organic Pages · Dec 2025 – Oct 2026"
       />
 
       <TimeRangeFilter value={timeRange} onChange={setTimeRange} />
@@ -143,26 +143,26 @@ export function SlideOrganicPagesOverview({ onNavigateHome }: { onNavigateHome?:
               icon={TrendingUp}
               type="success"
               title="SentinelOne Surging"
-              content={`SentinelOne pages grew ${(((s1Latest - s1First) / s1First) * 100).toFixed(0)}% Dec→Sep (${s1First.toLocaleString()} → ${s1Latest.toLocaleString()}) — by far the fastest-growing vendor in indexed page count.`}
+              content={`SentinelOne pages grew ${(((s1Latest - s1First) / s1First) * 100).toFixed(0)}% Dec→Oct (${s1First.toLocaleString()} → ${s1Latest.toLocaleString()}) — by far the fastest-growing vendor in indexed page count.`}
             />
             <InsightCard
               icon={TrendingDown}
               type="warning"
               title="Fortinet Below May Peak"
-              content={`Fortinet peaked at ${ftPeak.toLocaleString()} pages in May 2026, fell to a Jul low of 30,354, and stood at ${ftLatest.toLocaleString()} in Sep (−${(((ftPeak - ftLatest) / ftPeak) * 100).toFixed(0)}% vs peak, +14% vs Jul). Monitor for re-indexing or content removal issues.`}
+              content={`Fortinet peaked at ${ftPeak.toLocaleString()} pages in May 2026, fell to a Jul low of 30,354, and stood at ${ftLatest.toLocaleString()} in Oct (−${(((ftPeak - ftLatest) / ftPeak) * 100).toFixed(0)}% vs peak, +${(((ftLatest - 30354) / 30354) * 100).toFixed(0)}% vs Jul). Monitor for re-indexing or content removal issues.`}
             />
             <InsightCard
               icon={AlertTriangle}
               type="error"
               title="Wiz Declining Fast"
-              content={`Wiz pages fell from a Feb 2026 peak of ${wizPeak.toLocaleString()} to just ${wizLatest.toLocaleString()} in Sep 2026 (−${(((wizPeak - wizLatest) / wizPeak) * 100).toFixed(0)}%). Cato Networks moving the opposite direction: +${(((catoLatest - catoFirst) / catoFirst) * 100).toFixed(0)}% Dec→Sep.`}
+              content={`Wiz pages fell from a Feb 2026 peak of ${wizPeak.toLocaleString()} to just ${wizLatest.toLocaleString()} in Oct 2026 (−${(((wizPeak - wizLatest) / wizPeak) * 100).toFixed(0)}%). Cato Networks moving the opposite direction: +${(((catoLatest - catoFirst) / catoFirst) * 100).toFixed(0)}% Dec→Oct (though −11% MoM in Oct).`}
             />
           </InsightsSection>
 
         </div>
       </div>
 
-      <SlideFooter source="Source: SEMrush · Organic Pages · Dec 2025 – Sep 2026" />
+      <SlideFooter source="Source: SEMrush · Organic Pages · Dec 2025 – Oct 2026" />
     </SlideContainer>
   );
 }

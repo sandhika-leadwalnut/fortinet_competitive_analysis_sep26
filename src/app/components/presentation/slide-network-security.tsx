@@ -25,38 +25,38 @@ const VENDORS = [
 ];
 
 // Jul 2026, Aug 2026, Sep 2026
-const MONTHS = ['2026-07', '2026-08', '2026-09'];
+const MONTHS = ['2026-07', '2026-08', '2026-09', '2026-10'];
 
 const TOTAL_KEYWORDS_DATA = {
-  fortinet:   [457, 452, 427],
-  checkpoint: [221, 202, 193],
-  cisco:      [380, 381, 357],
-  ibm:        [203, 219, 216],
-  imperva:    [67,  57,  38],
+  fortinet:   [457, 452, 427, 484],
+  checkpoint: [221, 202, 193, 207],
+  cisco:      [380, 381, 357, 341],
+  ibm:        [203, 219, 216, 245],
+  imperva:    [67,  57,  38,  36],
 };
 
 const TRAFFIC_DATA = {
-  fortinet:   [7579, 7737, 6785],
-  checkpoint: [2937, 3064, 2539],
-  cisco:      [7314, 7009, 6717],
-  ibm:        [3419, 2799, 2937],
-  imperva:    [514,  482,  398],
+  fortinet:   [7579, 7737, 6785, 8025],
+  checkpoint: [2937, 3064, 2539, 3049],
+  cisco:      [7314, 7009, 6717, 5941],
+  ibm:        [3419, 2799, 2937, 2955],
+  imperva:    [514,  482,  398,  351],
 };
 
 const PAGE_ONE_DATA = {
-  fortinet:   [444, 437, 411],
-  checkpoint: [195, 181, 176],
-  cisco:      [360, 367, 343],
-  ibm:        [189, 210, 206],
-  imperva:    [56,  45,  30],
+  fortinet:   [444, 437, 411, 475],
+  checkpoint: [195, 181, 176, 200],
+  cisco:      [360, 367, 343, 331],
+  ibm:        [189, 210, 206, 241],
+  imperva:    [56,  45,  30,  34],
 };
 
 const AIO_DATA = {
-  fortinet:   [271, 260, 255],
-  checkpoint: [131, 116, 119],
-  cisco:      [219, 209, 201],
-  ibm:        [137, 139, 131],
-  imperva:    [40,  37,  22],
+  fortinet:   [271, 260, 255, 323],
+  checkpoint: [131, 116, 119, 135],
+  cisco:      [219, 209, 201, 215],
+  ibm:        [137, 139, 131, 165],
+  imperva:    [40,  37,  22,  22],
 };
 
 const formatMonth = (monthKey: string) => {
@@ -130,36 +130,36 @@ export function SlideNetworkSecurity({ onNavigateHome }: { onNavigateHome?: () =
         return (
           <InsightsSection>
             <InsightCard icon={Trophy} type="success" title="Fortinet Leads"
-              content="Sep 2026: Fortinet ranks #1 with 427 keywords — 70 ahead of Cisco (357) and 234 ahead of Check Point (193). Only IBM grew Jul → Sep (203 → 216, +6%)." />
+              content="Oct 2026: Fortinet ranks #1 with 484 keywords (+13% MoM) — 143 ahead of Cisco (341) and 277 ahead of Check Point (207). IBM is the fastest grower Jul → Oct (203 → 245, +21%)." />
             <InsightCard icon={TrendingDown} type="error" title="Sector Contraction"
-              content="Four of five vendors lost keyword coverage Jul → Sep: Fortinet −7%, Cisco −6%, Check Point −13%, Imperva −43%. Only IBM grew (+6%), intensifying competitive pressure." />
+              content="Oct reversed part of the Jul–Sep contraction: Fortinet is +6% and IBM +21% vs Jul, while Cisco (−10%), Check Point (−6%) and Imperva (−46%) remain below July — IBM is the one to watch for share gains." />
           </InsightsSection>
         );
       case 'traffic':
         return (
           <InsightsSection>
             <InsightCard icon={Trophy} type="success" title="Fortinet #1"
-              content="Sep 2026: Fortinet leads with 6,785 cumulative traffic — only 68 ahead of Cisco (6,717). IBM third at 2,937. Cisco closing the gap fast." />
+              content="Oct 2026: Fortinet leads with 8,025 cumulative traffic (+18% MoM) — 2,084 ahead of Cisco (5,941). Check Point (3,049) and IBM (2,955) are a distant third and fourth." />
             <InsightCard icon={AlertTriangle} type="warning" title="Cisco Narrowing Gap"
-              content="Jul 2026 gap was 265 visits (7,579 vs 7,314); by Sep it's just 68. Fortinet's traffic dropped −10.5% while Cisco fell only −8.2%." />
+              content="The Fortinet–Cisco gap widened from just 68 visits in Sep (6,785 vs 6,717) to 2,084 in Oct — Fortinet rebounded +18.3% while Cisco fell −11.6%, its lowest in the Jul–Oct window." />
           </InsightsSection>
         );
       case 'page-one':
         return (
           <InsightsSection>
             <InsightCard icon={Trophy} type="success" title="Fortinet Leads"
-              content="Sep 2026: Fortinet holds 411 page-1 rankings vs Cisco 343, IBM 206, Check Point 176, Imperva 30. A comfortable 68-keyword lead over Cisco." />
+              content="Oct 2026: Fortinet holds 475 page-1 rankings vs Cisco 331, IBM 241, Check Point 200, Imperva 34 — a 144-keyword lead over Cisco, up from 68 in Sep." />
             <InsightCard icon={TrendingDown} type="error" title="Imperva Sharp Decline"
-              content="Imperva lost nearly half its page-1 rankings (56 → 30, −46%) Jul → Sep 2026. Check Point also fell from 195 to 176 (−10%)." />
+              content="Imperva is down 39% on page-1 rankings Jul → Oct 2026 (56 → 34) despite a small Oct uptick from 30. IBM is the one climbing: 189 → 241 (+28%), now ahead of Check Point (200)." />
           </InsightsSection>
         );
       case 'aio':
         return (
           <InsightsSection>
             <InsightCard icon={Trophy} type="success" title="Fortinet #1 in AIO"
-              content="Sep 2026: Fortinet appears in 255 AI Overviews — 54 more than Cisco (201) and 136 more than Check Point (119)." />
+              content="Oct 2026: Fortinet appears in 323 AI Overviews (+27% MoM) — 108 more than Cisco (215) and 188 more than Check Point (135)." />
             <InsightCard icon={TrendingDown} type="error" title="Imperva Losing Ground"
-              content="Imperva's AIO presence collapsed from 40 to 22 (−45%) Jul → Sep. Fortinet's AIO also declined (271 → 255, −6%) — monitoring warranted." />
+              content="Imperva's AIO presence has stayed at 22 since Sep (down from 40 in Jul, −45%). Fortinet's AIO recovered to 323 (+19% vs Jul 271), and IBM grew 137 → 165 (+20%)." />
           </InsightsSection>
         );
       default: return null;
@@ -170,7 +170,7 @@ export function SlideNetworkSecurity({ onNavigateHome }: { onNavigateHome?: () =
     const dataset = activeTab === 'keywords' ? TOTAL_KEYWORDS_DATA
       : activeTab === 'traffic' ? TRAFFIC_DATA
       : activeTab === 'page-one' ? PAGE_ONE_DATA : AIO_DATA;
-    const latestIdx = 2; // Sep 2026
+    const latestIdx = 3; // Oct 2026
     const rankings = VENDORS
       .map(v => ({ id: v.id, name: v.name, value: dataset[v.id][latestIdx] ?? 0, color: v.color }))
       .sort((a, b) => b.value - a.value);
@@ -230,7 +230,7 @@ export function SlideNetworkSecurity({ onNavigateHome }: { onNavigateHome?: () =
 
   return (
     <SlideContainer slideNumber={28} onNavigateHome={onNavigateHome} source="Ahrefs">
-      <SlideHeader title="Network Security" subtitle="(Jul 2026 – Sep 2026)" />
+      <SlideHeader title="Network Security" subtitle="(Jul 2026 – Oct 2026)" />
 
       <div className="flex-1 flex flex-col gap-6">
         {/* Tabs */}

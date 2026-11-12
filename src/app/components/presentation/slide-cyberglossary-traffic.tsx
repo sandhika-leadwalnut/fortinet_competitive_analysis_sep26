@@ -29,7 +29,7 @@ import {
 const MONTHS = [
   '2025-07', '2025-08', '2025-09', '2025-10', '2025-11',
   '2025-12', '2026-01', '2026-02', '2026-03',
-  '2026-04', '2026-05', '2026-06', '2026-07', '2026-08', '2026-09',
+  '2026-04', '2026-05', '2026-06', '2026-07', '2026-08', '2026-09', '2026-10',
 ];
 
 const formatMonth = (key: string) => {
@@ -38,7 +38,7 @@ const formatMonth = (key: string) => {
     '2025-10': 'Oct-25', '2025-11': 'Nov-25',
     '2025-12': 'Dec-25', '2026-01': 'Jan-26', '2026-02': 'Feb-26',
     '2026-03': 'Mar-26', '2026-04': 'Apr-26', '2026-05': 'May-26',
-    '2026-06': 'Jun-26', '2026-07': 'Jul-26', '2026-08': 'Aug-26', '2026-09': 'Sep-26',
+    '2026-06': 'Jun-26', '2026-07': 'Jul-26', '2026-08': 'Aug-26', '2026-09': 'Sep-26', '2026-10': 'Oct-26',
   };
   return map[key] ?? key;
 };
@@ -46,46 +46,46 @@ const formatMonth = (key: string) => {
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
 const GA_DATA = {
-  total:      [164526, 172102, 195488, 185335, 156307, 110689, 117434, 128151, 130379, 120458, 104128,  99306, 91685, 86677, 87115],
-  nonBranded: [159186, 167633, 190543, 180544, 152265, 107828, 114206, 125025, 127342, 117512, 101688,  96487, 89964, 85262, 85726],
-  branded:    [  5340,   4469,   4945,   4791,   4042,   2861,   3228,   3126,   3037,   2946,   2440,   2819,  1721,  1415,  1389],
+  total:      [164526, 172102, 195488, 185335, 156307, 110689, 117434, 128151, 130379, 120458, 104128,  99306, 91685, 86677, 87115, 81458],
+  nonBranded: [159186, 167633, 190543, 180544, 152265, 107828, 114206, 125025, 127342, 117512, 101688,  96487, 89964, 85262, 85726, 80121],
+  branded:    [  5340,   4469,   4945,   4791,   4042,   2861,   3228,   3126,   3037,   2946,   2440,   2819,  1721,  1415,  1389,  1337],
 };
 
 const GSC_DATA = {
-  total:      [143557, 164300, 188054, 182500, 159468, 132551, 146481, 152111, 165841, 150038, 142898, 139119, 138854, 142151, 135173],
-  nonBranded: [138898, 160034, 183297, 177782, 155344, 129125, 142455, 148400, 161978, 146369, 139549, 135170, 136247, 139831, 133018],
-  branded:    [  4659,   4266,   4757,   4718,   4124,   3426,   4026,   3711,   3863,   3669,   3349,   3949,   2607,   2320,   2155],
+  total:      [143557, 164300, 188054, 182500, 159468, 132551, 146481, 152111, 165841, 150038, 142898, 139119, 138854, 142151, 135173, 140247],
+  nonBranded: [138898, 160034, 183297, 177782, 155344, 129125, 142455, 148400, 161978, 146369, 139549, 135170, 136247, 139831, 133018, 137945],
+  branded:    [  4659,   4266,   4757,   4718,   4124,   3426,   4026,   3711,   3863,   3669,   3349,   3949,   2607,   2320,   2155,   2302],
 };
 
 const DIRECT_DATA: { total: number[]; nonBranded: (number | null)[]; branded: (number | null)[] } = {
-  //                  Jul-25  Aug-25  Sep-25  Oct-25  Nov-25  Dec-25  Jan-26  Feb-26  Mar-26  Apr-26  May-26  Jun-26  Jul-26  Aug-26  Sep-26
-  // Sep-26: CSV provides total direct only (no branded / non-branded split) -> null
-  total:      [24127, 22001, 24162, 24068, 30296, 25549, 23200, 23628, 29736, 30175, 32203, 32371, 19900, 17260, 18470],
-  nonBranded: [23500, 21429, 23534, 23442, 29508, 24428, 22562, 23052, 29043, 29437, 31448, 31452, 19526, 16935,  null],
-  branded:    [  627,   572,   628,   626,   788,   652,   638,   576,   693,   738,   755,   919,   374,   325,  null],
+  //                  Jul-25  Aug-25  Sep-25  Oct-25  Nov-25  Dec-25  Jan-26  Feb-26  Mar-26  Apr-26  May-26  Jun-26  Jul-26  Aug-26  Sep-26  Oct-26
+  // Sep-26 / Oct-26: CSV provides total direct only (no branded / non-branded split) -> null
+  total:      [24127, 22001, 24162, 24068, 30296, 25549, 23200, 23628, 29736, 30175, 32203, 32371, 19900, 17260, 18470, 17990],
+  nonBranded: [23500, 21429, 23534, 23442, 29508, 24428, 22562, 23052, 29043, 29437, 31448, 31452, 19526, 16935,  null,  null],
+  branded:    [  627,   572,   628,   626,   788,   652,   638,   576,   693,   738,   755,   919,   374,   325,  null,  null],
 };
 
 const BING_DATA = {
-  //                  Jul-25  Aug-25  Sep-25  Oct-25  Nov-25  Dec-25  Jan-26  Feb-26  Mar-26  Apr-26  May-26  Jun-26  Jul-26  Aug-26  Sep-26
-  total:      [10372, 10805,  8102,  8791,  7318,  5128,  5545,  5303,  5764,  5894,  5302,  3441,  2529,  3095,  4772],
-  branded:    [ 8565,  8792,  6649,  7157,  6024,  4332,  4526,  4495,  4658,  4713,  4157,  2506,  1909,  2477,  3722],
-  nonBranded: [ 1807,  2013,  1453,  1634,  1294,   796,  1019,   808,  1106,  1181,  1145,   935,   620,   618,  1050],
+  //                  Jul-25  Aug-25  Sep-25  Oct-25  Nov-25  Dec-25  Jan-26  Feb-26  Mar-26  Apr-26  May-26  Jun-26  Jul-26  Aug-26  Sep-26  Oct-26
+  total:      [10372, 10805,  8102,  8791,  7318,  5128,  5545,  5303,  5764,  5894,  5302,  3441,  2529,  3095,  4772,  4318],
+  branded:    [ 8565,  8792,  6649,  7157,  6024,  4332,  4526,  4495,  4658,  4713,  4157,  2506,  1909,  2477,  3722,  4188],
+  nonBranded: [ 1807,  2013,  1453,  1634,  1294,   796,  1019,   808,  1106,  1181,  1145,   935,   620,   618,  1050,   130],
 };
 
-const DIRECT_GL_DATA = [
-  { url: 'https://www.fortinet.com/resources/cyberglossary/proxy-server', keyword: 'What is Proxy Server', jun: 1044, jul: 1320, change: 276, pct: 26.44 },
-  { url: 'https://www.fortinet.com/resources/cyberglossary/cloud-security-tools', keyword: 'cloud security tools', jun: 4, jul: 101, change: 97, pct: 2425.00 },
-  { url: 'https://www.fortinet.com/resources/cyberglossary/firewall', keyword: 'firewall', jun: 229, jul: 301, change: 72, pct: 31.44 },
-  { url: 'https://www.fortinet.com/resources/cyberglossary/computer-virus', keyword: 'computer viruses', jun: 105, jul: 173, change: 68, pct: 64.76 },
-  { url: 'https://www.fortinet.com/resources/cyberglossary', keyword: 'Cyber Glossary', jun: 370, jul: 434, change: 64, pct: 17.30 },
-  { url: 'https://www.fortinet.com/resources/cyberglossary/cyber-safety', keyword: 'cyber safety', jun: 55, jul: 111, change: 56, pct: 101.82 },
-  { url: 'https://www.fortinet.com/resources/cyberglossary/what-is-dmz', keyword: 'DMZ', jun: 59, jul: 111, change: 52, pct: 88.14 },
-  { url: 'https://www.fortinet.com/resources/cyberglossary/data-breach', keyword: 'What is a data breach', jun: 72, jul: 110, change: 38, pct: 52.78 },
-  { url: 'https://www.fortinet.com/resources/cyberglossary/what-is-cryptography', keyword: 'cryptography', jun: 47, jul: 83, change: 36, pct: 76.60 },
-  { url: 'https://www.fortinet.com/resources/cyberglossary/what-is-arp', keyword: 'arp', jun: 63, jul: 99, change: 36, pct: 57.14 },
-];
-
 type TabType = 'ga' | 'gsc' | 'bing' | 'direct' | 'direct-gl';
+
+const DIRECT_LOSS_DATA = [
+  { url: 'https://www.fortinet.com/resources/cyberglossary/tcp-ip-model-vs-osi-model', keyword: 'tcp ip model vs osi model', prev: 216, curr: 116, change: -100, pct: -46.3 },
+  { url: 'https://www.fortinet.com/resources/cyberglossary/cybersecurity-trends-2026', keyword: 'Cybersecurity Trends', prev: 199, curr: 112, change: -87, pct: -43.7 },
+  { url: 'https://www.fortinet.com/resources/cyberglossary/cloud-security-tools', keyword: 'cloud security tools', prev: 101, curr: 31, change: -70, pct: -69.3 },
+  { url: 'https://www.fortinet.com/resources/cyberglossary/data-breach', keyword: 'What is a data breach', prev: 110, curr: 47, change: -63, pct: -57.3 },
+  { url: 'https://www.fortinet.com/resources/cyberglossary/firewall', keyword: 'firewall', prev: 301, curr: 241, change: -60, pct: -19.9 },
+  { url: 'https://www.fortinet.com/resources/cyberglossary/cia-triad', keyword: 'CIA Triad', prev: 463, curr: 407, change: -56, pct: -12.1 },
+  { url: 'https://www.fortinet.com/resources/cyberglossary/cyber-safety', keyword: 'cyber safety', prev: 111, curr: 55, change: -56, pct: -50.5 },
+  { url: 'https://www.fortinet.com/resources/cyberglossary/purdue-model', keyword: 'purdue model for ics security', prev: 198, curr: 150, change: -48, pct: -24.2 },
+  { url: 'https://www.fortinet.com/resources/cyberglossary/solarwinds-cyber-attack', keyword: 'solarwinds cyber attack', prev: 136, curr: 93, change: -43, pct: -31.6 },
+  { url: 'https://www.fortinet.com/resources/cyberglossary/what-is-ip-address', keyword: 'what is an ip address', prev: 323, curr: 285, change: -38, pct: -11.8 },
+];
 
 const LINES = [
   { key: 'total',      name: 'Total Traffic',        color: '#EF4444', width: 2.5 },
@@ -118,6 +118,12 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 export function SlideCyberglossaryTraffic({ onNavigateHome }: { onNavigateHome?: () => void }) {
   const [activeTab, setActiveTab] = useState<TabType>('ga');
   const [timeRange, setTimeRange] = useState<TimeRange>('all');
+  const glData = DIRECT_LOSS_DATA;
+  const glPrevTotal = glData.reduce((s, r) => s + r.prev, 0);
+  const glCurrTotal = glData.reduce((s, r) => s + r.curr, 0);
+  const glChangeTotal = glCurrTotal - glPrevTotal;
+  const glPctTotal = (glChangeTotal / glPrevTotal) * 100;
+  const glNeg = glChangeTotal < 0;
 
   const tro = getTimeRangeOffset(timeRange, MONTHS.length);
   const source = activeTab === 'ga' ? GA_DATA : activeTab === 'gsc' ? GSC_DATA : activeTab === 'bing' ? BING_DATA : DIRECT_DATA;
@@ -162,13 +168,13 @@ export function SlideCyberglossaryTraffic({ onNavigateHome }: { onNavigateHome?:
             icon={TrendingDown}
             type="warning"
             title="Post-Peak Decline"
-            content={`Total traffic dropped ${Math.abs(Number(peakDropPct))}% from the ${formatMonth(MONTHS[totalPeakIdx])} peak to ${formatNumber(totalLatest)} in Sep 2026. Non-branded fell from ${formatNumber(GA_DATA.nonBranded[totalPeakIdx])} → ${formatNumber(nbLatest)} (${(((nbLatest - GA_DATA.nonBranded[totalPeakIdx]) / GA_DATA.nonBranded[totalPeakIdx]) * 100).toFixed(1)}%).`}
+            content={`Total traffic dropped ${Math.abs(Number(peakDropPct))}% from the ${formatMonth(MONTHS[totalPeakIdx])} peak to ${formatNumber(totalLatest)} in Oct 2026. Non-branded fell from ${formatNumber(GA_DATA.nonBranded[totalPeakIdx])} → ${formatNumber(nbLatest)} (${(((nbLatest - GA_DATA.nonBranded[totalPeakIdx]) / GA_DATA.nonBranded[totalPeakIdx]) * 100).toFixed(1)}%).`}
           />
           <InsightCard
             icon={AlertTriangle}
             type="error"
             title="Branded Drop"
-            content={`Branded GA traffic hit a low of ${formatNumber(brandedLatest)} in Sep 2026 — down ${Math.abs(((brandedLatest - Math.max(...GA_DATA.branded)) / Math.max(...GA_DATA.branded)) * 100).toFixed(0)}% from the Jul 2025 peak of ${formatNumber(Math.max(...GA_DATA.branded))}.`}
+            content={`Branded GA traffic hit a low of ${formatNumber(brandedLatest)} in Oct 2026 — down ${Math.abs(((brandedLatest - Math.max(...GA_DATA.branded)) / Math.max(...GA_DATA.branded)) * 100).toFixed(0)}% from the Jul 2025 peak of ${formatNumber(Math.max(...GA_DATA.branded))}.`}
           />
         </InsightsSection>
       );
@@ -186,13 +192,13 @@ export function SlideCyberglossaryTraffic({ onNavigateHome }: { onNavigateHome?:
             icon={TrendingDown}
             type="warning"
             title="Post-Peak Decline"
-            content={`Total GSC clicks fell ${Math.abs(Number(peakDropPct))}% from the ${formatMonth(MONTHS[totalPeakIdx])} peak (${formatNumber(totalPeak)}) to Sep 2026 (${formatNumber(totalLatest)}). Non-branded slipped to ${formatNumber(nbLatest)} in Sep from ${formatNumber(GSC_DATA.nonBranded[GSC_DATA.nonBranded.length - 2])} in Aug.`}
+            content={`Total GSC clicks fell ${Math.abs(Number(peakDropPct))}% from the ${formatMonth(MONTHS[totalPeakIdx])} peak (${formatNumber(totalPeak)}) to Oct 2026 (${formatNumber(totalLatest)}). Non-branded slipped to ${formatNumber(nbLatest)} in Oct from ${formatNumber(GSC_DATA.nonBranded[GSC_DATA.nonBranded.length - 2])} in Sep.`}
           />
           <InsightCard
             icon={TrendingDown}
             type="info"
-            title="Sep Pullback Signal"
-            content={`Total GSC clicks eased to ${formatNumber(totalLatest)} in Sep 2026, down from ${formatNumber(GSC_DATA.total[GSC_DATA.total.length - 2])} in Aug (${(((totalLatest - GSC_DATA.total[GSC_DATA.total.length - 2]) / GSC_DATA.total[GSC_DATA.total.length - 2]) * 100).toFixed(1)}%). Non-branded drove the pullback at ${formatNumber(nbLatest)}.`}
+            title="Oct Rebound Signal"
+            content={`Total GSC clicks recovered to ${formatNumber(totalLatest)} in Oct 2026, up from ${formatNumber(GSC_DATA.total[GSC_DATA.total.length - 2])} in Sep (${(((totalLatest - GSC_DATA.total[GSC_DATA.total.length - 2]) / GSC_DATA.total[GSC_DATA.total.length - 2]) * 100).toFixed(1)}%). Non-branded drove the lift at ${formatNumber(nbLatest)}.`}
           />
         </InsightsSection>
       );
@@ -208,19 +214,19 @@ export function SlideCyberglossaryTraffic({ onNavigateHome }: { onNavigateHome?:
             icon={TrendingDown}
             type="error"
             title="Bing Clicks Below Peak"
-            content={`Total Bing CG clicks fell from ${formatNumber(totalPeak)} (${formatMonth(MONTHS[totalPeakIdx])}) to a low of ${formatNumber(Math.min(...BING_DATA.total))} in Jul 2026, then ${formatNumber(totalLatest)} in Sep 2026 — still ${Math.abs(Number(peakDropPct))}% below peak, despite a Sep rebound.`}
+            content={`Total Bing CG clicks fell from ${formatNumber(totalPeak)} (${formatMonth(MONTHS[totalPeakIdx])}) to a low of ${formatNumber(Math.min(...BING_DATA.total))} in Jul 2026, then ${formatNumber(totalLatest)} in Oct 2026 (Sep: ${formatNumber(BING_DATA.total[BING_DATA.total.length - 2])}) — still ${Math.abs(Number(peakDropPct))}% below peak. Oct non-branded of ${formatNumber(BING_DATA.nonBranded[BING_DATA.nonBranded.length - 1])} looks incomplete — validate in Bing Webmaster Tools.`}
           />
           <InsightCard
             icon={TrendingDown}
             type="warning"
             title="Branded Dominates but Shrinking"
-            content={`Branded clicks peaked at ${formatNumber(bingPeakBranded)} in ${formatMonth(MONTHS[bingPeakBrandedIdx])} and fell to ${formatNumber(bingBrandedLatest)} by Sep 2026 (−${(((bingPeakBranded - bingBrandedLatest) / bingPeakBranded) * 100).toFixed(0)}%). Branded traffic makes up ~${((bingBrandedLatest / totalLatest) * 100).toFixed(0)}% of Bing clicks.`}
+            content={`Branded clicks peaked at ${formatNumber(bingPeakBranded)} in ${formatMonth(MONTHS[bingPeakBrandedIdx])} and fell to ${formatNumber(bingBrandedLatest)} by Oct 2026 (−${(((bingPeakBranded - bingBrandedLatest) / bingPeakBranded) * 100).toFixed(0)}%). Branded traffic makes up ~${((bingBrandedLatest / totalLatest) * 100).toFixed(0)}% of Bing clicks.`}
           />
           <InsightCard
             icon={AlertTriangle}
             type="info"
             title="Non-Branded Small Share"
-            content={`Non-branded Bing clicks at ${formatNumber(bingNbLatest)} in Sep 2026 — only ~${((bingNbLatest / totalLatest) * 100).toFixed(0)}% of total Bing traffic. Fortinet has limited Bing organic discovery presence.`}
+            content={`Non-branded Bing clicks at ${formatNumber(bingNbLatest)} in Oct 2026 — only ~${((bingNbLatest / totalLatest) * 100).toFixed(0)}% of total Bing traffic. Fortinet has limited Bing organic discovery presence.`}
           />
         </InsightsSection>
       );
@@ -236,14 +242,14 @@ export function SlideCyberglossaryTraffic({ onNavigateHome }: { onNavigateHome?:
         <InsightCard
           icon={TrendingUp}
           type="info"
-          title="Partial Rebound"
-          content={`Direct traffic ticked up to ${formatNumber(18470)} in Sep 2026, from ${formatNumber(17260)} in Aug (+${(((18470 - 17260) / 17260) * 100).toFixed(1)}%) — still ${Math.abs(((18470 - 32371) / 32371) * 100).toFixed(0)}% below the Jun peak of ${formatNumber(32371)}.`}
+          title="Direct Plateau"
+          content={`Direct traffic eased to ${formatNumber(17990)} in Oct 2026, from ${formatNumber(18470)} in Sep (${(((17990 - 18470) / 18470) * 100).toFixed(1)}%) — still ${Math.abs(((17990 - 32371) / 32371) * 100).toFixed(0)}% below the Jun peak of ${formatNumber(32371)}.`}
         />
         <InsightCard
           icon={TrendingDown}
           type="warning"
           title="Branded Share Slipping"
-          content={`Branded direct traffic averaged ~2.5% of total direct visits (Jan–Jun 2026), peaking at ${formatNumber(919)} in Jun, then fell to ${formatNumber(374)} in Jul and ${formatNumber(325)} in Aug (~1.9%). Sep split not available.`}
+          content={`Branded direct traffic averaged ~2.5% of total direct visits (Jan–Jun 2026), peaking at ${formatNumber(919)} in Jun, then fell to ${formatNumber(374)} in Jul and ${formatNumber(325)} in Aug (~1.9%). Sep–Oct split not available.`}
         />
       </InsightsSection>
     );
@@ -253,7 +259,7 @@ export function SlideCyberglossaryTraffic({ onNavigateHome }: { onNavigateHome?:
     <SlideContainer slideNumber={4} onNavigateHome={onNavigateHome} source="GA & GSC">
       <SlideHeader
         title="Cyberglossary Pages"
-        subtitle="Fortinet Cyberglossary · Branded, Non-Branded & Total · Jul 2025 – Sep 2026"
+        subtitle="Fortinet Cyberglossary · Branded, Non-Branded & Total · Jul 2025 – Oct 2026"
       />
 
       <div className="flex-1 flex flex-col gap-4">
@@ -295,10 +301,10 @@ export function SlideCyberglossaryTraffic({ onNavigateHome }: { onNavigateHome?:
               <div className="px-4 py-3 bg-gray-50 border-b border-gray-200 flex items-center justify-between">
                 <div>
                   <span className="text-sm font-bold text-gray-900">Performance Tracker · Direct Traffic</span>
-                  <span className="ml-3 text-xs text-gray-500">Aug 2026 → Sep 2026</span>
+                  <span className="ml-3 text-xs text-gray-500">Sep 2026 → Oct 2026</span>
                 </div>
-                <span className="text-xs font-semibold px-2.5 py-1 bg-emerald-50 text-emerald-700 rounded-full border border-emerald-200">
-                  Top 10 Gains
+                <span className="text-xs font-semibold px-2.5 py-1 bg-red-50 text-red-700 rounded-full border border-red-200">
+                  Top 10 Losses
                 </span>
               </div>
               {/* Table */}
@@ -307,18 +313,18 @@ export function SlideCyberglossaryTraffic({ onNavigateHome }: { onNavigateHome?:
                   <tr className="bg-gray-50 border-b border-gray-200">
                     <th className="text-left px-4 py-2.5 font-semibold text-gray-600 w-[36%]">URL</th>
                     <th className="text-left px-4 py-2.5 font-semibold text-gray-600 w-[24%]">Target Keyword</th>
-                    <th className="text-right px-4 py-2.5 font-semibold text-gray-600">Aug 2026</th>
                     <th className="text-right px-4 py-2.5 font-semibold text-gray-600">Sep 2026</th>
+                    <th className="text-right px-4 py-2.5 font-semibold text-gray-600">Oct 2026</th>
                     <th className="text-right px-4 py-2.5 font-semibold text-gray-600">Change</th>
                     <th className="text-right px-4 py-2.5 font-semibold text-gray-600 pr-5">Change %</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {DIRECT_GL_DATA.map((row, i) => {
+                  {glData.map((row, i) => {
                     const slug = row.url.split('/cyberglossary/')[1] ?? '';
                     const isLoss = row.change < 0;
                     return (
-                      <tr key={i} className={`border-b border-gray-100 ${i % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'} hover:bg-emerald-50/30 transition-colors`}>
+                      <tr key={i} className={`border-b border-gray-100 ${i % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'} ${isLoss ? 'hover:bg-red-50/30' : 'hover:bg-emerald-50/30'} transition-colors`}>
                         <td className="px-4 py-2.5">
                           <a href={row.url} target="_blank" rel="noopener noreferrer"
                             className="text-blue-600 hover:text-blue-800 hover:underline transition-colors font-mono text-[11px]">
@@ -326,8 +332,8 @@ export function SlideCyberglossaryTraffic({ onNavigateHome }: { onNavigateHome?:
                           </a>
                         </td>
                         <td className="px-4 py-2.5 text-gray-700 font-medium">{row.keyword}</td>
-                        <td className="px-4 py-2.5 text-right text-gray-800 font-semibold">{row.jun.toLocaleString()}</td>
-                        <td className="px-4 py-2.5 text-right text-gray-800 font-semibold">{row.jul.toLocaleString()}</td>
+                        <td className="px-4 py-2.5 text-right text-gray-800 font-semibold">{row.prev.toLocaleString()}</td>
+                        <td className="px-4 py-2.5 text-right text-gray-800 font-semibold">{row.curr.toLocaleString()}</td>
                         <td className="px-4 py-2.5 text-right">
                           <span className={`font-bold ${isLoss ? 'text-red-600' : 'text-emerald-600'}`}>
                             {isLoss ? '' : '+'}{row.change.toLocaleString()}
@@ -336,7 +342,7 @@ export function SlideCyberglossaryTraffic({ onNavigateHome }: { onNavigateHome?:
                         <td className="px-4 py-2.5 text-right pr-5">
                           <span className={`inline-flex items-center justify-end gap-1 font-bold ${isLoss ? 'text-red-600' : 'text-emerald-600'}`}>
                             <span className={`inline-block w-1.5 h-1.5 rounded-full ${isLoss ? 'bg-red-500' : 'bg-emerald-500'}`} />
-                            {isLoss ? '' : '+'}{row.pct.toFixed(2)}%
+                            {isLoss ? '' : '+'}{row.pct.toFixed(isLoss ? 1 : 2)}%
                           </span>
                         </td>
                       </tr>
@@ -347,16 +353,16 @@ export function SlideCyberglossaryTraffic({ onNavigateHome }: { onNavigateHome?:
                   <tr className="bg-gray-100 border-t-2 border-gray-300">
                     <td colSpan={2} className="px-4 py-2.5 font-bold text-gray-800 text-xs">Total (Top 10)</td>
                     <td className="px-4 py-2.5 text-right font-bold text-gray-800">
-                      {DIRECT_GL_DATA.reduce((s, r) => s + r.jun, 0).toLocaleString()}
+                      {glPrevTotal.toLocaleString()}
                     </td>
                     <td className="px-4 py-2.5 text-right font-bold text-gray-800">
-                      {DIRECT_GL_DATA.reduce((s, r) => s + r.jul, 0).toLocaleString()}
+                      {glCurrTotal.toLocaleString()}
                     </td>
-                    <td className="px-4 py-2.5 text-right font-bold text-emerald-600">
-                      +{DIRECT_GL_DATA.reduce((s, r) => s + r.change, 0).toLocaleString()}
+                    <td className={`px-4 py-2.5 text-right font-bold ${glNeg ? 'text-red-600' : 'text-emerald-600'}`}>
+                      {glNeg ? '' : '+'}{glChangeTotal.toLocaleString()}
                     </td>
-                    <td className="px-4 py-2.5 text-right pr-5 font-bold text-emerald-600">
-                      +{((DIRECT_GL_DATA.reduce((s,r)=>s+r.jul,0) - DIRECT_GL_DATA.reduce((s,r)=>s+r.jun,0)) / DIRECT_GL_DATA.reduce((s,r)=>s+r.jun,0) * 100).toFixed(2)}%
+                    <td className={`px-4 py-2.5 text-right pr-5 font-bold ${glNeg ? 'text-red-600' : 'text-emerald-600'}`}>
+                      {glNeg ? '' : '+'}{glPctTotal.toFixed(glNeg ? 1 : 2)}%
                     </td>
                   </tr>
                 </tfoot>
@@ -416,7 +422,7 @@ export function SlideCyberglossaryTraffic({ onNavigateHome }: { onNavigateHome?:
         )}
       </div>
 
-      <SlideFooter source={`Source: ${activeTab === 'gsc' ? 'GSC' : activeTab === 'bing' ? 'Bing Webmaster Tools' : 'GA'} · Cyberglossary · ${activeTab === 'direct-gl' ? 'Aug–Sep 2026' : 'Jul 2025 – Sep 2026'}`} />
+      <SlideFooter source={`Source: ${activeTab === 'gsc' ? 'GSC' : activeTab === 'bing' ? 'Bing Webmaster Tools' : 'GA'} · Cyberglossary · ${activeTab === 'direct-gl' ? 'Sep–Oct 2026' : 'Jul 2025 – Oct 2026'}`} />
     </SlideContainer>
   );
 }

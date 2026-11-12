@@ -1,5 +1,6 @@
 import { ExternalLink, Target, Zap, Brain, Network } from 'lucide-react';
 import { useState } from 'react';
+import { ImageWithFallback } from '@/app/components/figma/ImageWithFallback';
 import {
   SlideContainer,
   SlideHeader,
@@ -17,6 +18,8 @@ import imgZeroTrustService from '../../../imports/sum_tab_3.png';
 
 // Tab 4 – Turn Key Takeaways Into AI-Search-Ready Summaries (Wiz)
 import imgStrategicCTA from '../../../imports/sum_tab_4.png';
+import imgVulnerabilityWiz from '../../../imports/sum_tab_5.png';
+import imgWizPodcast from '../../../imports/sum_tab_6.png';
 
 
 interface Finding {
@@ -40,61 +43,89 @@ interface Finding {
 const findings: Finding[] = [
   // ── Tab 1 ──────────────────────────────────────────────────────────────────
   {
-    icon: Brain,
+    icon: Network,
     color: '#F97316',
     bgColor: '#FFF7ED',
-    title: 'Turning Cybersecurity Expertise Into Brand Assets',
+    title: 'Competitor Vulnerability Databases',
     description: [
-      'Create proprietary, research-led reports that turn our cybersecurity expertise into authoritative, high-value brand assets.',
-      'Use each report to build sustained SEO/AEO visibility, thought leadership, PR, backlinks, and downstream content.',
+      'SentinelOne and Wiz have introduced dedicated, searchable vulnerability databases that centralize CVE intelligence and create durable entry points for high-intent organic discovery.',
+      'Fortinet should build a first-party vulnerability intelligence experience that connects CVE pages to FortiGuard research, affected technologies, remediation guidance, and relevant products—strengthening topical authority, backlinks, and AI citations.',
+      {
+        text: 'Wiz reference:',
+        link: 'https://www.wiz.io/vulnerability-database',
+        linkDisplay: 'wiz.io/vulnerability-database',
+      },
     ],
-    competitor: 'Check Point',
-    url: 'https://www.checkpoint.com/resources/ai-security-report-2026/',
-    urlDisplay: 'checkpoint.com/resources/ai-security-report-2026',
+    competitor: 'SentinelOne & Wiz',
+    url: 'https://www.sentinelone.com/vulnerability-database/',
+    urlDisplay: 'sentinelone.com/vulnerability-database',
     screenshot: imgZeroTrust,
+    screenshot2: imgVulnerabilityWiz,
   },
   // ── Tab 2 ──────────────────────────────────────────────────────────────────
   {
-    icon: Network,
+    icon: Brain,
     color: '#8B5CF6',
     bgColor: '#F5F3FF',
-    title: 'Competitive Shift: From Security Blogs to Threat Intelligence Hubs',
+    title: 'Wiz Expands Its Cloud Security Content Ecosystem',
     description: [
-      'Competitors are moving beyond blogs to build data-led threat intelligence hubs designed to capture broad, high-intent search demand across threats, actors, techniques, vulnerabilities, and incidents.',
-      'These evergreen hubs strengthen topical authority, improve AI/search visibility, and create scalable entry points into their broader security platforms and research.',
+      'Wiz is expanding beyond conventional articles through a connected ecosystem of vulnerability data, AI-security benchmarking, podcasts, and newsletters.',
+      'Cyber Model Arena builds authority around AI-agent evaluation, while Crying Out Cloud creates a recurring engagement channel for cloud-security audiences. Fortinet can respond with benchmark-led tools and recurring expert media tied to FortiGuard Labs.',
+      {
+        text: 'Cloud vulnerability database:',
+        link: 'https://www.cloudvulndb.org/',
+        linkDisplay: 'cloudvulndb.org',
+      },
+      {
+        text: 'Podcast and newsletter:',
+        link: 'https://www.wiz.io/crying-out-cloud',
+        linkDisplay: 'wiz.io/crying-out-cloud',
+      },
     ],
     competitor: 'Wiz',
-    url: 'https://www.wiz.io/cloud-threat-landscape',
-    urlDisplay: 'wiz.io/cloud-threat-landscape',
+    url: 'https://www.cloudvulndb.org/',
+    urlDisplay: 'cloudvulndb.org',
     screenshot: imgZeroTrustInfographic,
+    screenshot2: imgWizPodcast,
   },
   // ── Tab 3 ──────────────────────────────────────────────────────────────────
   {
-    icon: Zap,
+    icon: Target,
     color: '#0EA5E9',
     bgColor: '#F0F9FF',
-    title: 'PQC Tester: Turn Quantum Awareness Into Action',
+    title: 'Healthcare Solutions: Keyword Expansion Opportunity',
     description: [
-      'Build a Fortinet PQC Readiness Tester to turn quantum-security awareness into action.',
-      'Fortinet could create a differentiated version that uses its existing PQC expertise to generate an actionable readiness assessment and naturally connect prospects to Fortinet\'s quantum-safe solutions.',
+      'SentinelOne uses explicit healthcare-search language around ransomware, clinical systems, patient data, lean security teams, and rapid threat response.',
+      'Fortinet’s healthcare page should expand non-branded coverage across healthcare cybersecurity, HIPAA compliance, ransomware protection, IoMT security, patient-data protection, medical-device security, and clinical resilience.',
+      {
+        text: 'Fortinet page to optimize:',
+        link: 'https://www.fortinet.com/solutions/industries/healthcare',
+        linkDisplay: 'fortinet.com/solutions/industries/healthcare',
+      },
     ],
-    competitor: 'Wiz',
-    url: 'https://www.wiz.io/pqc-tester',
-    urlDisplay: 'wiz.io/pqc-tester',
+    competitor: 'SentinelOne',
+    url: 'https://www.sentinelone.com/platform/healthcare/',
+    urlDisplay: 'sentinelone.com/platform/healthcare',
     screenshot: imgZeroTrustService,
   },
   // ── Tab 4 ──────────────────────────────────────────────────────────────────
   {
-    icon: Target,
+    icon: Zap,
     color: '#F59E0B',
     bgColor: '#FEF3C7',
-    title: 'Turn Key Takeaways Into an AI-Search-Ready Summary',
+    title: 'Cybersecurity AI: Dedicated Research Labs',
     description: [
-      'Create concise, answer-ready summaries that help users quickly grasp the topic while giving search engines and AI platforms clear, authoritative information to surface.',
+      'CrowdStrike’s Cyber Superintelligence Lab creates a differentiated home for AI-driven cybersecurity research, innovation, and emerging capabilities.',
+      'Fortinet should consolidate AI-security research into a clearly branded lab or research hub, supported by benchmark studies, technical findings, researcher profiles, and recurring publications that strengthen thought leadership and AI-search authority.',
+      {
+        text: 'Research hub:',
+        link: 'https://www.crowdstrike.com/en-us/about-us/cyber-superintelligence-lab/research/',
+        linkDisplay: 'crowdstrike.com/cyber-superintelligence-lab/research',
+      },
     ],
-    competitor: 'Wiz',
-    url: 'https://www.wiz.io/academy/ai-guardrails',
-    urlDisplay: 'wiz.io/academy/ai-guardrails',
+    competitor: 'CrowdStrike',
+    url: 'https://www.crowdstrike.com/en-us/about-us/cyber-superintelligence-lab/',
+    urlDisplay: 'crowdstrike.com/cyber-superintelligence-lab',
     screenshot: imgStrategicCTA,
   },
 ];
@@ -104,10 +135,10 @@ export function SlideCompetitiveFindings({ onNavigateHome }: { onNavigateHome?: 
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
 
   return (
-    <SlideContainer slideNumber={23} onNavigateHome={onNavigateHome} source="">
+    <SlideContainer slideNumber={46} onNavigateHome={onNavigateHome} source="Website Experience · Oct 2026">
       <SlideHeader
         title="Web Experience"
-        subtitle="Strategic Observations from Competitor Websites"
+        subtitle="Strategic Observations from Competitor Websites · Oct 2026"
       />
 
       <div className="flex-1 flex flex-col gap-4 pb-4 overflow-hidden">
@@ -217,7 +248,7 @@ export function SlideCompetitiveFindings({ onNavigateHome }: { onNavigateHome?: 
                   className="bg-white rounded-lg shadow-sm overflow-hidden cursor-zoom-in hover:shadow-md transition-shadow"
                   onClick={() => setLightboxImage(findings[selectedFinding].screenshot!)}
                 >
-                  <img
+                  <ImageWithFallback
                     src={findings[selectedFinding].screenshot}
                     alt={findings[selectedFinding].title}
                     className="w-full h-auto object-contain"
@@ -250,7 +281,7 @@ export function SlideCompetitiveFindings({ onNavigateHome }: { onNavigateHome?: 
                       className="bg-white rounded-lg shadow-sm overflow-hidden cursor-zoom-in hover:shadow-md transition-shadow"
                       onClick={() => setLightboxImage(findings[selectedFinding].screenshot2!)}
                     >
-                      <img
+                      <ImageWithFallback
                         src={findings[selectedFinding].screenshot2}
                         alt={`${findings[selectedFinding].title} 2`}
                         className="w-full h-auto object-contain"
@@ -270,7 +301,7 @@ export function SlideCompetitiveFindings({ onNavigateHome }: { onNavigateHome?: 
                       className="bg-white rounded-lg shadow-sm overflow-hidden cursor-zoom-in hover:shadow-md transition-shadow"
                       onClick={() => setLightboxImage(findings[selectedFinding].screenshot3!)}
                     >
-                      <img
+                      <ImageWithFallback
                         src={findings[selectedFinding].screenshot3}
                         alt={`${findings[selectedFinding].title} 3`}
                         className="w-full h-auto object-contain"
@@ -290,7 +321,7 @@ export function SlideCompetitiveFindings({ onNavigateHome }: { onNavigateHome?: 
                       className="bg-white rounded-lg shadow-sm overflow-hidden cursor-zoom-in hover:shadow-md transition-shadow"
                       onClick={() => setLightboxImage(findings[selectedFinding].screenshot4!)}
                     >
-                      <img
+                      <ImageWithFallback
                         src={findings[selectedFinding].screenshot4}
                         alt={`${findings[selectedFinding].title} 4`}
                         className="w-full h-auto object-contain"
@@ -310,7 +341,7 @@ export function SlideCompetitiveFindings({ onNavigateHome }: { onNavigateHome?: 
                       className="bg-white rounded-lg shadow-sm overflow-hidden cursor-zoom-in hover:shadow-md transition-shadow"
                       onClick={() => setLightboxImage(findings[selectedFinding].screenshot5!)}
                     >
-                      <img
+                      <ImageWithFallback
                         src={findings[selectedFinding].screenshot5}
                         alt={`${findings[selectedFinding].title} 5`}
                         className="w-full h-auto object-contain"
@@ -345,7 +376,7 @@ export function SlideCompetitiveFindings({ onNavigateHome }: { onNavigateHome?: 
             ×
           </button>
           <div className="max-w-7xl max-h-full overflow-auto">
-            <img
+            <ImageWithFallback
               src={lightboxImage}
               alt="Enlarged view"
               className="w-auto h-auto max-w-full max-h-[90vh] rounded-lg shadow-2xl"
@@ -355,7 +386,7 @@ export function SlideCompetitiveFindings({ onNavigateHome }: { onNavigateHome?: 
         </div>
       )}
 
-      <SlideFooter />
+      <SlideFooter source="Source: Website Experience Review · Oct 2026" />
     </SlideContainer>
   );
 }

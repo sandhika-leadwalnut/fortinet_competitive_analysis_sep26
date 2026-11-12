@@ -37,35 +37,35 @@ const VENDORS = [
   { id: 'wiz',        name: 'Wiz',            color: '#06B6D4' },
 ];
 
-// ─── Referring Domains — Jul 2025 → Sep 2026 (Source: SEMrush, Location: WW) ─
+// ─── Referring Domains — Jul 2025 → Oct 2026 (Source: SEMrush, Location: WW) ─
 const REFERRING_DOMAINS_DATA_INITIAL: Record<string, number[]> = {
-  fortinet:    [54366,  54824,  54764,  55753,  55664,  55539,  54676,  54800,  55722,  56003,  56986,  57236,  57802,  58562, 59660],
-  paloalto:    [42176,  42110,  41804,  43395,  43492,  42913,  42607,  43274,  44892,  45762,  47306,  48365,  49145,  52803, 56353],
-  checkpoint:  [59363,  59664,  59675,  60931,  61349,  60699,  60302,  60848,  62166,  63298,  64851,  65817,  66855,  68070, 69987],
-  hpe:         [84611,  84164,  83241,  84928,  85049,  81908,  79383,  78234,  79355,  81050,  82022,  81615,  81152,  81327, 82030],
-  cisco:       [238434, 239069, 238654, 240813, 238909, 234233, 231358, 234186, 239850, 241636, 245197, 244423, 246769, 247714, 246832],
-  crowdstrike: [39155,  39201,  39187,  39829,  41063,  40497,  40061,  40158,  41103,  41692,  42786,  43021,  43987,  44901, 46816],
-  cato:        [5142,   5337,   5440,   5740,   6034,   6142,   6337,   6341,   6466,   6531,   6657,   6682,   6997,   7306, 7871],
-  sentinelone: [19295,  19329,  19424,  20013,  20742,  20604,  20452,  20615,  21187,  21705,  22579,  22811,  23396,  24405, 25667],
-  wiz:         [12572,  12889,  13081,  13660,  14318,  14615,  14732,  15484,  16189,  16931,  17960,  18286,  18916,  20413, 21550],
+  fortinet:    [54366,  54824,  54764,  55753,  55664,  55539,  54676,  54800,  55722,  56003,  56986,  57236,  57802,  58562, 59660, 66667],
+  paloalto:    [42176,  42110,  41804,  43395,  43492,  42913,  42607,  43274,  44892,  45762,  47306,  48365,  49145,  52803, 56353, 68036],
+  checkpoint:  [59363,  59664,  59675,  60931,  61349,  60699,  60302,  60848,  62166,  63298,  64851,  65817,  66855,  68070, 69987, 77458],
+  hpe:         [84611,  84164,  83241,  84928,  85049,  81908,  79383,  78234,  79355,  81050,  82022,  81615,  81152,  81327, 82030, 90866],
+  cisco:       [238434, 239069, 238654, 240813, 238909, 234233, 231358, 234186, 239850, 241636, 245197, 244423, 246769, 247714, 246832, 256320],
+  crowdstrike: [39155,  39201,  39187,  39829,  41063,  40497,  40061,  40158,  41103,  41692,  42786,  43021,  43987,  44901, 46816, 57573],
+  cato:        [5142,   5337,   5440,   5740,   6034,   6142,   6337,   6341,   6466,   6531,   6657,   6682,   6997,   7306, 7871, 10901],
+  sentinelone: [19295,  19329,  19424,  20013,  20742,  20604,  20452,  20615,  21187,  21705,  22579,  22811,  23396,  24405, 25667, 31128],
+  wiz:         [12572,  12889,  13081,  13660,  14318,  14615,  14732,  15484,  16189,  16931,  17960,  18286,  18916,  20413, 21550, 30312],
 };
 
-// ─── Backlinks — Jul 2025 → Sep 2026 (Source: SEMrush, Location: WW) ─────────
+// ─── Backlinks — Jul 2025 → Oct 2026 (Source: SEMrush, Location: WW) ─────────
 const BACKLINKS_DATA_INITIAL: Record<string, number[]> = {
-  fortinet:    [3170000,  2920000,  2990000,  2960000,  2780000,  2780000,  2800000,  2810000,  3060000,  3090000,  3110000,  3180000,  3280000,  3683570, 3868813],
-  paloalto:    [3350000,  3320000,  3150000,  3070000,  2980000,  2660000,  2580000,  2600000,  2640000,  2690000,  2860000,  2770000,  2910000,  3307889, 3560135],
-  checkpoint:  [5760000,  5880000,  6730000,  7200000,  6810000,  6500000,  5860000,  5660000,  5670000,  4310000,  4090000,  4230000,  4390000,  4632630, 5271420],
-  hpe:         [24370000, 23720000, 23100000, 27620000, 29960000, 29890000, 29640000, 29590000, 29570000, 28750000, 25480000, 22450000, 21670000, 21684993, 21884238],
-  cisco:       [43220000, 44410000, 43920000, 48290000, 49870000, 48050000, 46710000, 46300000, 48610000, 51020000, 48650000, 49420000, 51180000, 55026377, 57790017],
-  crowdstrike: [1690000,  1660000,  1620000,  1670000,  1690000,  1560000,  1400000,  1410000,  1440000,  1400000,  1230000,  1200000,  1120000,  1116642, 1171861],
-  cato:        [1080000,  714300,   362500,   166150,   108680,   105410,   119310,   137720,   163460,   182280,   214240,   244300,   282990,   293068, 295767],
-  sentinelone: [1120000,  1116520,  1304790,  1458140,  1370330,  1224920,  1083970,  1057850,  1056520,  832590,   707030,   697530,   603290,   594340, 617767],
-  wiz:         [3050000,  2950000,  2580000,  2250000,  2080000,  1820000,  1750000,  1670000,  1550000,  1380000,  1260000,  1120000,   930000,   891791, 797086],
+  fortinet:    [3170000,  2920000,  2990000,  2960000,  2780000,  2780000,  2800000,  2810000,  3060000,  3090000,  3110000,  3180000,  3280000,  3683570, 3868813, 4080424],
+  paloalto:    [3350000,  3320000,  3150000,  3070000,  2980000,  2660000,  2580000,  2600000,  2640000,  2690000,  2860000,  2770000,  2910000,  3307889, 3560135, 3992833],
+  checkpoint:  [5760000,  5880000,  6730000,  7200000,  6810000,  6500000,  5860000,  5660000,  5670000,  4310000,  4090000,  4230000,  4390000,  4632630, 5271420, 5915902],
+  hpe:         [24370000, 23720000, 23100000, 27620000, 29960000, 29890000, 29640000, 29590000, 29570000, 28750000, 25480000, 22450000, 21670000, 21684993, 21884238, 23126918],
+  cisco:       [43220000, 44410000, 43920000, 48290000, 49870000, 48050000, 46710000, 46300000, 48610000, 51020000, 48650000, 49420000, 51180000, 55026377, 57790017, 63756506],
+  crowdstrike: [1690000,  1660000,  1620000,  1670000,  1690000,  1560000,  1400000,  1410000,  1440000,  1400000,  1230000,  1200000,  1120000,  1116642, 1171861, 1603743],
+  cato:        [1080000,  714300,   362500,   166150,   108680,   105410,   119310,   137720,   163460,   182280,   214240,   244300,   282990,   293068, 295767, 310827],
+  sentinelone: [1120000,  1116520,  1304790,  1458140,  1370330,  1224920,  1083970,  1057850,  1056520,  832590,   707030,   697530,   603290,   594340, 617767, 666717],
+  wiz:         [3050000,  2950000,  2580000,  2250000,  2080000,  1820000,  1750000,  1670000,  1550000,  1380000,  1260000,  1120000,   930000,   891791, 797086, 897164],
 };
 
 // ─── Month helpers ────────────────────────────────────────────────────────────
 const MONTH_KEYS = [
-  '2025-07','2025-08','2025-09','2025-10','2025-11','2025-12','2026-01','2026-02','2026-03','2026-04','2026-05','2026-06','2026-07','2026-08','2026-09',
+  '2025-07','2025-08','2025-09','2025-10','2025-11','2025-12','2026-01','2026-02','2026-03','2026-04','2026-05','2026-06','2026-07','2026-08','2026-09','2026-10',
 ];
 
 const formatMonth = (key: string) => {
@@ -77,6 +77,7 @@ const formatMonth = (key: string) => {
     '2026-07': 'Jul-26',
     '2026-08': 'Aug-26',
     '2026-09': 'Sep-26',
+    '2026-10': 'Oct-26',
   };
   return map[key] ?? key;
 };
@@ -162,13 +163,13 @@ export function SlideBacklinks({ onNavigateHome }: { onNavigateHome?: () => void
             icon={TrendingUp}
             type="success"
             title="Fortinet"
-            content="From Jul 2025 to Sep 2026, domains grew 54.4K → 59.7K (+9.7%), Wiz surged 12.6K → 21.6K (+71.4%)."
+            content="From Jul 2025 to Oct 2026, domains grew 54.4K → 66.7K (+22.6%), Wiz grew 12.6K → 30.3K (+141.1%); Fortinet Oct MoM +11.7% — Oct step-up is across all vendors (+4% Cisco to +41% Wiz), likely an index refresh."
           />
           <InsightCard
             icon={TrendingUp}
             type="success"
             title="Competitions"
-            content="From Jul 2025 to Sep 2026, Cisco grew 238.4K → 246.8K (+3.5%), Check Point grew 59.4K → 70.0K (+17.9%)."
+            content="From Jul 2025 to Oct 2026, Cisco grew 238.4K → 256.3K (+7.5%), Check Point grew 59.4K → 77.5K (+30.5%); Oct MoM: Cisco +3.8%, Check Point +10.7%."
           />
         </InsightsSection>
       );
@@ -179,13 +180,13 @@ export function SlideBacklinks({ onNavigateHome }: { onNavigateHome?: () => void
           icon={TrendingUp}
           type="success"
           title="Cisco Leads in Volume"
-          content="Cisco leads Sep 2026 with 57.8M backlinks — 2.6× HPE (21.9M). HPE is down 10% since Jul 2025 (24.4M) and flat Aug → Sep; its totals reflect the Juniper Networks acquisition, where redirected Juniper.net URLs are counted as new backlinks rather than organic growth."
+          content="Cisco leads Oct 2026 with 63.8M backlinks — 2.8× HPE (23.1M). HPE is down 5% since Jul 2025 (24.4M) and up 6% Sep → Oct; its totals reflect the Juniper Networks acquisition, where redirected Juniper.net URLs are counted as new backlinks rather than organic growth."
         />
         <InsightCard
           icon={TrendingDown}
           type="error"
           title="Fortinet & Peers"
-          content="From Jul 2025 to Sep 2026, Fortinet grew 3.17M → 3.87M (+22.0%). Wiz dropped 3.05M → 0.80M (−73.9%). Palo Alto grew 3.35M → 3.56M (+6.3%), SentinelOne fell 1.12M → 0.62M (−44.8%)."
+          content="From Jul 2025 to Oct 2026, Fortinet grew 3.17M → 4.08M (+28.7%). Wiz dropped 3.05M → 0.90M (−70.6%). Palo Alto grew 3.35M → 3.99M (+19.2%), SentinelOne fell 1.12M → 0.67M (−40.5%)."
         />
       </InsightsSection>
     );
@@ -193,7 +194,7 @@ export function SlideBacklinks({ onNavigateHome }: { onNavigateHome?: () => void
 
   // ── Performance summary (May 2026, index 10) ──────────────────────────────
   const getPerformanceSummary = () => {
-    const latestIndex = 14; // Sep 2026
+    const latestIndex = 15; // Oct 2026
     const dataSource = activeTab === 'referringDomains'
       ? editableData.referringDomains
       : editableData.backlinks;
@@ -216,7 +217,7 @@ export function SlideBacklinks({ onNavigateHome }: { onNavigateHome?: () => void
         <div className="bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-300 rounded-xl p-4 shadow-sm">
           <div className="flex items-center gap-1.5 mb-2">
             <Trophy className="w-4 h-4 text-green-600" />
-            <span className="text-xs font-bold text-green-800 uppercase tracking-wide">Sep 2026 Standing</span>
+            <span className="text-xs font-bold text-green-800 uppercase tracking-wide">Oct 2026 Standing</span>
           </div>
           <div className="space-y-1">
             <div className="flex justify-between">
@@ -242,7 +243,7 @@ export function SlideBacklinks({ onNavigateHome }: { onNavigateHome?: () => void
         <div className="bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-orange-300 rounded-xl p-4 shadow-sm">
           <div className="flex items-center gap-1.5 mb-2">
             <Target className="w-4 h-4 text-orange-600" />
-            <span className="text-xs font-bold text-orange-800 uppercase tracking-wide">Sep 2026 Standing</span>
+            <span className="text-xs font-bold text-orange-800 uppercase tracking-wide">Oct 2026 Standing</span>
           </div>
           <div className="space-y-1">
             <div className="flex justify-between">
@@ -277,7 +278,7 @@ export function SlideBacklinks({ onNavigateHome }: { onNavigateHome?: () => void
     <SlideContainer slideNumber={23} onNavigateHome={onNavigateHome}>
       <SlideHeader
         title="Competitions Backlink Performance"
-        subtitle="(Jul 2025 – Sep 2026) • Location: WW"
+        subtitle="(Jul 2025 – Oct 2026) • Location: WW"
       />
 
       <div className="flex-1 flex flex-col gap-4 overflow-hidden">

@@ -20,12 +20,12 @@ const VENDORS = [
   { id: 'crowdstrike', name: 'CrowdStrike',  color: '#1F2937' },
 ];
 
-const MONTHS = ['2025-12','2026-01','2026-02','2026-03','2026-04','2026-05','2026-06','2026-07','2026-08','2026-09'];
+const MONTHS = ['2025-12','2026-01','2026-02','2026-03','2026-04','2026-05','2026-06','2026-07','2026-08','2026-09','2026-10'];
 
 const formatMonth = (key: string) => {
   const map: Record<string,string> = {
     '2025-12':'Dec-25','2026-01':'Jan-26','2026-02':'Feb-26','2026-03':'Mar-26',
-    '2026-04':'Apr-26','2026-05':'May-26','2026-06':'Jun-26','2026-07':'Jul-26','2026-08':'Aug-26','2026-09':'Sep-26',
+    '2026-04':'Apr-26','2026-05':'May-26','2026-06':'Jun-26','2026-07':'Jul-26','2026-08':'Aug-26','2026-09':'Sep-26','2026-10':'Oct-26',
   };
   return map[key] ?? key;
 };
@@ -43,12 +43,12 @@ const formatAxis = (v: number, isValue = false, short = false) => {
 type VendorMetrics = { keywords: number[]; traffic: number[]; value: number[]; pages: number[] };
 
 const DATA: Record<string, VendorMetrics> = {
-  fortinet:   { keywords: [60,60,56,60,54,56,42,40,36,41],       traffic: [1400,1300,1600,1800,1800,1700,693,632,583,1000],  value: [1500,1500,1800,1700,1700,1700,1200,1200,1200,1100], pages: [8922,9100,9180,10126,9887,9144,9000,8720,8529,9361] },
-  cisco:      { keywords: [3,3,3,3,2,2,2,1,1,1],                traffic: [38,48,47,56,48,43,38,31,27,25],                 value: [95,119,127,142,122,118,112,98,97,72],             pages: [38360,37019,36865,44902,41599,35379,33974,30427,28244,34289] },
-  hpe:        { keywords: [8,8,8,8,6,7,7,6,6,6],                traffic: [69,68,70,68,69,71,64,62,56,68],                 value: [142,138,137,144,136,139,138,138,123,107],          pages: [19385,18935,18919,22696,21019,18483,17509,15614,13507,17537] },
-  paloalto:   { keywords: [20,21,20,23,20,22,20,19,17,18],        traffic: [361,603,526,614,738,801,380,315,301,454],        value: [1000,1500,1300,1400,1500,1600,1400,1300,1500,1100], pages: [2361,2369,2494,2857,2846,2590,2514,2339,2217,2583] },
-  checkpoint: { keywords: [17,17,15,15,12,12,9,7,6,9],           traffic: [210,209,166,290,264,363,240,69,59,185],          value: [234,307,191,357,312,362,280,209,147,200],          pages: [6893,6850,6950,7856,7807,7273,6956,6577,6003,6549] },
-  crowdstrike:{ keywords: [0,0,0,0,0,0,0,0,0,0],                 traffic: [0,0,0,0,0,0,0,0,0,0],                           value: [0,0,0,0,0,0,0,0,1,1],                             pages: [3897,3866,4010,4630,4711,4395,4458,4288,4279,4687] },
+  fortinet:   { keywords: [60,60,56,60,54,56,42,40,36,41,36],       traffic: [1400,1300,1600,1800,1800,1700,693,632,583,1000,540],  value: [1500,1500,1800,1700,1700,1700,1200,1200,1200,1100,1100], pages: [8922,9100,9180,10126,9887,9144,9000,8720,8529,9361,8933] },
+  cisco:      { keywords: [3,3,3,3,2,2,2,1,1,1,2],                traffic: [38,48,47,56,48,43,38,31,27,25,22],                 value: [95,119,127,142,122,118,112,98,97,72,82],             pages: [38360,37019,36865,44902,41599,35379,33974,30427,28244,34289,19651] },
+  hpe:        { keywords: [8,8,8,8,6,7,7,6,6,6,7],                traffic: [69,68,70,68,69,71,64,62,56,68,51],                 value: [142,138,137,144,136,139,138,138,123,107,130],          pages: [19385,18935,18919,22696,21019,18483,17509,15614,13507,17537,16885] },
+  paloalto:   { keywords: [20,21,20,23,20,22,20,19,17,18,16],        traffic: [361,603,526,614,738,801,380,315,301,454,214],        value: [1000,1500,1300,1400,1500,1600,1400,1300,1500,1100,1200], pages: [2361,2369,2494,2857,2846,2590,2514,2339,2217,2583,2531] },
+  checkpoint: { keywords: [17,17,15,15,12,12,9,7,6,9,6],           traffic: [210,209,166,290,264,363,240,69,59,185,65],          value: [234,307,191,357,312,362,280,209,147,200,169],          pages: [6893,6850,6950,7856,7807,7273,6956,6577,6003,6549,6262] },
+  crowdstrike:{ keywords: [0,0,0,0,0,0,0,0,0,0,5],                 traffic: [0,0,0,0,0,0,0,0,0,0,18],                           value: [0,0,0,0,0,0,0,0,1,1,26],                             pages: [3897,3866,4010,4630,4711,4395,4458,4288,4279,4687,4089] },
 };
 
 const METRIC_OPTS: { id: MetricKey; label: string }[] = [
@@ -110,57 +110,57 @@ export function SlideCyberglossaryKeywords({ onNavigateHome }: { onNavigateHome?
     return dp;
   });
 
-  const ftLatest = DATA.fortinet[metric][9]; const ftFirst = DATA.fortinet[metric][0];
+  const L = MONTHS.length - 1;
+  const ftLatest = DATA.fortinet[metric][L]; const ftFirst = DATA.fortinet[metric][0];
   const ftPeak   = Math.max(...DATA.fortinet[metric]);
   const ftPeakIdx = DATA.fortinet[metric].indexOf(ftPeak);
-  const paLatest = DATA.paloalto[metric][9]; const paFirst = DATA.paloalto[metric][0];
+  const paLatest = DATA.paloalto[metric][L];
   const paPeak   = Math.max(...DATA.paloalto[metric]);
-  const cpLatest = DATA.checkpoint[metric][9]; const cpFirst = DATA.checkpoint[metric][0];
+  const cpLatest = DATA.checkpoint[metric][L];
 
   const renderInsights = () => {
     if (metric === 'keywords') return (
       <InsightsSection>
         <InsightCard icon={TrendingDown} type="warning" title="Fortinet KW Decline"
-          content={`Fortinet cyberglossary keywords dropped from 60 (Dec–Jan) to 41 in Sep 2026 (−32%). This significant reduction may reflect keyword de-duplication or ranking losses.`} />
+          content={`Fortinet cyberglossary keywords fell to 36 in Oct 2026 (−12% MoM; −40% vs Dec). The footprint is back at the Jul–Aug low, indicating renewed ranking contraction.`} />
         <InsightCard icon={TrendingDown} type="error" title="Check Point Collapsing"
-          content={`Check Point keywords fell from 17 to 9 (−47% Dec→Sep) — the steepest decline of any vendor with 10+ keywords (rebounding slightly from 6 in Aug). Cisco also shrinking: 3 → 1. Both lost cyberglossary search visibility.`} />
+          content={`Check Point fell to 6 keywords (−33% MoM; −65% vs Dec). Palo Alto also declined to 16, while CrowdStrike entered the tracked set with 5 keywords and Cisco recovered from 1 to 2.`} />
         <InsightCard icon={TrendingUp} type="info" title="Fortinet Still Leads"
-          content={`Despite declining, Fortinet at ${formatAxis(ftLatest)} keywords leads Palo Alto (#2 at ${formatAxis(DATA.paloalto.keywords[9])}) by ${(ftLatest/DATA.paloalto.keywords[9]).toFixed(1)}×. Palo Alto keywords remain relatively stable in the 17–23 range.`} />
+          content={`Fortinet still leads with ${formatAxis(ftLatest)} keywords, ${((ftLatest / DATA.paloalto.keywords[L] - 1) * 100).toFixed(0)}% ahead of Palo Alto at ${formatAxis(DATA.paloalto.keywords[L])}. Leadership remains meaningful, but both vendors lost coverage in October.`} />
       </InsightsSection>
     );
     if (metric === 'traffic') return (
       <InsightsSection>
-        <InsightCard icon={TrendingDown} type="error" title="Fortinet Traffic Crash, Sep Rebound"
-          content={`Fortinet cyberglossary traffic collapsed from ${formatAxis(ftPeak)} (${formatMonth(MONTHS[ftPeakIdx])}) to a low of ${formatAxis(DATA.fortinet.traffic[8])} in Aug, rebounding to ${formatAxis(ftLatest)} in Sep 2026 — still −${(((ftPeak-ftLatest)/ftPeak)*100).toFixed(0)}% vs peak. Needs diagnosis.`} />
+        <InsightCard icon={TrendingDown} type="error" title="Fortinet Traffic Reverses"
+          content={`Fortinet cyberglossary traffic fell from ${formatAxis(DATA.fortinet.traffic[L - 1])} in Sep to ${formatAxis(ftLatest)} in Oct (−${(((DATA.fortinet.traffic[L - 1] - ftLatest) / DATA.fortinet.traffic[L - 1]) * 100).toFixed(0)}% MoM), now −${(((ftPeak-ftLatest)/ftPeak)*100).toFixed(0)}% below the ${formatMonth(MONTHS[ftPeakIdx])} peak.`} />
         <InsightCard icon={TrendingUp} type="success" title="Palo Alto Peak"
-          content={`Palo Alto reached ${formatAxis(paPeak)} organic traffic in May 2026 — at ${formatAxis(paLatest)} in Sep 2026 (−${(((paPeak-paLatest)/paPeak)*100).toFixed(0)}% from peak). Gap with Fortinet narrowed since Dec (26% → 45% of Fortinet's traffic) despite a much lower keyword count.`} />
-        <InsightCard icon={TrendingDown} type="warning" title="Check Point Aug Low"
-          content={`Check Point traffic fell from ${formatAxis(DATA.checkpoint.traffic[5])} (May peak) a low of ${formatAxis(DATA.checkpoint.traffic[8])} in Aug, then ${formatAxis(cpLatest)} in Sep 2026 — still a ${(((DATA.checkpoint.traffic[5]-cpLatest)/DATA.checkpoint.traffic[5])*100).toFixed(0)}% drop vs May. Likely an algorithm impact.`} />
+          content={`Palo Alto dropped to ${formatAxis(paLatest)} in Oct (−${(((DATA.paloalto.traffic[L - 1] - paLatest) / DATA.paloalto.traffic[L - 1]) * 100).toFixed(0)}% MoM) and remains −${(((paPeak-paLatest)/paPeak)*100).toFixed(0)}% below its peak. Fortinet still leads traffic by ${(ftLatest / paLatest).toFixed(1)}×.`} />
+        <InsightCard icon={AlertTriangle} type="warning" title="Broad October Contraction"
+          content={`Check Point traffic fell to ${formatAxis(cpLatest)} (−${(((DATA.checkpoint.traffic[L - 1] - cpLatest) / DATA.checkpoint.traffic[L - 1]) * 100).toFixed(0)}% MoM), while HPE declined 25% and Cisco 12%. The cross-vendor drop warrants an Ahrefs methodology check alongside page-level ranking analysis.`} />
       </InsightsSection>
     );
     if (metric === 'value') return (
       <InsightsSection>
         <InsightCard icon={TrendingDown} type="error" title="Fortinet Value Drop"
-          content={`Fortinet traffic value dropped from ${formatAxis(ftPeak, true)} peak to ${formatAxis(ftLatest, true)} in Sep 2026 (−${(((ftPeak-ftLatest)/ftPeak)*100).toFixed(0)}%). The $1.1K value now only ties Palo Alto for the lead and the decline signals lost high-value keyword rankings.`} />
+          content={`Fortinet traffic value held at ${formatAxis(ftLatest, true)} in Oct, still −${(((ftPeak-ftLatest)/ftPeak)*100).toFixed(0)}% below peak. Stable value despite lower traffic suggests the remaining rankings skew toward higher-value queries.`} />
         <InsightCard icon={TrendingUp} type="success" title="Palo Alto Value Strong"
-          content={`Palo Alto achieved ${formatAxis(paPeak, true)} peak traffic value in May 2026, at ${formatAxis(paLatest, true)} in Sep 2026. Level with Fortinet in absolute value (both $1,100) despite far fewer pages.`} />
+          content={`Palo Alto rose to ${formatAxis(paLatest, true)} in Oct (+9% MoM) and moved ahead of Fortinet by ${formatAxis(paLatest - ftLatest, true)} despite operating with far fewer indexed pages.`} />
         <InsightCard icon={TrendingUp} type="info" title="HPE Most Stable"
-          content={`HPE traffic value ranges ${formatAxis(Math.min(...DATA.hpe.value), true)}–${formatAxis(Math.max(...DATA.hpe.value), true)} — the narrowest relative swing of any vendor, though it eased to ${formatAxis(DATA.hpe.value[9], true)} in Sep.`} />
+          content={`HPE recovered to ${formatAxis(DATA.hpe.value[L], true)} (+21% MoM), while Cisco improved to ${formatAxis(DATA.cisco.value[L], true)}. Check Point declined 16% to ${formatAxis(DATA.checkpoint.value[L], true)}.`} />
       </InsightsSection>
     );
     // pages
-    const ciscoPagesLatest = DATA.cisco.pages[9]; const ciscoPagesFirst = DATA.cisco.pages[0];
-    const ciscoPeak = Math.max(...DATA.cisco.pages); const ciscoPeakMo = MONTHS[DATA.cisco.pages.indexOf(ciscoPeak)];
-    const ftPagesLatest = DATA.fortinet.pages[9]; const ftPagesFirst = DATA.fortinet.pages[0];
-    const hpePagesLatest = DATA.hpe.pages[9]; const hpePeakPages = Math.max(...DATA.hpe.pages);
+    const ciscoPagesLatest = DATA.cisco.pages[L];
+    const ftPagesLatest = DATA.fortinet.pages[L];
+    const hpePagesLatest = DATA.hpe.pages[L];
     return (
       <InsightsSection>
         <InsightCard icon={TrendingDown} type="warning" title="Industry-Wide Page Drop"
-          content={`All vendors peaked in Mar–Apr 2026, declined into Jul–Aug, then partly rebounded in Sep. Cisco peaked at ${formatAxis(ciscoPeak)} pages (${formatMonth(ciscoPeakMo)}) and sits at ${formatAxis(ciscoPagesLatest)} in Sep 2026 — a ${(((ciscoPeak-ciscoPagesLatest)/ciscoPeak)*100).toFixed(0)}% drop.`} />
+          content={`Indexed pages fell across all six vendors in Oct. Cisco recorded the largest decline, dropping from ${formatAxis(DATA.cisco.pages[L - 1])} to ${formatAxis(ciscoPagesLatest)} (−${(((DATA.cisco.pages[L - 1] - ciscoPagesLatest) / DATA.cisco.pages[L - 1]) * 100).toFixed(0)}% MoM).`} />
         <InsightCard icon={TrendingDown} type="error" title="Fortinet Pages Declining"
-          content={`Fortinet cyberglossary pages dropped from ${formatAxis(Math.max(...DATA.fortinet.pages))} (Mar peak) to ${formatAxis(DATA.fortinet.pages[8])} in Aug, then ${formatAxis(ftPagesLatest)} in Sep 2026 (−${(((Math.max(...DATA.fortinet.pages)-ftPagesLatest)/Math.max(...DATA.fortinet.pages))*100).toFixed(0)}%). Monitor for index coverage issues.`} />
+          content={`Fortinet pages eased to ${formatAxis(ftPagesLatest)} in Oct (−${(((DATA.fortinet.pages[L - 1] - ftPagesLatest) / DATA.fortinet.pages[L - 1]) * 100).toFixed(1)}% MoM; −${(((Math.max(...DATA.fortinet.pages)-ftPagesLatest)/Math.max(...DATA.fortinet.pages))*100).toFixed(0)}% vs peak). Check removals, canonicals and index coverage.`} />
         <InsightCard icon={TrendingDown} type="info" title="HPE Page Decline"
-          content={`HPE pages fell from ${formatAxis(hpePeakPages)} (Mar peak) to ${formatAxis(hpePagesLatest)} by Sep 2026 (−${(((hpePeakPages-hpePagesLatest)/hpePeakPages)*100).toFixed(0)}%), up from ${formatAxis(DATA.hpe.pages[8])} in Aug. Cisco had the largest absolute drop; Palo Alto remains lowest across all months at 2.2K–2.9K pages.`} />
+          content={`HPE declined to ${formatAxis(hpePagesLatest)} (−4% MoM), Check Point to ${formatAxis(DATA.checkpoint.pages[L])} (−4%), and CrowdStrike to ${formatAxis(DATA.crowdstrike.pages[L])} (−13%). The synchronized contraction may reflect Ahrefs recrawling as well as real index loss.`} />
       </InsightsSection>
     );
   };
@@ -170,7 +170,7 @@ export function SlideCyberglossaryKeywords({ onNavigateHome }: { onNavigateHome?
     <SlideContainer slideNumber={29} onNavigateHome={onNavigateHome} source="Ahrefs">
       <SlideHeader
         title="Cyberglossary Organic Keyword & Traffic"
-        subtitle="Organic Keywords, Traffic, Traffic Value & Indexed Pages · Dec 2025 – Sep 2026"
+        subtitle="Organic Keywords, Traffic, Traffic Value & Indexed Pages · Dec 2025 – Oct 2026"
       />
 
       <div className="flex-1 flex flex-col gap-3">
@@ -211,7 +211,7 @@ export function SlideCyberglossaryKeywords({ onNavigateHome }: { onNavigateHome?
         </div>
       </div>
 
-      <SlideFooter source="Source: Ahrefs · Cyberglossary Organic Data · Dec 2025 – Sep 2026" />
+      <SlideFooter source="Source: Ahrefs · Cyberglossary Organic Data · Dec 2025 – Oct 2026" />
     </SlideContainer>
   );
 }

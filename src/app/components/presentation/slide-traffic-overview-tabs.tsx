@@ -198,13 +198,13 @@ export function SlideTrafficOverviewTabs({ onNavigateHome }: SlideTrafficOvervie
             icon={TrendingUp}
             type="success"
             title="Fortinet"
-            content="From Jul 2025 to Sep 2026, traffic grew 890K → 1.20M (+34.3%), Palo Alto surged 296K → 718K (+142.8%)."
+            content="From Jul 2025 to Oct 2026, traffic grew 890K → 975K (+9.6%), Palo Alto grew 296K → 505K (+70.7%); Fortinet Oct MoM −18.4% (1.2M → 975K)."
           />
           <InsightCard
             icon={TrendingUp}
             type="success"
             title="Competitions"
-            content="From Jul 2025 to Sep 2026, Cisco leads at 1.96M (+5.8%), Crowdstrike fell 352K → 277K (−21.2%)."
+            content="From Jul 2025 to Oct 2026, Cisco fell 1.85M → 1.37M (−25.9%), CrowdStrike fell 352K → 205K (−41.6%); Oct MoM: Cisco −29.9%, CrowdStrike −25.9%."
           />
         </InsightsSection>
       );
@@ -215,13 +215,13 @@ export function SlideTrafficOverviewTabs({ onNavigateHome }: SlideTrafficOvervie
             icon={TrendingDown}
             type="error"
             title="Fortinet"
-            content="From Jul 2025 to Sep 2026, branded traffic fell 158K → 109K (−31.3%), Wiz fell 91K → 21K (−76.8%)."
+            content="From Jul 2025 to Oct 2026, branded traffic fell 158K → 60K (−61.8%), Wiz fell 91K → 15K (−84.0%); Fortinet Oct MoM −44.4% (109K → 60K)."
           />
           <InsightCard
             icon={TrendingDown}
             type="error"
             title="Competitions"
-            content="From Jul 2025 to Sep 2026, Cisco fell 974K → 390K (−60.0%), Crowdstrike 181K → 73K (−59.4%)."
+            content="From Jul 2025 to Oct 2026, Cisco fell 974K → 369K (−62.1%), CrowdStrike fell 181K → 45K (−75.2%); Oct MoM: Cisco −5.3%, CrowdStrike −39.0%."
           />
         </InsightsSection>
       );
@@ -232,13 +232,13 @@ export function SlideTrafficOverviewTabs({ onNavigateHome }: SlideTrafficOvervie
             icon={TrendingUp}
             type="success"
             title="Fortinet"
-            content="From Jul 2025 to Sep 2026, non-branded grew 732K → 1.09M (+48.5%), Palo Alto 225K → 588K (+161.3%)."
+            content="From Jul 2025 to Oct 2026, non-branded traffic grew 732K → 915K (+25.0%), Palo Alto grew 225K → 394K (+75.0%); Fortinet Oct MoM −15.8% (1.09M → 915K)."
           />
           <InsightCard
             icon={TrendingUp}
             type="success"
             title="Competitions"
-            content="From Jul 2025 to Sep 2026, Cisco grew 877K → 1.57M (+78.7%), SentinelOne 87K → 196K (+126.5%)."
+            content="From Jul 2025 to Oct 2026, Cisco grew 877K → 1M (+14.3%), SentinelOne grew 87K → 161K (+85.6%); Oct MoM: Cisco −36.1%, SentinelOne −18.1%."
           />
         </InsightsSection>
       );
@@ -246,7 +246,7 @@ export function SlideTrafficOverviewTabs({ onNavigateHome }: SlideTrafficOvervie
   };
 
   const getPerformanceSummary = () => {
-    const latestIndex = 14; // Sep 2026
+    const latestIndex = 15; // Oct 2026
     let dataSource: Record<string, number[]>;
     let label: string;
 
@@ -331,7 +331,7 @@ export function SlideTrafficOverviewTabs({ onNavigateHome }: SlideTrafficOvervie
     <SlideContainer slideNumber={13} onNavigateHome={onNavigateHome}>
       <SlideHeader
         title="Organic Traffic Performance Overview"
-        subtitle="(Jul 2025 - Sep 2026)"
+        subtitle="(Jul 2025 - Oct 2026)"
       />
 
       {/* Tabs */}

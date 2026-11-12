@@ -32,64 +32,64 @@ const VENDORS = [
   { id: 'orca',         name: 'Orca Security', color: '#F97316' },
 ];
 
-// Data: Aug 2025 to Sep 2026 (14 months)
+// Data: Aug 2025 to Oct 2026 (15 months)
 const TOTAL_KEYWORDS_DATA_INITIAL = {
-  fortinet:    [538, 259, 231, 259, 299, 305, 305, 283, 246, 234, 247, 247, 238, 228],
-  cisco:       [471, 177, 127, 137, 165, 165, 167, 163,  82,  76,  65,  59,  62,  67],
-  hpe:         [ 64,  22,  19,  20,  19,  20,  26,  25,  19,  26,  22,  21,  26,  24],
-  paloalto:    [502, 265, 203, 219, 254, 275, 277, 263, 195, 188, 205, 182, 185, 162],
-  checkpoint:  [552, 293, 237, 223, 215, 221, 221, 201, 140, 130, 138, 129, 125, 115],
-  crowdstrike: [null, null, null, 303, 323, 323, 317, 307, 243, 218, 251, 223, 192, 150],
-  catonetworks:[null, null, null, null,  41,  41,  49,  44,  18,  14,  21,  16,  17,  10],
-  sentinelone: [null, null, null, null, 376, 376, 370, 392, 387, 373, 403, 398, 376, 319],
-  wiz:         [null, null, null, null, null, null, null, 334, 256, 241, 242, 223, 219, 198],
-  ibm:         [null, null, null, null, null, null, null, null, null, null, null, 142, 149, 124], // Data starts Jul 2026
-  orca:        [null, null, null, null, null, null, null, null, null, null, null, 297, 311, 254], // Data starts Jul 2026
+  fortinet:    [538, 259, 231, 259, 299, 305, 305, 283, 246, 234, 247, 247, 238, 228, 202],
+  cisco:       [471, 177, 127, 137, 165, 165, 167, 163, 82, 76, 65, 59, 62, 67, 53],
+  hpe:         [64, 22, 19, 20, 19, 20, 26, 25, 19, 26, 22, 21, 26, 24, 24],
+  paloalto:    [502, 265, 203, 219, 254, 275, 277, 263, 195, 188, 205, 182, 185, 162, 149],
+  checkpoint:  [552, 293, 237, 223, 215, 221, 221, 201, 140, 130, 138, 129, 125, 115, 111],
+  crowdstrike: [null, null, null, 303, 323, 323, 317, 307, 243, 218, 251, 223, 192, 150, 128],
+  catonetworks:[null, null, null, null, 41, 41, 49, 44, 18, 14, 21, 16, 17, 10, 7],
+  sentinelone: [null, null, null, null, 376, 376, 370, 392, 387, 373, 403, 398, 376, 319, 298],
+  wiz:         [null, null, null, null, null, null, null, 334, 256, 241, 242, 223, 219, 198, 178],
+  ibm:         [null, null, null, null, null, null, null, null, null, null, null, 142, 149, 124, 128], // Data starts Jul 2026
+  orca:        [null, null, null, null, null, null, null, null, null, null, null, 297, 311, 254, 217], // Data starts Jul 2026
 };
 
 const CUMULATIVE_TRAFFIC_DATA_INITIAL = {
-  fortinet:    [ 13433,  25775,  13737, 144268,  48266,  48183, 138334,  58925, 111518,   6991,   7202,   4532,   3608,  3137],
-  cisco:       [   633,    450,   1008,    633,    734,    847,   1550,  24224,   1421,    908,   1573,   1565,   2272,   831],
-  hpe:         [   267,    279,    380,    458,    840,    407,    947,   1102,   1267,   1234,   1401,   1521,    988,   308],
-  paloalto:    [118654,  90426,  29305, 178295, 171256, 213474,  71718,   4870,   5008, 138059, 136921,   3627,   2933,  2793],
-  checkpoint:  [367241, 224793,  74645,   5634,   5246,   3458,  24300,   2231,   1877,  37673,  36170,   1358,   1070,  1764],
-  crowdstrike: [null, null, null,  62044, 114510, 176384,  19111,  10645,   8890,   8200,   5834,   4496,   3135,  2684],
-  catonetworks:[null, null, null,   null,    34,     33,     59,    103,    100,    103,    178,    117,    128,   164],
-  sentinelone: [null, null, null,   null, 25634,  15386, 226115,  17605,  18824,  71662,  71161,  15101,   9839,  7809],
-  wiz:         [null, null, null,   null,  null,   null,   null,  16086,  13163,   8524,   8436,   5769,   4473,  4115],
-  ibm:         [null, null, null, null, null, null, null, null, null, null, null,  2286,  3366,  3558], // Data starts Jul 2026
-  orca:        [null, null, null, null, null, null, null, null, null, null, null,  8933,  5253,  5180], // Data starts Jul 2026
+  fortinet:    [13433, 25775, 13737, 144268, 48266, 48183, 138334, 58925, 111518, 6991, 7202, 4532, 3608, 3137, 2750],
+  cisco:       [633, 450, 1008, 633, 734, 847, 1550, 24224, 1421, 908, 1573, 1565, 2272, 831, 761],
+  hpe:         [267, 279, 380, 458, 840, 407, 947, 1102, 1267, 1234, 1401, 1521, 988, 308, 491],
+  paloalto:    [118654, 90426, 29305, 178295, 171256, 213474, 71718, 4870, 5008, 138059, 136921, 3627, 2933, 2793, 2331],
+  checkpoint:  [367241, 224793, 74645, 5634, 5246, 3458, 24300, 2231, 1877, 37673, 36170, 1358, 1070, 1764, 2295],
+  crowdstrike: [null, null, null, 62044, 114510, 176384, 19111, 10645, 8890, 8200, 5834, 4496, 3135, 2684, 2600],
+  catonetworks:[null, null, null, null, 34, 33, 59, 103, 100, 103, 178, 117, 128, 164, 50],
+  sentinelone: [null, null, null, null, 25634, 15386, 226115, 17605, 18824, 71662, 71161, 15101, 9839, 7809, 8744],
+  wiz:         [null, null, null, null, null, null, null, 16086, 13163, 8524, 8436, 5769, 4473, 4115, 3727],
+  ibm:         [null, null, null, null, null, null, null, null, null, null, null, 2286, 3366, 3558, 5011], // Data starts Jul 2026
+  orca:        [null, null, null, null, null, null, null, null, null, null, null, 8933, 5253, 5180, 4408], // Data starts Jul 2026
 };
 
 const PAGE_ONE_KEYWORDS_DATA_INITIAL = {
-  fortinet:    [109, 142, 163, 179, 199, 201, 206, 211, 202, 196, 220, 232, 210, 207],
-  cisco:       [ 58,  47,  57,  48,  49,  43,  47,  64,  46,  46,  36,  43,  53,  56],
-  hpe:         [ 11,  11,  11,  14,   9,   9,  10,  14,  14,  18,  18,  21,  20,  22],
-  paloalto:    [143, 150, 149, 149, 164, 171, 174, 185, 168, 167, 185, 165, 161, 143],
-  checkpoint:  [179, 177, 175, 142,  91,  98,  87,  87,  86,  90,  90,  98,  99, 101],
-  crowdstrike: [null, null, null, 249, 234, 230, 223, 210, 198, 177, 220, 194, 163, 120],
-  catonetworks:[null, null, null, null,  7,   7,  10,  10,  11,  10,  15,  14,  15,  10],
-  sentinelone: [null, null, null, null, 320, 317, 318, 350, 364, 354, 385, 379, 357, 301],
-  wiz:         [null, null, null, null, null, null, null, 272, 220, 205, 227, 215, 204, 184],
-  ibm:         [null, null, null, null, null, null, null, null, null, null, null, 122, 125, 114], // Data starts Jul 2026
-  orca:        [null, null, null, null, null, null, null, null, null, null, null, 286, 297, 241], // Data starts Jul 2026
+  fortinet:    [109, 142, 163, 179, 199, 201, 206, 211, 202, 196, 220, 232, 210, 207, 199],
+  cisco:       [58, 47, 57, 48, 49, 43, 47, 64, 46, 46, 36, 43, 53, 56, 52],
+  hpe:         [11, 11, 11, 14, 9, 9, 10, 14, 14, 18, 18, 21, 20, 22, 23],
+  paloalto:    [143, 150, 149, 149, 164, 171, 174, 185, 168, 167, 185, 165, 161, 143, 145],
+  checkpoint:  [179, 177, 175, 142, 91, 98, 87, 87, 86, 90, 90, 98, 99, 101, 107],
+  crowdstrike: [null, null, null, 249, 234, 230, 223, 210, 198, 177, 220, 194, 163, 120, 125],
+  catonetworks:[null, null, null, null, 7, 7, 10, 10, 11, 10, 15, 14, 15, 10, 7],
+  sentinelone: [null, null, null, null, 320, 317, 318, 350, 364, 354, 385, 379, 357, 301, 289],
+  wiz:         [null, null, null, null, null, null, null, 272, 220, 205, 227, 215, 204, 184, 171],
+  ibm:         [null, null, null, null, null, null, null, null, null, null, null, 122, 125, 114, 128], // Data starts Jul 2026
+  orca:        [null, null, null, null, null, null, null, null, null, null, null, 286, 297, 241, 214], // Data starts Jul 2026
 };
 
 const AIO_DATA_INITIAL = {
-  fortinet:    [181,  91, 104, 143, 187, 187, 190, 192, 138, 154, 153, 149, 134, 111],
-  cisco:       [142,  51,  48,  95, 123, 121, 122, 127,  49,  52,  47,  42,  34,  34],
-  hpe:         [ 14,  10,   7,  15,  17,  18,  23,  20,  10,  21,  15,  14,  16,  10],
-  paloalto:    [164,  89,  77, 115, 145, 159, 165, 173,  97, 107, 110,  94,  98,  71],
-  checkpoint:  [181, 116, 118, 138, 155, 155, 156, 152,  93,  91, 101,  91,  77,  64],
-  crowdstrike: [null, null, null, 149, 189, 191, 191, 200, 129, 149, 158, 130, 109,  76],
-  catonetworks:[null, null, null, null,  38,  38,  42,  36,  13,  14,  19,  12,  10,   5],
-  sentinelone: [null, null, null, null, 210, 207, 203, 236, 202, 235, 240, 233, 203, 154],
-  wiz:         [null, null, null, null, null, null, null, 203, 139, 149, 151, 130, 118, 104],
-  ibm:         [null, null, null, null, null, null, null, null, null, null, null, 100, 103,  76], // Data starts Jul 2026
-  orca:        [null, null, null, null, null, null, null, null, null, null, null, 175, 179, 150], // Data starts Jul 2026
+  fortinet:    [181, 91, 104, 143, 187, 187, 190, 192, 138, 154, 153, 149, 134, 111, 102],
+  cisco:       [142, 51, 48, 95, 123, 121, 122, 127, 49, 52, 47, 42, 34, 34, 30],
+  hpe:         [14, 10, 7, 15, 17, 18, 23, 20, 10, 21, 15, 14, 16, 10, 11],
+  paloalto:    [164, 89, 77, 115, 145, 159, 165, 173, 97, 107, 110, 94, 98, 71, 74],
+  checkpoint:  [181, 116, 118, 138, 155, 155, 156, 152, 93, 91, 101, 91, 77, 64, 73],
+  crowdstrike: [null, null, null, 149, 189, 191, 191, 200, 129, 149, 158, 130, 109, 76, 65],
+  catonetworks:[null, null, null, null, 38, 38, 42, 36, 13, 14, 19, 12, 10, 5, 5],
+  sentinelone: [null, null, null, null, 210, 207, 203, 236, 202, 235, 240, 233, 203, 154, 170],
+  wiz:         [null, null, null, null, null, null, null, 203, 139, 149, 151, 130, 118, 104, 102],
+  ibm:         [null, null, null, null, null, null, null, null, null, null, null, 100, 103, 76, 85], // Data starts Jul 2026
+  orca:        [null, null, null, null, null, null, null, null, null, null, null, 175, 179, 150, 154], // Data starts Jul 2026
 };
 
-const MONTHS = ['2025-08', '2025-09', '2025-10', '2025-11', '2025-12', '2026-01', '2026-02', '2026-03', '2026-04', '2026-05', '2026-06', '2026-07', '2026-08', '2026-09'];
+const MONTHS = ['2025-08', '2025-09', '2025-10', '2025-11', '2025-12', '2026-01', '2026-02', '2026-03', '2026-04', '2026-05', '2026-06', '2026-07', '2026-08', '2026-09', '2026-10'];
 
 // Format function for month display
 const formatMonth = (monthKey: string) => {
@@ -102,25 +102,25 @@ type TabType = 'keywords' | 'page-one' | 'traffic' | 'aio' | 'keyword-gap';
 
 const KEYWORD_GAP_DATA = {
   tofu: [
-    { keyword: "cloud security", sv: 23000, kd: 52, fortinet: 20, cisco: 19, paloalto: 28, checkpoint: 6, crowdstrike: null },
-    { keyword: "what is cloud security", sv: 2400, kd: 39, fortinet: 21, cisco: 1, paloalto: 1, checkpoint: 7, crowdstrike: 24 },
+    { keyword: "cloud security", sv: 23000, kd: 52, fortinet: null, cisco: null, paloalto: null, checkpoint: 1, crowdstrike: null },
+    { keyword: "what is cloud security", sv: 2400, kd: 39, fortinet: null, cisco: null, paloalto: 1, checkpoint: 1, crowdstrike: null },
     { keyword: "cloud security posture management", sv: 4100, kd: 26, fortinet: null, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
-    { keyword: "cloud security architecture", sv: 1700, kd: 3, fortinet: 13, cisco: 24, paloalto: 23, checkpoint: null, crowdstrike: null },
-    { keyword: "cloud security challenges", sv: 700, kd: 22, fortinet: 4, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
-    { keyword: "cloud security best practices", sv: 3700, kd: 22, fortinet: 1, cisco: null, paloalto: null, checkpoint: null, crowdstrike: 6 },
+    { keyword: "cloud security architecture", sv: 1700, kd: 3, fortinet: 9, cisco: null, paloalto: 1, checkpoint: null, crowdstrike: null },
+    { keyword: "cloud security challenges", sv: 700, kd: 22, fortinet: null, cisco: null, paloalto: 1, checkpoint: 10, crowdstrike: 2 },
+    { keyword: "cloud security best practices", sv: 3700, kd: 22, fortinet: null, cisco: null, paloalto: 6, checkpoint: null, crowdstrike: null },
   ],
   mofu: [
-    { keyword: "cloud security software", sv: 1000, kd: 12, fortinet: 6, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
+    { keyword: "cloud security software", sv: 1000, kd: 12, fortinet: null, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
     { keyword: "cloud security comparison", sv: null, kd: null, fortinet: null, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
-    { keyword: "enterprise cloud security", sv: 1800, kd: 9, fortinet: 6, cisco: null, paloalto: null, checkpoint: null, crowdstrike: 24 },
-    { keyword: "cloud security for small business", sv: 200, kd: 0, fortinet: null, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
+    { keyword: "enterprise cloud security", sv: 1800, kd: 9, fortinet: 1, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
+    { keyword: "cloud security for small business", sv: 200, kd: 0, fortinet: 1, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
   ],
   bofu: [
-    { keyword: "cloud security solutions", sv: 6100, kd: 34, fortinet: null, cisco: 1, paloalto: null, checkpoint: 1, crowdstrike: null },
-    { keyword: "cloud security services", sv: 8800, kd: 38, fortinet: null, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
-    { keyword: "cloud security company", sv: 700, kd: 45, fortinet: 1, cisco: null, paloalto: null, checkpoint: 17, crowdstrike: 10 },
-    { keyword: "cloud security providers", sv: 800, kd: 10, fortinet: 8, cisco: null, paloalto: null, checkpoint: 4, crowdstrike: 9 },
-    { keyword: "cloud security vendors", sv: 500, kd: 22, fortinet: null, cisco: null, paloalto: null, checkpoint: null, crowdstrike: 13 },
+    { keyword: "cloud security solutions", sv: 6100, kd: 34, fortinet: 1, cisco: 1, paloalto: null, checkpoint: null, crowdstrike: null },
+    { keyword: "cloud security services", sv: 8800, kd: 38, fortinet: null, cisco: null, paloalto: 1, checkpoint: null, crowdstrike: null },
+    { keyword: "cloud security company", sv: 700, kd: 45, fortinet: 1, cisco: null, paloalto: null, checkpoint: null, crowdstrike: 1 },
+    { keyword: "cloud security providers", sv: 800, kd: 10, fortinet: 10, cisco: null, paloalto: null, checkpoint: 5, crowdstrike: 11 },
+    { keyword: "cloud security vendors", sv: 500, kd: 22, fortinet: 1, cisco: null, paloalto: null, checkpoint: null, crowdstrike: 1 },
     { keyword: "cnapp solutions", sv: 300, kd: 11, fortinet: null, cisco: null, paloalto: 8, checkpoint: null, crowdstrike: null },
     { keyword: "cnapp provider", sv: null, kd: null, fortinet: null, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
   ],
@@ -299,13 +299,13 @@ export function SlideCloudSecurity({ onNavigateHome }: { onNavigateHome?: () => 
               icon={TrendingDown}
               type="error"
               title="Fortinet"
-              content="From Aug 2025 to Sep 2026, keywords declined 538 → 228 (−57.6%), trailing SentinelOne 319 and Orca 254."
+              content="From Aug 2025 to Oct 2026, keywords declined 538 → 202 (−62.5%), trailing SentinelOne 298 and Orca 217; Oct MoM −11.4% (228 → 202)."
             />
             <InsightCard
               icon={TrendingDown}
               type="error"
               title="Competitions"
-              content="From Aug 2025 to Sep 2026, Check Point declined 552 → 115 (−79.2%) and Cisco 471 → 67 (−85.8%); Orca (tracked since Jul 2026) leads visible peers at 254."
+              content="From Aug 2025 to Oct 2026, Check Point declined 552 → 111 (−79.9%), Cisco declined 471 → 53 (−88.7%), IBM declined 142 → 128 (−9.9%) since Jul 2026, Orca declined 297 → 217 (−26.9%) since Jul 2026; Oct MoM: Check Point −3.5%, Cisco −20.9%, IBM +3.2%, Orca −14.6%."
             />
           </InsightsSection>
         );
@@ -316,13 +316,13 @@ export function SlideCloudSecurity({ onNavigateHome }: { onNavigateHome?: () => 
               icon={TrendingUp}
               type="success"
               title="Fortinet"
-              content="From Aug 2025 to Sep 2026, page-1 keywords grew 109 → 207 (+89.9%), trailing SentinelOne 301 and Orca 241."
+              content="From Aug 2025 to Oct 2026, page-1 keywords grew 109 → 199 (+82.6%), trailing SentinelOne 289 and Orca 214; Oct MoM −3.9% (207 → 199)."
             />
             <InsightCard
               icon={TrendingDown}
               type="error"
               title="Competitions"
-              content="From Aug 2025 to Sep 2026, Check Point declined 179 → 101 (−43.6%) and Cisco 58 → 56 (−3.4%); Orca (since Jul 2026) leads at 241."
+              content="From Aug 2025 to Oct 2026, Check Point declined 179 → 107 (−40.2%), Cisco declined 58 → 52 (−10.3%), IBM grew 122 → 128 (+4.9%) since Jul 2026, Orca declined 286 → 214 (−25.2%) since Jul 2026; Oct MoM: Check Point +5.9%, Cisco −7.1%, IBM +12.3%, Orca −11.2%."
             />
           </InsightsSection>
         );
@@ -333,13 +333,13 @@ export function SlideCloudSecurity({ onNavigateHome }: { onNavigateHome?: () => 
               icon={TrendingDown}
               type="error"
               title="Fortinet"
-              content="From Aug 2025 to Sep 2026, traffic declined 13,433 → 3,137 (−76.6%), trailing SentinelOne 7,809 and Orca 5,180."
+              content="From Aug 2025 to Oct 2026, traffic declined 13,433 → 2,750 (−79.5%), trailing SentinelOne 8,744 and IBM 5,011; Oct MoM −12.3% (3,137 → 2,750)."
             />
             <InsightCard
               icon={TrendingDown}
               type="error"
               title="Competitions"
-              content="From Aug 2025 to Sep 2026, Check Point declined 367,241 → 1,764 (−99.5%); Cisco grew 633 → 831 (+31.3%) and IBM (since Jul 2026) rose 2,286 → 3,558 (+55.6%), ahead of Fortinet."
+              content="From Aug 2025 to Oct 2026, Check Point declined 367,241 → 2,295 (−99.4%), Cisco grew 633 → 761 (+20.2%), IBM grew 2,286 → 5,011 (+119.2%) since Jul 2026, Orca declined 8,933 → 4,408 (−50.7%) since Jul 2026; Oct MoM: Check Point +30.1%, Cisco −8.4%, IBM +40.8%, Orca −14.9%."
             />
           </InsightsSection>
         );
@@ -350,13 +350,13 @@ export function SlideCloudSecurity({ onNavigateHome }: { onNavigateHome?: () => 
               icon={TrendingDown}
               type="error"
               title="Fortinet"
-              content="From Aug 2025 to Sep 2026, AIO declined 181 → 111 (−38.7%), trailing SentinelOne 154 and Orca 150."
+              content="From Aug 2025 to Oct 2026, AIO keywords declined 181 → 102 (−43.6%), trailing SentinelOne 170 and Orca 154; Oct MoM −8.1% (111 → 102)."
             />
             <InsightCard
               icon={TrendingDown}
               type="error"
               title="Competitions"
-              content="From Aug 2025 to Sep 2026, Check Point declined 181 → 64 (−64.6%) and Cisco 142 → 34 (−76.1%); SentinelOne leads at 154."
+              content="From Aug 2025 to Oct 2026, Check Point declined 181 → 73 (−59.7%), Cisco declined 142 → 30 (−78.9%), IBM declined 100 → 85 (−15.0%) since Jul 2026, Orca declined 175 → 154 (−12.0%) since Jul 2026; Oct MoM: Check Point +14.1%, Cisco −11.8%, IBM +11.8%, Orca +2.7%."
             />
           </InsightsSection>
         );
@@ -367,13 +367,13 @@ export function SlideCloudSecurity({ onNavigateHome }: { onNavigateHome?: () => 
               icon={Trophy}
               type="success"
               title="Fortinet"
-              content="Ranks #1 for 'cloud security best practices' (SV 3.7K) and 'cloud security company'; #4 for 'cloud security challenges' and #6 for 'cloud security software' and 'enterprise cloud security'."
+              content="Fortinet ranks #1 for 'enterprise cloud security', the small-business term, 'cloud security solutions', 'cloud security company' and 'cloud security vendors'."
             />
             <InsightCard
               icon={Target}
               type="warning"
               title="Competitions"
-              content="'cloud security' (SV 23K) sits at #20 (Check Point #6, Cisco #19); no ranking for 'cloud security solutions' (SV 6.1K; Cisco and Check Point #1), 'cloud security services' (SV 8.8K) or 'cloud security posture management' (SV 4.1K) — largest volume gaps."
+              content="Fortinet is absent for the 23K head term, 'cloud security services' (SV 8.8K), CSPM (4.1K), best practices (3.7K) and software (1K). The #10 providers ranking is the clearest BOFU quick win."
             />
           </InsightsSection>
         );
@@ -383,7 +383,7 @@ export function SlideCloudSecurity({ onNavigateHome }: { onNavigateHome?: () => 
   };
 
   const getPerformanceSummary = () => {
-    const latestIndex = 13; // Sep 2026
+    const latestIndex = 14; // Oct 2026
     let dataSource: Record<string, number[]>;
     let formatValue: (val: number) => string;
 
@@ -502,7 +502,7 @@ export function SlideCloudSecurity({ onNavigateHome }: { onNavigateHome?: () => 
     <SlideContainer slideNumber={24} onNavigateHome={onNavigateHome} source="Ahrefs">
       <SlideHeader 
         title="Cloud Security" 
-        subtitle="(Aug 2025 – Sep 2026)"
+        subtitle="(Aug 2025 – Oct 2026)"
       />
       
       {!isEditing ? (
@@ -619,7 +619,7 @@ export function SlideCloudSecurity({ onNavigateHome }: { onNavigateHome?: () => 
       ) : (
         <div className="flex-1 overflow-auto">
           <div className="bg-white border border-gray-200 rounded-lg p-6">
-            <h3 className="text-sm font-bold text-gray-900 mb-4">Edit Cloud Security Metrics Data (Jul 2025 - Sep 2026)</h3>
+            <h3 className="text-sm font-bold text-gray-900 mb-4">Edit Cloud Security Metrics Data (Jul 2025 - Oct 2026)</h3>
             <div className="space-y-6">
               {VENDORS.map((vendor) => (
                 <div key={vendor.id} className="bg-gray-50 rounded-lg p-4 border border-gray-200">

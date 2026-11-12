@@ -37,32 +37,32 @@ const VENDORS = [
   { id: 'wiz',          name: 'Wiz',           color: '#06B6D4' },
 ];
 
-// ─── Data (Dec 2025 → Sep 2026) ───────────────────────────────────────────────
+// ─── Data (Dec 2025 → Oct 2026) ───────────────────────────────────────────────
 
 const MONTH_KEYS = [
   '2025-12', '2026-01', '2026-02', '2026-03',
-  '2026-04', '2026-05', '2026-06', '2026-07', '2026-08', '2026-09',
+  '2026-04', '2026-05', '2026-06', '2026-07', '2026-08', '2026-09', '2026-10',
 ];
 
 const formatMonth = (key: string) => {
   const map: Record<string, string> = {
     '2025-12': 'Dec-25', '2026-01': 'Jan-26', '2026-02': 'Feb-26',
     '2026-03': 'Mar-26', '2026-04': 'Apr-26', '2026-05': 'May-26',
-    '2026-06': 'Jun-26', '2026-07': 'Jul-26', '2026-08': 'Aug-26', '2026-09': 'Sep-26',
+    '2026-06': 'Jun-26', '2026-07': 'Jul-26', '2026-08': 'Aug-26', '2026-09': 'Sep-26', '2026-10': 'Oct-26',
   };
   return map[key] ?? key;
 };
 
 const SNIPPET_DATA: Record<string, (number | null)[]> = {
-  fortinet:    [287, 359, 385, 227, 111, 116, 130, 143,  81,  13],
-  cisco:       [183, 208, 201, 133,  84,  76,  61,  58,  53,   8],
-  hpe:         [ 69,  82,  82,  54,  44,  39,  42,  45,  18,   1],
-  paloalto:    [ 61,  70,  64,  34,  18,  20,  21,  22,  13,   3],
-  sentinelone: [ 15,  34,  47,  32,  17,  10,  10,  12,   8,   3],
-  crowdstrike: [ 11,  13,  14,  10,   9,   7,   3,   4,   2,   0],
-  checkpoint:  [ 21,  30,  20,  12,   7,   9,   8,   4,   4,   2],
-  cato:        [  1,   4,   4,   3,   4,   2,   0,   1,   1,   0],
-  wiz:         [  4,   7,   9,   4,   3,   5,   4,   1,   1,   0],
+  fortinet:    [287, 359, 385, 227, 111, 116, 130, 143,  81,  13, 0],
+  cisco:       [183, 208, 201, 133,  84,  76,  61,  58,  53,   8, 0],
+  hpe:         [ 69,  82,  82,  54,  44,  39,  42,  45,  18,   1, 0],
+  paloalto:    [ 61,  70,  64,  34,  18,  20,  21,  22,  13,   3, 0],
+  sentinelone: [ 15,  34,  47,  32,  17,  10,  10,  12,   8,   3, 0],
+  crowdstrike: [ 11,  13,  14,  10,   9,   7,   3,   4,   2,   0, 0],
+  checkpoint:  [ 21,  30,  20,  12,   7,   9,   8,   4,   4,   2, 1],
+  cato:        [  1,   4,   4,   3,   4,   2,   0,   1,   1,   0, 0],
+  wiz:         [  4,   7,   9,   4,   3,   5,   4,   1,   1,   0, 0],
 };
 
 // H2 2025 averages (Jul–Dec 2025)
@@ -126,8 +126,8 @@ export function SlideFeaturedSnippets({ onNavigateHome }: { onNavigateHome?: () 
     return dp;
   });
 
-  // Latest (Sep 2026) rankings
-  const latestIdx = 9;
+  // Latest (Oct 2026) rankings
+  const latestIdx = MONTH_KEYS.length - 1;
   const rankings = VENDORS.map((v) => ({
     ...v,
     value: SNIPPET_DATA[v.id]?.[latestIdx] ?? 0,
@@ -138,7 +138,7 @@ export function SlideFeaturedSnippets({ onNavigateHome }: { onNavigateHome?: () 
   const ftPeak    = Math.max(...(SNIPPET_DATA.fortinet as number[])); // 385 (Feb 2026)
   const ftDecline = (((ftPeak - ftLatest.value) / ftPeak) * 100).toFixed(0);
   const ftH2Decline = (((H2_AVG.fortinet! - ftLatest.value) / H2_AVG.fortinet!) * 100).toFixed(0);
-  const prevIdx = latestIdx - 1; // Aug 2026
+  const prevIdx = latestIdx - 1; // Sep 2026
   const ftPrev = SNIPPET_DATA.fortinet[prevIdx] as number;
   const ftMoM = Math.abs(((ftLatest.value - ftPrev) / ftPrev) * 100).toFixed(0);
   const allDeclined = VENDORS.every((v) => (SNIPPET_DATA[v.id][latestIdx] as number) < (SNIPPET_DATA[v.id][prevIdx] as number));
@@ -147,7 +147,7 @@ export function SlideFeaturedSnippets({ onNavigateHome }: { onNavigateHome?: () 
     <SlideContainer slideNumber={22} onNavigateHome={onNavigateHome} source="SEMrush">
       <SlideHeader
         title="Website Featured Snippets"
-        subtitle="Google Featured Snippet Count · Dec 2025 – Sep 2026 · Source: SEMrush"
+        subtitle="Google Featured Snippet Count · Dec 2025 – Oct 2026 · Source: SEMrush"
       />
 
       <div className="flex-1 flex flex-col gap-6">
@@ -204,20 +204,20 @@ export function SlideFeaturedSnippets({ onNavigateHome }: { onNavigateHome?: () 
               <InsightCard
                 icon={Trophy}
                 type="success"
-                title="Fortinet Leads"
-                content={`${ftLatest.value} snippets in Sep 2026 — ${(ftLatest.value / rankings[1].value).toFixed(1)}× Cisco (#2 at ${rankings[1].value}) and clear category leader across all 9 vendors.`}
+                title="Category Pool Collapsed"
+                content={`Fortinet reports ${ftLatest.value} featured snippets in Oct 2026 (13 in Sep, 143 in Jul); Cisco is also at ${SNIPPET_DATA.cisco[latestIdx]}. Only Check Point shows any (${SNIPPET_DATA.checkpoint[latestIdx]}) — the whole 9-vendor pool totals ${VENDORS.reduce((t, v) => t + (SNIPPET_DATA[v.id][latestIdx] as number), 0)} vs 30 in Sep.`}
               />
               <InsightCard
                 icon={TrendingDown}
                 type="warning"
                 title="Market Decline"
-                content={`Fortinet dropped from H2 2025 avg of 496 to ${ftLatest.value} in Sep 2026 (−${ftH2Decline}% decline), mirroring a market-wide reduction in snippet saturation.`}
+                content={`Fortinet dropped from H2 2025 avg of 496 to ${ftLatest.value} in Oct 2026 (−${ftH2Decline}%), after leading every month through Sep (peak ${ftPeak} in Feb 2026).`}
               />
               <InsightCard
                 icon={TrendingDown}
                 type="error"
-                title="Sep Collapse"
-                content={`Fortinet peaked at ${ftPeak} in Feb 2026 and fell to ${ftLatest.value} in Sep 2026 (−${ftDecline}% from peak, −${ftMoM}% MoM from ${ftPrev} in Aug). ${allDeclined ? 'Market-wide drop in Sep — all 9 vendors declined vs Aug.' : 'Most vendors declined vs Aug.'}`}
+                title="Validate Before Presenting"
+                content={`The Aug → Sep → Oct slide (81 → 13 → ${ftLatest.value} for Fortinet; 181 → 30 → 1 across all vendors) is uniform, which points to a SEMrush tracking or SERP-feature change rather than genuine loss. Confirm in SEMrush before attributing it to performance.`}
               />
             </InsightsSection>
 
@@ -225,7 +225,7 @@ export function SlideFeaturedSnippets({ onNavigateHome }: { onNavigateHome?: () 
         </div>
       </div>
 
-      <SlideFooter source="Source: SEMrush · Featured Snippets · Jul 2025 – Sep 2026" />
+      <SlideFooter source="Source: SEMrush · Featured Snippets · Jul 2025 – Oct 2026" />
     </SlideContainer>
   );
 }

@@ -31,60 +31,60 @@ const VENDORS = [
   { id: 'akamai',       name: 'Akamai',        color: '#F97316' },
 ];
 
-// Full data - Jul 2025 to Sep 2026 (14 months)
+// Full data - Jul 2025 to Oct 2026 (16 months)
 const TOTAL_KEYWORDS_DATA_INITIAL = {
-  fortinet:    [301, 307, 218, 179, 210, 218, 226, 222, 227, 207, 220, 208, 258, 248, 237],
-  cisco:       [310, 312, 163, 104, 126, 141, 135, 139, 138, 104, 102, 91, 77, 77, 77],
-  hpe:         [ 71,  80,  20,  12,  22,  23,  22,  30,  23,  17,   8, 11,  7,  8, 10],
-  paloalto:    [325, 348, 246, 225, 224, 232, 228, 237, 236, 215, 234, 261, 319, 300, 260],
-  checkpoint:  [242, 250,  99,  46,  96, 115, 104, 105,  87,  58,  52, 59, 53, 59, 42],
-  crowdstrike: [0, 0, 0, 0, 204, 217, 215, 220, 208, 160, 152, 174, 168, 167, 156],
-  catonetworks:[0, 0, 0, 0, 0, 71, 72, 73, 49, 17, 20, 20, 17, 17, 14],
-  sentinelone: [0, 0, 0, 0, 0, 101, 106, 93, 90, 62, 55, 58, 52, 44, 39],
-  wiz:         [null, null, null, null, null, null, null, null, 16, 6, 4, 3, 2, 2, 3],
-  akamai:      [null, null, null, null, null, null, null, null, null, null, null, null, 88, 92, 74], // Data starts Jul 2026
+  fortinet:    [301, 307, 218, 179, 210, 218, 226, 222, 227, 207, 220, 208, 258, 248, 237, 229],
+  cisco:       [310, 312, 163, 104, 126, 141, 135, 139, 138, 104, 102, 91, 77, 77, 77, 77],
+  hpe:         [71, 80, 20, 12, 22, 23, 22, 30, 23, 17, 8, 11, 7, 8, 10, 13],
+  paloalto:    [325, 348, 246, 225, 224, 232, 228, 237, 236, 215, 234, 261, 319, 300, 260, 237],
+  checkpoint:  [242, 250, 99, 46, 96, 115, 104, 105, 87, 58, 52, 59, 53, 59, 42, 43],
+  crowdstrike: [0, 0, 0, 0, 204, 217, 215, 220, 208, 160, 152, 174, 168, 167, 156, 131],
+  catonetworks:[0, 0, 0, 0, 0, 71, 72, 73, 49, 17, 20, 20, 17, 17, 14, 14],
+  sentinelone: [0, 0, 0, 0, 0, 101, 106, 93, 90, 62, 55, 58, 52, 44, 39, 33],
+  wiz:         [null, null, null, null, null, null, null, null, 16, 6, 4, 3, 2, 2, 3, 2],
+  akamai:      [null, null, null, null, null, null, null, null, null, null, null, null, 88, 92, 74, 66], // Data starts Jul 2026
 };
 
 const CUMULATIVE_TRAFFIC_DATA_INITIAL = {
-  fortinet:    [4565, 7238, 5353, 5994, 5370, 5926, 6208, 5688, 7125, 6489, 6366, 7621, 6379, 6378, 5231],
-  cisco:       [1983, 2275, 1776, 1854, 1442, 1352, 1462, 1955, 1667, 1906, 2086, 1335, 1264, 1072, 1267],
-  hpe:         [  49,   84,   39,   19,   75,   81,   55,   53,   67,  110,   62, 22, 15, 65, 636],
-  paloalto:    [7219, 6300, 6434, 6942, 6334, 7388, 7193, 9993, 9513, 9469, 14406, 12393, 8601, 7629, 8140],
-  checkpoint:  [ 215,  287,  176,  357,  408,  558,  352, 1096,  687,  859,   531, 846, 593, 533, 310],
-  crowdstrike: [0, 0, 0, 0, 8230, 10344, 11093, 9760, 8538, 5952, 4841, 7082, 7699, 4015, 2917],
-  catonetworks:[0, 0, 0, 0, 0, 200, 241, 234, 248, 87, 184, 126, 545, 256, 114],
-  sentinelone: [0, 0, 0, 0, 0, 1774, 1841, 1851, 2162, 2145, 1961, 2120, 1754, 1157, 929],
-  wiz:         [null, null, null, null, null, null, null, null, 66, 9, 14, 8, 0, 18, 10],
-  akamai:      [null, null, null, null, null, null, null, null, null, null, null, null, 1093, 626, 753], // Data starts Jul 2026
+  fortinet:    [4565, 7238, 5353, 5994, 5370, 5926, 6208, 5688, 7125, 6489, 6366, 7621, 6379, 6378, 5231, 4448],
+  cisco:       [1983, 2275, 1776, 1854, 1442, 1352, 1462, 1955, 1667, 1906, 2086, 1335, 1264, 1072, 1267, 1036],
+  hpe:         [49, 84, 39, 19, 75, 81, 55, 53, 67, 110, 62, 22, 15, 65, 636, 157],
+  paloalto:    [7219, 6300, 6434, 6942, 6334, 7388, 7193, 9993, 9513, 9469, 14406, 12393, 8601, 7629, 8140, 7122],
+  checkpoint:  [215, 287, 176, 357, 408, 558, 352, 1096, 687, 859, 531, 846, 593, 533, 310, 1489],
+  crowdstrike: [0, 0, 0, 0, 8230, 10344, 11093, 9760, 8538, 5952, 4841, 7082, 7699, 4015, 2917, 2949],
+  catonetworks:[0, 0, 0, 0, 0, 200, 241, 234, 248, 87, 184, 126, 545, 256, 114, 310],
+  sentinelone: [0, 0, 0, 0, 0, 1774, 1841, 1851, 2162, 2145, 1961, 2120, 1754, 1157, 929, 786],
+  wiz:         [null, null, null, null, null, null, null, null, 66, 9, 14, 8, 0, 18, 10, 19],
+  akamai:      [null, null, null, null, null, null, null, null, null, null, null, null, 1093, 626, 753, 1078], // Data starts Jul 2026
 };
 
 const PAGE_ONE_KEYWORDS_DATA_INITIAL = {
-  fortinet:    [113, 120, 134, 143, 174, 180, 192, 182, 199, 185, 200, 196, 248, 236, 225],
-  cisco:       [ 73,  89,  70,  64,  69,  53,  58,  60,  73,  73,  77, 76, 68, 68, 74],
-  hpe:         [  3,   6,   5,   3,   7,   8,   5,   9,   6,   8,   3, 6,  6,  5,  9],
-  paloalto:    [146, 187, 177, 194, 193, 179, 172, 179, 195, 189, 204, 244, 303, 280, 243],
-  checkpoint:  [ 15,  21,  21,  16,  29,  29,  20,  20,  22,  26,  21, 30, 33, 35, 30],
-  crowdstrike: [0, 0, 0, 0, 176, 170, 170, 170, 167, 144, 125, 164, 152, 150, 142],
-  catonetworks:[0, 0, 0, 0, 0, 17, 19, 19, 20, 9, 11, 16, 14, 14, 12],
-  sentinelone: [0, 0, 0, 0, 0, 57, 54, 47, 61, 52, 44, 50, 47, 43, 33],
-  wiz:         [null, null, null, null, null, null, null, null, 8, 4, 3, 2, 1, 2, 2],
-  akamai:      [null, null, null, null, null, null, null, null, null, null, null, null, 67, 67, 57], // Data starts Jul 2026
+  fortinet:    [113, 120, 134, 143, 174, 180, 192, 182, 199, 185, 200, 196, 248, 236, 225, 222],
+  cisco:       [73, 89, 70, 64, 69, 53, 58, 60, 73, 73, 77, 76, 68, 68, 74, 74],
+  hpe:         [3, 6, 5, 3, 7, 8, 5, 9, 6, 8, 3, 6, 6, 5, 9, 13],
+  paloalto:    [146, 187, 177, 194, 193, 179, 172, 179, 195, 189, 204, 244, 303, 280, 243, 226],
+  checkpoint:  [15, 21, 21, 16, 29, 29, 20, 20, 22, 26, 21, 30, 33, 35, 30, 40],
+  crowdstrike: [0, 0, 0, 0, 176, 170, 170, 170, 167, 144, 125, 164, 152, 150, 142, 128],
+  catonetworks:[0, 0, 0, 0, 0, 17, 19, 19, 20, 9, 11, 16, 14, 14, 12, 13],
+  sentinelone: [0, 0, 0, 0, 0, 57, 54, 47, 61, 52, 44, 50, 47, 43, 33, 32],
+  wiz:         [null, null, null, null, null, null, null, null, 8, 4, 3, 2, 1, 2, 2, 2],
+  akamai:      [null, null, null, null, null, null, null, null, null, null, null, null, 67, 67, 57, 63], // Data starts Jul 2026
 };
 
 const AIO_DATA_INITIAL = {
-  fortinet:    [165, 176, 120, 120, 151, 163, 175, 174, 181, 161, 181, 174, 202, 179, 176],
-  cisco:       [152, 175,  89,  58,  91, 102, 102,  97,  99,  75,  82, 65, 52, 55, 55],
-  hpe:         [ 42,  52,   6,  10,  22,  22,  20,  28,  20,  16,   6, 11,  7,  8, 10],
-  paloalto:    [160, 190, 136, 140, 157, 157, 165, 163, 174, 158, 179, 194, 216, 183, 159],
-  checkpoint:  [139, 163,  48,  30,  82,  98,  92,  90,  71,  46,  41, 47, 45, 44, 32],
-  crowdstrike: [0, 0, 0, 0, 158, 163, 164, 160, 156, 130, 131, 154, 143, 133, 121],
-  catonetworks:[0, 0, 0, 0, 0, 62, 62, 62, 42, 14, 17, 14, 12, 14, 13],
-  sentinelone: [0, 0, 0, 0, 0, 77, 81, 71, 66, 45, 43, 46, 40, 31, 23],
-  wiz:         [null, null, null, null, null, null, null, null, 13, 4, 2, 2, 2, 2, 2],
-  akamai:      [null, null, null, null, null, null, null, null, null, null, null, null, 54, 55, 43], // Data starts Jul 2026
+  fortinet:    [165, 176, 120, 120, 151, 163, 175, 174, 181, 161, 181, 174, 202, 179, 176, 171],
+  cisco:       [152, 175, 89, 58, 91, 102, 102, 97, 99, 75, 82, 65, 52, 55, 55, 55],
+  hpe:         [42, 52, 6, 10, 22, 22, 20, 28, 20, 16, 6, 11, 7, 8, 10, 11],
+  paloalto:    [160, 190, 136, 140, 157, 157, 165, 163, 174, 158, 179, 194, 216, 183, 159, 159],
+  checkpoint:  [139, 163, 48, 30, 82, 98, 92, 90, 71, 46, 41, 47, 45, 44, 32, 35],
+  crowdstrike: [0, 0, 0, 0, 158, 163, 164, 160, 156, 130, 131, 154, 143, 133, 121, 105],
+  catonetworks:[0, 0, 0, 0, 0, 62, 62, 62, 42, 14, 17, 14, 12, 14, 13, 13],
+  sentinelone: [0, 0, 0, 0, 0, 77, 81, 71, 66, 45, 43, 46, 40, 31, 23, 20],
+  wiz:         [null, null, null, null, null, null, null, null, 13, 4, 2, 2, 2, 2, 2, 0],
+  akamai:      [null, null, null, null, null, null, null, null, null, null, null, null, 54, 55, 43, 39], // Data starts Jul 2026
 };
 
-const MONTHS = ['2025-07', '2025-08', '2025-09', '2025-10', '2025-11', '2025-12', '2026-01', '2026-02', '2026-03', '2026-04', '2026-05', '2026-06', '2026-07', '2026-08', '2026-09'];
+const MONTHS = ['2025-07', '2025-08', '2025-09', '2025-10', '2025-11', '2025-12', '2026-01', '2026-02', '2026-03', '2026-04', '2026-05', '2026-06', '2026-07', '2026-08', '2026-09', '2026-10'];
 
 // Format function for month display
 const formatMonth = (monthKey: string) => {
@@ -97,31 +97,31 @@ type TabType = 'keywords' | 'page-one' | 'traffic' | 'aio' | 'keyword-gap';
 
 const KEYWORD_GAP_DATA = {
   tofu: [
-    { keyword: "zero trust", sv: 9600, kd: 83, fortinet: 7, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
-    { keyword: "what is zero trust", sv: 2400, kd: 78, fortinet: 11, cisco: 29, paloalto: 19, checkpoint: 15, crowdstrike: 7 },
-    { keyword: "zero trust definition", sv: 500, kd: 74, fortinet: 1, cisco: null, paloalto: null, checkpoint: null, crowdstrike: 1 },
-    { keyword: "zero trust network", sv: 1900, kd: 78, fortinet: 6, cisco: 1, paloalto: 9, checkpoint: 20, crowdstrike: 15 },
+    { keyword: "zero trust", sv: 9600, kd: 83, fortinet: null, cisco: null, paloalto: 11, checkpoint: null, crowdstrike: 1 },
+    { keyword: "what is zero trust", sv: 2400, kd: 78, fortinet: 1, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
+    { keyword: "zero trust definition", sv: 500, kd: 74, fortinet: null, cisco: null, paloalto: 7, checkpoint: null, crowdstrike: 1 },
+    { keyword: "zero trust network", sv: 1900, kd: 78, fortinet: 1, cisco: 1, paloalto: null, checkpoint: 7, crowdstrike: 1 },
     { keyword: "zero trust network security", sv: 500, kd: 65, fortinet: 1, cisco: 1, paloalto: 1, checkpoint: null, crowdstrike: null },
-    { keyword: "zero trust principles", sv: 900, kd: 82, fortinet: null, cisco: null, paloalto: 17, checkpoint: 18, crowdstrike: 1 },
-    { keyword: "zero trust architecture", sv: 6500, kd: 57, fortinet: null, cisco: null, paloalto: 1, checkpoint: null, crowdstrike: 8 },
-    { keyword: "zero trust network access", sv: 3200, kd: 59, fortinet: 1, cisco: 1, paloalto: null, checkpoint: null, crowdstrike: null },
+    { keyword: "zero trust principles", sv: 900, kd: 82, fortinet: null, cisco: null, paloalto: 11, checkpoint: null, crowdstrike: 1 },
+    { keyword: "zero trust architecture", sv: 6500, kd: 57, fortinet: null, cisco: null, paloalto: 1, checkpoint: 1, crowdstrike: 9 },
+    { keyword: "zero trust network access", sv: 3200, kd: 59, fortinet: 1, cisco: 1, paloalto: null, checkpoint: 2, crowdstrike: null },
   ],
   mofu: [
-    { keyword: "zero trust software", sv: 400, kd: 33, fortinet: 1, cisco: null, paloalto: 1, checkpoint: null, crowdstrike: 6 },
-    { keyword: "zero trust system", sv: 50, kd: 77, fortinet: 8, cisco: null, paloalto: null, checkpoint: null, crowdstrike: 1 },
+    { keyword: "zero trust software", sv: 400, kd: 33, fortinet: null, cisco: null, paloalto: 1, checkpoint: 1, crowdstrike: 1 },
+    { keyword: "zero trust system", sv: 50, kd: 77, fortinet: 4, cisco: null, paloalto: null, checkpoint: null, crowdstrike: 5 },
     { keyword: "zero trust access software", sv: 40, kd: null, fortinet: null, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
     { keyword: "zero trust network access software", sv: 40, kd: null, fortinet: null, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
   ],
   bofu: [
-    { keyword: "zero trust solutions", sv: 800, kd: 52, fortinet: 31, cisco: 8, paloalto: 14, checkpoint: null, crowdstrike: null },
-    { keyword: "ztna solutions", sv: 900, kd: 47, fortinet: 11, cisco: null, paloalto: 1, checkpoint: null, crowdstrike: 1 },
-    { keyword: "zero trust network access solutions", sv: 100, kd: 31, fortinet: 1, cisco: null, paloalto: 1, checkpoint: null, crowdstrike: 6 },
-    { keyword: "zero trust security platform", sv: 400, kd: 51, fortinet: 6, cisco: null, paloalto: 4, checkpoint: 9, crowdstrike: 12 },
+    { keyword: "zero trust solutions", sv: 800, kd: 52, fortinet: null, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
+    { keyword: "ztna solutions", sv: 900, kd: 47, fortinet: 1, cisco: null, paloalto: 1, checkpoint: null, crowdstrike: null },
+    { keyword: "zero trust network access solutions", sv: 100, kd: 31, fortinet: 1, cisco: null, paloalto: 3, checkpoint: null, crowdstrike: 5 },
+    { keyword: "zero trust security platform", sv: 400, kd: 51, fortinet: null, cisco: null, paloalto: 1, checkpoint: null, crowdstrike: null },
     { keyword: "zero trust network access platform", sv: null, kd: null, fortinet: null, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
-    { keyword: "zero trust vendor", sv: 200, kd: 6, fortinet: null, cisco: null, paloalto: null, checkpoint: null, crowdstrike: 10 },
-    { keyword: "zero trust security solutions", sv: 700, kd: 58, fortinet: 21, cisco: null, paloalto: 12, checkpoint: null, crowdstrike: 15 },
+    { keyword: "zero trust vendor", sv: 200, kd: 6, fortinet: null, cisco: null, paloalto: null, checkpoint: null, crowdstrike: 1 },
+    { keyword: "zero trust security solutions", sv: 700, kd: 58, fortinet: null, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
     { keyword: "ztna vendor", sv: 30, kd: null, fortinet: null, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
-    { keyword: "zero trust platform", sv: 500, kd: 54, fortinet: 1, cisco: null, paloalto: 1, checkpoint: 17, crowdstrike: 1 },
+    { keyword: "zero trust platform", sv: 500, kd: 54, fortinet: null, cisco: null, paloalto: 1, checkpoint: null, crowdstrike: null },
   ],
 };
 
@@ -298,13 +298,13 @@ export function SlideZeroTrust({ onNavigateHome }: { onNavigateHome?: () => void
               icon={TrendingDown}
               type="error"
               title="Fortinet"
-              content="From Jul 2025 to Sep 2026, keywords declined 301 → 237 (−21.3%), trailing Palo Alto 260."
+              content="From Jul 2025 to Oct 2026, keywords declined 301 → 229 (−23.9%), trailing Palo Alto 237; Oct MoM −3.4% (237 → 229)."
             />
             <InsightCard
               icon={TrendingDown}
               type="error"
               title="Competitions"
-              content="From Jul 2025 to Sep 2026, Palo Alto declined 325 → 260 (−20.0%), Cisco declined 310 → 77 (−75.2%)."
+              content="From Jul 2025 to Oct 2026, Palo Alto declined 325 → 237 (−27.1%), Cisco declined 310 → 77 (−75.2%), CrowdStrike grew 0 → 131; Oct MoM: Palo Alto −8.8%, CrowdStrike −16.0%."
             />
           </InsightsSection>
         );
@@ -315,13 +315,13 @@ export function SlideZeroTrust({ onNavigateHome }: { onNavigateHome?: () => void
               icon={TrendingUp}
               type="success"
               title="Fortinet"
-              content="From Jul 2025 to Sep 2026, rankings grew 113 → 225 (+99.1%), trailing Palo Alto 243."
+              content="From Jul 2025 to Oct 2026, page-1 keywords grew 113 → 222 (+96.5%), trailing Palo Alto 226; Oct MoM −1.3% (225 → 222)."
             />
             <InsightCard
               icon={TrendingUp}
               type="success"
               title="Competitions"
-              content="From Jul 2025 to Sep 2026, Palo Alto grew 146 → 243 (+66.4%), Crowdstrike grew 0 → 142."
+              content="From Jul 2025 to Oct 2026, Palo Alto grew 146 → 226 (+54.8%), Cisco grew 73 → 74 (+1.4%), CrowdStrike grew 0 → 128; Oct MoM: Palo Alto −7.0%, CrowdStrike −9.9%."
             />
           </InsightsSection>
         );
@@ -332,13 +332,13 @@ export function SlideZeroTrust({ onNavigateHome }: { onNavigateHome?: () => void
               icon={TrendingUp}
               type="success"
               title="Fortinet"
-              content="From Jul 2025 to Sep 2026, traffic grew 4,565 → 5,231 (+14.6%), trailing Palo Alto 8,140."
+              content="From Jul 2025 to Oct 2026, traffic declined 4,565 → 4,448 (−2.6%), trailing Palo Alto 7,122; Oct MoM −15.0% (5,231 → 4,448)."
             />
             <InsightCard
               icon={TrendingUp}
               type="success"
               title="Competitions"
-              content="From Jul 2025 to Sep 2026, Palo Alto grew 7,219 → 8,140 (+12.8%), leading all competitors."
+              content="From Jul 2025 to Oct 2026, Palo Alto declined 7,219 → 7,122 (−1.3%), Cisco declined 1,983 → 1,036 (−47.8%), CrowdStrike grew 0 → 2,949; Oct MoM: Palo Alto −12.5%, Cisco −18.2%, CrowdStrike +1.1%."
             />
           </InsightsSection>
         );
@@ -349,13 +349,13 @@ export function SlideZeroTrust({ onNavigateHome }: { onNavigateHome?: () => void
               icon={TrendingUp}
               type="success"
               title="Fortinet"
-              content="From Jul 2025 to Sep 2026, AIO grew 165 → 176 (+6.7%), leading Palo Alto 159."
+              content="From Jul 2025 to Oct 2026, AIO keywords grew 165 → 171 (+3.6%), leading Palo Alto 159 and CrowdStrike 105; Oct MoM −2.8% (176 → 171)."
             />
             <InsightCard
               icon={TrendingUp}
               type="success"
               title="Competitions"
-              content="From Jul 2025 to Sep 2026, Palo Alto was flat 160 → 159 (−0.6%), Crowdstrike grew 0 → 121."
+              content="From Jul 2025 to Oct 2026, Palo Alto declined 160 → 159 (−0.6%), Cisco declined 152 → 55 (−63.8%), CrowdStrike grew 0 → 105; Oct MoM: CrowdStrike −13.2%."
             />
           </InsightsSection>
         );
@@ -366,13 +366,13 @@ export function SlideZeroTrust({ onNavigateHome }: { onNavigateHome?: () => void
               icon={Trophy}
               type="success"
               title="Fortinet"
-              content="Ranks #1 for 'zero trust definition', 'zero trust network security', 'zero trust network access' (SV 3.2K), 'zero trust software' and 'zero trust platform' — strong ZTNA and platform terms."
+              content="Fortinet retains #1 rankings for 'what is zero trust', 'zero trust network', 'zero trust network security', 'zero trust network access' and both tracked ZTNA solution terms."
             />
             <InsightCard
               icon={Target}
               type="warning"
               title="Competitions"
-              content="Head terms lag: 'zero trust' (SV 9.6K) #7, 'what is zero trust' #11, 'zero trust solutions' #31 (Cisco #8, Palo Alto #14), and no ranking for 'zero trust architecture' (SV 6.5K; Palo Alto #1) or 'zero trust principles' — key gaps to address."
+              content="The category has severe breadth gaps: Fortinet is absent for 'zero trust' (SV 9.6K), 'zero trust architecture' (6.5K), 'zero trust principles' and every generic platform/vendor/solution term."
             />
           </InsightsSection>
         );
@@ -382,7 +382,7 @@ export function SlideZeroTrust({ onNavigateHome }: { onNavigateHome?: () => void
   };
 
   const getPerformanceSummary = () => {
-    const latestIndex = 14; // Sep 2026
+    const latestIndex = 15; // Oct 2026
     let dataSource: Record<string, number[]>;
     let formatValue: (val: number) => string;
 
@@ -501,7 +501,7 @@ export function SlideZeroTrust({ onNavigateHome }: { onNavigateHome?: () => void
     <SlideContainer slideNumber={23} onNavigateHome={onNavigateHome} source="Ahrefs">
       <SlideHeader 
         title="Zero Trust Security" 
-        subtitle="(Jul 2025 – Sep 2026)"
+        subtitle="(Jul 2025 – Oct 2026)"
       />
       
       {!isEditing ? (
@@ -618,7 +618,7 @@ export function SlideZeroTrust({ onNavigateHome }: { onNavigateHome?: () => void
       ) : (
         <div className="flex-1 overflow-auto">
           <div className="bg-white border border-gray-200 rounded-lg p-6">
-            <h3 className="text-sm font-bold text-gray-900 mb-4">Edit Zero Trust Metrics Data (Jul 2025 - Sep 2026)</h3>
+            <h3 className="text-sm font-bold text-gray-900 mb-4">Edit Zero Trust Metrics Data (Jul 2025 - Oct 2026)</h3>
             <div className="space-y-6">
               {VENDORS.map((vendor) => (
                 <div key={vendor.id} className="bg-gray-50 rounded-lg p-4 border border-gray-200">

@@ -19,13 +19,13 @@ type AIOMetric = 'keywords' | 'traffic';
 
 // ─── Month keys ────────────────────────────────────────────────────────────────
 
-const MONTHS_8 = ['2025-12','2026-01','2026-02','2026-03','2026-04','2026-05','2026-06','2026-07','2026-08','2026-09'];
+const MONTHS_8 = ['2025-12','2026-01','2026-02','2026-03','2026-04','2026-05','2026-06','2026-07','2026-08','2026-09','2026-10'];
 const MONTHS_7 = ['2026-01','2026-02','2026-03','2026-04','2026-05','2026-06','2026-07','2026-08','2026-09'];
 
 const formatMonth = (key: string) => {
   const map: Record<string,string> = {
     '2025-12':'Dec-25','2026-01':'Jan-26','2026-02':'Feb-26','2026-03':'Mar-26',
-    '2026-04':'Apr-26','2026-05':'May-26','2026-06':'Jun-26','2026-07':'Jul-26','2026-08':'Aug-26','2026-09':'Sep-26',
+    '2026-04':'Apr-26','2026-05':'May-26','2026-06':'Jun-26','2026-07':'Jul-26','2026-08':'Aug-26','2026-09':'Sep-26','2026-10':'Oct-26',
   };
   return map[key] ?? key;
 };
@@ -40,14 +40,14 @@ const formatAxis = (v: number) => {
 
 const SEARCH_DATA: Record<TrafficMetric, Record<string, number[]>> = {
   sessions: {
-    google: [80922,94225,102040,104400,87360,72320,64923,54149,46202,47788],
-    bing:   [14461,16839, 17572, 15407,13372,12435,12525, 9671, 8084, 7721],
-    yahoo:  [  783,  924,  1006,   993,  710,  645,  462,  425,  280,  268],
+    google: [80922,94225,102040,104400,87360,72320,64923,54149,46202,47788,49603],
+    bing:   [14461,16839, 17572, 15407,13372,12435,12525, 9671, 8084, 7721, 8463],
+    yahoo:  [  783,  924,  1006,   993,  710,  645,  462,  425,  280,  268,  305],
   },
   users: {
-    google: [59668,69109,73097,74778,64464,55524,50947,40395,32258,34851],
-    bing:   [11132,12955,12825,11931, 9991, 9744,10107, 7782, 6372, 6193],
-    yahoo:  [  668,  830,  854,  839,  612,  569,  415,  367,  244,  230],
+    google: [59668,69109,73097,74778,64464,55524,50947,40395,32258,34851,36896],
+    bing:   [11132,12955,12825,11931, 9991, 9744,10107, 7782, 6372, 6193, 6486],
+    yahoo:  [  668,  830,  854,  839,  612,  569,  415,  367,  244,  230,  264],
   },
 };
 
@@ -61,34 +61,34 @@ const SEARCH_LINES = [
 
 const METRICS_DATA: Record<MetricsView, { gsc: number[]; bing: number[]; ratio: number[] }> = {
   'us-clicks': {
-    gsc:   [130000,153000,162000,173000,160000,142000,127000,120000,118000,121000],
-    bing:  [ 68000, 76000, 76000, 71000, 64000, 55000, 58000, 59000, 60000, 59000],
-    ratio: [1.9,2.0,2.1,2.4,2.5,2.6,2.2,2.0,2.0,2.0],
+    gsc:   [130000,153000,162000,173000,160000,142000,127000,120000,118000,121000,126000],
+    bing:  [ 68000, 76000, 76000, 71000, 64000, 55000, 58000, 59000, 60000, 59000, 60000],
+    ratio: [1.9,2.0,2.1,2.4,2.5,2.6,2.2,2.0,2.0,2.0,2.1],
   },
   'us-impressions': {
-    gsc:   [47500000,51100000,68200000,69900000,62100000,64700000,55800000,38400000,32900000,40600000],
-    bing:  [ 2300000, 2300000, 2300000, 2100000, 1800000, 1600000, 2600000, 1900000, 1863000, 1930000],
-    ratio: [21.0,22.3,29.7,33.9,35.0,40.1,21.5,20.4,17.6,21.0],
+    gsc:   [47500000,51100000,68200000,69900000,62100000,64700000,55800000,38400000,32900000,40600000,24100000],
+    bing:  [ 2300000, 2300000, 2300000, 2100000, 1800000, 1600000, 2600000, 1900000, 1863000, 1930000, 1870000],
+    ratio: [21.0,22.3,29.7,33.9,35.0,40.1,21.5,20.4,17.6,21.0,12.9],
   },
   'ww-clicks': {
-    gsc:   [1300000,1500000,1500000,1600000,1500000,1400000,1400000,1300000,1100000,1200000],
-    bing:  [ 408000, 449000, 452000, 448000, 403000, 365000, 400000, 396000, 374000, 404000],
-    ratio: [3.2,3.2,3.2,3.6,3.7,3.8,3.5,3.3,3.0,2.9],
+    gsc:   [1300000,1500000,1500000,1600000,1500000,1400000,1400000,1300000,1100000,1200000,1300000],
+    bing:  [ 408000, 449000, 452000, 448000, 403000, 365000, 400000, 396000, 374000, 404000, 432000],
+    ratio: [3.2,3.2,3.2,3.6,3.7,3.8,3.5,3.3,3.0,2.9,2.9],
   },
   'ww-impressions': {
-    gsc:   [136600000,157500000,292300000,232700000,204800000,182100000,168300000,156200000,141300000,145200000],
-    bing:  [  8800000,  8700000,  8900000,  9000000,  8300000,  7200000,  7200000,  6400000,  8300000,  8600000],
-    ratio: [15.6,18.1,32.9,25.8,24.7,25.3,23.4,24.6,17.0,16.8],
+    gsc:   [136600000,157500000,292300000,232700000,204800000,182100000,168300000,156200000,141300000,145200000,87900000],
+    bing:  [  8800000,  8700000,  8900000,  9000000,  8300000,  7200000,  7200000,  6400000,  8300000,  8600000,  8100000],
+    ratio: [15.6,18.1,32.9,25.8,24.7,25.3,23.4,24.6,17.0,16.8,10.9],
   },
 };
 
 // ─── Tab 3: AI Traffic ─────────────────────────────────────────────────────────
 
 const AI_ENGINES = [
-  { id: 'chatgpt',    name: 'ChatGPT',    color: '#10B981', data: [9000,8716,8878,8888,7777,12859,10948, 9978,10389,11056] },
-  { id: 'gemini',     name: 'Gemini',     color: '#3B82F6', data: [1272,1684,1743,2062,2135, 1607, 1578, 1634, 1605, 1671] },
-  { id: 'perplexity', name: 'Perplexity', color: '#F59E0B', data: [1115, 824, 753, 911, 994,  656,  464,  286,  149,  179] },
-  { id: 'claude',     name: 'Claude',     color: '#8B5CF6', data: [ 179, 235, 260, 508, 414,  539,  409,  295,  224,  123] },
+  { id: 'chatgpt',    name: 'ChatGPT',    color: '#10B981', data: [9000,8716,8878,8888,7777,12859,10948, 9978,10389,11056,12455] },
+  { id: 'gemini',     name: 'Gemini',     color: '#3B82F6', data: [1272,1684,1743,2062,2135, 1607, 1578, 1634, 1605, 1671, 1946] },
+  { id: 'perplexity', name: 'Perplexity', color: '#F59E0B', data: [1115, 824, 753, 911, 994,  656,  464,  286,  149,  179,  261] },
+  { id: 'claude',     name: 'Claude',     color: '#8B5CF6', data: [ 179, 235, 260, 508, 414,  539,  409,  295,  224,  123,  150] },
 ];
 
 // ─── Tab 4: AIO Metrics ────────────────────────────────────────────────────────
@@ -233,19 +233,20 @@ export function SlideOrganicPerformance({ onNavigateHome }: { onNavigateHome?: (
   // ── Insights ────────────────────────────────────────────────────────────────
 
   const renderInsights = () => {
+    const L = MONTHS_8.length - 1;
     if (activeTab === 'search-traffic') {
       const d = SEARCH_DATA[trafficMetric];
       const label = trafficMetric === 'sessions' ? 'sessions' : 'users';
-      const gLatest = d.google[9]; const gPeak = Math.max(...d.google); const gPeakIdx = d.google.indexOf(gPeak);
-      const bLatest = d.bing[9];   const bFirst = d.bing[0]; const yLatest = d.yahoo[9];
+      const gLatest = d.google[L]; const gPeak = Math.max(...d.google); const gPeakIdx = d.google.indexOf(gPeak);
+      const bLatest = d.bing[L];   const bFirst = d.bing[0]; const yLatest = d.yahoo[L];
       const bPeakIdx = d.bing.indexOf(Math.max(...d.bing));
       const gShare = Math.round((gLatest / (gLatest + bLatest + yLatest)) * 100);
       return (
         <InsightsSection>
           <InsightCard icon={TrendingUp} type="success" title="Google Dominates"
-            content={`Google generated ${formatNumber(gLatest)} ${label} in Sep 2026, accounting for ~${gShare}% of all organic ${label}. Peaked at ${formatNumber(gPeak)} in ${formatMonth(MONTHS_8[gPeakIdx])}.`} />
+            content={`Google generated ${formatNumber(gLatest)} ${label} in Oct 2026, accounting for ~${gShare}% of all organic ${label}. Peaked at ${formatNumber(gPeak)} in ${formatMonth(MONTHS_8[gPeakIdx])}.`} />
           <InsightCard icon={TrendingDown} type="warning" title="Bing Declining"
-            content={`Bing dropped from ${formatNumber(bFirst)} in Dec 2025 to ${formatNumber(bLatest)} in Sep 2026 (${(((bLatest-bFirst)/bFirst)*100).toFixed(0)}%). Downward trend since the ${formatMonth(MONTHS_8[bPeakIdx])} peak.`} />
+            content={`Bing dropped from ${formatNumber(bFirst)} in Dec 2025 to ${formatNumber(bLatest)} in Oct 2026 (${(((bLatest-bFirst)/bFirst)*100).toFixed(0)}%). Downward trend since the ${formatMonth(MONTHS_8[bPeakIdx])} peak.`} />
           <InsightCard icon={AlertTriangle} type="error" title="Yahoo Negligible"
             content={`Yahoo averages just ${formatNumber(Math.round(d.yahoo.reduce((a,b)=>a+b,0)/d.yahoo.length))} ${label}/month — less than 1% of organic ${label}. Not a meaningful traffic source.`} />
         </InsightsSection>
@@ -254,16 +255,16 @@ export function SlideOrganicPerformance({ onNavigateHome }: { onNavigateHome?: (
 
     if (activeTab === 'search-metrics') {
       const d = METRICS_DATA[metricsView];
-      const gLatest = d.gsc[9]; const gFirst = d.gsc[0]; const gPeak = Math.max(...d.gsc);
-      const ratioLatest = d.ratio[9]; const ratioPeak = Math.max(...d.ratio);
+      const gLatest = d.gsc[L]; const gFirst = d.gsc[0]; const gPeak = Math.max(...d.gsc);
+      const ratioLatest = d.ratio[L]; const ratioPeak = Math.max(...d.ratio);
       const isImpression = metricsView.includes('impression');
       const scope = metricsView.startsWith('us') ? 'US' : 'WW';
       return (
         <InsightsSection>
           <InsightCard icon={TrendingDown} type="warning" title={`${scope} GSC ${isImpression ? 'Impressions' : 'Clicks'} Peak`}
-            content={`GSC ${isImpression ? 'impressions' : 'clicks'} peaked at ${formatAxis(gPeak)} — currently at ${formatAxis(gLatest)} in Sep 2026 (${(((gLatest-gFirst)/gFirst)*100).toFixed(0)}% Dec→Sep change).`} />
+            content={`GSC ${isImpression ? 'impressions' : 'clicks'} peaked at ${formatAxis(gPeak)} — currently at ${formatAxis(gLatest)} in Oct 2026 (${(((gLatest-gFirst)/gFirst)*100).toFixed(0)}% Dec→Oct change).`} />
           <InsightCard icon={Activity} type="info" title="GSC/Bing Ratio"
-            content={`GSC is ${ratioLatest}× Bing in Sep 2026. Ratio peaked at ${ratioPeak}× — GSC ${isImpression ? 'impression' : 'click'} volume significantly outpaces Bing across all months.`} />
+            content={`GSC is ${ratioLatest}× Bing in Oct 2026. Ratio peaked at ${ratioPeak}× — GSC ${isImpression ? 'impression' : 'click'} volume significantly outpaces Bing across all months.`} />
           <InsightCard icon={TrendingUp} type="success" title={isImpression ? 'Bing Impressions Stable' : 'Bing Trend'}
             content={`Bing ${isImpression ? 'impressions' : 'clicks'} ranged from ${formatAxis(Math.min(...d.bing))} to ${formatAxis(Math.max(...d.bing))} — relatively stable vs volatile GSC trends.`} />
         </InsightsSection>
@@ -271,17 +272,17 @@ export function SlideOrganicPerformance({ onNavigateHome }: { onNavigateHome?: (
     }
 
     if (activeTab === 'ai-traffic') {
-      const chatLatest = AI_ENGINES[0].data[9]; const chatPeak = Math.max(...AI_ENGINES[0].data);
-      const gemFirst = AI_ENGINES[1].data[0]; const gemLatest = AI_ENGINES[1].data[9]; const gemPeak = Math.max(...AI_ENGINES[1].data);
-      const claudeFirst = AI_ENGINES[3].data[0]; const claudeLatest = AI_ENGINES[3].data[9]; const claudePeak = Math.max(...AI_ENGINES[3].data); const claudePrev = AI_ENGINES[3].data[8];
+      const chatLatest = AI_ENGINES[0].data[L]; const chatPeak = Math.max(...AI_ENGINES[0].data);
+      const gemFirst = AI_ENGINES[1].data[0]; const gemLatest = AI_ENGINES[1].data[L]; const gemPeak = Math.max(...AI_ENGINES[1].data);
+      const claudeFirst = AI_ENGINES[3].data[0]; const claudeLatest = AI_ENGINES[3].data[L]; const claudePeak = Math.max(...AI_ENGINES[3].data); const claudePrev = AI_ENGINES[3].data[L-1];
       return (
         <InsightsSection>
           <InsightCard icon={TrendingUp} type="success" title="ChatGPT Dominates"
-            content={`ChatGPT drives ~85% of all AI referral traffic. May 2026 spike to ${formatNumber(chatPeak)} sessions (+65% MoM) is the highest recorded month. Sep at ${formatNumber(chatLatest)}.`} />
+            content={`ChatGPT drives ~85% of all AI referral traffic. May 2026 spike to ${formatNumber(chatPeak)} sessions (+65% MoM) is the highest recorded month; Oct at ${formatNumber(chatLatest)} is within ${(((chatPeak-chatLatest)/chatPeak)*100).toFixed(0)}% of it (+${(((chatLatest-AI_ENGINES[0].data[L-1])/AI_ENGINES[0].data[L-1])*100).toFixed(0)}% MoM).`} />
           <InsightCard icon={TrendingUp} type="success" title="Gemini Growing"
-            content={`Gemini sessions grew ${(((gemLatest-gemFirst)/gemFirst)*100).toFixed(0)}% Dec→Sep (${formatNumber(gemFirst)} → ${formatNumber(gemLatest)}), though still below the Apr peak of ${formatNumber(gemPeak)}. Remains the #2 AI source.`} />
+            content={`Gemini sessions grew ${(((gemLatest-gemFirst)/gemFirst)*100).toFixed(0)}% Dec→Oct (${formatNumber(gemFirst)} → ${formatNumber(gemLatest)}), though still below the Apr peak of ${formatNumber(gemPeak)}. Remains the #2 AI source.`} />
           <InsightCard icon={TrendingDown} type="warning" title="Claude Declining"
-            content={`Claude fell ${Math.abs(((claudeLatest-claudeFirst)/claudeFirst)*100).toFixed(0)}% Dec→Sep (${formatNumber(claudeFirst)} → ${formatNumber(claudeLatest)}), including a ${Math.abs(((claudeLatest-claudePrev)/claudePrev)*100).toFixed(0)}% MoM drop in Sep — well below the May peak of ${formatNumber(claudePeak)} and the weakest engine by volume.`} />
+            content={`Claude fell ${Math.abs(((claudeLatest-claudeFirst)/claudeFirst)*100).toFixed(0)}% Dec→Oct (${formatNumber(claudeFirst)} → ${formatNumber(claudeLatest)}), despite a ${Math.abs(((claudeLatest-claudePrev)/claudePrev)*100).toFixed(0)}% MoM rebound in Oct — still well below the May peak of ${formatNumber(claudePeak)} and the weakest engine by volume.`} />
         </InsightsSection>
       );
     }
@@ -317,14 +318,14 @@ export function SlideOrganicPerformance({ onNavigateHome }: { onNavigateHome?: (
   const TABS: { id: MainTab; label: string }[] = [
     { id: 'search-traffic', label: 'Search Engines - Organic Traffic'  },
     { id: 'search-metrics', label: 'Search Engines - Organic Metrics'  },
-    { id: 'ai-traffic',     label: 'LLM - Organic Traffic'             },
+    { id: 'ai-traffic',     label: 'LLM - Organic Traffic'      },
     { id: 'aio-metrics',    label: 'AIO Metrics (KW & Traffic)'        },
   ];
 
   const footerSource =
-    activeTab === 'search-traffic' ? 'Source: GA & Google Webmaster · US · Dec 2025 – Sep 2026' :
-    activeTab === 'search-metrics' ? 'Source: GSC & Bing Webmaster · Dec 2025 – Sep 2026' :
-    activeTab === 'ai-traffic'     ? 'Source: GA · AI Engine Referrals · Dec 2025 – Sep 2026' :
+    activeTab === 'search-traffic' ? 'Source: GA & Google Webmaster · US · Dec 2025 – Oct 2026' :
+    activeTab === 'search-metrics' ? 'Source: GSC & Bing Webmaster · Dec 2025 – Oct 2026' :
+    activeTab === 'ai-traffic'     ? 'Source: GA · AI Engine Referrals · Dec 2025 – Oct 2026' :
                                      'Source: SEMrush · AIO Metrics · Jan 2026 – Sep 2026';
 
   return (
@@ -340,7 +341,7 @@ export function SlideOrganicPerformance({ onNavigateHome }: { onNavigateHome?: (
     >
       <SlideHeader
         title="Organic Performance Metrics"
-        subtitle="Search Engine, LLM & AIO Performance · Dec 2025 – Sep 2026"
+        subtitle="Search Engine, LLM & AIO Performance · Dec 2025 – Oct 2026"
       />
 
       <div className="flex-1 flex flex-col gap-3">

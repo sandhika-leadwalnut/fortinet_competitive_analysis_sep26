@@ -31,7 +31,7 @@ const NGFW_COMPETITORS = [
   { id: 'zscaler',      name: 'Zscaler',       color: '#A855F7' },
 ];
 
-const MONTHS = ['2025-07', '2025-08', '2025-09', '2025-10', '2025-11', '2025-12', '2026-01', '2026-02', '2026-03', '2026-04', '2026-05', '2026-06', '2026-07', '2026-08', '2026-09'];
+const MONTHS = ['2025-07', '2025-08', '2025-09', '2025-10', '2025-11', '2025-12', '2026-01', '2026-02', '2026-03', '2026-04', '2026-05', '2026-06', '2026-07', '2026-08', '2026-09', '2026-10'];
 
 // Format month for display
 const formatMonth = (month: string) => {
@@ -41,86 +41,86 @@ const formatMonth = (month: string) => {
 };
 
 const TOTAL_KEYWORDS_ABS = {
-  fortinet:    [1240, 1421, 995, 896, 944, 981, 998, 999,  908, 903, 896, 900, 1522, 1458, 1369],
-  cisco:       [1132, 1177, 756, 665, 700, 742, 755, 825,  689, 654, 659, 660, 1145, 1151, 1128],
-  hpe:         [ 170,  174,  87,  85, 103, 102, 109, 109,  111,  72,  82,  80,   72,   68,   52],
-  paloalto:    [1129, 1224, 848, 727, 756, 860, 909, 917,  868, 809, 854, 812, 1406, 1331, 1239],
-  checkpoint:  [1115, 1198, 708, 564, 560, 562, 562, 567,  553, 516, 537, 530,  816,  767,  767],
-  crowdstrike: [null, null, null, null,  63,  74,  80,  89,   76,  61,  50,  53,   44,   44,   39], // Data starts Nov 2025
-  catonetworks:[null, null, null, null, null,  89,  99,  86,   77,  38,  37,  36,   28,   23,   22], // Data starts Dec 2025
-  sentinelone: [null, null, null, null, null,  25,  32,  34,   31,  17,  10,  20,   22,   17,   11], // Data starts Dec 2025
-  wiz:         [null, null, null, null, null, null, null, null, 14,   0,   0,   0,    1,    0,    0], // Data starts Mar 2026
-  forcepoint:  [null, null, null, null, null, null, null, null, null, null, null, null,   37,   45,   39], // Data starts Jul 2026
-  zscaler:     [null, null, null, null, null, null, null, null, null, null, null, null,  104,   89,   90], // Data starts Jul 2026
+  fortinet:    [1240, 1421, 995, 896, 944, 981, 998, 999, 908, 903, 896, 900, 1522, 1458, 1369, 1296],
+  cisco:       [1132, 1177, 756, 665, 700, 742, 755, 825, 689, 654, 659, 660, 1145, 1151, 1128, 1089],
+  hpe:         [170, 174, 87, 85, 103, 102, 109, 109, 111, 72, 82, 80, 72, 68, 52, 51],
+  paloalto:    [1129, 1224, 848, 727, 756, 860, 909, 917, 868, 809, 854, 812, 1406, 1331, 1239, 1163],
+  checkpoint:  [1115, 1198, 708, 564, 560, 562, 562, 567, 553, 516, 537, 530, 816, 767, 767, 744],
+  crowdstrike: [null, null, null, null, 63, 74, 80, 89, 76, 61, 50, 53, 44, 44, 39, null], // Data starts Nov 2025
+  catonetworks:[null, null, null, null, null, 89, 99, 86, 77, 38, 37, 36, 28, 23, 22, 14], // Data starts Dec 2025
+  sentinelone: [null, null, null, null, null, 25, 32, 34, 31, 17, 10, 20, 22, 17, 11, 13], // Data starts Dec 2025
+  wiz:         [null, null, null, null, null, null, null, null, 14, 0, 0, 0, 1, 0, 0, 1], // Data starts Mar 2026
+  forcepoint:  [null, null, null, null, null, null, null, null, null, null, null, null, 37, 45, 39, null], // Data starts Jul 2026
+  zscaler:     [null, null, null, null, null, null, null, null, null, null, null, null, 104, 89, 90, 87], // Data starts Jul 2026
 };
 
 const PAGE_ONE_KW_ABS = {
-  fortinet:    [653, 762, 791, 788, 849, 862, 879, 859, 820, 864, 847, 871, 1494, 1429, 1336],
-  cisco:       [494, 510, 535, 556, 584, 601, 604, 661, 562, 606, 615, 621, 1101, 1116, 1096],
-  hpe:         [ 41,  41,  45,  51,  64,  55,  66,  63,  69,  53,  65,  68,   60,   56,   43],
-  paloalto:    [517, 557, 611, 608, 634, 719, 760, 758, 761, 746, 791, 770, 1359, 1279, 1207],
-  checkpoint:  [425, 430, 445, 413, 400, 371, 381, 361, 378, 439, 458, 470,  768,  712,  715],
-  crowdstrike: [null, null, null, null,  38,  39,  36,  40,  35,  54,  45,  48,   41,   39,   35], // Data starts Nov 2025
-  catonetworks:[null, null, null, null, null,  22,  29,  21,  27,  22,  25,  28,   21,   17,   18], // Data starts Dec 2025
-  sentinelone: [null, null, null, null, null,   6,   7,   6,  12,  12,   8,  13,   15,    9,    8], // Data starts Dec 2025
-  wiz:         [null, null, null, null, null, null, null, null, 0,   0,   0,   0,    1,    0,    0], // Data starts Mar 2026
-  forcepoint:  [null, null, null, null, null, null, null, null, null, null, null, null,   29,   37,   37], // Data starts Jul 2026
-  zscaler:     [null, null, null, null, null, null, null, null, null, null, null, null,   95,   79,   80], // Data starts Jul 2026
+  fortinet:    [653, 762, 791, 788, 849, 862, 879, 859, 820, 864, 847, 871, 1494, 1429, 1336, 1270],
+  cisco:       [494, 510, 535, 556, 584, 601, 604, 661, 562, 606, 615, 621, 1101, 1116, 1096, 1066],
+  hpe:         [41, 41, 45, 51, 64, 55, 66, 63, 69, 53, 65, 68, 60, 56, 43, 50],
+  paloalto:    [517, 557, 611, 608, 634, 719, 760, 758, 761, 746, 791, 770, 1359, 1279, 1207, 1143],
+  checkpoint:  [425, 430, 445, 413, 400, 371, 381, 361, 378, 439, 458, 470, 768, 712, 715, 707],
+  crowdstrike: [null, null, null, null, 38, 39, 36, 40, 35, 54, 45, 48, 41, 39, 35, null], // Data starts Nov 2025
+  catonetworks:[null, null, null, null, null, 22, 29, 21, 27, 22, 25, 28, 21, 17, 18, 14], // Data starts Dec 2025
+  sentinelone: [null, null, null, null, null, 6, 7, 6, 12, 12, 8, 13, 15, 9, 8, 13], // Data starts Dec 2025
+  wiz:         [null, null, null, null, null, null, null, null, 0, 0, 0, 0, 1, 0, 0, 0], // Data starts Mar 2026
+  forcepoint:  [null, null, null, null, null, null, null, null, null, null, null, null, 29, 37, 37, null], // Data starts Jul 2026
+  zscaler:     [null, null, null, null, null, null, null, null, null, null, null, null, 95, 79, 80, 85], // Data starts Jul 2026
 };
 
 const CUMULATIVE_TRAFFIC_ABS = {
-  fortinet:    [18947, 23092, 25392, 23104, 24692, 27746, 30861, 30105, 35029, 37349, 36987, 38088, 23118, 22921, 18403],
-  cisco:       [16293, 15420, 16155, 15861, 15826, 24132, 29153, 30462, 36553, 42295, 42594, 39293, 17960, 18614, 15532],
-  hpe:         [  256,   413,   384,   782,   836,   626,   687,   702,   645,   518,   709,   754,   542,   580,   512],
-  paloalto:    [10265, 11043, 11770, 11946, 12637, 21611, 23649, 23938, 23938, 27038, 27275, 23299, 17443, 15363, 13224],
-  checkpoint:  [ 5250,  6262,  5016,  4294,  5126,  4772,  4814,  5881,  4753,  8828,  5543,  7395,  4612,  4742,  4964],
-  crowdstrike: [null, null, null, null,  407,  338,  317,  451,  296,   629,   507,   399,   412,   278,   323], // Data starts Nov 2025
-  catonetworks:[null, null, null, null, null,  270,  306,  351,  283,   214,   215,   214,   187,   158,   129], // Data starts Dec 2025
-  sentinelone: [null, null, null, null, null,   62,   60,   62,   64,    92,    47,    72,    60,    46,    36], // Data starts Dec 2025
-  wiz:         [null, null, null, null, null, null, null, null,    0,     0,     0,     0,     5,     0,     0], // Data starts Mar 2026
-  forcepoint:  [null, null, null, null, null, null, null, null, null,  null,  null,  null,   119,   171,   381], // Data starts Jul 2026
-  zscaler:     [null, null, null, null, null, null, null, null, null,  null,  null,  null,   834,   985,   997], // Data starts Jul 2026
+  fortinet:    [18947, 23092, 25392, 23104, 24692, 27746, 30861, 30105, 35029, 37349, 36987, 38088, 23118, 22921, 18403, 16564],
+  cisco:       [16293, 15420, 16155, 15861, 15826, 24132, 29153, 30462, 36553, 42295, 42594, 39293, 17960, 18614, 15532, 17753],
+  hpe:         [256, 413, 384, 782, 836, 626, 687, 702, 645, 518, 709, 754, 542, 580, 512, 499],
+  paloalto:    [10265, 11043, 11770, 11946, 12637, 21611, 23649, 23938, 23938, 27038, 27275, 23299, 17443, 15363, 13224, 11709],
+  checkpoint:  [5250, 6262, 5016, 4294, 5126, 4772, 4814, 5881, 4753, 8828, 5543, 7395, 4612, 4742, 4964, 5152],
+  crowdstrike: [null, null, null, null, 407, 338, 317, 451, 296, 629, 507, 399, 412, 278, 323, null], // Data starts Nov 2025
+  catonetworks:[null, null, null, null, null, 270, 306, 351, 283, 214, 215, 214, 187, 158, 129, 100], // Data starts Dec 2025
+  sentinelone: [null, null, null, null, null, 62, 60, 62, 64, 92, 47, 72, 60, 46, 36, 67], // Data starts Dec 2025
+  wiz:         [null, null, null, null, null, null, null, null, 0, 0, 0, 0, 5, 0, 0, 2], // Data starts Mar 2026
+  forcepoint:  [null, null, null, null, null, null, null, null, null, null, null, null, 119, 171, 381, null], // Data starts Jul 2026
+  zscaler:     [null, null, null, null, null, null, null, null, null, null, null, null, 834, 985, 997, 667], // Data starts Jul 2026
 };
 
 const AIO_DATA_ABS = {
-  fortinet:    [538, 611, 474, 498, 588, 615, 637, 652, 660, 678, 692, 699, 1051, 957, 925],
-  cisco:       [484, 530, 374, 389, 462, 490, 498, 534, 517, 498, 504, 524,  812, 776, 764],
-  hpe:         [ 82,  98,  61,  55,  77,  77,  79,  87,  90,  56,  60,  63,   55,  51,  43],
-  paloalto:    [497, 550, 420, 413, 496, 558, 587, 613, 629, 602, 643, 620,  940, 853, 814],
-  checkpoint:  [500, 542, 359, 353, 389, 396, 384, 406, 430, 405, 431, 441,  606, 542, 555],
-  crowdstrike: [null, null, null, null,  47,  47,  53,  61,  58,  45,  45,  48,   39,  35,  30], // Data starts Nov 2025
-  catonetworks:[null, null, null, null, null,  68,  74,  73,  65,  32,  34,  35,   25,  17,  17], // Data starts Dec 2025
-  sentinelone: [null, null, null, null, null,  18,  22,  27,  27,  13,   8,  18,   19,  14,   9], // Data starts Dec 2025
-  wiz:         [null, null, null, null, null, null, null, null, 13,   0,   0,   0,    1,   0,   0], // Data starts Mar 2026
-  forcepoint:  [null, null, null, null, null, null, null, null, null, null, null, null,   25,  26,  23], // Data starts Jul 2026
-  zscaler:     [null, null, null, null, null, null, null, null, null, null, null, null,   69,  56,  58], // Data starts Jul 2026
+  fortinet:    [538, 611, 474, 498, 588, 615, 637, 652, 660, 678, 692, 699, 1051, 957, 925, 899],
+  cisco:       [484, 530, 374, 389, 462, 490, 498, 534, 517, 498, 504, 524, 812, 776, 764, 774],
+  hpe:         [82, 98, 61, 55, 77, 77, 79, 87, 90, 56, 60, 63, 55, 51, 43, 38],
+  paloalto:    [497, 550, 420, 413, 496, 558, 587, 613, 629, 602, 643, 620, 940, 853, 814, 785],
+  checkpoint:  [500, 542, 359, 353, 389, 396, 384, 406, 430, 405, 431, 441, 606, 542, 555, 546],
+  crowdstrike: [null, null, null, null, 47, 47, 53, 61, 58, 45, 45, 48, 39, 35, 30, null], // Data starts Nov 2025
+  catonetworks:[null, null, null, null, null, 68, 74, 73, 65, 32, 34, 35, 25, 17, 17, 11], // Data starts Dec 2025
+  sentinelone: [null, null, null, null, null, 18, 22, 27, 27, 13, 8, 18, 19, 14, 9, 11], // Data starts Dec 2025
+  wiz:         [null, null, null, null, null, null, null, null, 13, 0, 0, 0, 1, 0, 0, 1], // Data starts Mar 2026
+  forcepoint:  [null, null, null, null, null, null, null, null, null, null, null, null, 25, 26, 23, null], // Data starts Jul 2026
+  zscaler:     [null, null, null, null, null, null, null, null, null, null, null, null, 69, 56, 58, 57], // Data starts Jul 2026
 };
 
 type TabType = 'keywords' | 'page-one' | 'traffic' | 'aio' | 'keyword-gap';
 
 const KEYWORD_GAP_DATA = {
   tofu: [
-    { keyword: "firewall", sv: 33000, kd: 69, fortinet: 1, cisco: 1, paloalto: null, checkpoint: null, crowdstrike: null },
-    { keyword: "what is firewall", sv: 2200, kd: 65, fortinet: 1, cisco: 1, paloalto: null, checkpoint: 12, crowdstrike: null },
-    { keyword: "firewall definition", sv: 2900, kd: 51, fortinet: 1, cisco: 1, paloalto: 1, checkpoint: null, crowdstrike: null },
-    { keyword: "network firewall", sv: 8200, kd: 50, fortinet: null, cisco: 4, paloalto: null, checkpoint: null, crowdstrike: null },
-    { keyword: "how does a firewall work", sv: 700, kd: 52, fortinet: 1, cisco: 9, paloalto: 1, checkpoint: 12, crowdstrike: null },
-    { keyword: "types of firewall", sv: 400, kd: 29, fortinet: 2, cisco: 10, paloalto: 1, checkpoint: 1, crowdstrike: null },
-    { keyword: "firewall benefits", sv: 40, kd: 2, fortinet: 1, cisco: 7, paloalto: 4, checkpoint: null, crowdstrike: null },
+    { keyword: "firewall", sv: 33000, kd: 69, fortinet: 1, cisco: 1, paloalto: null, checkpoint: 1, crowdstrike: null },
+    { keyword: "what is firewall", sv: 2200, kd: 65, fortinet: 1, cisco: 1, paloalto: 8, checkpoint: 1, crowdstrike: null },
+    { keyword: "firewall definition", sv: 2900, kd: 51, fortinet: 1, cisco: 1, paloalto: 1, checkpoint: 6, crowdstrike: null },
+    { keyword: "network firewall", sv: 8200, kd: 50, fortinet: null, cisco: 1, paloalto: 1, checkpoint: null, crowdstrike: null },
+    { keyword: "how does a firewall work", sv: 700, kd: 52, fortinet: 1, cisco: 1, paloalto: 1, checkpoint: 1, crowdstrike: null },
+    { keyword: "types of firewall", sv: 400, kd: 29, fortinet: 8, cisco: 1, paloalto: 1, checkpoint: 11, crowdstrike: null },
+    { keyword: "firewall benefits", sv: 40, kd: 2, fortinet: 1, cisco: 10, paloalto: 3, checkpoint: null, crowdstrike: null },
   ],
   mofu: [
-    { keyword: "software firewalls", sv: 600, kd: 46, fortinet: 1, cisco: null, paloalto: 1, checkpoint: null, crowdstrike: null },
-    { keyword: "firewall comparison", sv: 70, kd: 14, fortinet: 9, cisco: null, paloalto: 2, checkpoint: null, crowdstrike: null },
-    { keyword: "enterprise firewall", sv: 500, kd: 12, fortinet: 15, cisco: 22, paloalto: null, checkpoint: 11, crowdstrike: null },
-    { keyword: "firewall devices", sv: 150, kd: 8, fortinet: 1, cisco: 7, paloalto: 1, checkpoint: null, crowdstrike: null },
-    { keyword: "network firewall device", sv: 150, kd: 0, fortinet: 6, cisco: 11, paloalto: 10, checkpoint: null, crowdstrike: null },
+    { keyword: "software firewalls", sv: 600, kd: 46, fortinet: 5, cisco: null, paloalto: 2, checkpoint: null, crowdstrike: null },
+    { keyword: "firewall comparison", sv: 70, kd: 14, fortinet: 6, cisco: null, paloalto: 1, checkpoint: null, crowdstrike: null },
+    { keyword: "enterprise firewall", sv: 500, kd: 12, fortinet: null, cisco: null, paloalto: null, checkpoint: 1, crowdstrike: null },
+    { keyword: "firewall devices", sv: 150, kd: 8, fortinet: 1, cisco: 1, paloalto: 1, checkpoint: null, crowdstrike: null },
+    { keyword: "network firewall device", sv: 150, kd: 0, fortinet: 1, cisco: 1, paloalto: 9, checkpoint: null, crowdstrike: null },
   ],
   bofu: [
-    { keyword: "firewall solutions", sv: 450, kd: 46, fortinet: 4, cisco: 3, paloalto: 10, checkpoint: null, crowdstrike: null },
-    { keyword: "enterprise firewall solutions", sv: 200, kd: 42, fortinet: 6, cisco: null, paloalto: 1, checkpoint: 11, crowdstrike: null },
+    { keyword: "firewall solutions", sv: 450, kd: 46, fortinet: 1, cisco: 1, paloalto: 1, checkpoint: null, crowdstrike: null },
+    { keyword: "enterprise firewall solutions", sv: 200, kd: 42, fortinet: 5, cisco: null, paloalto: 4, checkpoint: 9, crowdstrike: null },
     { keyword: "best firewall solution", sv: null, kd: null, fortinet: null, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
     { keyword: "leading firewall services", sv: null, kd: null, fortinet: null, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
-    { keyword: "firewall solutions for small business", sv: 100, kd: 1, fortinet: 3, cisco: 2, paloalto: null, checkpoint: null, crowdstrike: null },
+    { keyword: "firewall solutions for small business", sv: 100, kd: 1, fortinet: null, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
   ],
 };
 
@@ -257,13 +257,13 @@ export function SlideNGFW({ onNavigateHome }: SlideNGFWProps) {
               icon={TrendingUp}
               type="success"
               title="Fortinet"
-              content="From Jul 2025 to Sep 2026, keywords grew 1,240 → 1,369 (+10.4%), leading Palo Alto 1,239 and Cisco 1,128; Jul-26 data refresh lifted the base."
+              content="From Jul 2025 to Oct 2026, keywords grew 1,240 → 1,296 (+4.5%), leading Palo Alto 1,163 and Cisco 1,089; Jul-26 data refresh step 900 → 1,522; Oct MoM −5.3% (1,369 → 1,296)."
             />
             <InsightCard
               icon={TrendingUp}
               type="success"
               title="Competitions"
-              content="From Jul 2025 to Sep 2026, Cisco held flat 1,132 → 1,128 (−0.4%), Palo Alto grew 1,129 → 1,239 (+9.7%); both gains rest on the Jul-26 jump (Cisco 660 → 1,145, Palo Alto 812 → 1,406)."
+              content="From Jul 2025 to Oct 2026, Cisco declined 1,132 → 1,089 (−3.8%), Palo Alto grew 1,129 → 1,163 (+3.0%); Oct MoM: Cisco −3.5%, Palo Alto −6.1%."
             />
           </InsightsSection>
         );
@@ -274,13 +274,13 @@ export function SlideNGFW({ onNavigateHome }: SlideNGFWProps) {
               icon={TrendingUp}
               type="success"
               title="Fortinet"
-              content="From Jul 2025 to Sep 2026, page-1 keywords grew 653 → 1,336 (+104.6%), leading Palo Alto 1,207 and Cisco 1,096; most of the gain came in the Jul-26 step (871 → 1,494), easing since."
+              content="From Jul 2025 to Oct 2026, page-1 keywords grew 653 → 1,270 (+94.5%), leading Palo Alto 1,143 and Cisco 1,066; Jul-26 data refresh step 871 → 1,494; Oct MoM −4.9% (1,336 → 1,270)."
             />
             <InsightCard
               icon={TrendingUp}
               type="success"
               title="Competitions"
-              content="From Jul 2025 to Sep 2026, Cisco grew 494 → 1,096 (+121.9%), Palo Alto grew 517 → 1,207 (+133.5%), both stepping up in Jul-26 and easing since."
+              content="From Jul 2025 to Oct 2026, Cisco grew 494 → 1,066 (+115.8%), Palo Alto grew 517 → 1,143 (+121.1%); Oct MoM: Cisco −2.7%, Palo Alto −5.3%."
             />
           </InsightsSection>
         );
@@ -291,13 +291,13 @@ export function SlideNGFW({ onNavigateHome }: SlideNGFWProps) {
               icon={TrendingDown}
               type="error"
               title="Fortinet"
-              content="From Jul 2025 to Sep 2026, traffic declined 18,947 → 18,403 (−2.9%), after falling from 38,088 in Jun-26 to 23,118 in Jul-26; leads Cisco 15,532 and Palo Alto 13,224 since Jul-26."
+              content="From Jul 2025 to Oct 2026, traffic declined 18,947 → 16,564 (−12.6%), trailing Cisco 17,753; Jul-26 data refresh step 38,088 → 23,118; Oct MoM −10.0% (18,403 → 16,564)."
             />
             <InsightCard
               icon={TrendingDown}
               type="error"
               title="Competitions"
-              content="From Jul 2025 to Sep 2026, Cisco declined 16,293 → 15,532 (−4.7%); it led Fortinet Feb–Jun 2026, Zscaler tracked at 997 since Jul."
+              content="From Jul 2025 to Oct 2026, Cisco grew 16,293 → 17,753 (+9.0%), Palo Alto grew 10,265 → 11,709 (+14.1%); Oct MoM: Cisco +14.3%, Palo Alto −11.5%."
             />
           </InsightsSection>
         );
@@ -308,13 +308,13 @@ export function SlideNGFW({ onNavigateHome }: SlideNGFWProps) {
               icon={TrendingUp}
               type="success"
               title="Fortinet"
-              content="From Jul 2025 to Sep 2026, AIO keywords grew 538 → 925 (+71.9%), maintaining category lead over Palo Alto 814; Jul-26 step (699 → 1,051) has eased to 925."
+              content="From Jul 2025 to Oct 2026, AIO keywords grew 538 → 899 (+67.1%), leading Palo Alto 785 and Cisco 774; Jul-26 data refresh step 699 → 1,051; Oct MoM −2.8% (925 → 899)."
             />
             <InsightCard
               icon={TrendingUp}
               type="success"
               title="Competitions"
-              content="From Jul 2025 to Sep 2026, Cisco grew 484 → 764 (+57.9%), Palo Alto grew 497 → 814 (+63.8%)."
+              content="From Jul 2025 to Oct 2026, Cisco grew 484 → 774 (+59.9%), Palo Alto grew 497 → 785 (+57.9%); Oct MoM: Cisco +1.3%, Palo Alto −3.6%."
             />
           </InsightsSection>
         );
@@ -325,13 +325,13 @@ export function SlideNGFW({ onNavigateHome }: SlideNGFWProps) {
               icon={Trophy}
               type="success"
               title="Fortinet"
-              content="Ranks #1 for 5 of 7 TOFU firewall keywords (firewall, what is firewall, definition, how it works, benefits) and #1 for 'software firewalls' and 'firewall devices' — strong foundational coverage."
+              content="Fortinet ranks #1 for five of seven TOFU terms and for 'firewall solutions'; it also holds Page 1 positions for every ranked MOFU term except 'enterprise firewall'."
             />
             <InsightCard
               icon={Target}
               type="warning"
               title="Competitions"
-              content="Fortinet does not rank for 'network firewall' (SV 8.2K; Cisco #4) and sits at #15 for 'enterprise firewall'; Palo Alto leads BOFU with #1 for 'enterprise firewall solutions' (Fortinet #6) — biggest volume gaps to close."
+              content="The largest gap is 'network firewall' (SV 8.2K), where Fortinet is absent while Cisco and Palo Alto rank #1. Fortinet also misses 'enterprise firewall' and the small-business solution term."
             />
           </InsightsSection>
         );
@@ -341,7 +341,7 @@ export function SlideNGFW({ onNavigateHome }: SlideNGFWProps) {
   };
 
   const getPerformanceSummary = () => {
-    const latestIndex = 14; // Sep 2026
+    const latestIndex = 15; // Oct 2026
     let dataSource: Record<string, number[]>;
     let metricName: string;
     let formatValue: (val: number) => string;
@@ -466,7 +466,7 @@ export function SlideNGFW({ onNavigateHome }: SlideNGFWProps) {
     <SlideContainer slideNumber={19} onNavigateHome={onNavigateHome} source="Ahrefs">
       <SlideHeader
         title="NGFW / Firewall"
-        subtitle="(Jul 2025 – Sep 2026)"
+        subtitle="(Jul 2025 – Oct 2026)"
       />
 
       {!isEditing ? (

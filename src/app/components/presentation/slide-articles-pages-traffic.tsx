@@ -27,7 +27,7 @@ import {
 const MONTHS = [
   '2025-12', '2026-01', '2026-02', '2026-03',
   '2026-04', '2026-05', '2026-06', '2026-07', '2026-08',
-  '2026-09',
+  '2026-09', '2026-10',
 ];
 
 const formatMonth = (key: string) => {
@@ -35,21 +35,21 @@ const formatMonth = (key: string) => {
     '2025-12': 'Dec-25', '2026-01': 'Jan-26', '2026-02': 'Feb-26',
     '2026-03': 'Mar-26', '2026-04': 'Apr-26', '2026-05': 'May-26',
     '2026-06': 'Jun-26', '2026-07': 'Jul-26', '2026-08': 'Aug-26',
-    '2026-09': 'Sep-26',
+    '2026-09': 'Sep-26', '2026-10': 'Oct-26',
   };
   return map[key] ?? key;
 };
 
 const GA_DATA = {
-  total:      [1035, 1199, 1355, 1321, 1211, 1047, 1049, 779, 735, 710],
-  branded:    [  16,    6,   21,   17,   29,   17,   69,  18,  25,  24],
-  nonBranded: [1019, 1193, 1334, 1304, 1182, 1030,  980, 761, 710, 686],
+  total:      [1035, 1199, 1355, 1321, 1211, 1047, 1049, 779, 735, 710, 616],
+  branded:    [  16,    6,   21,   17,   29,   17,   69,  18,  25,  24,  27],
+  nonBranded: [1019, 1193, 1334, 1304, 1182, 1030,  980, 761, 710, 686, 589],
 };
 
 const GSC_DATA = {
-  total:      [315, 370, 446, 463, 457, 809, 488, 443, 417, 417],
-  branded:    [  5,   2,   7,   6,  11,  13,  32,  10,  14,  14],
-  nonBranded: [310, 368, 439, 457, 446, 796, 456, 433, 403, 403],
+  total:      [315, 370, 446, 463, 457, 809, 488, 443, 417, 417, 340],
+  branded:    [  5,   2,   7,   6,  11,  13,  32,  10,  14,  14,  15],
+  nonBranded: [310, 368, 439, 457, 446, 796, 456, 433, 403, 403, 325],
 };
 
 type TabType = 'ga' | 'gsc';
@@ -120,13 +120,13 @@ export function SlideArticlesPagesTraffic({ onNavigateHome }: { onNavigateHome?:
             icon={TrendingDown}
             type="warning"
             title="Significant Decline"
-            content={`Total traffic fell ${Math.abs(Number(peakDropPct))}% from peak to ${formatNumber(totalLatest)} in Sep 2026. Non-branded dropped from 1,334 → ${formatNumber(nbLatest)} — continued decline worth monitoring.`}
+            content={`Total traffic fell ${Math.abs(Number(peakDropPct))}% from peak to ${formatNumber(totalLatest)} in Oct 2026. Non-branded dropped from 1,334 → ${formatNumber(nbLatest)} — continued decline worth monitoring.`}
           />
           <InsightCard
             icon={AlertTriangle}
             type="error"
             title="Low Absolute Volume"
-            content={`Articles pages generate only ${formatNumber(totalLatest)} GA sessions in Sep 2026 — very low volume compared to product and cyberglossary pages, suggesting limited content depth.`}
+            content={`Articles pages generate only ${formatNumber(totalLatest)} GA sessions in Oct 2026 — very low volume compared to product and cyberglossary pages, suggesting limited content depth.`}
           />
         </InsightsSection>
       );
@@ -143,13 +143,13 @@ export function SlideArticlesPagesTraffic({ onNavigateHome }: { onNavigateHome?:
           icon={TrendingDown}
           type="warning"
           title="Post-Spike Drop"
-          content={`After the May peak of 809 clicks, traffic dropped to ${formatNumber(totalLatest)} in Sep 2026 (${peakDropPct}%), indicating the May spike was not sustained by permanent ranking gains.`}
+          content={`After the May peak of 809 clicks, traffic dropped to ${formatNumber(totalLatest)} in Oct 2026 (${peakDropPct}%), indicating the May spike was not sustained by permanent ranking gains.`}
         />
         <InsightCard
           icon={AlertTriangle}
           type="error"
           title="Minimal Branded Presence"
-          content={`Branded GSC clicks are near-zero (${formatNumber(brandedLatest)} in Sep 2026), confirming articles pages are not driving any brand-search traffic — purely informational/SEO reach.`}
+          content={`Branded GSC clicks are near-zero (${formatNumber(brandedLatest)} in Oct 2026), confirming articles pages are not driving any brand-search traffic — purely informational/SEO reach.`}
         />
       </InsightsSection>
     );
@@ -159,7 +159,7 @@ export function SlideArticlesPagesTraffic({ onNavigateHome }: { onNavigateHome?:
     <SlideContainer slideNumber={7} onNavigateHome={onNavigateHome} source="GA & GSC">
       <SlideHeader
         title="Articles Pages"
-        subtitle="Fortinet Articles Pages · Branded, Non-Branded & Total · Dec 2025 – Sep 2026"
+        subtitle="Fortinet Articles Pages · Branded, Non-Branded & Total · Dec 2025 – Oct 2026"
       />
 
       <div className="flex-1 flex flex-col gap-4">
@@ -226,7 +226,7 @@ export function SlideArticlesPagesTraffic({ onNavigateHome }: { onNavigateHome?:
         </div>
       </div>
 
-      <SlideFooter source={`Source: ${activeTab === 'ga' ? 'GA' : 'GSC'} · Articles Pages · Dec 2025 – Sep 2026`} />
+      <SlideFooter source={`Source: ${activeTab === 'ga' ? 'GA' : 'GSC'} · Articles Pages · Dec 2025 – Oct 2026`} />
     </SlideContainer>
   );
 }

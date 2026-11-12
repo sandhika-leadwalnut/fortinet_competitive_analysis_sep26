@@ -15,79 +15,79 @@ import {
 } from 'lucide-react';
 import { SlideContainer, SlideHeader, SlideFooter } from './design-system';
 
-// ─── Category Scorecard Data (Profound – Sep 2026 latest snapshot) ──────────
+// ─── Category Scorecard Data (Profound – Oct 2026 latest snapshot) ──────────
 const CATEGORIES = [
   {
     id: 'firewall',
     name: 'Firewall',
-    ft: 71.7,
+    ft: 71.3,
     rivalName: 'Palo Alto',
-    rivalPct: 56.4,
+    rivalPct: 60.1,
     status: 'leader' as const,
-    delta: '+15.3pp vs Palo Alto',
+    delta: '+11.2pp vs Palo Alto',
   },
   {
     id: 'sase',
     name: 'SASE',
-    ft: 71.1,
+    ft: 70.1,
     rivalName: 'Palo Alto',
-    rivalPct: 63.2,
+    rivalPct: 68.6,
     status: 'leader' as const,
-    delta: '+7.9pp vs Palo Alto',
+    delta: '+1.5pp vs Palo Alto',
   },
   {
     id: 'quantum',
     name: 'Quantum Security',
-    ft: 38.5,
+    ft: 33.6,
     rivalName: 'Palo Alto',
-    rivalPct: 25.3,
+    rivalPct: 26.3,
     status: 'leader' as const,
-    delta: '+13.2pp vs Palo Alto',
+    delta: '+7.3pp vs Palo Alto',
   },
   {
     id: 'ot',
     name: 'OT Security',
-    ft: 42.2,
+    ft: 42.5,
     rivalName: 'Palo Alto',
-    rivalPct: 34.1,
+    rivalPct: 32.2,
     status: 'leader' as const,
-    delta: '+8.1pp vs Palo Alto',
+    delta: '+10.3pp vs Palo Alto',
   },
   {
     id: 'ai',
     name: 'AI Cybersecurity',
-    ft: 39.6,
+    ft: 35.2,
     rivalName: 'CrowdStrike',
-    rivalPct: 28.1,
+    rivalPct: 28.2,
     status: 'leader' as const,
-    delta: '+11.5pp vs CrowdStrike',
+    delta: '+7.0pp vs CrowdStrike',
   },
   {
     id: 'ztna',
     name: 'ZTNA',
-    ft: 33.1,
+    ft: 32.3,
     rivalName: 'Palo Alto',
-    rivalPct: 44.1,
+    rivalPct: 51.5,
     status: 'gap' as const,
-    delta: '−11.0pp vs Palo Alto',
+    delta: '−19.2pp vs Palo Alto',
   },
   {
     id: 'cloud',
     name: 'Cloud Security',
-    ft: 25.7,
+    ft: 24.0,
     rivalName: 'Palo Alto',
     rivalPct: 44.8,
     status: 'gap' as const,
-    delta: '−19.1pp vs Palo Alto',
+    delta: '−20.8pp vs Palo Alto',
   },
   {
     id: 'secops',
     name: 'SecOps',
-    ft: 12.6,
+    ft: 10.9,
     rivalName: 'CrowdStrike',
-    rivalPct: 43.4,
+    rivalPct: 50.0,
     status: 'critical' as const,
-    delta: '−30.8pp vs CrowdStrike',
+    delta: '−39.1pp vs CrowdStrike',
   },
 ];
 
@@ -95,9 +95,9 @@ const CATEGORIES = [
 const KPIS = [
   {
     id: 'traffic',
-    value: '+34.3%',
-    label: 'US Traffic Growth',
-    sub: '890K → 1.20M · Jul 2025–Sep 2026',
+    value: '975K',
+    label: 'Modeled US Traffic',
+    sub: '−18.4% MoM · +9.6% vs Jul-25',
     color: 'text-blue-600',
     bg: 'bg-blue-50',
     border: 'border-blue-200',
@@ -105,9 +105,9 @@ const KPIS = [
   },
   {
     id: 'llm',
-    value: '8.8%',
+    value: '9.3%',
     label: 'LLM Citation Rate',
-    sub: '#1 globally · Palo Alto 3.6% (2.4×)',
+    sub: '#1 globally · Palo Alto 3.7% (2.5×)',
     color: 'text-red-600',
     bg: 'bg-red-50',
     border: 'border-red-200',
@@ -115,9 +115,9 @@ const KPIS = [
   },
   {
     id: 'aio',
-    value: '22.2K',
-    label: 'AIO Keywords (Sep)',
-    sub: '+14.9% MoM · AIO traffic 184K',
+    value: '44.0K',
+    label: 'Page 1 Keywords',
+    sub: '−4.1% MoM · 19.4% of footprint',
     color: 'text-violet-600',
     bg: 'bg-violet-50',
     border: 'border-violet-200',
@@ -125,9 +125,9 @@ const KPIS = [
   },
   {
     id: 'sov',
-    value: '44.3%',
+    value: '42.3%',
     label: 'Profound Visibility',
-    sub: '3.3pp lead over Palo Alto (41.0%)',
+    sub: '0.9pp behind Palo Alto (43.2%)',
     color: 'text-emerald-600',
     bg: 'bg-emerald-50',
     border: 'border-emerald-200',
@@ -139,27 +139,27 @@ const KPIS = [
 const PRIORITY_GAPS = [
   {
     cat: 'SecOps',
-    ft: 12.6,
+    ft: 10.9,
     rival: 'CrowdStrike',
-    rval: 43.4,
-    gap: 30.8,
+    rval: 50.0,
+    gap: 39.1,
     severity: 'critical' as const,
   },
   {
     cat: 'Cloud Security',
-    ft: 25.7,
+    ft: 24.0,
     rival: 'Palo Alto',
     rval: 44.8,
-    gap: 19.1,
+    gap: 20.8,
     severity: 'gap' as const,
   },
   {
     cat: 'ZTNA',
-    ft: 33.1,
+    ft: 32.3,
     rival: 'Palo Alto',
-    rval: 44.1,
-    gap: 11.0,
-    severity: 'watch' as const,
+    rval: 51.5,
+    gap: 19.2,
+    severity: 'gap' as const,
   },
 ];
 
@@ -188,30 +188,30 @@ const GAP_SEVERITY = {
 const ROADMAP = [
   {
     id: 'r1',
-    quarter: 'NOW — Q4 2026',
-    icon: Brain,
-    title: 'Elevate AI & Agentic Messaging',
-    detail: 'Upgrade hero/hero-image messaging on SOC, homepage & solutions pages to match CrowdStrike\'s agentic AI narrative — target "agentic ai security", "ai soc platform" — also defends AI Cyber lead (11.5pp) and Profound visibility (3.3pp over PA)',
+    quarter: 'NOW · 0–30 DAYS',
+    icon: BarChart3,
+    title: 'Demand Recovery Diagnostic',
+    detail: 'Explain the 40.6% MoM US impression decline and −52.5% Google-session gap to peak by query, URL, template, country and SERP feature. Fix tracking, indexing, canonical and decay issues before scaling production.',
     tagColor: 'bg-red-100 text-red-700 border-red-200',
     barColor: 'bg-red-500',
     impact: 'HIGH',
   },
   {
     id: 'r2',
-    quarter: 'Q4 2026',
+    quarter: '30–60 DAYS',
     icon: Shield,
-    title: 'ZTNA & Cloud Security Sprint',
-    detail: 'Narrow 11.0pp ZTNA gap and 19.1pp Cloud gap vs Palo Alto — create 20+ pillar pages targeting "zero trust solutions" (SV 800) and "cloud security services" (SV 8.8K)',
+    title: 'Commercial Intent Sprint',
+    detail: 'Refresh and interlink the highest-potential ZTNA, Cloud and SecOps pages. Prioritize solution, provider, platform and comparison intent; establish visibility for currently unranked "zero trust solutions" and "cloud security".',
     tagColor: 'bg-amber-100 text-amber-700 border-amber-200',
     barColor: 'bg-amber-500',
     impact: 'HIGH',
   },
   {
     id: 'r3',
-    quarter: 'Q4 2026–Q1 2027',
-    icon: Globe,
-    title: 'AI Feature Pages & CTA Uplift',
-    detail: 'Build standalone AI feature pages (AI Red Teaming, AI Discovery, AEV) like Check Point; strengthen above-fold CTAs to match CrowdStrike conversion strategy; refresh decayed pages to reverse Google organic sessions −54% vs Mar peak',
+    quarter: '60–90 DAYS',
+    icon: Brain,
+    title: 'AI Citation-to-Traffic System',
+    detail: 'Protect the 9.3% citation rate with answer-first modules, expert evidence, entity consistency and schema. Build a vulnerability intelligence asset and AI research hub; target AIO traffic recovery from 96.7K toward 150K+.',
     tagColor: 'bg-blue-100 text-blue-700 border-blue-200',
     barColor: 'bg-blue-500',
     impact: 'HIGH',
@@ -219,9 +219,9 @@ const ROADMAP = [
   {
     id: 'r4',
     quarter: 'Q1 2027',
-    icon: BarChart3,
-    title: 'Content Velocity & Authority',
-    detail: 'Scale to 8–10 new pages/month (vs +2 in Sep; SentinelOne added +154); launch Compliance & Certifications hub; publish AI ThreatCloud-equivalent to compete with Check Point 1,142 / SentinelOne 1,091 pages',
+    icon: Globe,
+    title: 'Authority & Conversion Flywheel',
+    detail: 'Use digital PR, original FortiGuard data and expert-led vertical assets to earn category-relevant links. Refresh decayed glossary winners and connect them to proof-rich product pages with measurable demo and trial CTAs.',
     tagColor: 'bg-emerald-100 text-emerald-700 border-emerald-200',
     barColor: 'bg-emerald-500',
     impact: 'MED',
@@ -305,7 +305,7 @@ export function SlideStrategicBrief({ onNavigateHome }: { onNavigateHome?: () =>
     <SlideContainer slideNumber={29} onNavigateHome={onNavigateHome} source="">
       <SlideHeader
         title="Executive Strategy Brief"
-        subtitle="SEO Competitive Summary · Jul 2025 – Sep 2026 · 15-Month View · US & WW · Semrush traffic/KW to Sep · Profound to Sep · Backlinks to Sep"
+        subtitle="SEO Competitive Summary · Jul-25 – Oct-26 · 16-Month View · US & WW · Traffic, keywords, Profound & backlinks through Oct"
       />
 
       {/* ── Verdict Banner ─────────────────────────────────────────────────── */}
@@ -317,10 +317,10 @@ export function SlideStrategicBrief({ onNavigateHome }: { onNavigateHome?: () =>
             </div>
             <div>
               <p className="text-white font-black text-[13px] leading-tight">
-                Fortinet leads 5 of 8 Profound categories · holds #1 AI citation rate globally (8.8% vs PA 3.6%) · US traffic +34.3% Jul 2025–Sep 2026
+                Strong authority, but October demand softened: 5 of 8 categories led · #1 citation rate in the tracked set (9.3%) · 31 of 48 strategic keywords at position #1
               </p>
               <p className="text-red-100 text-[10px] mt-0.5">
-                Three strategic gaps remain: ZTNA −11.0pp, Cloud Security −19.1pp vs Palo Alto · SecOps −30.8pp vs CrowdStrike · Sep watch: Profound lead over PA shrank to 3.3pp · GA Google organic −54% vs Mar peak
+                Four category leads narrowed · ZTNA, Cloud and SecOps gaps widened · Profound visibility trails Palo Alto by 0.9pp · modeled traffic fell 18.4% MoM while Google sessions remain 52.5% below peak
               </p>
             </div>
           </div>
@@ -342,7 +342,7 @@ export function SlideStrategicBrief({ onNavigateHome }: { onNavigateHome?: () =>
               Category Visibility Scorecard
             </span>
             <div className="h-px flex-1 bg-gray-200" />
-            <span className="text-[9px] text-gray-400">Source: Profound · Nov 2025 – Sep 2026</span>
+            <span className="text-[9px] text-gray-400">Source: Profound · Nov-25 – Oct-26</span>
           </div>
 
           {/* Legend */}
@@ -449,10 +449,10 @@ export function SlideStrategicBrief({ onNavigateHome }: { onNavigateHome?: () =>
             </div>
             <div className="space-y-0.5">
               {[
-                { brand: 'Checkpoint', count: '1,142 pages' },
-                { brand: 'SentinelOne', count: '1,091 pages' },
-                { brand: 'Palo Alto', count: '809 pages' },
-                { brand: 'CrowdStrike', count: '597 pages' },
+                { brand: 'Check Point', count: '1,154 pages' },
+                { brand: 'SentinelOne', count: '1,100 pages' },
+                { brand: 'Palo Alto', count: '814 pages' },
+                { brand: 'CrowdStrike', count: '606 pages' },
               ].map((c) => (
                 <div key={c.brand} className="flex justify-between items-center">
                   <span className="text-[9px] text-gray-600">{c.brand}</span>
@@ -461,7 +461,7 @@ export function SlideStrategicBrief({ onNavigateHome }: { onNavigateHome?: () =>
               ))}
             </div>
             <p className="text-[8.5px] text-red-400 mt-1.5 leading-tight">
-              Fortinet: 624 pages (+2 in Sep) — content velocity lags the three largest rivals in Sep 2026
+              Oct-26: Fortinet 633 pages (+9). Close the gap with differentiated assets and stronger journeys—not volume alone
             </p>
           </div>
         </div>
@@ -473,7 +473,7 @@ export function SlideStrategicBrief({ onNavigateHome }: { onNavigateHome?: () =>
           <div className="h-px w-4 bg-gray-200" />
           <Zap size={10} className="text-amber-500" />
           <span className="text-[10px] font-black uppercase tracking-widest text-gray-400">
-            Strategic Roadmap · Q4 2026 – Q1 2027
+            Strategic Roadmap · Recovery → Commercial Growth → AI Authority
           </span>
           <div className="h-px flex-1 bg-gray-200" />
           <span className="text-[9px] text-gray-400">4 Priority Actions</span>
@@ -527,7 +527,7 @@ export function SlideStrategicBrief({ onNavigateHome }: { onNavigateHome?: () =>
         </div>
       </div>
 
-      <SlideFooter source="Source: Semrush traffic & keywords, Profound, GA, GSC, Top 50 KW & Competitive Intel (through Sep 2026) · Backlinks (through Sep 2026)" />
+      <SlideFooter source="Source: Semrush traffic & keywords, Profound, GA, GSC, Top 50 KW & backlinks through Oct-26 · Competitive Intel through Oct-26" />
     </SlideContainer>
   );
 }

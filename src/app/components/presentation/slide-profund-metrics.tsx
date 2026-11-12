@@ -30,39 +30,39 @@ const VENDORS = [
 ];
 
 const VISIBILITY_DATA_INITIAL = {
-  fortinet:    [57.3, 57.8, 57.7, 63.7, 66.2, 64.7, 48.7, 46.3, 46.5, 44.9, 44.3],
-  paloalto:    [40.9, 43.5, 43.5, 42.4, 42.2, 46.7, 34.5, 34.6, 43.9, 42.5, 41.0],
-  checkpoint:  [14.9, 15.8, 15.9, 14.3, 14.3, 16.4, 12.4, 10.3, 11.2, 10.5, 10.7],
-  hpe:         [ 1.6,  1.8,  2.1,  2.2,  1.8,  1.7,  1.8,  1.3,  1.4,  1.7,  1.4],
-  cisco:       [31.3, 34.6, 33.9, 32.5, 32.2, 34.8, 30.8, 28.7, 31.6, 30.0, 29.7],
-  crowdstrike: [14.5, 16.3, 16.0, 15.4, 15.2, 17.2, 13.5, 14.5, 16.0, 14.9, 15.0],
-  catonetworks:[ 6.3,  6.5,  6.9,  7.0,  6.2,  6.6,  8.1,  7.5,  8.9,  8.1,  7.7],
-  sentinelone: [10.3, 10.6, 11.3, 11.6, 10.5, 11.5,  6.8,  6.7,  7.3,  7.3,  8.0],
+  fortinet:    [57.3, 57.8, 57.7, 63.7, 66.2, 64.7, 48.7, 46.3, 46.5, 44.9, 44.3, 42.3],
+  paloalto:    [40.9, 43.5, 43.5, 42.4, 42.2, 46.7, 34.5, 34.6, 43.9, 42.5, 41.0, 43.2],
+  checkpoint:  [14.9, 15.8, 15.9, 14.3, 14.3, 16.4, 12.4, 10.3, 11.2, 10.5, 10.7, 10.3],
+  hpe:         [ 1.6,  1.8,  2.1,  2.2,  1.8,  1.7,  1.8,  1.3,  1.4,  1.7,  1.4, 2.1],
+  cisco:       [31.3, 34.6, 33.9, 32.5, 32.2, 34.8, 30.8, 28.7, 31.6, 30.0, 29.7, 31.1],
+  crowdstrike: [14.5, 16.3, 16.0, 15.4, 15.2, 17.2, 13.5, 14.5, 16.0, 14.9, 15.0, 16.1],
+  catonetworks:[ 6.3,  6.5,  6.9,  7.0,  6.2,  6.6,  8.1,  7.5,  8.9,  8.1,  7.7, 9.3],
+  sentinelone: [10.3, 10.6, 11.3, 11.6, 10.5, 11.5,  6.8,  6.7,  7.3,  7.3,  8.0, 8.0],
 };
 
 const SHARE_OF_VOICE_DATA_INITIAL = {
-  fortinet:    [10.8, 10.1, 10.0, 11.2, 14.0, 10.6,  8.8,  9.1,  8.4,  8.6,  8.3],
-  paloalto:    [ 7.7,  7.5,  7.5,  7.4,  7.5,  7.6,  6.3,  6.9,  7.9,  8.1,  7.6],
-  checkpoint:  [ 2.8,  2.8,  2.8,  2.5,  2.5,  2.6,  2.1,  2.0,  2.0,  2.0,  2.0],
-  hpe:         [ 0.3,  0.3,  0.3,  0.4,  0.3,  0.3,  0.3,  0.3,  0.3,  0.3,  0.3],
-  cisco:       [ 5.8,  6.0,  5.9,  5.7,  5.7,  5.6,  5.5,  5.6,  5.6,  5.6,  5.4],
-  crowdstrike: [ 2.7,  2.8,  2.8,  2.7,  2.7,  2.8,  2.4,  2.8,  2.8,  2.8,  2.7],
-  catonetworks:[ 1.2,  1.1,  1.2,  1.2,  1.0,  1.0,  1.4,  1.4,  1.6,  1.5,  1.4],
-  sentinelone: [ 1.9,  1.9,  1.9,  2.0,  1.8,  1.8,  1.2,  1.3,  1.3,  1.4,  1.5],
+  fortinet:    [10.8, 10.1, 10.0, 11.2, 14.0, 10.6,  8.8,  9.1,  8.4,  8.6,  8.3, 7.5],
+  paloalto:    [ 7.7,  7.5,  7.5,  7.4,  7.5,  7.6,  6.3,  6.9,  7.9,  8.1,  7.6, 7.8],
+  checkpoint:  [ 2.8,  2.8,  2.8,  2.5,  2.5,  2.6,  2.1,  2.0,  2.0,  2.0,  2.0, 1.8],
+  hpe:         [ 0.3,  0.3,  0.3,  0.4,  0.3,  0.3,  0.3,  0.3,  0.3,  0.3,  0.3, 0.4],
+  cisco:       [ 5.8,  6.0,  5.9,  5.7,  5.7,  5.6,  5.5,  5.6,  5.6,  5.6,  5.4, 5.6],
+  crowdstrike: [ 2.7,  2.8,  2.8,  2.7,  2.7,  2.8,  2.4,  2.8,  2.8,  2.8,  2.7, 2.9],
+  catonetworks:[ 1.2,  1.1,  1.2,  1.2,  1.0,  1.0,  1.4,  1.4,  1.6,  1.5,  1.4, 1.7],
+  sentinelone: [ 1.9,  1.9,  1.9,  2.0,  1.8,  1.8,  1.2,  1.3,  1.3,  1.4,  1.5, 1.4],
 };
 
 const CITATION_DATA_INITIAL = {
-  fortinet:    [ 9.2, 12.2, 12.4, 11.4, 11.7, 12.0,  8.2,  8.5,  9.0,  9.1,  8.8],
-  paloalto:    [ 2.0,  1.8,  1.8,  1.7,  1.8,  1.9,  3.9,  3.4,  3.5,  3.9,  3.6],
-  checkpoint:  [ 1.4,  0.9,  0.9,  0.9,  0.9,  1.0,  1.3,  1.0,  1.2,  1.0,  0.9],
-  hpe:         [ 1.1,  0.1,  0.1,  0.2,  0.2,  0.2,  0.1,  0.2,  0.2,  0.2,  0.2],
-  cisco:       [ 1.4,  1.1,  1.1,  1.0,  0.9,  1.0,  1.8,  1.6,  2.1,  2.0,  1.9],
-  crowdstrike: [ 1.0,  0.4,  0.4,  0.4,  0.4,  0.4,  0.5,  0.4,  0.5,  0.4,  0.4],
-  catonetworks:[ 0.2,  0.1,  0.2,  0.2,  0.2,  0.2,  0.5,  0.5,  0.3,  0.4,  0.4],
-  sentinelone: [ 2.0,  1.6,  1.5,  1.7,  1.6,  1.5,  1.2,  1.1,  0.9,  0.8,  1.0],
+  fortinet:    [ 9.2, 12.2, 12.4, 11.4, 11.7, 12.0,  8.2,  8.5,  9.0,  9.1,  8.8, 9.3],
+  paloalto:    [ 2.0,  1.8,  1.8,  1.7,  1.8,  1.9,  3.9,  3.4,  3.5,  3.9,  3.6, 3.7],
+  checkpoint:  [ 1.4,  0.9,  0.9,  0.9,  0.9,  1.0,  1.3,  1.0,  1.2,  1.0,  0.9, 0.9],
+  hpe:         [ 1.1,  0.1,  0.1,  0.2,  0.2,  0.2,  0.1,  0.2,  0.2,  0.2,  0.2, 0.2],
+  cisco:       [ 1.4,  1.1,  1.1,  1.0,  0.9,  1.0,  1.8,  1.6,  2.1,  2.0,  1.9, 2.1],
+  crowdstrike: [ 1.0,  0.4,  0.4,  0.4,  0.4,  0.4,  0.5,  0.4,  0.5,  0.4,  0.4, 0.4],
+  catonetworks:[ 0.2,  0.1,  0.2,  0.2,  0.2,  0.2,  0.5,  0.5,  0.3,  0.4,  0.4, 0.5],
+  sentinelone: [ 2.0,  1.6,  1.5,  1.7,  1.6,  1.5,  1.2,  1.1,  0.9,  0.8,  1.0, 1.0],
 };
 
-const MONTHS = ['Nov-25', 'Dec-25', 'Jan-26', 'Feb-26', 'Mar-26', 'Apr-26', 'May-26', 'Jun-26', 'Jul-26', 'Aug-26', 'Sep-26'];
+const MONTHS = ['Nov-25', 'Dec-25', 'Jan-26', 'Feb-26', 'Mar-26', 'Apr-26', 'May-26', 'Jun-26', 'Jul-26', 'Aug-26', 'Sep-26', 'Oct-26'];
 
 // Helper function to format month keys for display
 const formatMonth = (monthKey: string) => {
@@ -78,24 +78,25 @@ const formatMonth = (monthKey: string) => {
     '2026-07': 'Jul-26',
     '2026-08': 'Aug-26',
     '2026-09': 'Sep-26',
+    '2026-10': 'Oct-26',
   };
   return monthMap[monthKey] || monthKey;
 };
 
-const MONTH_LABELS_LONG = ['Nov 2025', 'Dec 2025', 'Jan 2026', 'Feb 2026', 'Mar 2026', 'Apr 2026', 'May 2026', 'Jun 2026', 'Jul 2026', 'Aug 2026', 'Sep 2026'];
+const MONTH_LABELS_LONG = ['Nov 2025', 'Dec 2025', 'Jan 2026', 'Feb 2026', 'Mar 2026', 'Apr 2026', 'May 2026', 'Jun 2026', 'Jul 2026', 'Aug 2026', 'Sep 2026', 'Oct 2026'];
 
-const MONTH_KEYS = ['2025-11', '2025-12', '2026-01', '2026-02', '2026-03', '2026-04', '2026-05', '2026-06', '2026-07', '2026-08', '2026-09'];
+const MONTH_KEYS = ['2025-11', '2025-12', '2026-01', '2026-02', '2026-03', '2026-04', '2026-05', '2026-06', '2026-07', '2026-08', '2026-09', '2026-10'];
 
 type TabType = 'visibility' | 'shareOfVoice' | 'citation';
 
-// Slide 34 has 11 months (Nov 2025 – Sep 2026):
-// All → offset 0  (Nov 2025 – Sep 2026)
-// 6M  → offset 5  (Apr 2026 – Sep 2026, last 6 months)
-// 3M  → offset 8  (Jul 2026 – Sep 2026)
+// Slide 34 has 12 months (Nov 2025 – Oct 2026):
+// All → offset 0  (Nov 2025 – Oct 2026)
+// 6M  → offset MONTHS.length - 6 (May 2026 – Oct 2026)
+// 3M  → offset MONTHS.length - 3 (Aug 2026 – Oct 2026)
 function getProfundOffset(range: TimeRange): number {
-  if (range === '3m') return 8;
-  if (range === '6m') return 5;
-  return 0; // 'all' shows all 11 months
+  if (range === '3m') return MONTHS.length - 3;
+  if (range === '6m') return MONTHS.length - 6;
+  return 0; // 'all' shows all months
 }
 
 const CustomTooltip = ({ active, payload, label }: any) => {
@@ -286,7 +287,7 @@ export function SlideProfundMetrics({ onNavigateHome }: { onNavigateHome?: () =>
   };
 
   const getPerformanceSummary = () => {
-    const latestIndex = 10; // Sep 2026
+    const latestIndex = MONTHS.length - 1; // Oct 2026
     let dataSource: Record<string, number[]>;
     let formatValue: (val: number) => string;
 
@@ -369,7 +370,7 @@ export function SlideProfundMetrics({ onNavigateHome }: { onNavigateHome?: () =>
     <SlideContainer slideNumber={15} onNavigateHome={onNavigateHome} source="Profound">
       <SlideHeader
         title="LLM Metrics"
-        subtitle="(Nov 2025 – Sep 2026)"
+        subtitle="(Nov 2025 – Oct 2026)"
       />
 
       {!isEditing ? (

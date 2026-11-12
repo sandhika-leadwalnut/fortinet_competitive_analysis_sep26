@@ -21,26 +21,26 @@ const VENDORS = [
   { id: 'wiz',         name: 'Wiz',           color: '#06B6D4' },
 ];
 
-const MONTHS = ['2025-12','2026-01','2026-02','2026-03','2026-04','2026-05','2026-06','2026-07','2026-08','2026-09'];
+const MONTHS = ['2025-12','2026-01','2026-02','2026-03','2026-04','2026-05','2026-06','2026-07','2026-08','2026-09','2026-10'];
 
 const formatMonth = (key: string) => {
   const map: Record<string,string> = {
     '2025-12':'Dec-25','2026-01':'Jan-26','2026-02':'Feb-26','2026-03':'Mar-26',
-    '2026-04':'Apr-26','2026-05':'May-26','2026-06':'Jun-26','2026-07':'Jul-26','2026-08':'Aug-26','2026-09':'Sep-26',
+    '2026-04':'Apr-26','2026-05':'May-26','2026-06':'Jun-26','2026-07':'Jul-26','2026-08':'Aug-26','2026-09':'Sep-26','2026-10':'Oct-26',
   };
   return map[key] ?? key;
 };
 
 const DATA: Record<string, number[]> = {
-  fortinet:    [2900000,3000000,3100000,3500000,3600000,3700000,3500000,3400000,3000000,3000000],
-  cisco:       [2100000,4000000,3100000,3400000,3000000,2300000,2800000,1900000,1500000,1600000],
-  hpe:         [ 592000, 865000, 830000, 857000, 819000, 572000, 825000, 577000, 470000, 498000],
-  paloalto:    [ 443000, 800000, 850000, 794000, 886000, 881000,1071000, 692000, 646000, 640000],
-  checkpoint:  [ 545000, 543000, 549000, 618000, 625000, 558000, 681000, 528000, 425000, 407000],
-  crowdstrike: [ 688000, 727000, 698000, 697000, 667000, 645000, 606000, 520000, 433000, 382000],
-  cato:        [  44000,  46000,  52000,  70000,  78000,  68000,  67000,  71000,  63000,  66000],
-  sentinelone: [ 331000, 336000, 384000, 365000, 383000, 421000, 461000, 370000, 352000, 309000],
-  wiz:         [ 177000, 142000, 141000, 132000, 129000, 104000, 118000, 109000, 101000,  94000],
+  fortinet:    [2900000,3000000,3100000,3500000,3600000,3700000,3500000,3400000,3000000,3000000,3100000],
+  cisco:       [2100000,4000000,3100000,3400000,3000000,2300000,2800000,1900000,1500000,1600000,2100000],
+  hpe:         [ 592000, 865000, 830000, 857000, 819000, 572000, 825000, 577000, 470000, 498000,894000],
+  paloalto:    [ 443000, 800000, 850000, 794000, 886000, 881000,1071000, 692000, 646000, 640000,620000],
+  checkpoint:  [ 545000, 543000, 549000, 618000, 625000, 558000, 681000, 528000, 425000, 407000,494000],
+  crowdstrike: [ 688000, 727000, 698000, 697000, 667000, 645000, 606000, 520000, 433000, 382000,406000],
+  cato:        [  44000,  46000,  52000,  70000,  78000,  68000,  67000,  71000,  63000,  66000,63000],
+  sentinelone: [ 331000, 336000, 384000, 365000, 383000, 421000, 461000, 370000, 352000, 309000,333000],
+  wiz:         [ 177000, 142000, 141000, 132000, 129000, 104000, 118000, 109000, 101000,  94000,92000],
 };
 
 const formatAxis = (v: number) => {
@@ -84,20 +84,21 @@ export function SlideOrganicTrafficPerformance({ onNavigateHome }: { onNavigateH
     return dp;
   });
 
-  const ftLatest  = DATA.fortinet[9];  const ftFirst  = DATA.fortinet[0];
-  const ciscoLatest = DATA.cisco[9];   const ciscoPeak = Math.max(...DATA.cisco);
-  const s1First   = DATA.sentinelone[0]; const s1Latest = DATA.sentinelone[9];
-  const paFirst   = DATA.paloalto[0]; const paLatest  = DATA.paloalto[9];  const paPeak   = Math.max(...DATA.paloalto);
+  const L = MONTHS.length - 1;
+  const ftLatest  = DATA.fortinet[L];  const ftFirst  = DATA.fortinet[0];
+  const ciscoLatest = DATA.cisco[L];   const ciscoPeak = Math.max(...DATA.cisco);
+  const s1First   = DATA.sentinelone[0]; const s1Latest = DATA.sentinelone[L];
+  const paFirst   = DATA.paloalto[0]; const paLatest  = DATA.paloalto[L];  const paPeak   = Math.max(...DATA.paloalto);
   const ftPeak    = Math.max(...DATA.fortinet); const ftPeakMonth = formatMonth(MONTHS[DATA.fortinet.indexOf(ftPeak)]);
-  const runnerUpLatest = Math.max(...VENDORS.filter(v => v.id !== 'fortinet').map(v => DATA[v.id][9]));
-  const wizFirst  = DATA.wiz[0];       const wizLatest = DATA.wiz[9];
+  const runnerUpLatest = Math.max(...VENDORS.filter(v => v.id !== 'fortinet').map(v => DATA[v.id][L]));
+  const wizFirst  = DATA.wiz[0];       const wizLatest = DATA.wiz[L];
 
 
   return (
     <SlideContainer slideNumber={16} onNavigateHome={onNavigateHome} source="Ahrefs">
       <SlideHeader
         title="Organic Traffic Performance"
-        subtitle="Organic Traffic · Dec 2025 – Sep 2026"
+        subtitle="Organic Traffic · Dec 2025 – Oct 2026"
       />
 
       <TimeRangeFilter value={timeRange} onChange={setTimeRange} />
@@ -144,26 +145,26 @@ export function SlideOrganicTrafficPerformance({ onNavigateHome }: { onNavigateH
               icon={Trophy}
               type="success"
               title="Fortinet Leads WW"
-              content={`Fortinet leads WW organic traffic at ${formatAxis(ftLatest)} in Sep 2026, up ${(((ftLatest - ftFirst) / ftFirst) * 100).toFixed(0)}% from ${formatAxis(ftFirst)} in Dec 2025. Down from a ${formatAxis(ftPeak)} peak in ${ftPeakMonth}, but still ~${(ftLatest / runnerUpLatest).toFixed(1)}× the next-best vendor (${formatAxis(runnerUpLatest)}).`}
+              content={`Fortinet leads WW organic traffic at ${formatAxis(ftLatest)} in Oct 2026, up ${(((ftLatest - ftFirst) / ftFirst) * 100).toFixed(0)}% from ${formatAxis(ftFirst)} in Dec 2025. Down from a ${formatAxis(ftPeak)} peak in ${ftPeakMonth}, but still ~${(ftLatest / runnerUpLatest).toFixed(1)}× the next-best vendor (${formatAxis(runnerUpLatest)}).`}
             />
             <InsightCard
               icon={TrendingDown}
               type="warning"
               title="Cisco Highly Volatile"
-              content={`Cisco spiked to ${formatAxis(ciscoPeak)} in Jan 2026 then collapsed to ${formatAxis(ciscoLatest)} in Sep 2026 (−${(((ciscoPeak - ciscoLatest) / ciscoPeak) * 100).toFixed(0)}%). Extreme month-to-month swings suggest unstable crawl/indexing patterns.`}
+              content={`Cisco spiked to ${formatAxis(ciscoPeak)} in Jan 2026 then collapsed to ${formatAxis(ciscoLatest)} in Oct 2026 (−${(((ciscoPeak - ciscoLatest) / ciscoPeak) * 100).toFixed(0)}%). Extreme month-to-month swings suggest unstable crawl/indexing patterns.`}
             />
             <InsightCard
               icon={TrendingUp}
               type="info"
               title="Palo Alto Growing"
-              content={`Palo Alto grew ${(((paLatest - paFirst) / paFirst) * 100).toFixed(0)}% Dec→Sep (${formatAxis(paFirst)} → ${formatAxis(paLatest)}), though below its Jun peak of ${formatAxis(paPeak)}. SentinelOne slipped ${Math.abs(((s1Latest - s1First) / s1First) * 100).toFixed(0)}% (${formatAxis(s1First)} → ${formatAxis(s1Latest)}) over the same period.`}
+              content={`Palo Alto grew ${(((paLatest - paFirst) / paFirst) * 100).toFixed(0)}% Dec→Oct (${formatAxis(paFirst)} → ${formatAxis(paLatest)}), though below its Jun peak of ${formatAxis(paPeak)}. SentinelOne ${s1Latest >= s1First ? 'edged up' : 'slipped'} ${Math.abs(((s1Latest - s1First) / s1First) * 100).toFixed(0)}% (${formatAxis(s1First)} → ${formatAxis(s1Latest)}) over the same period.`}
             />
           </InsightsSection>
 
         </div>
       </div>
 
-      <SlideFooter source="Source: Ahrefs · Organic Traffic · Dec 2025 – Sep 2026" />
+      <SlideFooter source="Source: Ahrefs · Organic Traffic · Dec 2025 – Oct 2026" />
     </SlideContainer>
   );
 }

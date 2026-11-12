@@ -25,43 +25,43 @@ const VENDORS = [
   { id: 'splunk',        name: 'Splunk',         color: '#34D399' },
 ];
 
-// Jul 2026, Aug 2026, Sep 2026
-const MONTHS = ['2026-07', '2026-08', '2026-09'];
+// Jul 2026, Aug 2026, Sep 2026, Oct 2026
+const MONTHS = ['2026-07', '2026-08', '2026-09', '2026-10'];
 
 const TOTAL_KEYWORDS_DATA = {
-  fortinet:      [317, 295, 255],
-  crowdstrike:   [241, 222, 220],
-  paloalto:      [674, 671, 634],
-  redcanary:     [87,  78,  75],
-  secopsolution: [3,   2,   4],
-  splunk:        [494, 493, 442],
+  fortinet:      [317, 295, 255,  66],
+  crowdstrike:   [241, 222, 220,  41],
+  paloalto:      [674, 671, 634, 102],
+  redcanary:     [87,  78,  75,   3],
+  secopsolution: [3,   2,   4,    2],
+  splunk:        [494, 493, 442,  65],
 };
 
 const TRAFFIC_DATA = {
-  fortinet:      [3095, 2913, 2971],
-  crowdstrike:   [3342, 2465, 7101],
-  paloalto:      [10947, 9137, 8632],
-  redcanary:     [992,  593,  536],
-  secopsolution: [10,   1,    61],
-  splunk:        [5626, 7288, 4069],
+  fortinet:      [3095, 2913, 2971,  731],
+  crowdstrike:   [3342, 2465, 7101,  827],
+  paloalto:      [10947, 9137, 8632, 1039],
+  redcanary:     [992,  593,  536,    24],
+  secopsolution: [10,   1,    61,     57],
+  splunk:        [5626, 7288, 4069,   660],
 };
 
 const PAGE_ONE_DATA = {
-  fortinet:      [289, 267, 236],
-  crowdstrike:   [226, 205, 205],
-  paloalto:      [650, 645, 602],
-  redcanary:     [73,  67,  68],
-  secopsolution: [3,   2,   4],
-  splunk:        [474, 478, 426],
+  fortinet:      [289, 267, 236,  66],
+  crowdstrike:   [226, 205, 205,  41],
+  paloalto:      [650, 645, 602, 100],
+  redcanary:     [73,  67,  68,   3],
+  secopsolution: [3,   2,   4,    2],
+  splunk:        [474, 478, 426,  63],
 };
 
 const AIO_DATA = {
-  fortinet:      [211, 185, 156],
-  crowdstrike:   [189, 153, 156],
-  paloalto:      [470, 442, 435],
-  redcanary:     [73,  64,  55],
-  secopsolution: [3,   2,   3],
-  splunk:        [326, 320, 293],
+  fortinet:      [211, 185, 156, 41],
+  crowdstrike:   [189, 153, 156, 30],
+  paloalto:      [470, 442, 435, 61],
+  redcanary:     [73,  64,  55,   2],
+  secopsolution: [3,   2,   3,    1],
+  splunk:        [326, 320, 293, 38],
 };
 
 const formatMonth = (monthKey: string) => {
@@ -134,37 +134,37 @@ export function SlideSecOps({ onNavigateHome }: { onNavigateHome?: () => void })
       case 'keywords':
         return (
           <InsightsSection>
-            <InsightCard icon={Target} type="error" title="Palo Alto Dominates"
-              content="Sep 2026: Palo Alto leads with 634 keywords — 1.4× Splunk (442) and 2.5× Fortinet (255). Every vendor except Secopsolution lost keywords Jul → Sep." />
-            <InsightCard icon={TrendingDown} type="error" title="Fortinet Declining"
-              content="Fortinet lost 62 keywords Jul → Sep (317 → 255, −20%), the steepest drop among the major vendors (Red Canary −14%, Splunk −10%). Action needed." />
+            <InsightCard icon={Target} type="error" title="Palo Alto Leads"
+              content="Oct 2026: Palo Alto leads with 102 keywords, ahead of Fortinet (66) and Splunk (65). Every major vendor fell sharply from Sep, indicating a likely partial or methodology-shifted Ahrefs export." />
+            <InsightCard icon={TrendingDown} type="error" title="Uniform October Contraction"
+              content="Fortinet fell 255 → 66 (−74% MoM); Palo Alto 634 → 102 (−84%); Splunk 442 → 65 (−85%); CrowdStrike 220 → 41 (−81%). Use Oct directionally and validate before presenting." />
           </InsightsSection>
         );
       case 'traffic':
         return (
           <InsightsSection>
-            <InsightCard icon={Zap} type="warning" title="CrowdStrike Sep Spike"
-              content="CrowdStrike's traffic surged from 2,465 (Aug) to 7,101 (Sep 2026) — a 188% single-month jump. Likely a viral campaign or news cycle boost." />
+            <InsightCard icon={Zap} type="warning" title="September Spike Reversed"
+              content="CrowdStrike's Sep traffic spike to 7,101 reversed to 827 in Oct (−88% MoM). Palo Alto still leads at 1,039, followed by CrowdStrike (827) and Fortinet (731)." />
             <InsightCard icon={Target} type="error" title="Fortinet Trails"
-              content="Sep 2026: Fortinet ranks 4th in traffic (2,971) behind Palo Alto (8,632), CrowdStrike (7,101), and Splunk (4,069). Significant gap to close." />
+              content="Oct 2026: Fortinet ranks 3rd in traffic at 731, behind Palo Alto (1,039) and CrowdStrike (827). All major competitors dropped 75–88% MoM, so this should not be treated as a normal performance decline." />
           </InsightsSection>
         );
       case 'page-one':
         return (
           <InsightsSection>
             <InsightCard icon={Target} type="error" title="Palo Alto Leads"
-              content="Sep 2026: Palo Alto holds 602 page-1 rankings — 1.4× Splunk (426) and 2.5× Fortinet (236). A large structural advantage to overcome." />
-            <InsightCard icon={TrendingDown} type="error" title="Fortinet Gap Widening"
-              content="Fortinet's page-1 KWs dropped from 289 (Jul) to 236 (Sep), −18%. The gap vs Splunk widened (185 → 190 keywords behind)." />
+              content="Oct 2026: Palo Alto holds 100 page-1 rankings, ahead of Fortinet (66) and Splunk (63). Fortinet now ranks 2nd, but the entire category contracted sharply." />
+            <InsightCard icon={TrendingDown} type="error" title="Page-1 Data Collapse"
+              content="Fortinet fell 236 → 66 page-1 keywords (−72% MoM), while Palo Alto fell 602 → 100 and Splunk 426 → 63. The synchronized decline points to a source-data reset rather than SEO loss alone." />
           </InsightsSection>
         );
       case 'aio':
         return (
           <InsightsSection>
             <InsightCard icon={Target} type="error" title="Palo Alto AIO Leader"
-              content="Sep 2026: Palo Alto appears in 435 AI Overviews — 1.5× Splunk (293) and 2.8× Fortinet (156). AIO capture gap is wide." />
-            <InsightCard icon={TrendingDown} type="error" title="Fortinet AIO Declining"
-              content="Fortinet's AIO presence fell sharply Jul → Sep (211 → 156, −26%), the steepest decline across all vendors. CrowdStrike also fell −17%." />
+              content="Oct 2026: Palo Alto appears in 61 AI Overviews, ahead of Fortinet (41), Splunk (38), and CrowdStrike (30)." />
+            <InsightCard icon={TrendingDown} type="error" title="AIO Series Reset"
+              content="Fortinet fell 156 → 41 AIO keywords (−74% MoM); Palo Alto fell 435 → 61 and Splunk 293 → 38. The uniform 74–87% contraction should be validated as an Ahrefs methodology or collection change." />
           </InsightsSection>
         );
       default: return null;
@@ -175,7 +175,7 @@ export function SlideSecOps({ onNavigateHome }: { onNavigateHome?: () => void })
     const dataset = activeTab === 'keywords' ? TOTAL_KEYWORDS_DATA
       : activeTab === 'traffic' ? TRAFFIC_DATA
       : activeTab === 'page-one' ? PAGE_ONE_DATA : AIO_DATA;
-    const latestIdx = 2; // Sep 2026
+    const latestIdx = MONTHS.length - 1; // Oct 2026
     const rankings = VENDORS
       .map(v => ({ id: v.id, name: v.name, value: dataset[v.id][latestIdx] ?? 0, color: v.color }))
       .sort((a, b) => b.value - a.value);
@@ -235,7 +235,7 @@ export function SlideSecOps({ onNavigateHome }: { onNavigateHome?: () => void })
 
   return (
     <SlideContainer slideNumber={29} onNavigateHome={onNavigateHome} source="Ahrefs">
-      <SlideHeader title="SecOps" subtitle="(Jul 2026 – Sep 2026)" />
+      <SlideHeader title="SecOps" subtitle="(Jul 2026 – Oct 2026)" />
 
       <div className="flex-1 flex flex-col gap-6">
         {/* Tabs */}

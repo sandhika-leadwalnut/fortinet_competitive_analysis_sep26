@@ -31,60 +31,60 @@ const SDWAN_VENDORS = [
   { id: 'zscaler',      name: 'Zscaler',       color: '#A855F7' },
 ];
 
-// SASE full data - Jul 2025 to Sep 2026 (15 months)
+// SASE full data - Jul 2025 to Oct 2026 (16 months)
 const TOTAL_KEYWORDS_DATA_INITIAL = {
-  fortinet:    [184, 202, 186, 175, 181, 189, 196, 193, 193, 183, 188, 184, 229, 226, 232],
-  cisco:       [180, 185, 154, 129, 144, 154, 160, 164, 166, 142, 128, 118, 112, 116, 104],
-  hpe:         [ 98,  83,  37,  33,  45,  65,  70,  65,  52,  18,  23,  28,  24,  29,  25],
-  paloalto:    [187, 202, 189, 179, 182, 195, 200, 200, 196, 198, 199, 201, 249, 245, 234],
-  checkpoint:  [150, 170, 101,  65,  99, 114, 114, 105, 102,  61,  62,  64,  60,  63,  66],
-  crowdstrike: [0, 0, 0, 0, 35, 44, 48, 40, 40,  27,  24,  32,  33,  15, 13],
-  catonetworks:[0, 0, 0, 0, 0, 205, 207, 171, 136, 130, 126, 138, 162, 156, 144],
-  sentinelone: [0, 0, 0, 0, 0, 51, 53, 49, 47,  20,  18,  21,  15,  13, 17],
-  wiz:         [null, null, null, null, null, null, null, null, 9, 0, 0, 0, 0, 0, 0],
-  zscaler:     [null, null, null, null, null, null, null, null, null, null, null, null, 154, 149, 153], // Data starts Jul 2026
+  fortinet:    [184, 202, 186, 175, 181, 189, 196, 193, 193, 183, 188, 184, 229, 226, 232, 365],
+  cisco:       [180, 185, 154, 129, 144, 154, 160, 164, 166, 142, 128, 118, 112, 116, 104, 109],
+  hpe:         [98, 83, 37, 33, 45, 65, 70, 65, 52, 18, 23, 28, 24, 29, 25, 22],
+  paloalto:    [187, 202, 189, 179, 182, 195, 200, 200, 196, 198, 199, 201, 249, 245, 234, 664],
+  checkpoint:  [150, 170, 101, 65, 99, 114, 114, 105, 102, 61, 62, 64, 60, 63, 66, 58],
+  crowdstrike: [0, 0, 0, 0, 35, 44, 48, 40, 40, 27, 24, 32, 33, 15, 13, 9],
+  catonetworks:[0, 0, 0, 0, 0, 205, 207, 171, 136, 130, 126, 138, 162, 156, 144, 139],
+  sentinelone: [0, 0, 0, 0, 0, 51, 53, 49, 47, 20, 18, 21, 15, 13, 17, 7],
+  wiz:         [null, null, null, null, null, null, null, null, 9, 0, 0, 0, 0, 0, 0, 0],
+  zscaler:     [null, null, null, null, null, null, null, null, null, null, null, null, 154, 149, 153, 151], // Data starts Jul 2026
 };
 
 const CUMULATIVE_TRAFFIC_DATA_INITIAL = {
-  fortinet:    [13499, 15964, 9684, 11031, 8746, 10024, 10015, 10369, 6899, 8455, 12229, 11145, 8013, 8354, 6800],
-  cisco:       [ 1713,  2353, 1932,  1921, 2090,  1976,  2109,  3539, 2249, 2212,  2084,  1379,  1387, 1004, 1134],
-  hpe:         [  125,    80,  181,   227,  107,   137,   118,   189,  141,   88,    74,    62,   343,  137,  324],
-  paloalto:    [ 7562,  8242, 8130,  8998, 9442, 10263, 10660, 10161, 10645, 8979,  7260,  7696,  6621, 6889, 5024],
-  checkpoint:  [  671,   849,  780,   818, 1270,  1368,  1372,  1472, 1118, 1024,  1076,  1034,   857,  861, 1146],
-  crowdstrike: [0, 0, 0, 0, 325, 423, 436, 472, 469, 487, 441, 420, 381, 275, 218],
-  catonetworks:[0, 0, 0, 0, 0, 2456, 2410, 2352, 2056, 1803, 1822, 2486, 2057, 2531, 1702],
-  sentinelone: [0, 0, 0, 0, 0, 43, 38, 53, 66,  68,  57,  44,  63,  64, 126],
-  wiz:         [null, null, null, null, null, null, null, null, 0, 0, 0, 0, 0, 0, 0],
-  zscaler:     [null, null, null, null, null, null, null, null, null, null, null, null, 1521, 1699, 1449], // Data starts Jul 2026
+  fortinet:    [13499, 15964, 9684, 11031, 8746, 10024, 10015, 10369, 6899, 8455, 12229, 11145, 8013, 8354, 6800, 9766],
+  cisco:       [1713, 2353, 1932, 1921, 2090, 1976, 2109, 3539, 2249, 2212, 2084, 1379, 1387, 1004, 1134, 1203],
+  hpe:         [125, 80, 181, 227, 107, 137, 118, 189, 141, 88, 74, 62, 343, 137, 324, 60],
+  paloalto:    [7562, 8242, 8130, 8998, 9442, 10263, 10660, 10161, 10645, 8979, 7260, 7696, 6621, 6889, 5024, 11417],
+  checkpoint:  [671, 849, 780, 818, 1270, 1368, 1372, 1472, 1118, 1024, 1076, 1034, 857, 861, 1146, 797],
+  crowdstrike: [0, 0, 0, 0, 325, 423, 436, 472, 469, 487, 441, 420, 381, 275, 218, 164],
+  catonetworks:[0, 0, 0, 0, 0, 2456, 2410, 2352, 2056, 1803, 1822, 2486, 2057, 2531, 1702, 1391],
+  sentinelone: [0, 0, 0, 0, 0, 43, 38, 53, 66, 68, 57, 44, 63, 64, 126, 90],
+  wiz:         [null, null, null, null, null, null, null, null, 0, 0, 0, 0, 0, 0, 0, 0],
+  zscaler:     [null, null, null, null, null, null, null, null, null, null, null, null, 1521, 1699, 1449, 1711], // Data starts Jul 2026
 };
 
 const PAGE_ONE_KEYWORDS_DATA_INITIAL = {
-  fortinet:    [148, 161, 169, 165, 167, 179, 188, 179, 184, 178, 183, 179, 226, 226, 230],
-  cisco:       [102, 107, 120, 114, 128, 128, 131, 124, 136, 132, 112, 102, 106, 106, 95],
-  hpe:         [  5,   9,   7,  14,  13,  16,  15,  12,   9,  11,  11,  16,  19,  21,  20],
-  paloalto:    [157, 160, 173, 173, 174, 182, 188, 190, 188, 197, 194, 198, 248, 241, 231],
-  checkpoint:  [ 13,  28,  32,  37,  54,  57,  52,  46,  47,  42,  42,  47,  48,  48,  49],
-  crowdstrike: [0, 0, 0, 0, 17, 15, 13, 14, 19,  16,  19,  29,  31,  14, 11],
-  catonetworks:[0, 0, 0, 0, 0, 186, 185, 147, 124, 117, 114, 133, 158, 150, 141],
-  sentinelone: [0, 0, 0, 0, 0, 11, 11, 7, 10,   7,   2,   9,  10,   8, 11],
-  wiz:         [null, null, null, null, null, null, null, null, 0, 0, 0, 0, 0, 0, 0],
-  zscaler:     [null, null, null, null, null, null, null, null, null, null, null, null, 146, 142, 148], // Data starts Jul 2026
+  fortinet:    [148, 161, 169, 165, 167, 179, 188, 179, 184, 178, 183, 179, 226, 226, 230, 358],
+  cisco:       [102, 107, 120, 114, 128, 128, 131, 124, 136, 132, 112, 102, 106, 106, 95, 104],
+  hpe:         [5, 9, 7, 14, 13, 16, 15, 12, 9, 11, 11, 16, 19, 21, 20, 22],
+  paloalto:    [157, 160, 173, 173, 174, 182, 188, 190, 188, 197, 194, 198, 248, 241, 231, 658],
+  checkpoint:  [13, 28, 32, 37, 54, 57, 52, 46, 47, 42, 42, 47, 48, 48, 49, 52],
+  crowdstrike: [0, 0, 0, 0, 17, 15, 13, 14, 19, 16, 19, 29, 31, 14, 11, 9],
+  catonetworks:[0, 0, 0, 0, 0, 186, 185, 147, 124, 117, 114, 133, 158, 150, 141, 135],
+  sentinelone: [0, 0, 0, 0, 0, 11, 11, 7, 10, 7, 2, 9, 10, 8, 11, 6],
+  wiz:         [null, null, null, null, null, null, null, null, 0, 0, 0, 0, 0, 0, 0, 0],
+  zscaler:     [null, null, null, null, null, null, null, null, null, null, null, null, 146, 142, 148, 148], // Data starts Jul 2026
 };
 
 const AIO_DATA_INITIAL = {
-  fortinet:    [148, 161, 169, 165, 167, 179, 188, 179, 136, 133, 136, 129, 150, 142, 155],
-  cisco:       [102, 107, 120, 114, 128, 128, 131, 124, 120, 100, 100,  87,  82,  81, 73],
-  hpe:         [  5,   9,   7,  14,  13,  16,  15,  12,  43,  15,  20,  24,  20,  19,  18],
-  paloalto:    [157, 160, 173, 173, 174, 182, 188, 190, 135, 137, 144, 132, 156, 153, 156],
-  checkpoint:  [ 13,  28,  32,  37,  54,  57,  52,  46,  78,  48,  52,  51,  41,  48,  49],
-  crowdstrike: [0, 0, 0, 0, 17, 15, 13, 14, 32,  24,  23,  30,  31,  15, 13],
-  catonetworks:[0, 0, 0, 0, 0, 186, 185, 147, 95,  89,  96,  93,  98,  94,  95],
-  sentinelone: [0, 0, 0, 0, 0, 11, 11, 7, 40,  18,  18,  20,  13,  11, 15],
-  wiz:         [null, null, null, null, null, null, null, null, 5, 0, 0, 0, 0, 0, 0],
-  zscaler:     [null, null, null, null, null, null, null, null, null, null, null, null, 115, 105, 109], // Data starts Jul 2026
+  fortinet:    [148, 161, 169, 165, 167, 179, 188, 179, 136, 133, 136, 129, 150, 142, 155, 272],
+  cisco:       [102, 107, 120, 114, 128, 128, 131, 124, 120, 100, 100, 87, 82, 81, 73, 77],
+  hpe:         [5, 9, 7, 14, 13, 16, 15, 12, 43, 15, 20, 24, 20, 19, 18, 13],
+  paloalto:    [157, 160, 173, 173, 174, 182, 188, 190, 135, 137, 144, 132, 156, 153, 156, 485],
+  checkpoint:  [13, 28, 32, 37, 54, 57, 52, 46, 78, 48, 52, 51, 41, 48, 49, 39],
+  crowdstrike: [0, 0, 0, 0, 17, 15, 13, 14, 32, 24, 23, 30, 31, 15, 13, 9],
+  catonetworks:[0, 0, 0, 0, 0, 186, 185, 147, 95, 89, 96, 93, 98, 94, 95, 97],
+  sentinelone: [0, 0, 0, 0, 0, 11, 11, 7, 40, 18, 18, 20, 13, 11, 15, 7],
+  wiz:         [null, null, null, null, null, null, null, null, 5, 0, 0, 0, 0, 0, 0, 0],
+  zscaler:     [null, null, null, null, null, null, null, null, null, null, null, null, 115, 105, 109, 123], // Data starts Jul 2026
 };
 
-const MONTHS = ['2025-07', '2025-08', '2025-09', '2025-10', '2025-11', '2025-12', '2026-01', '2026-02', '2026-03', '2026-04', '2026-05', '2026-06', '2026-07', '2026-08', '2026-09'];
+const MONTHS = ['2025-07', '2025-08', '2025-09', '2025-10', '2025-11', '2025-12', '2026-01', '2026-02', '2026-03', '2026-04', '2026-05', '2026-06', '2026-07', '2026-08', '2026-09', '2026-10'];
 
 // Format function for month display
 const formatMonth = (monthKey: string) => {
@@ -97,28 +97,28 @@ type TabType = 'keywords' | 'page-one' | 'traffic' | 'aio' | 'keyword-gap';
 
 const KEYWORD_GAP_DATA = {
   tofu: [
-    { keyword: "sase", sv: 19000, kd: 58, fortinet: 1, cisco: 1, paloalto: 1, checkpoint: 1, crowdstrike: null },
-    { keyword: "sase meaning", sv: 4900, kd: 51, fortinet: 2, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
-    { keyword: "what is sase", sv: 2600, kd: 54, fortinet: 1, cisco: null, paloalto: null, checkpoint: 20, crowdstrike: null },
-    { keyword: "secure access service edge", sv: 2000, kd: 55, fortinet: 1, cisco: 8, paloalto: 1, checkpoint: 11, crowdstrike: 18 },
-    { keyword: "sase definition", sv: 700, kd: 57, fortinet: 1, cisco: 7, paloalto: 2, checkpoint: 9, crowdstrike: null },
-    { keyword: "sase benefits", sv: 600, kd: 2, fortinet: 1, cisco: null, paloalto: 1, checkpoint: null, crowdstrike: null },
-    { keyword: "sase architecture", sv: 800, kd: 48, fortinet: 1, cisco: null, paloalto: 1, checkpoint: 5, crowdstrike: null },
+    { keyword: "sase", sv: 19000, kd: 58, fortinet: 1, cisco: 1, paloalto: 1, checkpoint: 8, crowdstrike: null },
+    { keyword: "sase meaning", sv: 4900, kd: 51, fortinet: 1, cisco: 1, paloalto: 1, checkpoint: null, crowdstrike: null },
+    { keyword: "what is sase", sv: 2600, kd: 54, fortinet: 1, cisco: 1, paloalto: 1, checkpoint: null, crowdstrike: null },
+    { keyword: "secure access service edge", sv: 2000, kd: 55, fortinet: 1, cisco: 1, paloalto: 1, checkpoint: 1, crowdstrike: null },
+    { keyword: "sase definition", sv: 700, kd: 57, fortinet: 1, cisco: 1, paloalto: 1, checkpoint: null, crowdstrike: null },
+    { keyword: "sase benefits", sv: 600, kd: 2, fortinet: 5, cisco: null, paloalto: 1, checkpoint: null, crowdstrike: null },
+    { keyword: "sase architecture", sv: 800, kd: 48, fortinet: 1, cisco: 2, paloalto: 1, checkpoint: null, crowdstrike: null },
     { keyword: "sase technology", sv: 250, kd: 60, fortinet: 1, cisco: 1, paloalto: 1, checkpoint: null, crowdstrike: null },
   ],
   mofu: [
-    { keyword: "sase security", sv: 1600, kd: 42, fortinet: 1, cisco: 9, paloalto: 1, checkpoint: 16, crowdstrike: null },
-    { keyword: "sase platform", sv: 600, kd: 54, fortinet: 1, cisco: 24, paloalto: 1, checkpoint: 16, crowdstrike: null },
-    { keyword: "sase network", sv: 300, kd: 53, fortinet: 1, cisco: 10, paloalto: 1, checkpoint: null, crowdstrike: null },
-    { keyword: "sase products", sv: 200, kd: 37, fortinet: 1, cisco: 6, paloalto: 1, checkpoint: 4, crowdstrike: null },
-    { keyword: "sase network security", sv: 150, kd: 57, fortinet: 1, cisco: 7, paloalto: 3, checkpoint: null, crowdstrike: null },
+    { keyword: "sase security", sv: 1600, kd: 42, fortinet: 1, cisco: 1, paloalto: 1, checkpoint: null, crowdstrike: null },
+    { keyword: "sase platform", sv: 600, kd: 54, fortinet: 1, cisco: 11, paloalto: 1, checkpoint: null, crowdstrike: null },
+    { keyword: "sase network", sv: 300, kd: 53, fortinet: 1, cisco: 1, paloalto: 1, checkpoint: null, crowdstrike: null },
+    { keyword: "sase products", sv: 200, kd: 37, fortinet: 1, cisco: 10, paloalto: 9, checkpoint: 5, crowdstrike: null },
+    { keyword: "sase network security", sv: 150, kd: 57, fortinet: 1, cisco: 5, paloalto: 4, checkpoint: null, crowdstrike: null },
   ],
   bofu: [
-    { keyword: "sase solutions", sv: 1600, kd: 55, fortinet: 1, cisco: 11, paloalto: 1, checkpoint: 13, crowdstrike: null },
-    { keyword: "sase services", sv: 250, kd: 57, fortinet: 1, cisco: 1, paloalto: 1, checkpoint: null, crowdstrike: null },
-    { keyword: "secure access service edge vendors", sv: 150, kd: 56, fortinet: 1, cisco: null, paloalto: 4, checkpoint: null, crowdstrike: null },
-    { keyword: "sase vendor", sv: 200, kd: 0, fortinet: 8, cisco: null, paloalto: 6, checkpoint: 9, crowdstrike: null },
-    { keyword: "sase providers", sv: 450, kd: 1, fortinet: 1, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
+    { keyword: "sase solutions", sv: 1600, kd: 55, fortinet: 1, cisco: null, paloalto: 1, checkpoint: null, crowdstrike: null },
+    { keyword: "sase services", sv: 250, kd: 57, fortinet: 1, cisco: null, paloalto: 1, checkpoint: null, crowdstrike: null },
+    { keyword: "secure access service edge vendors", sv: 150, kd: 56, fortinet: 2, cisco: 8, paloalto: 1, checkpoint: null, crowdstrike: null },
+    { keyword: "sase vendor", sv: 200, kd: 0, fortinet: 7, cisco: null, paloalto: null, checkpoint: 10, crowdstrike: null },
+    { keyword: "sase providers", sv: 450, kd: 1, fortinet: 10, cisco: null, paloalto: 1, checkpoint: null, crowdstrike: null },
   ],
 };
 
@@ -294,13 +294,13 @@ export function SlideDashboard({ onNavigateHome }: { onNavigateHome?: () => void
               icon={TrendingUp}
               type="success"
               title="Fortinet"
-              content="From Jul 2025 to Sep 2026, keywords grew 184 → 232 (+26.1%), just behind Palo Alto 234."
+              content="From Jul 2025 to Oct 2026, keywords grew 184 → 365 (+98.4%), trailing Palo Alto 664; Oct MoM +57.3% (232 → 365). Oct step-up for Fortinet and Palo Alto is unusually large — validate the Ahrefs export."
             />
             <InsightCard
               icon={TrendingDown}
               type="error"
               title="Competitions"
-              content="From Jul 2025 to Sep 2026, Cisco declined 180 → 104 (−42.2%), Palo Alto grew 187 → 234 (+25.1%)."
+              content="From Jul 2025 to Oct 2026, Cisco declined 180 → 109 (−39.4%), Palo Alto grew 187 → 664 (+255.1%); Oct MoM: Cisco +4.8%, Palo Alto +183.8%. Oct step-up for Fortinet and Palo Alto is unusually large — validate the Ahrefs export."
             />
           </InsightsSection>
         );
@@ -311,13 +311,13 @@ export function SlideDashboard({ onNavigateHome }: { onNavigateHome?: () => void
               icon={TrendingUp}
               type="success"
               title="Fortinet"
-              content="From Jul 2025 to Sep 2026, page-1 keywords grew 148 → 230 (+55.4%), essentially level with Palo Alto 231."
+              content="From Jul 2025 to Oct 2026, page-1 keywords grew 148 → 358 (+141.9%), trailing Palo Alto 658; Oct MoM +55.7% (230 → 358). Oct step-up for Fortinet and Palo Alto is unusually large — validate the Ahrefs export."
             />
             <InsightCard
               icon={TrendingUp}
               type="success"
               title="Competitions"
-              content="From Jul 2025 to Sep 2026, Palo Alto grew 157 → 231 (+47.1%), edging Fortinet 230."
+              content="From Jul 2025 to Oct 2026, Cisco grew 102 → 104 (+2.0%), Palo Alto grew 157 → 658 (+319.1%); Oct MoM: Cisco +9.5%, Palo Alto +184.8%."
             />
           </InsightsSection>
         );
@@ -328,13 +328,13 @@ export function SlideDashboard({ onNavigateHome }: { onNavigateHome?: () => void
               icon={TrendingDown}
               type="error"
               title="Fortinet"
-              content="From Jul 2025 to Sep 2026, traffic declined 13,499 → 6,800 (−49.6%), still leading Palo Alto 5,024."
+              content="From Jul 2025 to Oct 2026, traffic declined 13,499 → 9,766 (−27.7%), trailing Palo Alto 11,417; Oct MoM +43.6% (6,800 → 9,766)."
             />
             <InsightCard
               icon={TrendingDown}
               type="error"
               title="Competitions"
-              content="From Jul 2025 to Sep 2026, Palo Alto declined 7,562 → 5,024 (−33.6%), Cisco declined 1,713 → 1,134 (−33.8%)."
+              content="From Jul 2025 to Oct 2026, Cisco declined 1,713 → 1,203 (−29.8%), Palo Alto grew 7,562 → 11,417 (+51.0%); Oct MoM: Cisco +6.1%, Palo Alto +127.2%."
             />
           </InsightsSection>
         );
@@ -345,13 +345,13 @@ export function SlideDashboard({ onNavigateHome }: { onNavigateHome?: () => void
               icon={TrendingUp}
               type="success"
               title="Fortinet"
-              content="From Jul 2025 to Sep 2026, AIO grew 148 → 155 (+4.7%), just behind Palo Alto 156."
+              content="From Jul 2025 to Oct 2026, AIO keywords grew 148 → 272 (+83.8%), trailing Palo Alto 485; Oct MoM +75.5% (155 → 272)."
             />
             <InsightCard
               icon={TrendingDown}
               type="error"
               title="Competitions"
-              content="From Jul 2025 to Sep 2026, Cisco declined 102 → 73 (−28.4%), Palo Alto declined 157 → 156 (−0.6%)."
+              content="From Jul 2025 to Oct 2026, Cisco declined 102 → 77 (−24.5%), Palo Alto grew 157 → 485 (+208.9%); Oct MoM: Cisco +5.5%, Palo Alto +210.9%."
             />
           </InsightsSection>
         );
@@ -362,13 +362,13 @@ export function SlideDashboard({ onNavigateHome }: { onNavigateHome?: () => void
               icon={Trophy}
               type="success"
               title="Fortinet"
-              content="Ranks #1 for 7 of 8 TOFU terms, all 5 MOFU terms and 'sase solutions', 'sase services', 'secure access service edge vendors', 'sase providers' — dominant SASE funnel coverage."
+              content="Fortinet ranks #1 for seven of eight TOFU terms, all five MOFU terms and both core BOFU solution/service terms. Only 'sase benefits' sits outside the top three at #5."
             />
             <InsightCard
               icon={Target}
               type="warning"
               title="Competitions"
-              content="Palo Alto matches Fortinet at #1 on 'sase', 'sase platform', 'sase solutions' and leads 'sase vendor' (#6 vs Fortinet #8, SV 200); Check Point is a growing challenger at #4–#5 for 'sase products' and 'sase architecture'."
+              content="Palo Alto leads the vendor/provider layer: #1 for 'secure access service edge vendors' and 'sase providers'. Fortinet is #7–10 on 'sase vendor' and 'sase providers', leaving a conversion-intent gap."
             />
           </InsightsSection>
         );
@@ -378,7 +378,7 @@ export function SlideDashboard({ onNavigateHome }: { onNavigateHome?: () => void
   };
 
   const getPerformanceSummary = () => {
-    const latestIndex = 14; // Sep 2026
+    const latestIndex = 15; // Oct 2026
     let dataSource: Record<string, number[]>;
     let formatValue: (val: number) => string;
 
@@ -496,7 +496,7 @@ export function SlideDashboard({ onNavigateHome }: { onNavigateHome?: () => void
     <SlideContainer slideNumber={22} onNavigateHome={onNavigateHome} source="Ahrefs">
       <SlideHeader
         title="SASE"
-        subtitle="(Jul 2025 – Sep 2026)"
+        subtitle="(Jul 2025 – Oct 2026)"
       />
       
       {!isEditing ? (
@@ -623,7 +623,7 @@ export function SlideDashboard({ onNavigateHome }: { onNavigateHome?: () => void
       ) : (
         <div className="flex-1 overflow-auto">
           <div className="bg-white border border-gray-200 rounded-lg p-6">
-            <h3 className="text-sm font-bold text-gray-900 mb-4">Edit SASE Metrics Data (Jul 2025 - May 2026)</h3>
+            <h3 className="text-sm font-bold text-gray-900 mb-4">Edit SASE Metrics Data (Jul 2025 - Oct 2026)</h3>
             <div className="space-y-6">
               {SDWAN_VENDORS.map((vendor) => (
                 <div key={vendor.id} className="bg-gray-50 rounded-lg p-4 border border-gray-200">

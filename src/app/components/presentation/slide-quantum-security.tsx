@@ -30,56 +30,56 @@ const VENDORS = [
   { id: 'wiz',          name: 'Wiz',           color: '#06B6D4' },
 ];
 
-// Data: Dec 2025 to Sep 2026 (9 months)
+// Data: Dec 2025 to Oct 2026 (11 months)
 const TOTAL_KEYWORDS_DATA_INITIAL = {
-  fortinet:    [0, 3, 3, 3, 3, 3, 4, 4, 6, 5],
-  cisco:       [0, 4, 4, 3, 2, 2, 2, 1, 0, 0],
-  hpe:         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  paloalto:    [0, 4, 4, 4, 5, 5, 7, 7, 5, 6],
-  checkpoint:  [0, 1, 1, 1, 0, 0, 1, 1, 1, 0],
-  crowdstrike: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  catonetworks:[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  sentinelone: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  wiz:         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  fortinet:    [0, 3, 3, 3, 3, 3, 4, 4, 6, 5, 4],
+  cisco:       [0, 4, 4, 3, 2, 2, 2, 1, 0, 0, 0],
+  hpe:         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  paloalto:    [0, 4, 4, 4, 5, 5, 7, 7, 5, 6, 6],
+  checkpoint:  [0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0],
+  crowdstrike: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  catonetworks:[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  sentinelone: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  wiz:         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 };
 
 const CUMULATIVE_TRAFFIC_DATA_INITIAL = {
-  fortinet:    [  0,  12,  27,  50,  36,  54,  54,  43,  56,  41],
-  cisco:       [  0,  12,  15,  11,   8,  10,   0,   0,   0,   0],
-  hpe:         [  0,   0,   0,   0,   0,   0,   0,   0,   0,   0],
-  paloalto:    [  0, 131, 128, 127, 154, 147, 156, 190, 166, 110],
-  checkpoint:  [  0,   0,   0,   0,   0,   0,   0,   4,   3,   0],
-  crowdstrike: [  0,   0,   0,   0,   0,   0,   0,   0,   0,   0],
-  catonetworks:[  0,   0,   0,   0,   0,   0,   0,   0,   0,   0],
-  sentinelone: [  0,   0,   0,   0,   0,   0,   0,   0,   0,   0],
-  wiz:         [  0,   0,   0,   0,   0,   0,   0,   0,   0,   0],
+  fortinet:    [0, 12, 27, 50, 36, 54, 54, 43, 56, 41, 16],
+  cisco:       [0, 12, 15, 11, 8, 10, 0, 0, 0, 0, 0],
+  hpe:         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  paloalto:    [0, 131, 128, 127, 154, 147, 156, 190, 166, 110, 36],
+  checkpoint:  [0, 0, 0, 0, 0, 0, 0, 4, 3, 0, 0],
+  crowdstrike: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  catonetworks:[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  sentinelone: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  wiz:         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 };
 
 const PAGE_ONE_KEYWORDS_DATA_INITIAL = {
-  fortinet:    [0, 0, 3, 3, 3, 3, 4, 4, 6, 5],
-  cisco:       [0, 2, 3, 1, 1, 2, 2, 1, 0, 0],
-  hpe:         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  paloalto:    [0, 4, 4, 3, 5, 5, 7, 7, 5, 6],
-  checkpoint:  [0, 0, 0, 0, 0, 0, 0, 1, 1, 0],
-  crowdstrike: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  catonetworks:[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  sentinelone: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  wiz:         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  fortinet:    [0, 0, 3, 3, 3, 3, 4, 4, 6, 5, 4],
+  cisco:       [0, 2, 3, 1, 1, 2, 2, 1, 0, 0, 0],
+  hpe:         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  paloalto:    [0, 4, 4, 3, 5, 5, 7, 7, 5, 6, 6],
+  checkpoint:  [0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0],
+  crowdstrike: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  catonetworks:[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  sentinelone: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  wiz:         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 };
 
 const AIO_DATA_INITIAL = {
-  fortinet:    [0, 1, 1, 1, 1, 2, 1, 1, 1, 1],
-  cisco:       [0, 3, 3, 3, 2, 2, 2, 1, 0, 0],
-  hpe:         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  paloalto:    [0, 2, 2, 2, 3, 4, 4, 3, 2, 3],
-  checkpoint:  [0, 1, 1, 1, 0, 0, 1, 1, 1, 0],
-  crowdstrike: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  catonetworks:[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  sentinelone: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  wiz:         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  fortinet:    [0, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1],
+  cisco:       [0, 3, 3, 3, 2, 2, 2, 1, 0, 0, 0],
+  hpe:         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  paloalto:    [0, 2, 2, 2, 3, 4, 4, 3, 2, 3, 3],
+  checkpoint:  [0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0],
+  crowdstrike: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  catonetworks:[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  sentinelone: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  wiz:         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 };
 
-const MONTHS = ['2025-12', '2026-01', '2026-02', '2026-03', '2026-04', '2026-05', '2026-06', '2026-07', '2026-08', '2026-09'];
+const MONTHS = ['2025-12', '2026-01', '2026-02', '2026-03', '2026-04', '2026-05', '2026-06', '2026-07', '2026-08', '2026-09', '2026-10'];
 
 // Format function for month display
 const formatMonth = (monthKey: string) => {
@@ -93,15 +93,15 @@ type TabType = 'keywords' | 'page-one' | 'traffic' | 'aio' | 'keyword-gap';
 const KEYWORD_GAP_DATA = {
   tofu: [
     { keyword: "quantum security", sv: 600, kd: 29, fortinet: 1, cisco: null, paloalto: 1, checkpoint: null, crowdstrike: null },
-    { keyword: "quantum safe encryption", sv: 250, kd: 53, fortinet: 1, cisco: null, paloalto: 8, checkpoint: null, crowdstrike: null },
-    { keyword: "post-quantum cryptography", sv: 9400, kd: 74, fortinet: null, cisco: null, paloalto: 11, checkpoint: null, crowdstrike: null },
-    { keyword: "pqc", sv: 1200, kd: 67, fortinet: null, cisco: 19, paloalto: 11, checkpoint: null, crowdstrike: null },
+    { keyword: "quantum safe encryption", sv: 250, kd: 53, fortinet: 1, cisco: 9, paloalto: null, checkpoint: null, crowdstrike: null },
+    { keyword: "post-quantum cryptography", sv: 9400, kd: 74, fortinet: null, cisco: 1, paloalto: 1, checkpoint: null, crowdstrike: null },
+    { keyword: "pqc", sv: 1200, kd: 67, fortinet: null, cisco: 1, paloalto: null, checkpoint: null, crowdstrike: null },
     { keyword: "quantum computing security", sv: 150, kd: 14, fortinet: 1, cisco: null, paloalto: 1, checkpoint: null, crowdstrike: null },
-    { keyword: "quantum key distribution", sv: 900, kd: 23, fortinet: 1, cisco: null, paloalto: 20, checkpoint: null, crowdstrike: null },
-    { keyword: "qkd", sv: 600, kd: 1, fortinet: 1, cisco: null, paloalto: 14, checkpoint: null, crowdstrike: null },
+    { keyword: "quantum key distribution", sv: 900, kd: 23, fortinet: 1, cisco: null, paloalto: 1, checkpoint: null, crowdstrike: null },
+    { keyword: "qkd", sv: 600, kd: 1, fortinet: 1, cisco: null, paloalto: 1, checkpoint: null, crowdstrike: null },
   ],
   mofu: [
-    { keyword: "quantum security system", sv: 30, kd: 18, fortinet: 3, cisco: null, paloalto: 7, checkpoint: null, crowdstrike: null },
+    { keyword: "quantum security system", sv: 30, kd: 18, fortinet: 4, cisco: null, paloalto: 6, checkpoint: null, crowdstrike: null },
     { keyword: "quantum security software", sv: null, kd: null, fortinet: null, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
   ],
   bofu: [
@@ -285,13 +285,13 @@ export function SlideQuantumSecurity({ onNavigateHome }: { onNavigateHome?: () =
               icon={TrendingUp}
               type="success"
               title="Fortinet"
-              content="From Jan 2026 to Sep 2026, keyword coverage grew 3 → 5 (+66.7%), trailing Palo Alto 6."
+              content="From Jan 2026 to Oct 2026, keywords grew 3 → 4 (+33.3%), trailing Palo Alto 6; Oct MoM −20.0% (5 → 4)."
             />
             <InsightCard
               icon={TrendingUp}
               type="success"
               title="Competitions"
-              content="From Jan 2026 to Sep 2026, Palo Alto grew 4 → 6 (+50.0%), while Cisco declined 4 → 0 (−100%)."
+              content="From Jan 2026 to Oct 2026, Palo Alto grew 4 → 6 (+50.0%), Cisco declined 4 → 0 (−100.0%)."
             />
           </InsightsSection>
         );
@@ -302,13 +302,13 @@ export function SlideQuantumSecurity({ onNavigateHome }: { onNavigateHome?: () =
               icon={TrendingUp}
               type="success"
               title="Fortinet"
-              content="From Feb 2026 to Sep 2026, page-1 rankings grew 3 → 5 (+66.7%), trailing Palo Alto 6."
+              content="From Feb 2026 to Oct 2026, page-1 keywords grew 3 → 4 (+33.3%), trailing Palo Alto 6; Oct MoM −20.0% (5 → 4)."
             />
             <InsightCard
               icon={TrendingUp}
               type="success"
               title="Competitions"
-              content="From Feb 2026 to Sep 2026, Palo Alto grew 4 → 6 (+50.0%), while Cisco declined 3 → 0 (−100%)."
+              content="From Feb 2026 to Oct 2026, Palo Alto grew 4 → 6 (+50.0%), Cisco declined 3 → 0 (−100.0%)."
             />
           </InsightsSection>
         );
@@ -319,13 +319,13 @@ export function SlideQuantumSecurity({ onNavigateHome }: { onNavigateHome?: () =
               icon={TrendingUp}
               type="success"
               title="Fortinet"
-              content="From Jan 2026 to Sep 2026, traffic grew 12 → 41 (+241.7%), trailing Palo Alto 110."
+              content="From Jan 2026 to Oct 2026, traffic grew 12 → 16 (+33.3%), trailing Palo Alto 36; Oct MoM −61.0% (41 → 16)."
             />
             <InsightCard
               icon={TrendingDown}
               type="error"
               title="Competitions"
-              content="From Jan 2026 to Sep 2026, Palo Alto declined 131 → 110 (−16.0%) but remains the clear leader; Cisco fell 12 → 0."
+              content="From Jan 2026 to Oct 2026, Palo Alto declined 131 → 36 (−72.5%), Cisco declined 12 → 0 (−100.0%); Oct MoM: Palo Alto −67.3%."
             />
           </InsightsSection>
         );
@@ -336,13 +336,13 @@ export function SlideQuantumSecurity({ onNavigateHome }: { onNavigateHome?: () =
               icon={TrendingUp}
               type="success"
               title="Fortinet"
-              content="From Jan 2026 to Sep 2026, AIO rankings remained stable 1 → 1, trailing Palo Alto 3."
+              content="From Jan 2026 to Oct 2026, AIO keywords held flat at 1 → 1, trailing Palo Alto 3."
             />
             <InsightCard
               icon={TrendingUp}
               type="success"
               title="Competitions"
-              content="From Jan 2026 to Sep 2026, Palo Alto grew 2 → 3 (+50.0%), Cisco declined 3 → 0 (−100%)."
+              content="From Jan 2026 to Oct 2026, Palo Alto grew 2 → 3 (+50.0%), Cisco declined 3 → 0 (−100.0%)."
             />
           </InsightsSection>
         );
@@ -353,13 +353,13 @@ export function SlideQuantumSecurity({ onNavigateHome }: { onNavigateHome?: () =
               icon={Trophy}
               type="success"
               title="Fortinet"
-              content="Ranks #1 for 5 of 7 TOFU terms — 'quantum security', 'quantum safe encryption', 'quantum computing security', 'quantum key distribution' and 'qkd' — and #3 for 'quantum security system'."
+              content="Fortinet ranks #1 for five of seven TOFU terms and #4 for 'quantum security system', confirming strong ownership of the general quantum-security cluster."
             />
             <InsightCard
               icon={Target}
               type="warning"
               title="Competitions"
-              content="Fortinet does not rank for 'post-quantum cryptography' (SV 9.4K) or 'pqc' (SV 1.2K) — Palo Alto is #11 for both and Cisco #19 for 'pqc'. No vendor ranks for any BOFU quantum term, a category-wide content gap."
+              content="Fortinet is absent for the two highest-value PQC terms: 'post-quantum cryptography' (SV 9.4K) and 'pqc' (1.2K), where Cisco ranks #1. Every tracked BOFU term remains open."
             />
           </InsightsSection>
         );
@@ -369,7 +369,7 @@ export function SlideQuantumSecurity({ onNavigateHome }: { onNavigateHome?: () =
   };
 
   const getPerformanceSummary = () => {
-    const latestIndex = 9; // Sep 2026
+    const latestIndex = 10; // Oct 2026
     let dataSource: Record<string, number[]>;
     let formatValue: (val: number) => string;
 
@@ -488,7 +488,7 @@ export function SlideQuantumSecurity({ onNavigateHome }: { onNavigateHome?: () =
     <SlideContainer slideNumber={27} onNavigateHome={onNavigateHome} source="Ahrefs">
       <SlideHeader 
         title="Quantum Security" 
-        subtitle="(Dec 2025 – Sep 2026)"
+        subtitle="(Dec 2025 – Oct 2026)"
       />
       
       {!isEditing ? (
@@ -605,7 +605,7 @@ export function SlideQuantumSecurity({ onNavigateHome }: { onNavigateHome?: () =
       ) : (
         <div className="flex-1 overflow-auto">
           <div className="bg-white border border-gray-200 rounded-lg p-6">
-            <h3 className="text-sm font-bold text-gray-900 mb-4">Edit Quantum Security Metrics Data (Dec 2025 - Sep 2026)</h3>
+            <h3 className="text-sm font-bold text-gray-900 mb-4">Edit Quantum Security Metrics Data (Dec 2025 - Oct 2026)</h3>
             <div className="space-y-6">
               {VENDORS.map((vendor) => (
                 <div key={vendor.id} className="bg-gray-50 rounded-lg p-4 border border-gray-200">

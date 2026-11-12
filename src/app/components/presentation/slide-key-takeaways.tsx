@@ -28,19 +28,19 @@ const takeaways = [
     iconColor: 'text-blue-600',
     borderColor: 'border-l-blue-500',
     badgeBg: 'bg-blue-100 text-blue-700',
-    label: 'Traffic & Reach',
+    label: 'Demand & Traffic',
     points: [
       {
         type: 'win' as PointType,
-        text: 'US organic traffic 890K → 1.20M (+34.3%) Jul 2025–Sep 2026 (Semrush); non-branded 732K → 1.09M (+48.5%) now 91% of traffic — authority is brand-independent. But Sep is −5.8% MoM and −24% vs Mar peak 1.58M.',
+        text: 'Semrush models US organic traffic at 975K in Oct: +9.6% vs Jul-25, but −18.4% MoM and −38% below the Mar peak. Non-branded demand remains the strength at 915K, or 93.8% of traffic.',
       },
       {
         type: 'watch' as PointType,
-        text: 'GA Google organic sessions 47.8K in Sep (+3.4% MoM, first uptick since Mar) but −54% vs Mar peak of 104.4K; Bing 7.7K, −47% since Dec.',
+        text: 'First-party data is more cautious: Google organic sessions rose to 49.6K (+3.8% MoM) but remain −52.5% vs Mar; US GSC clicks improved to 126K (+4.1%), while impressions fell sharply to 24.1M (−40.6% MoM).',
       },
       {
         type: 'neutral' as PointType,
-        text: 'Cyberglossary direct traffic recovered to 18.5K in Sep (+7.0% MoM); top-10 direct gainers led by proxy-server (+276) and cloud-security-tools (+97).',
+        text: 'Cyberglossary GA traffic fell to 81.5K (−6.5% MoM), while GSC clicks rebounded to 140.2K (+3.8%). The GA/GSC divergence requires page-level diagnosis before declaring recovery.',
       },
     ],
   },
@@ -55,15 +55,15 @@ const takeaways = [
     points: [
       {
         type: 'win' as PointType,
-        text: 'Page 1 keywords 39.4K → 45.9K (+16.5%, +2.7% MoM); total footprint 211K is still 42% below Feb peak 362K, but page-1 share of footprint rose 12.8% → 21.8% — quality up, breadth to rebuild.',
+        text: 'The footprint is getting smaller but more efficient: 227K total keywords (+7.6% MoM, −26.5% vs Jul-25) and 44.0K Page 1 rankings (−4.1% MoM, +11.7% vs Jul-25). Page 1 share improved from 12.8% to 19.4%.',
       },
       {
         type: 'win' as PointType,
-        text: 'Top-50 KW tracker (Sep): Fortinet holds 36 Page 1 KWs vs Cisco 27, Palo Alto 23, Check Point 19 (record) — 29 at #1, rebounding from 8 in Aug.',
+        text: 'On the 48-keyword strategic set, Fortinet leads with 36 Page 1 terms and 31 at position #1 (+2 MoM), ahead of Cisco (26 Page 1) and Palo Alto (23). Firewall and SD-WAN both returned to full-strength leadership.',
       },
       {
         type: 'critical' as PointType,
-        text: 'Key BOFU gaps: "zero trust solutions" (#32), "ai security solutions" (#5), "cloud security services" (#15); Check Point closing in on Page 1 (19 vs 14 in Aug).',
+        text: 'Commercial depth is the constraint: Fortinet is unranked for "zero trust solutions", "cloud security" and "cloud security services"; "cloud security providers" is only #10. These gaps sit directly inside categories where AI visibility trails Palo Alto.',
       },
     ],
   },
@@ -78,15 +78,15 @@ const takeaways = [
     points: [
       {
         type: 'watch' as PointType,
-        text: 'US AIO keywords rebounded to 22.2K in Sep (+14.9% MoM) but AIO traffic is flat at 184K (−50% vs Mar peak 367K) — coverage up, click capture lagging.',
+        text: 'AIO coverage held at 22.2K keywords (−0.2% MoM), but remains 39% below Cisco’s 36.6K. AIO traffic dropped to 96.7K (−47.5% MoM; −73.7% vs Mar peak), showing a material loss of click capture.',
       },
       {
         type: 'watch' as PointType,
-        text: 'Profound visibility 44.3% (Sep) is −21.9pp vs Mar peak 66.2%; lead over Palo Alto (41.0%) shrank 24.0pp → 3.3pp. Citation rate 8.8% vs PA 3.6% (2.4×) is the moat. France AIO traffic hit 29.6K.',
+        text: 'Profound visibility fell to 42.3% (−2.0pp) and share of voice to 7.5%, allowing Palo Alto to lead both metrics (43.2% / 7.8%). Citation rate improved to 9.3% vs 3.7% — Fortinet’s clearest AI-search moat.',
       },
       {
         type: 'watch' as PointType,
-        text: 'AI referrals: ChatGPT 11.1K sessions in Sep (+6.4% MoM) drives most volume; Claude fell to 123 (−45% MoM), Perplexity 179 — concentration risk.',
+        text: 'AI referrals strengthened across every tracked engine in Oct; ChatGPT reached 12.5K (+12.7% MoM) and contributes ~84% of tracked AI sessions. Diversify citations for Gemini and Perplexity while protecting ChatGPT visibility.',
       },
     ],
   },
@@ -101,15 +101,15 @@ const takeaways = [
     points: [
       {
         type: 'win' as PointType,
-        text: 'Leads 5 of 8 categories (Sep 2026, Profound): Firewall 71.7%, SASE 71.1%, OT 42.2%, Quantum 38.5%; AI Cyber 39.6% fell −10.4pp MoM, lead over CrowdStrike cut to 11.5pp.',
+        text: 'Fortinet leads 5 of 8 Profound categories: Firewall 71.3%, SASE 70.1%, OT 42.5%, Quantum 33.6% and AI Cybersecurity 35.2%. This is broad leadership, not uniform momentum.',
       },
       {
         type: 'win' as PointType,
-        text: 'Firewall lead widened to 15.3pp (71.7% vs PA 56.4%); Quantum lead 13.2pp; SASE lead 7.9pp (71.1% vs PA 63.2%) as PA slipped −2.2pp.',
+        text: 'Four of five leads narrowed in Oct: SASE to +1.5pp, AI Cybersecurity +7.0pp, Quantum +7.3pp and Firewall +11.2pp. Only OT expanded, to +10.3pp over Palo Alto.',
       },
       {
         type: 'critical' as PointType,
-        text: 'Trailing in 3 categories: ZTNA −11.0pp (33.1% vs PA 44.1%), Cloud Security −19.1pp (25.7% vs PA 44.8%), SecOps −30.8pp (12.6% vs CrowdStrike 43.4%).',
+        text: 'The three losses all worsened MoM: ZTNA −19.2pp and Cloud Security −20.8pp vs Palo Alto; SecOps −39.1pp vs CrowdStrike. These are the primary growth categories for corrective investment.',
       },
     ],
   },
@@ -124,15 +124,15 @@ const takeaways = [
     points: [
       {
         type: 'win' as PointType,
-        text: 'Referring domains grew 54,366 → 59,660 (+5,294 net new, +9.7%) Jul 2025–Sep 2026 (Semrush WW) — steady, but slower than 6 of 8 rivals.',
+        text: 'Referring domains reached 66.7K (+22.6% vs Jul-25; +11.7% MoM) and backlinks 4.08M (+28.7% vs Jul-25). Authority is growing, but October’s market-wide jump likely includes a Semrush index refresh.',
       },
       {
         type: 'watch' as PointType,
-        text: 'Palo Alto grew 42.2K → 56.4K domains (+33.6%) — over 3× Fortinet\'s pace; Check Point (70.0K) still holds more referring domains.',
+        text: 'Palo Alto moved just ahead at 68.0K referring domains and Check Point reached 77.5K. Fortinet’s 4.08M backlinks narrowly exceed Palo Alto’s 3.99M, so quality and topical relevance matter more than raw volume.',
       },
       {
         type: 'watch' as PointType,
-        text: 'Wiz surged 12.6K → 21.6K domains (+71.4%) — fastest-rising rival; monitor link velocity & quality closely.',
+        text: 'Wiz is the velocity watch: referring domains rose 141% vs Jul-25 and 40.7% MoM, even as total backlinks remain 71% below Jul-25. Validate new-domain quality before treating velocity as durable authority.',
       },
     ],
   },
@@ -147,15 +147,15 @@ const takeaways = [
     points: [
       {
         type: 'critical' as PointType,
-        text: 'Fortinet: 624 pages vs Checkpoint: 1,142, SentinelOne: 1,091, PAN: 809 — content velocity significantly lags Sep 2026.',
+        text: 'Fortinet’s tracked content hub reached 633 pages (+9 MoM), behind Check Point 1,154, SentinelOne 1,100 and Palo Alto 814. Separately, indexed organic pages recovered to 37.7K (+8.9% MoM) but remain below the May peak.',
       },
       {
         type: 'critical' as PointType,
-        text: 'Incomplete AI & Agentic messaging at hero level; SOC solutions page lacks Agentic AI / SOC Reimagined positioning.',
+        text: 'The clearest asset gaps are not more generic blogs: Fortinet lacks competitor-style vulnerability databases, a branded AI-security research hub and complete agentic/SOC positioning on high-authority solution pages.',
       },
       {
         type: 'watch' as PointType,
-        text: 'SentinelOne added +154 pages in Sep 2026 alone (937 → 1,091) — largest single-month jump of any rival; content bar rising fast.',
+        text: 'Use existing authority more effectively: refresh decayed glossary winners, connect informational pages to ZTNA/Cloud/SecOps decision journeys, and strengthen above-fold proof and CTA paths on commercial pages.',
       },
     ],
   },
@@ -166,22 +166,22 @@ const priorities = [
     icon: Zap,
     color: 'bg-red-500',
     label: 'Priority 1',
-    action: 'Elevate AI & Agentic Messaging',
-    detail: 'Upgrade hero/hero-image messaging on SOC, homepage & solutions pages to match CrowdStrike\'s agentic AI narrative — target "agentic ai security", "ai soc platform" — also defends AI Cyber lead (11.5pp) and Profound visibility (3.3pp over PA)',
+    action: 'Diagnose the Demand Loss',
+    detail: 'Segment the 40.6% MoM US impression decline and 52.5% Google-session gap to peak by query, URL, template, country and SERP feature; resolve indexing, canonical, content-decay and tracking issues first',
   },
   {
     icon: TrendingUp,
     color: 'bg-amber-500',
     label: 'Priority 2',
-    action: 'Close ZTNA & Cloud Security Gaps',
-    detail: 'Narrow 11.0pp ZTNA gap and 19.1pp Cloud gap vs Palo Alto — create 20+ pillar pages targeting "zero trust solutions" (SV 800) and "cloud security services" (SV 8.8K)',
+    action: 'Win the Commercial Gaps',
+    detail: 'Refresh and interlink the highest-potential ZTNA, Cloud and SecOps pages around solution, provider, platform and comparison intent; establish rankings for missing head terms, then move priority terms into the top 10',
   },
   {
     icon: Link2,
     color: 'bg-blue-500',
     label: 'Priority 3',
-    action: 'Accelerate Content & CTA Velocity',
-    detail: 'Fortinet: 624 pages (+2 in Sep) vs Checkpoint 1,142 & SentinelOne 1,091 (+154 in Sep) — increase to 8–10 pages/month; strengthen CTA placement to match CrowdStrike\'s above-fold conversion strategy',
+    action: 'Turn Authority Into AI Demand',
+    detail: 'Protect the 9.3% citation rate with answer-first modules, expert evidence, schema and original research; launch a vulnerability intelligence asset and recover AIO traffic toward 150K+',
   },
 ];
 
@@ -217,7 +217,7 @@ export function SlideKeyTakeaways({ onNavigateHome }: { onNavigateHome?: () => v
     <SlideContainer slideNumber={24} onNavigateHome={onNavigateHome} source="">
       <SlideHeader
         title="Key Takeaways"
-        subtitle="Strategic Summary · Jul 2025 – Sep 2026 · 15-Month View · US & WW"
+        subtitle="Strategic Summary · Jul-25 – Oct-26 · 16-Month View · US & WW"
       />
 
       {/* ── 6-card Grid ─────────────────────────────────────────────────── */}
@@ -315,7 +315,7 @@ export function SlideKeyTakeaways({ onNavigateHome }: { onNavigateHome?: () => v
         </div>
       </div>
 
-      <SlideFooter source="Source: Semrush traffic & keywords, Profound, GA, GSC, Top 50 KW & Competitive Intel (through Sep 2026) · Backlinks (through Sep 2026)" />
+      <SlideFooter source="Source: Semrush traffic & keywords, Profound, GA, GSC, Top 50 KW & backlinks through Oct-26 · Competitive Intel through Oct-26" />
     </SlideContainer>
   );
 }

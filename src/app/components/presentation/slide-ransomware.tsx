@@ -30,56 +30,56 @@ const VENDORS = [
   { id: 'wiz',          name: 'Wiz',           color: '#06B6D4' },
 ];
 
-// Full data - Jul 2025 to Sep 2026 (14 months)
+// Full data - Jul 2025 to Oct 2026 (16 months)
 const TOTAL_KEYWORDS_DATA_INITIAL = {
-  fortinet:    [1294, 1318,  848, 745, 723, 699, 687, 675, 670, 654, 690, 727, 719, 701, 631],
-  cisco:       [ 440,  443,  139, 130, 113, 127, 124, 131, 125, 100, 105,  88,  93, 114, 109],
-  hpe:         [  81,   80,   29,  26,  20,  18,  14,  15,   9,  10,   7,  13,  16,   9,  16],
-  paloalto:    [1052, 1084,  448, 281, 282, 310, 314, 311, 304, 277, 283, 359, 336, 291, 290],
-  checkpoint:  [1295, 1320,  610, 404, 366, 344, 327, 317, 281, 277, 299, 340, 324, 288, 280],
-  crowdstrike: [   0,    0,    0,   0, 398, 397, 401, 388, 355, 344, 293, 285, 248, 202, 168],
-  catonetworks:[   0,    0,    0,   0,   0,  18,  18,  22,  18,   7,   8,  10,   4,   5,   4],
-  sentinelone: [   0,    0,    0,   0,   0, 416, 414, 401, 410, 394, 365, 401, 372, 343, 329],
-  wiz:         [null, null, null, null, null, null, null, null, 11, 11,  5,  6,  5,  4,  5],
+  fortinet:    [1294, 1318, 848, 745, 723, 699, 687, 675, 670, 654, 690, 727, 719, 701, 631, 595],
+  cisco:       [440, 443, 139, 130, 113, 127, 124, 131, 125, 100, 105, 88, 93, 114, 109, 121],
+  hpe:         [81, 80, 29, 26, 20, 18, 14, 15, 9, 10, 7, 13, 16, 9, 16, 28],
+  paloalto:    [1052, 1084, 448, 281, 282, 310, 314, 311, 304, 277, 283, 359, 336, 291, 290, 286],
+  checkpoint:  [1295, 1320, 610, 404, 366, 344, 327, 317, 281, 277, 299, 340, 324, 288, 280, 245],
+  crowdstrike: [0, 0, 0, 0, 398, 397, 401, 388, 355, 344, 293, 285, 248, 202, 168, 168],
+  catonetworks:[0, 0, 0, 0, 0, 18, 18, 22, 18, 7, 8, 10, 4, 5, 4, 3],
+  sentinelone: [0, 0, 0, 0, 0, 416, 414, 401, 410, 394, 365, 401, 372, 343, 329, 341],
+  wiz:         [null, null, null, null, null, null, null, null, 11, 11, 5, 6, 5, 4, 5, 3],
 };
 
 const CUMULATIVE_TRAFFIC_DATA_INITIAL = {
-  fortinet:    [ 3312,  4354,  5383,  5796,  7556, 11049, 11290,  8071, 10527, 18736, 10170, 20083, 12783,  7902,  6933],
-  cisco:       [  636,   718,   392,   561,   551,  2223,  3294,  4142,  8087,  7102,  8608,  6799,  1870,  2191,   766],
-  hpe:         [    8,     9,    25,    48,    40,    29,    20,    46,    47,    21,     1,    29,    34,    44,  1250],
-  paloalto:    [ 1150,  1340,  1239,  1220,  1416,  1721,  1786,  1826,  2106,  2006,  2022,  4434,  3189,  2226,  3249],
-  checkpoint:  [19231,  7786,  8295, 11713,  8505,  8967, 19872, 19340, 11413,  4649,  5229,  4303,  3118,  2213,  2380],
-  crowdstrike: [    0,     0,     0,     0,  4057,  4507,  3898,  4491,  4152,  3600,  2827,  2750,  2573,  2038,  1624],
-  catonetworks:[    0,     0,     0,     0,     0,    30,    30,     7,    32,    12,    22,    14,     6,    11,    10],
-  sentinelone: [    0,     0,     0,     0,     0,  2286,  2378,  2139,  2511,  2944,  2439,  2427,  2357,  2263,  1926],
-  wiz:         [ null,  null,  null,  null,  null,  null,  null,  null,    87,    69,    32,    18,    10,    25,    27],
+  fortinet:    [3312, 4354, 5383, 5796, 7556, 11049, 11290, 8071, 10527, 18736, 10170, 20083, 12783, 7902, 6933, 6228],
+  cisco:       [636, 718, 392, 561, 551, 2223, 3294, 4142, 8087, 7102, 8608, 6799, 1870, 2191, 766, 801],
+  hpe:         [8, 9, 25, 48, 40, 29, 20, 46, 47, 21, 1, 29, 34, 44, 1250, 631],
+  paloalto:    [1150, 1340, 1239, 1220, 1416, 1721, 1786, 1826, 2106, 2006, 2022, 4434, 3189, 2226, 3249, 1861],
+  checkpoint:  [19231, 7786, 8295, 11713, 8505, 8967, 19872, 19340, 11413, 4649, 5229, 4303, 3118, 2213, 2380, 1773],
+  crowdstrike: [0, 0, 0, 0, 4057, 4507, 3898, 4491, 4152, 3600, 2827, 2750, 2573, 2038, 1624, 1578],
+  catonetworks:[0, 0, 0, 0, 0, 30, 30, 7, 32, 12, 22, 14, 6, 11, 10, 10],
+  sentinelone: [0, 0, 0, 0, 0, 2286, 2378, 2139, 2511, 2944, 2439, 2427, 2357, 2263, 1926, 1953],
+  wiz:         [null, null, null, null, null, null, null, null, 87, 69, 32, 18, 10, 25, 27, 3],
 };
 
 const PAGE_ONE_KEYWORDS_DATA_INITIAL = {
-  fortinet:    [499, 564, 594, 639, 660, 627, 618, 597, 596, 610, 637, 690, 698, 686, 613],
-  cisco:       [ 69,  77,  53,  57,  63,  69,  68,  73,  61,  77,  92,  74,  85, 106, 104],
-  hpe:         [  2,   2,   5,  12,  10,   8,   5,   6,   5,   6,   3,  11,  12,   7,  15],
-  paloalto:    [184, 205, 202, 187, 212, 213, 222, 209, 224, 241, 258, 345, 319, 274, 278],
-  checkpoint:  [349, 370, 312, 288, 289, 258, 237, 209, 180, 216, 261, 314, 306, 267, 254],
-  crowdstrike: [  0,   0,   0,   0, 330, 316, 311, 296, 272, 301, 258, 258, 229, 187, 156],
-  catonetworks:[  0,   0,   0,   0,   0,   0,   0,   0,   1,   0,   2,   3,   2,   1,   1],
-  sentinelone: [  0,   0,   0,   0,   0, 339, 329, 314, 335, 360, 327, 379, 357, 334, 323],
-  wiz:         [null, null, null, null, null, null, null, null, 8, 8, 5, 6, 5, 4, 4],
+  fortinet:    [499, 564, 594, 639, 660, 627, 618, 597, 596, 610, 637, 690, 698, 686, 613, 585],
+  cisco:       [69, 77, 53, 57, 63, 69, 68, 73, 61, 77, 92, 74, 85, 106, 104, 117],
+  hpe:         [2, 2, 5, 12, 10, 8, 5, 6, 5, 6, 3, 11, 12, 7, 15, 27],
+  paloalto:    [184, 205, 202, 187, 212, 213, 222, 209, 224, 241, 258, 345, 319, 274, 278, 279],
+  checkpoint:  [349, 370, 312, 288, 289, 258, 237, 209, 180, 216, 261, 314, 306, 267, 254, 240],
+  crowdstrike: [0, 0, 0, 0, 330, 316, 311, 296, 272, 301, 258, 258, 229, 187, 156, 164],
+  catonetworks:[0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 2, 3, 2, 1, 1, 3],
+  sentinelone: [0, 0, 0, 0, 0, 339, 329, 314, 335, 360, 327, 379, 357, 334, 323, 333],
+  wiz:         [null, null, null, null, null, null, null, null, 8, 8, 5, 6, 5, 4, 4, 3],
 };
 
 const AIO_DATA_INITIAL = {
-  fortinet:    [296, 327, 207, 193, 242, 243, 245, 250, 295, 334, 415, 401, 369, 359, 310],
-  cisco:       [152, 164,  63,  54,  91,  99,  92,  92,  94,  82,  82,  68,  71,  83,  73],
-  hpe:         [ 27,  22,   9,   8,   9,  11,  10,  11,   7,   6,   6,  11,  13,   6,   5],
-  paloalto:    [224, 253,  89,  53, 111, 128, 130, 124, 140, 112, 137, 185, 162, 134, 131],
-  checkpoint:  [296, 329, 156, 123, 176, 170, 164, 152, 153, 143, 168, 181, 158, 138, 124],
-  crowdstrike: [  0,   0,   0,   0, 189, 183, 189, 181, 184, 174, 172, 167, 124,  93,  74],
-  catonetworks:[  0,   0,   0,   0,   0,  17,  17,  19,  15,   7,   8,   9,   2,   4,   4],
-  sentinelone: [  0,   0,   0,   0,   0, 129, 119, 115, 134, 107, 149, 170, 135, 103,  81],
-  wiz:         [null, null, null, null, null, null, null, null, 5, 5, 3, 4, 3, 1, 2],
+  fortinet:    [296, 327, 207, 193, 242, 243, 245, 250, 295, 334, 415, 401, 369, 359, 310, 308],
+  cisco:       [152, 164, 63, 54, 91, 99, 92, 92, 94, 82, 82, 68, 71, 83, 73, 81],
+  hpe:         [27, 22, 9, 8, 9, 11, 10, 11, 7, 6, 6, 11, 13, 6, 5, 11],
+  paloalto:    [224, 253, 89, 53, 111, 128, 130, 124, 140, 112, 137, 185, 162, 134, 131, 135],
+  checkpoint:  [296, 329, 156, 123, 176, 170, 164, 152, 153, 143, 168, 181, 158, 138, 124, 122],
+  crowdstrike: [0, 0, 0, 0, 189, 183, 189, 181, 184, 174, 172, 167, 124, 93, 74, 85],
+  catonetworks:[0, 0, 0, 0, 0, 17, 17, 19, 15, 7, 8, 9, 2, 4, 4, 2],
+  sentinelone: [0, 0, 0, 0, 0, 129, 119, 115, 134, 107, 149, 170, 135, 103, 81, 102],
+  wiz:         [null, null, null, null, null, null, null, null, 5, 5, 3, 4, 3, 1, 2, 0],
 };
 
-const MONTHS = ['2025-07', '2025-08', '2025-09', '2025-10', '2025-11', '2025-12', '2026-01', '2026-02', '2026-03', '2026-04', '2026-05', '2026-06', '2026-07', '2026-08', '2026-09'];
+const MONTHS = ['2025-07', '2025-08', '2025-09', '2025-10', '2025-11', '2025-12', '2026-01', '2026-02', '2026-03', '2026-04', '2026-05', '2026-06', '2026-07', '2026-08', '2026-09', '2026-10'];
 
 // Format function for month display
 const formatMonth = (monthKey: string) => {
@@ -261,13 +261,13 @@ export function SlideRansomware({ onNavigateHome }: { onNavigateHome?: () => voi
               icon={TrendingDown}
               type="error"
               title="Fortinet"
-              content="From Jul 2025 to Sep 2026, keywords declined 1,294 → 631 (−51.2%), leading all competitors."
+              content="From Jul 2025 to Oct 2026, keywords declined 1,294 → 595 (−54.0%), leading SentinelOne 341 and Palo Alto 286; Oct MoM −5.7% (631 → 595)."
             />
             <InsightCard
               icon={TrendingDown}
               type="error"
               title="Competitions"
-              content="From Jul 2025 to Sep 2026, Checkpoint declined 1,295 → 280 (−78.4%), Palo Alto declined 1,052 → 290 (−72.4%)."
+              content="From Jul 2025 to Oct 2026, Check Point declined 1,295 → 245 (−81.1%), Palo Alto declined 1,052 → 286 (−72.8%), SentinelOne grew 0 → 341; Oct MoM: Check Point −12.5%, Palo Alto −1.4%, SentinelOne +3.6%."
             />
           </InsightsSection>
         );
@@ -278,13 +278,13 @@ export function SlideRansomware({ onNavigateHome }: { onNavigateHome?: () => voi
               icon={TrendingUp}
               type="success"
               title="Fortinet"
-              content="From Jul 2025 to Sep 2026, rankings grew 499 → 613 (+22.8%), leading all competitors."
+              content="From Jul 2025 to Oct 2026, page-1 keywords grew 499 → 585 (+17.2%), leading SentinelOne 333 and Palo Alto 279; Oct MoM −4.6% (613 → 585)."
             />
             <InsightCard
               icon={TrendingUp}
               type="success"
               title="Competitions"
-              content="From Jul 2025 to Sep 2026, Palo Alto grew 184 → 278 (+51.1%), SentinelOne declined 339 → 323."
+              content="From Jul 2025 to Oct 2026, Check Point declined 349 → 240 (−31.2%), Palo Alto grew 184 → 279 (+51.6%), SentinelOne grew 0 → 333; Oct MoM: Check Point −5.5%, Palo Alto +0.4%, SentinelOne +3.1%."
             />
           </InsightsSection>
         );
@@ -295,13 +295,13 @@ export function SlideRansomware({ onNavigateHome }: { onNavigateHome?: () => voi
               icon={TrendingUp}
               type="success"
               title="Fortinet"
-              content="From Jul 2025 to Sep 2026, traffic grew 3,312 → 6,933 (+109.3%), leading Palo Alto 3,249 and Checkpoint 2,380."
+              content="From Jul 2025 to Oct 2026, traffic grew 3,312 → 6,228 (+88.0%), leading SentinelOne 1,953 and Palo Alto 1,861; Oct MoM −10.2% (6,933 → 6,228)."
             />
             <InsightCard
               icon={TrendingUp}
               type="success"
               title="Competitions"
-              content="From Jul 2025 to Sep 2026, Palo Alto grew 1,150 → 3,249 (+182.5%), Checkpoint declined 19,231 → 2,380 (−87.6%)."
+              content="From Jul 2025 to Oct 2026, Check Point declined 19,231 → 1,773 (−90.8%), Palo Alto grew 1,150 → 1,861 (+61.8%), SentinelOne grew 0 → 1,953; Oct MoM: Check Point −25.5%, Palo Alto −42.7%, SentinelOne +1.4%."
             />
           </InsightsSection>
         );
@@ -312,13 +312,13 @@ export function SlideRansomware({ onNavigateHome }: { onNavigateHome?: () => voi
               icon={TrendingUp}
               type="success"
               title="Fortinet"
-              content="From Jul 2025 to Sep 2026, AIO keywords grew 296 → 310 (+4.7%), leading Palo Alto 131 and Checkpoint 124."
+              content="From Jul 2025 to Oct 2026, AIO keywords grew 296 → 308 (+4.1%), leading Palo Alto 135 and Check Point 122; Oct MoM −0.6% (310 → 308)."
             />
             <InsightCard
               icon={TrendingDown}
               type="error"
               title="Competitions"
-              content="From Jul 2025 to Sep 2026, Palo Alto declined 224 → 131 (−41.5%), Checkpoint declined 296 → 124 (−58.1%)."
+              content="From Jul 2025 to Oct 2026, Check Point declined 296 → 122 (−58.8%), Palo Alto declined 224 → 135 (−39.7%), SentinelOne grew 0 → 102; Oct MoM: Check Point −1.6%, Palo Alto +3.1%, SentinelOne +25.9%."
             />
           </InsightsSection>
         );
@@ -328,7 +328,7 @@ export function SlideRansomware({ onNavigateHome }: { onNavigateHome?: () => voi
   };
 
   const getPerformanceSummary = () => {
-    const latestIndex = 14; // Sep 2026
+    const latestIndex = 15; // Oct 2026
     let dataSource: Record<string, number[]>;
     let formatValue: (val: number) => string;
 
@@ -447,7 +447,7 @@ export function SlideRansomware({ onNavigateHome }: { onNavigateHome?: () => voi
     <SlideContainer slideNumber={25} onNavigateHome={onNavigateHome} source="Ahrefs">
       <SlideHeader 
         title="Ransomware" 
-        subtitle="(Jul 2025 – Sep 2026)"
+        subtitle="(Jul 2025 – Oct 2026)"
       />
       
       {!isEditing ? (
@@ -511,7 +511,7 @@ export function SlideRansomware({ onNavigateHome }: { onNavigateHome?: () => voi
       ) : (
         <div className="flex-1 overflow-auto">
           <div className="bg-white border border-gray-200 rounded-lg p-6">
-            <h3 className="text-sm font-bold text-gray-900 mb-4">Edit Ransomware Metrics Data (Jul 2025 - Sep 2026)</h3>
+            <h3 className="text-sm font-bold text-gray-900 mb-4">Edit Ransomware Metrics Data (Jul 2025 - Oct 2026)</h3>
             <div className="space-y-6">
               {VENDORS.map((vendor) => (
                 <div key={vendor.id} className="bg-gray-50 rounded-lg p-4 border border-gray-200">

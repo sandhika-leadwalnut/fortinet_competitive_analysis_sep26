@@ -30,56 +30,56 @@ const VENDORS = [
   { id: 'wiz',          name: 'Wiz',           color: '#06B6D4' },
 ];
 
-// Data: Dec 2025 to Sep 2026 (9 months)
+// Data: Dec 2025 to Oct 2026 (11 months)
 const TOTAL_KEYWORDS_DATA_INITIAL = {
-  fortinet:    [32, 31, 33, 29, 14, 15, 15, 76, 78, 79],
-  cisco:       [29, 32, 32, 25,  4,  4,  3, 80, 91, 95],
-  hpe:         [ 1,  6,  6,  5,  2,  1,  2, 82, 68, 52],
-  paloalto:    [35, 41, 41, 31, 20, 21, 25, 89, 85, 66],
-  checkpoint:  [28, 27, 27, 22, 15, 16, 16, 16, 15, 14],
-  crowdstrike: [34, 31, 31, 25, 11, 15, 14, 14, 12,  9],
-  catonetworks:[ 9, 15, 15,  7,  0,  2,  3,  2,  4,  1],
-  sentinelone: [43, 45, 40, 36, 30, 29, 33, 34, 30, 23],
-  wiz:         [null, null, null, 24, 17, 19, 21, 21, 22, 19],
+  fortinet:    [32, 31, 33, 29, 14, 15, 15, 76, 78, 79, 70],
+  cisco:       [29, 32, 32, 25, 4, 4, 3, 80, 91, 95, 33],
+  hpe:         [1, 6, 6, 5, 2, 1, 2, 82, 68, 52, 27],
+  paloalto:    [35, 41, 41, 31, 20, 21, 25, 89, 85, 66, 32],
+  checkpoint:  [28, 27, 27, 22, 15, 16, 16, 16, 15, 14, 21],
+  crowdstrike: [34, 31, 31, 25, 11, 15, 14, 14, 12, 9, 13],
+  catonetworks:[9, 15, 15, 7, 0, 2, 3, 2, 4, 1, 3],
+  sentinelone: [43, 45, 40, 36, 30, 29, 33, 34, 30, 23, 24],
+  wiz:         [null, null, null, 24, 17, 19, 21, 21, 22, 19, 20],
 };
 
 const CUMULATIVE_TRAFFIC_DATA_INITIAL = {
-  fortinet:    [ 959, 1661, 1435,  931, 1840, 1890, 1106, 5572, 4446, 2145],
-  cisco:       [ 125,  149,  141,  150,   10,  145,   13, 1275, 1835, 1726],
-  hpe:         [   0,   13,    0,    1,    0,    1,    8, 1121,  486,  402],
-  paloalto:    [1252, 1430,  834, 1224, 1585, 1004, 1605, 3623, 2668, 1638],
-  checkpoint:  [ 301,  294,  207,  216,  612,  508,  556,  316,  162,  451],
-  crowdstrike: [ 154,  142,  144,  125,  154,  249,  175,  157,  137,  128],
-  catonetworks:[   0,    0,    0,    0,    0,   23,    2,    0,   44,   18],
-  sentinelone: [ 659,  624, 1064,  985, 1028,  834,  884,  674,  721,  460],
-  wiz:         [null, null, null, 1405, 1398, 1638, 1431, 1116, 1184, 1490],
+  fortinet:    [959, 1661, 1435, 931, 1840, 1890, 1106, 5572, 4446, 2145, 4325],
+  cisco:       [125, 149, 141, 150, 10, 145, 13, 1275, 1835, 1726, 1431],
+  hpe:         [0, 13, 0, 1, 0, 1, 8, 1121, 486, 402, 357],
+  paloalto:    [1252, 1430, 834, 1224, 1585, 1004, 1605, 3623, 2668, 1638, 1415],
+  checkpoint:  [301, 294, 207, 216, 612, 508, 556, 316, 162, 451, 1290],
+  crowdstrike: [154, 142, 144, 125, 154, 249, 175, 157, 137, 128, 399],
+  catonetworks:[0, 0, 0, 0, 0, 23, 2, 0, 44, 18, 26],
+  sentinelone: [659, 624, 1064, 985, 1028, 834, 884, 674, 721, 460, 789],
+  wiz:         [null, null, null, 1405, 1398, 1638, 1431, 1116, 1184, 1490, 1113],
 };
 
 const PAGE_ONE_KEYWORDS_DATA_INITIAL = {
-  fortinet:    [10,  7, 11,  9,  6,  9, 15, 71, 75, 72],
-  cisco:       [ 1,  3,  4,  6,  1,  3,  3, 69, 76, 90],
-  hpe:         [ 0,  0,  0,  1,  0,  0,  1, 61, 45, 42],
-  paloalto:    [17, 18, 20, 20, 16, 13, 22, 81, 75, 60],
-  checkpoint:  [ 2,  2,  8,  9,  9, 10, 11, 11,  8, 10],
-  crowdstrike: [ 8,  7,  7,  7,  6,  8,  6,  8,  7,  6],
-  catonetworks:[ 0,  0,  0,  0,  0,  0,  1,  2,  3,  1],
-  sentinelone: [26, 24, 23, 24, 23, 22, 27, 25, 23, 20],
-  wiz:         [null, null, null, 12, 12, 16, 18, 21, 20, 18],
+  fortinet:    [10, 7, 11, 9, 6, 9, 15, 71, 75, 72, 69],
+  cisco:       [1, 3, 4, 6, 1, 3, 3, 69, 76, 90, 33],
+  hpe:         [0, 0, 0, 1, 0, 0, 1, 61, 45, 42, 22],
+  paloalto:    [17, 18, 20, 20, 16, 13, 22, 81, 75, 60, 30],
+  checkpoint:  [2, 2, 8, 9, 9, 10, 11, 11, 8, 10, 19],
+  crowdstrike: [8, 7, 7, 7, 6, 8, 6, 8, 7, 6, 13],
+  catonetworks:[0, 0, 0, 0, 0, 0, 1, 2, 3, 1, 3],
+  sentinelone: [26, 24, 23, 24, 23, 22, 27, 25, 23, 20, 22],
+  wiz:         [null, null, null, 12, 12, 16, 18, 21, 20, 18, 19],
 };
 
 const AIO_DATA_INITIAL = {
-  fortinet:    [26, 24, 27, 26, 11, 14, 15, 66, 62, 69],
-  cisco:       [23, 24, 27, 23,  4,  3,  3, 59, 73, 75],
-  hpe:         [ 1,  5,  4,  5,  2,  1,  2, 67, 57, 45],
-  paloalto:    [27, 28, 33, 28, 16, 17, 22, 77, 76, 60],
-  checkpoint:  [25, 22, 24, 22, 13, 15, 16, 14, 13, 12],
-  crowdstrike: [24, 22, 26, 23,  8, 14, 13, 13, 10,  8],
-  catonetworks:[ 7, 13, 12,  5,  0,  2,  3,  2,  4,  1],
-  sentinelone: [32, 33, 34, 31, 25, 26, 32, 32, 24, 21],
-  wiz:         [null, null, null, 18, 13, 14, 19, 18, 19, 15],
+  fortinet:    [26, 24, 27, 26, 11, 14, 15, 66, 62, 69, 64],
+  cisco:       [23, 24, 27, 23, 4, 3, 3, 59, 73, 75, 28],
+  hpe:         [1, 5, 4, 5, 2, 1, 2, 67, 57, 45, 22],
+  paloalto:    [27, 28, 33, 28, 16, 17, 22, 77, 76, 60, 31],
+  checkpoint:  [25, 22, 24, 22, 13, 15, 16, 14, 13, 12, 21],
+  crowdstrike: [24, 22, 26, 23, 8, 14, 13, 13, 10, 8, 11],
+  catonetworks:[7, 13, 12, 5, 0, 2, 3, 2, 4, 1, 2],
+  sentinelone: [32, 33, 34, 31, 25, 26, 32, 32, 24, 21, 23],
+  wiz:         [null, null, null, 18, 13, 14, 19, 18, 19, 15, 17],
 };
 
-const MONTHS = ['2025-12', '2026-01', '2026-02', '2026-03', '2026-04', '2026-05', '2026-06', '2026-07', '2026-08', '2026-09'];
+const MONTHS = ['2025-12', '2026-01', '2026-02', '2026-03', '2026-04', '2026-05', '2026-06', '2026-07', '2026-08', '2026-09', '2026-10'];
 
 // Format function for month display
 const formatMonth = (monthKey: string) => {
@@ -93,26 +93,26 @@ type TabType = 'keywords' | 'page-one' | 'traffic' | 'aio' | 'keyword-gap';
 const KEYWORD_GAP_DATA = {
   tofu: [
     { keyword: "ai in cybersecurity", sv: 11000, kd: 72, fortinet: 1, cisco: 1, paloalto: null, checkpoint: null, crowdstrike: null },
-    { keyword: "artificial intelligence in cybersecurity", sv: 300, kd: 70, fortinet: 1, cisco: 7, paloalto: 9, checkpoint: null, crowdstrike: null },
-    { keyword: "ai security", sv: 4600, kd: 45, fortinet: null, cisco: null, paloalto: null, checkpoint: 7, crowdstrike: null },
-    { keyword: "ai for security", sv: 900, kd: 61, fortinet: null, cisco: 5, paloalto: null, checkpoint: null, crowdstrike: null },
+    { keyword: "artificial intelligence in cybersecurity", sv: 300, kd: 70, fortinet: 1, cisco: 1, paloalto: 8, checkpoint: null, crowdstrike: null },
+    { keyword: "ai security", sv: 4600, kd: 45, fortinet: null, cisco: null, paloalto: null, checkpoint: 6, crowdstrike: null },
+    { keyword: "ai for security", sv: 900, kd: 61, fortinet: null, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
     { keyword: "how generative ai in used in cybersecurity", sv: null, kd: null, fortinet: null, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
-    { keyword: "aiops", sv: 9000, kd: 48, fortinet: 1, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
+    { keyword: "aiops", sv: 9000, kd: 48, fortinet: null, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
   ],
   mofu: [
     { keyword: "ai security system", sv: 450, kd: 51, fortinet: 1, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
-    { keyword: "ai cybersecurity tools", sv: 500, kd: 61, fortinet: 5, cisco: null, paloalto: null, checkpoint: null, crowdstrike: 20 },
+    { keyword: "ai cybersecurity tools", sv: 500, kd: 61, fortinet: 9, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
     { keyword: "ai cybersecurity platform", sv: 80, kd: 73, fortinet: null, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
     { keyword: "ai cybersecurity software", sv: 200, kd: 59, fortinet: null, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
-    { keyword: "ai security software", sv: 500, kd: 56, fortinet: 1, cisco: null, paloalto: 1, checkpoint: 9, crowdstrike: null },
+    { keyword: "ai security software", sv: 500, kd: 56, fortinet: null, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
     { keyword: "ai security platform", sv: 500, kd: 79, fortinet: null, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
   ],
   bofu: [
-    { keyword: "ai security solutions", sv: 2200, kd: 55, fortinet: null, cisco: null, paloalto: 1, checkpoint: null, crowdstrike: null },
+    { keyword: "ai security solutions", sv: 2200, kd: 55, fortinet: null, cisco: 7, paloalto: 11, checkpoint: null, crowdstrike: null },
     { keyword: "ai security services", sv: 200, kd: 33, fortinet: null, cisco: 5, paloalto: null, checkpoint: null, crowdstrike: 1 },
-    { keyword: "ai cybersecurity solutions", sv: 1200, kd: 58, fortinet: 1, cisco: 1, paloalto: 12, checkpoint: null, crowdstrike: 25 },
-    { keyword: "ai cybersecurity companies", sv: 600, kd: 5, fortinet: 29, cisco: null, paloalto: null, checkpoint: 7, crowdstrike: null },
-    { keyword: "ai security companies", sv: 250, kd: 47, fortinet: null, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
+    { keyword: "ai cybersecurity solutions", sv: 1200, kd: 58, fortinet: 1, cisco: null, paloalto: 1, checkpoint: null, crowdstrike: null },
+    { keyword: "ai cybersecurity companies", sv: 600, kd: 5, fortinet: 1, cisco: null, paloalto: null, checkpoint: 9, crowdstrike: null },
+    { keyword: "ai security companies", sv: 250, kd: 47, fortinet: 1, cisco: null, paloalto: null, checkpoint: null, crowdstrike: null },
   ],
 };
 
@@ -289,13 +289,13 @@ export function SlideAICyberSecurity({ onNavigateHome }: { onNavigateHome?: () =
               icon={TrendingUp}
               type="success"
               title="Fortinet"
-              content="From Dec 2025 to Sep 2026, keywords grew 32 → 79 (+146.9%), driven by a Jul-26 step-up, trailing only Cisco 95."
+              content="From Dec 2025 to Oct 2026, keywords grew 32 → 70 (+118.8%), leading Cisco 33 and Palo Alto 32; Oct MoM −11.4% (79 → 70)."
             />
             <InsightCard
               icon={TrendingUp}
               type="success"
               title="Competitions"
-              content="From Dec 2025 to Sep 2026, Cisco grew 29 → 95 (+227.6%), Palo Alto grew 35 → 66 (+88.6%), SentinelOne declined 43 → 23 (−46.5%)."
+              content="From Dec 2025 to Oct 2026, Cisco grew 29 → 33 (+13.8%), Palo Alto declined 35 → 32 (−8.6%), SentinelOne declined 43 → 24 (−44.2%); Oct MoM: Cisco −65.3%, Palo Alto −51.5%, SentinelOne +4.3%. Cisco, Palo Alto and HPE Oct values are back at pre-Jul-26 levels — likely a data-basis reversion, validate before presenting."
             />
           </InsightsSection>
         );
@@ -306,13 +306,13 @@ export function SlideAICyberSecurity({ onNavigateHome }: { onNavigateHome?: () =
               icon={TrendingUp}
               type="success"
               title="Fortinet"
-              content="From Dec 2025 to Sep 2026, page-1 rankings grew 10 → 72 (+620.0%), trailing only Cisco 90, ahead of Palo Alto 60."
+              content="From Dec 2025 to Oct 2026, page-1 keywords grew 10 → 69 (+590.0%), leading Cisco 33 and Palo Alto 30; Oct MoM −4.2% (72 → 69)."
             />
             <InsightCard
               icon={TrendingUp}
               type="success"
               title="Competitions"
-              content="From Dec 2025 to Sep 2026, Cisco grew 1 → 90, Palo Alto grew 17 → 60 (+252.9%), SentinelOne declined 26 → 20 (−23.1%)."
+              content="From Dec 2025 to Oct 2026, Cisco grew 1 → 33 (+3200.0%), Palo Alto grew 17 → 30 (+76.5%), SentinelOne declined 26 → 22 (−15.4%); Oct MoM: Cisco −63.3%, Palo Alto −50.0%, SentinelOne +10.0%. Cisco, Palo Alto and HPE Oct values are back at pre-Jul-26 levels — likely a data-basis reversion, validate before presenting."
             />
           </InsightsSection>
         );
@@ -323,13 +323,13 @@ export function SlideAICyberSecurity({ onNavigateHome }: { onNavigateHome?: () =
               icon={TrendingUp}
               type="success"
               title="Fortinet"
-              content="From Dec 2025 to Sep 2026, traffic grew 959 → 2,145 (+123.7%), leading Cisco 1,726 and Palo Alto 1,638."
+              content="From Dec 2025 to Oct 2026, traffic grew 959 → 4,325 (+351.0%), leading Cisco 1,431 and Palo Alto 1,415; Oct MoM +101.6% (2,145 → 4,325)."
             />
             <InsightCard
               icon={TrendingUp}
               type="success"
               title="Competitions"
-              content="From Dec 2025 to Sep 2026, Palo Alto grew 1,252 → 1,638 (+30.8%), SentinelOne declined 659 → 460 (−30.2%)."
+              content="From Dec 2025 to Oct 2026, Cisco grew 125 → 1,431 (+1044.8%), Palo Alto grew 1,252 → 1,415 (+13.0%), SentinelOne grew 659 → 789 (+19.7%); Oct MoM: Cisco −17.1%, Palo Alto −13.6%, SentinelOne +71.5%."
             />
           </InsightsSection>
         );
@@ -340,13 +340,13 @@ export function SlideAICyberSecurity({ onNavigateHome }: { onNavigateHome?: () =
               icon={TrendingUp}
               type="success"
               title="Fortinet"
-              content="From Dec 2025 to Sep 2026, AIO rankings grew 26 → 69 (+165.4%), trailing only Cisco 75, ahead of Palo Alto 60."
+              content="From Dec 2025 to Oct 2026, AIO keywords grew 26 → 64 (+146.2%), leading Palo Alto 31 and Cisco 28; Oct MoM −7.2% (69 → 64)."
             />
             <InsightCard
               icon={TrendingUp}
               type="success"
               title="Competitions"
-              content="From Dec 2025 to Sep 2026, Cisco grew 23 → 75 (+226.1%), Palo Alto grew 27 → 60 (+122.2%), SentinelOne declined 32 → 21 (−34.4%)."
+              content="From Dec 2025 to Oct 2026, Cisco grew 23 → 28 (+21.7%), Palo Alto grew 27 → 31 (+14.8%), SentinelOne declined 32 → 23 (−28.1%); Oct MoM: Cisco −62.7%, Palo Alto −48.3%, SentinelOne +9.5%. Cisco, Palo Alto and HPE Oct values are back at pre-Jul-26 levels — likely a data-basis reversion, validate before presenting."
             />
           </InsightsSection>
         );
@@ -357,13 +357,13 @@ export function SlideAICyberSecurity({ onNavigateHome }: { onNavigateHome?: () =
               icon={Trophy}
               type="success"
               title="Fortinet"
-              content="Ranks #1 for 'ai in cybersecurity' (SV 11K), 'artificial intelligence in cybersecurity', 'aiops' (SV 9K), 'ai security system', 'ai security software' and 'ai cybersecurity solutions' — strong AI TOFU and solution coverage."
+              content="Fortinet ranks #1 for the two cybersecurity-specific TOFU terms, 'ai security system' and three high-intent cybersecurity solution/company terms."
             />
             <InsightCard
               icon={Target}
               type="warning"
               title="Competitions"
-              content="Fortinet is unranked for 'ai security' (SV 4.6K; Check Point #7) and 'ai security solutions' (SV 2.2K; Palo Alto #1), and only #29 for 'ai cybersecurity companies' — Palo Alto and CrowdStrike are contesting BOFU AI terms."
+              content="The largest gaps are 'aiops' (SV 9K), 'ai security' (4.6K) and 'ai security solutions' (2.2K). Fortinet also lacks every tracked AI platform/software term, limiting commercial breadth."
             />
           </InsightsSection>
         );
@@ -373,7 +373,7 @@ export function SlideAICyberSecurity({ onNavigateHome }: { onNavigateHome?: () =
   };
 
   const getPerformanceSummary = () => {
-    const latestIndex = 9; // Sep 2026
+    const latestIndex = 10; // Oct 2026
     let dataSource: Record<string, number[]>;
     let formatValue: (val: number) => string;
 
@@ -492,7 +492,7 @@ export function SlideAICyberSecurity({ onNavigateHome }: { onNavigateHome?: () =
     <SlideContainer slideNumber={26} onNavigateHome={onNavigateHome} source="Ahrefs">
       <SlideHeader 
         title="AI CyberSecurity" 
-        subtitle="(Dec 2025 – Sep 2026)"
+        subtitle="(Dec 2025 – Oct 2026)"
       />
       
       {!isEditing ? (
@@ -609,7 +609,7 @@ export function SlideAICyberSecurity({ onNavigateHome }: { onNavigateHome?: () =
       ) : (
         <div className="flex-1 overflow-auto">
           <div className="bg-white border border-gray-200 rounded-lg p-6">
-            <h3 className="text-sm font-bold text-gray-900 mb-4">Edit AI CyberSecurity Metrics Data (Dec 2025 - Sep 2026)</h3>
+            <h3 className="text-sm font-bold text-gray-900 mb-4">Edit AI CyberSecurity Metrics Data (Dec 2025 - Oct 2026)</h3>
             <div className="space-y-6">
               {VENDORS.map((vendor) => (
                 <div key={vendor.id} className="bg-gray-50 rounded-lg p-4 border border-gray-200">

@@ -11,14 +11,14 @@ import {
 
 const MONTHS = [
   '2025-12', '2026-01', '2026-02', '2026-03',
-  '2026-04', '2026-05', '2026-06', '2026-07', '2026-08', '2026-09',
+  '2026-04', '2026-05', '2026-06', '2026-07', '2026-08', '2026-09', '2026-10',
 ];
 
 const formatMonth = (key: string) => {
   const map: Record<string, string> = {
     '2025-12': 'Dec-25', '2026-01': 'Jan-26', '2026-02': 'Feb-26',
     '2026-03': 'Mar-26', '2026-04': 'Apr-26', '2026-05': 'May-26',
-    '2026-06': 'Jun-26', '2026-07': 'Jul-26', '2026-08': 'Aug-26', '2026-09': 'Sep-26',
+    '2026-06': 'Jun-26', '2026-07': 'Jul-26', '2026-08': 'Aug-26', '2026-09': 'Sep-26', '2026-10': 'Oct-26',
   };
   return map[key] ?? key;
 };
@@ -34,31 +34,31 @@ const SOURCES = [
     id: 'ahrefs',
     name: 'Ahrefs',
     color: '#F97316',
-    data: [6200000, 7500000, 6800000, 7400000, 7800000, 8100000, 8100000, 10200000, 9800000, 6600000] as (number | null)[],
+    data: [6200000, 7500000, 6800000, 7400000, 7800000, 8100000, 8100000, 10200000, 9800000, 6600000, 4700000] as (number | null)[],
   },
   {
     id: 'gsc',
     name: 'GSC',
     color: '#3B82F6',
-    data: [4100000, 3400000, 3300000, 3100000, 2700000, 2500000, 2300000, 1800000, 2500000, 2700000] as (number | null)[],
+    data: [4100000, 3400000, 3300000, 3100000, 2700000, 2500000, 2300000, 1800000, 2500000, 2700000, 2300000] as (number | null)[],
   },
   {
     id: 'semrush',
     name: 'SEMRush',
     color: '#EF4444',
-    data: [2800000, 2800000, 2800000, 3100000, 3100000, 3110000, 3180000, 3280000, 3680000, 3870000] as (number | null)[],
+    data: [2800000, 2800000, 2800000, 3100000, 3100000, 3110000, 3180000, 3280000, 3680000, 3870000, 4080000] as (number | null)[],
   },
   {
     id: 'majestic',
     name: 'Majestic',
     color: '#8B5CF6',
-    data: [null, null, null, null, 7500000, 7100000, 6200000, 3100000, 2600000, 2100000] as (number | null)[],
+    data: [null, null, null, null, 7500000, 7100000, 6200000, 3100000, 2600000, 2100000, 2100000] as (number | null)[],
   },
   {
     id: 'bing',
     name: 'Bing',
     color: '#6B7280',
-    data: [900000, 900000, 800000, 800000, 900000, 900000, 1000000, 1000000, 1000000, 980000] as (number | null)[],
+    data: [900000, 900000, 800000, 800000, 900000, 900000, 1000000, 1000000, 1000000, 980000, 960000] as (number | null)[],
   },
 ];
 
@@ -108,18 +108,18 @@ export function SlideFortinetBacklinksBySource({ onNavigateHome }: { onNavigateH
   const ahData    = SOURCES[0].data as number[];
   const gscData   = SOURCES[1].data as number[];
   const semData   = SOURCES[2].data as number[];
-  const ahLatest  = ahData[9];
+  const ahLatest  = ahData[MONTHS.length - 1];
   const ahFirst   = ahData[0];
   const gscFirst  = gscData[0];
-  const gscLatest = gscData[9];
+  const gscLatest = gscData[MONTHS.length - 1];
   const semFirst  = semData[0];
-  const semLatest = semData[9];
+  const semLatest = semData[MONTHS.length - 1];
 
   return (
     <SlideContainer slideNumber={39} onNavigateHome={onNavigateHome} source="GSC · SEMRush · Ahrefs · Bing · Majestic">
       <SlideHeader
         title="Fortinet Backlinks by Source"
-        subtitle="No. of Backlinks · Location: US · Dec 2025 – Sep 2026"
+        subtitle="No. of Backlinks · Location: US · Dec 2025 – Oct 2026"
       />
 
       <div className="flex-1 flex flex-col gap-4">
@@ -171,32 +171,32 @@ export function SlideFortinetBacklinksBySource({ onNavigateHome }: { onNavigateH
                 icon={TrendingUp}
                 type="warning"
                 title="Ahrefs Largest, Off Peak"
-                content={`Ahrefs backlinks grew ${(((ahLatest - ahFirst) / ahFirst) * 100).toFixed(0)}% Dec→Sep (${formatAxis(ahFirst)} → ${formatAxis(ahLatest)}) — the largest source overall, but down 35% from the 10.2M peak in Jul 2026 (9.8M in Aug, 6.6M in Sep).`}
+                content={`Ahrefs backlinks grew ${(((ahLatest - ahFirst) / ahFirst) * 100).toFixed(0)}% Dec→Oct (${formatAxis(ahFirst)} → ${formatAxis(ahLatest)}) — the largest source overall, but down 54% from the 10.2M peak in Jul 2026 (9.8M in Aug, 6.6M in Sep, 4.7M in Oct) — a third straight monthly fall.`}
               />
               <InsightCard
                 icon={TrendingDown}
                 type="error"
                 title="GSC Backlinks Declining"
-                content={`GSC backlinks dropped ${Math.abs((((gscLatest - gscFirst) / gscFirst) * 100)).toFixed(0)}% Dec→Sep (${formatAxis(gscFirst)} → ${formatAxis(gscLatest)}) — steady decline to 1.8M in Jul 2026, then a partial rebound to 2.7M by Sep; possibly reflecting link cleanup or algorithm changes.`}
+                content={`GSC backlinks dropped ${Math.abs((((gscLatest - gscFirst) / gscFirst) * 100)).toFixed(0)}% Dec→Oct (${formatAxis(gscFirst)} → ${formatAxis(gscLatest)}) — steady decline to 1.8M in Jul 2026, then a partial rebound to 2.7M in Sep before easing to 2.3M in Oct; possibly reflecting link cleanup or algorithm changes.`}
               />
               <InsightCard
                 icon={Activity}
                 type="info"
                 title="SEMRush Stable Growth"
-                content={`SEMRush grew consistently ${(((semLatest - semFirst) / semFirst) * 100).toFixed(0)}% Dec→Sep (${formatAxis(semFirst)} → ${formatAxis(semLatest)}) — the most stable upward trend of any source across the full period.`}
+                content={`SEMRush grew consistently ${(((semLatest - semFirst) / semFirst) * 100).toFixed(0)}% Dec→Oct (${formatAxis(semFirst)} → ${formatAxis(semLatest)}) — the most stable upward trend of any source, up another 5% in Oct to 4.08M.`}
               />
               <InsightCard
                 icon={AlertTriangle}
                 type="warning"
-                title="Majestic Apr–Sep Trend"
-                content={`Majestic data starts Apr 2026 at 7.5M and declined to 2.1M in Sep 2026 — a 72% drop in 5 months. Not tracked before Apr 2026.`}
+                title="Majestic Apr–Oct Trend"
+                content={`Majestic data starts Apr 2026 at 7.5M and declined to 2.1M by Sep 2026 and held flat in Oct — a 72% drop in 6 months. Not tracked before Apr 2026.`}
               />
             </InsightsSection>
           </div>
         </div>
       </div>
 
-      <SlideFooter source="Source: GSC · SEMRush · Ahrefs · Bing · Majestic · Dec 2025 – Sep 2026" />
+      <SlideFooter source="Source: GSC · SEMRush · Ahrefs · Bing · Majestic · Dec 2025 – Oct 2026" />
     </SlideContainer>
   );
 }

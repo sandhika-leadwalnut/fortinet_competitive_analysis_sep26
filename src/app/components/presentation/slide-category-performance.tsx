@@ -29,11 +29,12 @@ const formatMonth = (monthKey: string) => {
     '2026-07': 'Jul-26',
     '2026-08': 'Aug-26',
     '2026-09': 'Sep-26',
+    '2026-10': 'Oct-26',
   };
   return monthMap[monthKey] || monthKey;
 };
 
-// Category performance data with insights — Nov 2025 → Sep 2026 (Source: Profound)
+// Category performance data with insights — Nov 2025 → Oct 2026 (Source: Profound)
 const categories = [
   {
     id: 'sase' as CategoryType,
@@ -52,9 +53,10 @@ const categories = [
       { period: '2026-07', fortinet: 72.7, top: 72.7, paloAlto: 62.4 }, // FT holds, PA surges +16.2pp
       { period: '2026-08', fortinet: 71.9, top: 71.9, paloAlto: 65.4 }, // FT dips slightly, PA continues closing gap
       { period: '2026-09', fortinet: 71.1, top: 71.1, paloAlto: 63.2 }, // FT holds lead, PA dips slightly
+      { period: '2026-10', fortinet: 70.1, top: 70.1, paloAlto: 68.6 }, // FT leads by 1.5pp
     ],
-    fortinetInsight: { icon: TrendingUp, type: 'success' as const, content: 'Led SASE in Sep 2026 at 71.1% (−0.8pp); Palo Alto dipped to 63.2% (−2.2pp), gap widens slightly to 7.9pp.' },
-    competitionInsight: { icon: TrendingDown, type: 'warning' as const, content: 'Palo Alto dipped from 65.4% (Aug) to 63.2% (Sep); Fortinet SASE lead widens to 7.9pp.' },
+    fortinetInsight: { icon: TrendingDown, type: 'warning' as const, content: 'SASE slipped to 70.1% in Oct 2026 (−1.0pp); Fortinet leads Palo Alto (68.6%) by 1.5pp.' },
+    competitionInsight: { icon: TrendingUp, type: 'warning' as const, content: 'Palo Alto rose to 68.6% in Oct (from 63.2% in Sep); Fortinet SASE lead narrows from 7.9pp to 1.5pp.' },
   },
   {
     id: 'otSecurity' as CategoryType,
@@ -73,9 +75,10 @@ const categories = [
       { period: '2026-07', fortinet: 46.3, top: 46.3, paloAlto: 34.6 }, // FT recovers, PA surges
       { period: '2026-08', fortinet: 40.6, top: 40.6, paloAlto: 31.6 }, // FT dips, PA also dips
       { period: '2026-09', fortinet: 42.2, top: 42.2, paloAlto: 34.1 }, // both recover slightly
+      { period: '2026-10', fortinet: 42.5, top: 42.5, paloAlto: 32.2 }, // FT leads by 10.3pp
     ],
-    fortinetInsight: { icon: TrendingUp, type: 'success' as const, content: 'OT Security recovered to 42.2% in Sep 2026 (+1.6pp); Fortinet leads PA (34.1%) by 8.1pp.' },
-    competitionInsight: { icon: TrendingUp, type: 'warning' as const, content: 'Palo Alto recovered from 31.6% (Aug) to 34.1% (Sep); both vendors rebounded — Fortinet lead narrows from 9.0pp to 8.1pp.' },
+    fortinetInsight: { icon: TrendingUp, type: 'success' as const, content: 'OT Security rose to 42.5% in Oct 2026 (+0.3pp); Fortinet leads Palo Alto (32.2%) by 10.3pp.' },
+    competitionInsight: { icon: TrendingDown, type: 'success' as const, content: 'Palo Alto dipped to 32.2% in Oct (from 34.1% in Sep); Fortinet OT Security lead widens from 8.1pp to 10.3pp.' },
   },
   {
     id: 'ztna' as CategoryType,
@@ -94,9 +97,10 @@ const categories = [
       { period: '2026-07', fortinet: 39.0, top: 50.3, paloAlto: 50.3 }, // PA surges, FT flat
       { period: '2026-08', fortinet: 33.5, top: 41.8, paloAlto: 41.8 }, // both decline, PA still leads
       { period: '2026-09', fortinet: 33.1, top: 44.1, paloAlto: 44.1 }, // FT flat, PA recovers
+      { period: '2026-10', fortinet: 32.3, top: 51.5, paloAlto: 51.5 }, // FT trails by 19.2pp
     ],
-    fortinetInsight: { icon: AlertTriangle, type: 'error' as const, content: 'ZTNA held at 33.1% in Sep 2026 (−0.4pp); Palo Alto recovered to 44.1% (+2.3pp), gap widens to −11.0pp.' },
-    competitionInsight: { icon: TrendingUp, type: 'warning' as const, content: 'Palo Alto recovered from 41.8% (Aug) to 44.1% (Sep); Fortinet flat at 33.1% — PA extends ZTNA lead to 11.0pp.' },
+    fortinetInsight: { icon: TrendingDown, type: 'error' as const, content: 'ZTNA slipped to 32.3% in Oct 2026 (−0.8pp); Palo Alto leads at 51.5%, a 19.2pp gap.' },
+    competitionInsight: { icon: TrendingUp, type: 'warning' as const, content: 'Palo Alto rose to 51.5% in Oct (from 44.1% in Sep); gap to Fortinet widens from 11.0pp to 19.2pp.' },
   },
   {
     id: 'cloudSecurity' as CategoryType,
@@ -115,9 +119,10 @@ const categories = [
       { period: '2026-07', fortinet: 24.0, top: 43.7 }, // FT dips, PA surges to 43.7%
       { period: '2026-08', fortinet: 25.0, top: 44.8 }, // FT slight recovery, PA continues climbing
       { period: '2026-09', fortinet: 25.7, top: 44.8 }, // FT ticks up, PA holds
+      { period: '2026-10', fortinet: 24.0, top: 44.8 }, // FT trails by 20.8pp
     ],
-    fortinetInsight: { icon: AlertTriangle, type: 'error' as const, content: 'Cloud Security edged to 25.7% in Sep 2026 (+0.7pp); Palo Alto held at 44.8%, gap narrows slightly to −19.1pp.' },
-    competitionInsight: { icon: TrendingDown, type: 'error' as const, content: 'Palo Alto held at 44.8% in Sep; Fortinet ticked up to 25.7% — Cloud Security deficit persists at −19.1pp.' },
+    fortinetInsight: { icon: TrendingDown, type: 'error' as const, content: 'Cloud Security slipped to 24.0% in Oct 2026 (−1.7pp); Palo Alto leads at 44.8%, a 20.8pp gap.' },
+    competitionInsight: { icon: TrendingUp, type: 'warning' as const, content: 'Palo Alto held to 44.8% in Oct (from 44.8% in Sep); gap to Fortinet widens from 19.1pp to 20.8pp. Palo Alto\'s 44.8% is unchanged for a third month (Aug–Oct) — confirm the Profound export is refreshing.' },
   },
   {
     id: 'secOps' as CategoryType,
@@ -136,9 +141,10 @@ const categories = [
       { period: '2026-07', fortinet: 12.8, top: 49.0 }, // FT slight uptick, CS surges to 49.0%
       { period: '2026-08', fortinet: 11.5, top: 46.3 }, // FT dips, CS also declines
       { period: '2026-09', fortinet: 12.6, top: 43.4 }, // FT recovers slightly, CS dips
+      { period: '2026-10', fortinet: 10.9, top: 50.0 }, // FT trails by 39.1pp
     ],
-    fortinetInsight: { icon: TrendingUp, type: 'error' as const, content: 'SecOps recovered to 12.6% in Sep 2026 (+1.1pp); CrowdStrike dipped to 43.4% (−2.9pp), gap narrows to 30.8pp.' },
-    competitionInsight: { icon: TrendingDown, type: 'warning' as const, content: 'CrowdStrike declined from 46.3% (Aug) to 43.4% (Sep); Fortinet ticked up to 12.6% — gap narrows to 30.8pp.' },
+    fortinetInsight: { icon: TrendingDown, type: 'error' as const, content: 'SecOps slipped to 10.9% in Oct 2026 (−1.7pp); CrowdStrike leads at 50.0%, a 39.1pp gap.' },
+    competitionInsight: { icon: TrendingUp, type: 'warning' as const, content: 'CrowdStrike rose to 50.0% in Oct (from 43.4% in Sep); gap to Fortinet widens from 30.8pp to 39.1pp.' },
   },
   {
     id: 'firewall' as CategoryType,
@@ -155,9 +161,10 @@ const categories = [
       { period: '2026-07', fortinet: 69.8,  top: 69.8,  cisco: undefined, paloalto: 58.8 }, // FT dips, PA runner-up surges
       { period: '2026-08', fortinet: 68.7,  top: 68.7,  cisco: undefined, paloalto: 57.1 }, // both dip slightly
       { period: '2026-09', fortinet: 71.7,  top: 71.7,  cisco: undefined, paloalto: 56.4 }, // FT recovers, PA dips
+      { period: '2026-10', fortinet: 71.3, top: 71.3, cisco: undefined, paloalto: 60.1 }, // FT leads by 11.2pp
     ],
-    fortinetInsight: { icon: TrendingUp, type: 'success' as const, content: 'Firewall recovered to 71.7% in Sep 2026 (+3.0pp); Fortinet leads Palo Alto (56.4%) by 15.3pp — gap widens.' },
-    competitionInsight: { icon: TrendingDown, type: 'warning' as const, content: 'Palo Alto dipped to 56.4% in Sep (from 57.1%); Fortinet Firewall lead extends to 15.3pp.' },
+    fortinetInsight: { icon: TrendingDown, type: 'warning' as const, content: 'Firewall slipped to 71.3% in Oct 2026 (−0.4pp); Fortinet leads Palo Alto (60.1%) by 11.2pp.' },
+    competitionInsight: { icon: TrendingUp, type: 'warning' as const, content: 'Palo Alto rose to 60.1% in Oct (from 56.4% in Sep); Fortinet Firewall lead narrows from 15.3pp to 11.2pp.' },
   },
   {
     id: 'quantumSecurity' as CategoryType,
@@ -174,9 +181,10 @@ const categories = [
       { period: '2026-07', fortinet: 33.2, top: 33.2, paloAlto: 22.0 }, // FT ticks up, PA recovers
       { period: '2026-08', fortinet: 35.8, top: 35.8, paloAlto: 28.0 }, // both climb, FT extends lead
       { period: '2026-09', fortinet: 38.5, top: 38.5, paloAlto: 25.3 }, // FT extends, PA dips
+      { period: '2026-10', fortinet: 33.6, top: 33.6, paloAlto: 26.3 }, // FT leads by 7.3pp
     ],
-    fortinetInsight: { icon: TrendingUp, type: 'success' as const, content: 'Quantum Security climbed to 38.5% in Sep 2026 (+2.7pp); Fortinet extends lead over PA (25.3%) to 13.2pp.' },
-    competitionInsight: { icon: TrendingDown, type: 'warning' as const, content: 'Palo Alto dipped to 25.3% in Sep (from 28.0%); Fortinet Quantum lead extends to 13.2pp.' },
+    fortinetInsight: { icon: TrendingDown, type: 'warning' as const, content: 'Quantum Security slipped to 33.6% in Oct 2026 (−4.9pp); Fortinet leads Palo Alto (26.3%) by 7.3pp.' },
+    competitionInsight: { icon: TrendingUp, type: 'warning' as const, content: 'Palo Alto rose to 26.3% in Oct (from 25.3% in Sep); Fortinet Quantum Security lead narrows from 13.2pp to 7.3pp.' },
   },
   {
     id: 'aiCybersecurity' as CategoryType,
@@ -193,9 +201,10 @@ const categories = [
       { period: '2026-07', fortinet: 51.5, top: 51.5, crowdstrike: 27.6 }, // FT extends, CS rises
       { period: '2026-08', fortinet: 50.0, top: 50.0, crowdstrike: 25.4 }, // both dip slightly, FT maintains lead
       { period: '2026-09', fortinet: 39.6, top: 39.6, crowdstrike: 28.1 }, // both drop sharply, CS closes gap
+      { period: '2026-10', fortinet: 35.2, top: 35.2, crowdstrike: 28.2 }, // FT leads by 7.0pp
     ],
-    fortinetInsight: { icon: AlertTriangle, type: 'warning' as const, content: 'AI Cybersecurity fell to 39.6% in Sep 2026 (−10.4pp); leads CrowdStrike (28.1%) by 11.5pp — gap narrows sharply.' },
-    competitionInsight: { icon: TrendingUp, type: 'warning' as const, content: 'CrowdStrike recovered to 28.1% in Sep (from 25.4%); Fortinet AI Cybersecurity lead narrows to 11.5pp — monitor closely.' },
+    fortinetInsight: { icon: TrendingDown, type: 'warning' as const, content: 'AI Cybersecurity slipped to 35.2% in Oct 2026 (−4.4pp); Fortinet leads CrowdStrike (28.2%) by 7.0pp.' },
+    competitionInsight: { icon: TrendingUp, type: 'warning' as const, content: 'CrowdStrike rose to 28.2% in Oct (from 28.1% in Sep); Fortinet AI Cybersecurity lead narrows from 11.5pp to 7.0pp.' },
   },
 ];
 
@@ -359,7 +368,7 @@ export function SlideCategoryPerformance({ onNavigateHome }: { onNavigateHome?: 
     <SlideContainer slideNumber={16} onNavigateHome={onNavigateHome} source="Profound">
       <SlideHeader
         title="Focused Category"
-        subtitle="(Nov 2025 – Sep 2026)"
+        subtitle="(Nov 2025 – Oct 2026)"
       />
 
       <div className="flex-1 flex flex-col gap-6">
@@ -567,7 +576,7 @@ export function SlideCategoryPerformance({ onNavigateHome }: { onNavigateHome?: 
 
         {/* Competitor Legend at bottom */}
         <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-          <h4 className={`${TEXT_STYLES.sectionLabel} mb-3`}>Top Performers by Category · Sep 2026 Snapshot</h4>
+          <h4 className={`${TEXT_STYLES.sectionLabel} mb-3`}>Top Performers by Category · Oct 2026 Snapshot</h4>
           <div className="flex gap-6 text-xs flex-wrap">
             <div className="flex items-center gap-2">
               <div
@@ -576,7 +585,7 @@ export function SlideCategoryPerformance({ onNavigateHome }: { onNavigateHome?: 
               />
               <span className="font-semibold text-gray-900">Fortinet</span>
               <span className="text-gray-500">·</span>
-              <span className="text-gray-600">SASE, OT Security, Firewall, Quantum Security, AI Cybersecurity (Sep 2026)</span>
+              <span className="text-gray-600">SASE, OT Security, Firewall, Quantum Security, AI Cybersecurity (Oct 2026)</span>
             </div>
             <div className="flex items-center gap-2">
               <div
@@ -585,7 +594,7 @@ export function SlideCategoryPerformance({ onNavigateHome }: { onNavigateHome?: 
               />
               <span className="font-semibold text-gray-900">Palo Alto</span>
               <span className="text-gray-500">·</span>
-              <span className="text-gray-600">Cloud Security, ZTNA (Sep 2026) · SASE/ZTNA leader Nov 2025–Apr 2026</span>
+              <span className="text-gray-600">Cloud Security, ZTNA (Oct 2026) · SASE/ZTNA leader Nov 2025–Apr 2026</span>
             </div>
             <div className="flex items-center gap-2">
               <div
@@ -594,7 +603,7 @@ export function SlideCategoryPerformance({ onNavigateHome }: { onNavigateHome?: 
               />
               <span className="font-semibold text-gray-900">CrowdStrike</span>
               <span className="text-gray-500">·</span>
-              <span className="text-gray-600">SecOps leader all periods (43.4% Sep 2026)</span>
+              <span className="text-gray-600">SecOps leader all periods (50.0% Oct 2026)</span>
             </div>
             <div className="flex items-center gap-2">
               <div
@@ -603,7 +612,7 @@ export function SlideCategoryPerformance({ onNavigateHome }: { onNavigateHome?: 
               />
               <span className="font-semibold text-gray-900">Cisco</span>
               <span className="text-gray-500">·</span>
-              <span className="text-gray-600">Runner-up in Firewall (Feb–Apr 2026); Palo Alto runner-up Jun–Sep 2026</span>
+              <span className="text-gray-600">Runner-up in Firewall (Feb–Apr 2026); Palo Alto runner-up Jun–Oct 2026</span>
             </div>
           </div>
         </div>

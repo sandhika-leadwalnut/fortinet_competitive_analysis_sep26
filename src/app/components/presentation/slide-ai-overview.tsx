@@ -29,38 +29,38 @@ const VENDORS = [
   { id: 'wiz',         name: 'Wiz',           color: '#06B6D4' },
 ];
 
-// ─── AIO Keywords — Jul 2025 → Sep 2026 (15 months, Source: SEMrush) ──────────
+// ─── AIO Keywords — Jul 2025 → Oct 2026 (16 months, Source: SEMrush) ──────────
 const AIO_KEYWORDS_DATA_INITIAL: Record<string, number[]> = {
-  fortinet:    [10829, 12194, 12482, 12365, 11938, 13887, 16395, 16503, 18900, 24298, 25738, 22996, 21257, 19353, 22240],
-  cisco:       [13691, 14468, 14574, 14365, 13811, 15752, 17923, 18245, 21308, 27867, 31191, 27559, 26474, 27597, 33127],
-  hpe:         [2702,  2774,  2844,  2784,  3257,  5159,  6049,  5872,  7008,  7706,  7031,  7248,  8112,  8151,  9208],
-  paloalto:    [4322,  4274,  4466,  4506,  4653,  6092,  7536,  7897,  9564,  11924, 12480, 12755, 13081, 12221, 13887],
-  checkpoint:  [2409,  2213,  2161,  2132,  2013,  1878,  1762,  1573,  2263,  3140,  2995,  2466,  2624,  2781,  3155],
-  crowdstrike: [4247,  4729,  5123,  5051,  4623,  4456,  4992,  5279,  5689,  7563,  8660,  8302,  7685,  6756,  7781],
-  cato:        [231,   301,   277,   270,   231,   263,   296,   315,   540,   674,   600,   548,   590,   570,   576],
-  sentinelone: [3268,  3155,  3209,  3274,  3411,  4247,  4936,  5516,  7510,  8334,  7215,  8246,  9140,  7515,  7526],
-  wiz:         [890,   939,   1030,  1051,  1091,  1562,  1948,  2202,  2883,  2939,  2575,  2875,  3078,  2918,  3041],
+  fortinet:    [10829, 12194, 12482, 12365, 11938, 13887, 16395, 16503, 18900, 24298, 25738, 22996, 21257, 19353, 22240, 22202],
+  cisco:       [13691, 14468, 14574, 14365, 13811, 15752, 17923, 18245, 21308, 27867, 31191, 27559, 26474, 27597, 33127, 36586],
+  hpe:         [2702,  2774,  2844,  2784,  3257,  5159,  6049,  5872,  7008,  7706,  7031,  7248,  8112,  8151,  9208, 9318],
+  paloalto:    [4322,  4274,  4466,  4506,  4653,  6092,  7536,  7897,  9564,  11924, 12480, 12755, 13081, 12221, 13887, 13988],
+  checkpoint:  [2409,  2213,  2161,  2132,  2013,  1878,  1762,  1573,  2263,  3140,  2995,  2466,  2624,  2781,  3155, 3156],
+  crowdstrike: [4247,  4729,  5123,  5051,  4623,  4456,  4992,  5279,  5689,  7563,  8660,  8302,  7685,  6756,  7781, 7991],
+  cato:        [231,   301,   277,   270,   231,   263,   296,   315,   540,   674,   600,   548,   590,   570,   576, 591],
+  sentinelone: [3268,  3155,  3209,  3274,  3411,  4247,  4936,  5516,  7510,  8334,  7215,  8246,  9140,  7515,  7526, 7006],
+  wiz:         [890,   939,   1030,  1051,  1091,  1562,  1948,  2202,  2883,  2939,  2575,  2875,  3078,  2918,  3041, 2753],
 };
 
-// ─── AIO Traffic — Jul 2025 → Sep 2026 (15 months, Source: SEMrush) ───────────
+// ─── AIO Traffic — Jul 2025 → Oct 2026 (16 months, Source: SEMrush) ───────────
 const AIO_TRAFFIC_DATA_INITIAL: Record<string, number[]> = {
-  fortinet:    [31927,  97533,  83220,  89387,  111533, 269736, 190645, 207640, 367278, 352079, 197296, 153672, 201628, 182939, 184345],
-  cisco:       [37628,  103811, 110409, 105848, 221685, 192321, 96999,  260919, 355774, 279737, 332885, 116057, 255245, 289774, 310021],
-  hpe:         [4553,   20403,  17052,  15630,  29985,  62162,  34054,  42252,  54271,  41126,  34828,  26427,  40164,  42827,  46320],
-  paloalto:    [6363,   20685,  59321,  114814, 40224,  66468,  49190,  50299,  80268,  91191,  78511,  82622,  78086,  124991, 115473],
-  checkpoint:  [3645,   9501,   9504,   10203,  10252,  10514,  6144,   8835,   12423,  12407,  10182,  7640,   10582,  13316,  19045],
-  crowdstrike: [70372,  42889,  33742,  44539,  169073, 54807,  33199,  177583, 52186,  66843,  42191,  59579,  53721,  71980,  77806],
-  cato:        [140,    1154,   1198,   1157,   1406,   1342,   993,    1490,   3534,   2969,   2237,   4657,   3530,   1976,   2596],
-  sentinelone: [5430,   10839,  15126,  13414,  16130,  22651,  19999,  91883,  46728,  32092,  34805,  24090,  22958,  34750,  32739],
-  wiz:         [897,    5718,   6418,   12359,  86440,  148096, 7178,   11528,  162533, 13429,  12227,  11665,  10540,  20714,  19711],
+  fortinet:    [31927,  97533,  83220,  89387,  111533, 269736, 190645, 207640, 367278, 352079, 197296, 153672, 201628, 182939, 184345, 96745],
+  cisco:       [37628,  103811, 110409, 105848, 221685, 192321, 96999,  260919, 355774, 279737, 332885, 116057, 255245, 289774, 310021, 195629],
+  hpe:         [4553,   20403,  17052,  15630,  29985,  62162,  34054,  42252,  54271,  41126,  34828,  26427,  40164,  42827,  46320, 30975],
+  paloalto:    [6363,   20685,  59321,  114814, 40224,  66468,  49190,  50299,  80268,  91191,  78511,  82622,  78086,  124991, 115473, 53340],
+  checkpoint:  [3645,   9501,   9504,   10203,  10252,  10514,  6144,   8835,   12423,  12407,  10182,  7640,   10582,  13316,  19045, 20077],
+  crowdstrike: [70372,  42889,  33742,  44539,  169073, 54807,  33199,  177583, 52186,  66843,  42191,  59579,  53721,  71980,  77806, 33966],
+  cato:        [140,    1154,   1198,   1157,   1406,   1342,   993,    1490,   3534,   2969,   2237,   4657,   3530,   1976,   2596, 2665],
+  sentinelone: [5430,   10839,  15126,  13414,  16130,  22651,  19999,  91883,  46728,  32092,  34805,  24090,  22958,  34750,  32739, 16190],
+  wiz:         [897,    5718,   6418,   12359,  86440,  148096, 7178,   11528,  162533, 13429,  12227,  11665,  10540,  20714,  19711, 11126],
 };
 
 const MONTH_KEYS = [
-  '2025-07','2025-08','2025-09','2025-10','2025-11','2025-12','2026-01','2026-02','2026-03','2026-04','2026-05','2026-06','2026-07','2026-08','2026-09',
+  '2025-07','2025-08','2025-09','2025-10','2025-11','2025-12','2026-01','2026-02','2026-03','2026-04','2026-05','2026-06','2026-07','2026-08','2026-09','2026-10',
 ];
 
 const MONTHS_LABELS = [
-  'Jul 2025','Aug 2025','Sep 2025','Oct 2025','Nov 2025','Dec 2025','Jan 2026','Feb 2026','Mar 2026','Apr 2026','May 2026','Jun 2026','Jul 2026','Aug 2026','Sep 2026',
+  'Jul 2025','Aug 2025','Sep 2025','Oct 2025','Nov 2025','Dec 2025','Jan 2026','Feb 2026','Mar 2026','Apr 2026','May 2026','Jun 2026','Jul 2026','Aug 2026','Sep 2026','Oct 2026',
 ];
 
 const formatMonth = (key: string) => {
@@ -79,7 +79,7 @@ const formatMonth = (key: string) => {
     '2026-06': 'Jun-26',
     '2026-07': 'Jul-26',
     '2026-08': 'Aug-26',
-    '2026-09': 'Sep-26',
+    '2026-09': 'Sep-26', '2026-10': 'Oct-26',
   };
   return map[key] ?? key;
 };
@@ -247,9 +247,9 @@ export function SlideAIOverview({ onNavigateHome }: { onNavigateHome?: () => voi
     return Math.ceil(max * 1.15);
   };
 
-  // ── Performance summary (latest = Sep 2026, index 14) ────────────────────
+  // ── Performance summary (latest = Oct 2026, index 15) ────────────────────
   const getPerformanceSummary = () => {
-    const latestIndex = 14; // Sep 2026
+    const latestIndex = 15; // Oct 2026
     const dataSource = activeTab === 'keywords' ? editedData.keywords : editedData.traffic;
     const fmtV = (v: number) => formatNumber(v);
     const ordinal = (n: number) => n === 2 ? '2nd' : n === 3 ? '3rd' : `${n}th`;
@@ -271,7 +271,7 @@ export function SlideAIOverview({ onNavigateHome }: { onNavigateHome?: () => voi
         <div className="bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-300 rounded-xl p-4 shadow-sm">
           <div className="flex items-center gap-1.5 mb-2">
             <Trophy className="w-4 h-4 text-green-600" />
-            <span className="text-xs font-bold text-green-800 uppercase tracking-wide">Sep 2026 Standing</span>
+            <span className="text-xs font-bold text-green-800 uppercase tracking-wide">Oct 2026 Standing</span>
           </div>
           <div className="space-y-1">
             <div className="flex justify-between">
@@ -297,7 +297,7 @@ export function SlideAIOverview({ onNavigateHome }: { onNavigateHome?: () => voi
         <div className="bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-orange-300 rounded-xl p-4 shadow-sm">
           <div className="flex items-center gap-1.5 mb-2">
             <Target className="w-4 h-4 text-orange-600" />
-            <span className="text-xs font-bold text-orange-800 uppercase tracking-wide">Sep 2026 Standing</span>
+            <span className="text-xs font-bold text-orange-800 uppercase tracking-wide">Oct 2026 Standing</span>
           </div>
           <div className="space-y-1">
             <div className="flex justify-between">
@@ -450,7 +450,7 @@ export function SlideAIOverview({ onNavigateHome }: { onNavigateHome?: () => voi
     <SlideContainer slideNumber={21} onNavigateHome={onNavigateHome}>
       <SlideHeader
         title="AI Overview Metrics"
-        subtitle="(Jul 2025 – Sep 2026)"
+        subtitle="(Jul 2025 – Oct 2026)"
       />
 
       <div className="flex-1 flex flex-col gap-4 overflow-hidden">

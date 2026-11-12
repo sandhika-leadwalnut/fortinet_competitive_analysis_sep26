@@ -8,7 +8,7 @@
 
 ## CONTEXT
 
-You are updating a **47-slide React/TypeScript SEO Competitive Analysis presentation** located at `/workspaces/default/code/`. The app is built with React 18, TypeScript, Vite, and Tailwind CSS v4.
+You are updating a **49-slide React/TypeScript SEO Competitive Analysis presentation** located at `/workspaces/default/code/`. The app is built with React 18, TypeScript, Vite, and Tailwind CSS v4.
 
 **Golden rules:**
 - Arrays are **chronological, oldest → newest**. New months are always **appended to the end** — never inserted in the middle.
@@ -30,15 +30,27 @@ You will receive one or more of the following CSVs. Match by filename:
 | `Fortinet_Content_Tracker_-_2026_-__International_Pages__Organic_Traffic_.csv` | International traffic by country |
 | `Top_5_KWs_in_Focus_Categories__-_Tofu_Mofu_Bofu__Aug_.csv` (or similar month) | Priority keyword rankings per slide category |
 | `Fortinet Keywords - Untapped KWs` (any name) | Untapped keyword opportunities |
-| `WebsiteExperience_2026-*.docx` (any dated version) | Web Experience slide (Slide 23) — competitor site observations + screenshots |
+| `Website*Experience*2026*.docx` / `Website*Experinece*2026*.docx` | Web Experience slide (Slide 46) — competitor observations, URLs and embedded screenshots |
 | `Category_Raw_Data_*.csv` (or category section of All.csv) | Per-category keyword/traffic/AIO chart data (Slides 19–27) |
 | `WW_Organic_Traffic_*.csv` (or WW section of All.csv) | WW organic traffic by vendor (Slide 16) |
 | `WebsitePerformance_*.csv` or pasted scores | Desktop + Mobile PageSpeed/Lighthouse scores (Slide 28) |
 | `Cyberglossary_*.csv` (keywords, backlinks sections) | Cyberglossary organic data + backlinks (Slides 30–32) |
+| `Fortinet_Content_Tracker_-_2026_-_Cyberglossary_competitor_analysis*.csv` | Cyberglossary global rank + DA → `slide-cyberglossary-ranking.tsx`; organic keywords/traffic/value/pages → `slide-cyberglossary-keywords.tsx`; backlinks/referring domains → `slide-cyberglossary-backlinks.tsx` |
 | `Profound_*.csv` or pasted Profound export | AI Visibility %, Share of Voice %, Citation Rate % (Slide 34) |
 | `AIO_Performance_*.csv` or pasted AIO export | AIO score % by category (Slide 35) + AIO Keywords & Traffic (Slide 36) |
 | `FeaturedSnippets_*.csv` or pasted snippet counts | Featured Snippets per vendor (Slide 37) |
 | `BacklinksBySource_*.csv` or pasted source table | Fortinet backlinks by tool source (Slide 39) |
+| `Fortinet_Competetiors_by_category_-_Jul___Aug_2026_-_Competition_Metrics_-_Jul_to_Oct2026*.csv` | Refreshed-basis category metrics (NGFW, SD-WAN, OT, SASE, Zero Trust, Cloud, Network Security, SecOps) — **FILE 17** |
+| `Fortinet_Content_Tracker_-_2026_-_Top_50_KW_2026*.csv` | Top 50 keyword ranking tracker (Top 50 KW slide) — **FILE 18** |
+| `Fortinet_Content_Tracker_-_2026_-_Performance_Tracker_Traffic__-_Articles*.csv` | Articles pages GA + GSC (Articles slide) — **FILE 19** |
+| `Fortinet_Content_Tracker_-_2026_-_Performance_Tracker_Organic__-_Product_Pages*.csv` | Product pages GA + GSC (Product Pages slide) — **FILE 20** |
+| `Fortinet_Content_Tracker_-_2026_-_Performance_Tracker_Organic__-_CyberGlossary*.csv` | CyberGlossary organic GA + GSC (CG traffic slide, tabs *Organic traffic* & *Click – GSC*) — **FILE 21** |
+| `Fortinet_Content_Tracker_-_2026_-_Performance_Tracker_Bing_Clicks__-_CyberGlossary*.csv` | CyberGlossary Bing clicks (CG traffic slide, tab *Click – Bing*) — **FILE 22** |
+| `Fortinet_Content_Tracker_-_2026_-_Performance_Tracker_Direct__-_CyberGlossary*.csv` | CyberGlossary direct traffic + URL-level gain/loss (CG traffic slide, tabs *Direct traffic* & *Direct traffic – Gain & Loss*) — **FILE 23** |
+| `Fortinet_Content_Tracker_-_2026_-_International_Pages__Direct_Traffic_*.csv` | International CG pages — **direct** traffic by country (International slide, tab *Direct traffic*) — **FILE 24** |
+| `Fortinet_Content_Tracker_-_2026_-__International_Pages__Organic_Traffic_*.csv` | International CG pages — **organic** traffic by country (International slide, tab *Organic traffic*) — see FILE 3 + FILE 24 |
+
+> **Duplicate uploads:** Google Sheets exports often arrive as `name.csv`, `name-1.csv`, `name-2.csv`, `name-3.csv`. Run `md5sum` — if hashes match they are the same file; use the highest-numbered/most recent one and do not process twice. Always confirm the **last month column header** (e.g. `2026 Oct`) before editing.
 
 ---
 
@@ -256,113 +268,52 @@ Each of these slide files has a tab button labeled `'Priority Keywords'`. **Do n
 
 ---
 
-## FILE 6 — `WebsiteExperience_2026-*.docx` (Web Experience slide — Slide 23)
+## FILE 6 — Website Experience DOCX (Slide 46)
 
+**Accepted filename patterns:** `WebsiteExperience_2026-*.docx`, `WebsiteExperinece_2026*.docx`, `Website_Experinece_2026.docx` (the source files use multiple spellings).  
 **Target file:** `src/app/components/presentation/slide-competitive-findings.tsx`  
 **Target constant:** `const findings: Finding[]`  
-**Screenshot images:** `src/imports/sum_tab_1.png` through `sum_tab_4.png`
+**Asset targets:** `src/imports/sum_tab_1.png` onward; a document can contain more screenshots than tabs, so use `screenshot2`…`screenshot5` and create/import `sum_tab_5.png`, `sum_tab_6.png`, etc. as needed.  
+**Slide metadata:** `slideNumber={46}`, subtitle/footer must state the source month.
 
-This Word document contains **website experience observations** from competitor sites. It has four sections, each becoming one tab in Slide 23. The document includes:
-- Descriptive text (title + bullet descriptions per tab)
-- Reference URLs to competitor examples
-- Embedded screenshots of competitor pages (4 images in the docx)
+The DOCX is the source of truth for four tab sections. Update only tab copy, competitor names, URLs and screenshot assets—do not restructure the slide.
 
-### Slide 23 tab structure
+### Extraction procedure
 
-| Tab # | `sum_tab_*.png` | Typical competitor | Topic |
+1. Treat the DOCX as a zip. Extract `word/document.xml`, `word/_rels/document.xml.rels`, and all `word/media/*` files to `/tmp` (not a repository sidecar folder).
+2. Parse paragraphs in document order. Resolve `w:hyperlink r:id` and `a:blip r:embed` through `document.xml.rels`; do not guess URLs or screenshot order from filenames.
+3. Open every extracted image with the Read tool and match it to its section by visible page content.
+4. Copy the selected files to `src/imports/sum_tab_N.png`; import each asset as an ES module. Use `ImageWithFallback`, not literal `/src/imports/...` paths.
+5. Keep exactly four findings/tabs. When a section has multiple screenshots, attach them to the same finding with `screenshot2`, `screenshot3`, etc.
+
+### Oct-26 document mapping — `Website_Experinece_2026.docx`
+
+| Tab | Finding title / competitor | URLs from DOCX | Screenshot mapping |
 |---|---|---|---|
-| 1 | `sum_tab_1.png` | Check Point | Proprietary research report / brand asset |
-| 2 | `sum_tab_2.png` | Wiz | Threat intelligence hub |
-| 3 | `sum_tab_3.png` | Wiz | Interactive tool (e.g. PQC Tester) |
-| 4 | `sum_tab_4.png` | Wiz | AI-search-ready content format |
+| 1 | `Competitor Vulnerability Databases` · SentinelOne & Wiz | `sentinelone.com/vulnerability-database/`, `wiz.io/vulnerability-database` | `image6.png` → `sum_tab_1.png` (SentinelOne); `image2.png` → `sum_tab_5.png` (Wiz, `screenshot2`) |
+| 2 | `Wiz Expands Its Cloud Security Content Ecosystem` · Wiz | `cloudvulndb.org`, `wiz.io/crying-out-cloud` | `image4.png` → `sum_tab_2.png` (Cyber Model Arena); `image5.png` → `sum_tab_6.png` (podcast, `screenshot2`) |
+| 3 | `Healthcare Solutions: Keyword Expansion Opportunity` · SentinelOne | `sentinelone.com/platform/healthcare/`, `fortinet.com/solutions/industries/healthcare` | `image1.png` → `sum_tab_3.png` |
+| 4 | `Cybersecurity AI: Dedicated Research Labs` · CrowdStrike | Cyber Superintelligence Lab main + `/research/` URLs | `image3.png` → `sum_tab_4.png` |
 
-> Tab order and topics may change month to month — always re-read the docx sections and match them to the correct tab slot by content, not position.
+The Oct DOCX also mentions Cyber Model Arena in the narrative even though no direct arena URL is supplied; show the screenshot and use only the URLs that exist in the document.
 
-### Step 1 — Extract docx images
+### `findings` field rules
 
-The docx is a zip file. Extract images programmatically:
+- `title`: use the DOCX section heading, cleaned only for grammar.
+- `description[]`: preserve the observation and add one concise Fortinet SEO/AEO implication. Do not invent competitor claims.
+- Multiple reference URLs: use the primary URL in `url`/`urlDisplay`; represent additional URLs as linked description objects `{ text, link, linkDisplay }`.
+- `competitor`: include every competitor represented by the tab (`SentinelOne & Wiz` for tab 1).
+- Keep each slot’s existing color tokens; icons may change to match the new topic.
+- `screenshot`: keep the established four aliases (`imgZeroTrust`, `imgZeroTrustInfographic`, `imgZeroTrustService`, `imgStrategicCTA`). Add descriptive aliases for screenshots 5+.
+- Set `SlideContainer` to slide 46 and update subtitle/footer to `Oct 2026` for this run.
 
-```python
-import zipfile, os
-os.makedirs('src/imports/docx_tmp', exist_ok=True)
-with zipfile.ZipFile('src/imports/WebsiteExperience_2026-X.docx') as z:
-    for name in z.namelist():
-        if name.startswith('word/media/'):
-            fname = name.split('/')[-1]
-            with z.open(name) as f:
-                with open(f'src/imports/docx_tmp/{fname}', 'wb') as out:
-                    out.write(f.read())
-```
+### Validation
 
-Then **read each extracted image** using the Read tool to see what it shows. Match each image to its tab based on content (report cover, tool UI, hub page, article layout, etc.).
-
-### Step 2 — Update screenshot files
-
-Copy images to the correct `sum_tab_N.png` path:
-
-```bash
-cp src/imports/docx_tmp/imageX.png src/imports/sum_tab_1.png
-cp src/imports/docx_tmp/imageY.png src/imports/sum_tab_2.png
-# etc.
-```
-
-### Step 3 — Update the `findings` array
-
-Extract the text from the docx (same python zip approach, reading `word/document.xml`), strip XML tags, and update the `findings` array in `slide-competitive-findings.tsx`:
-
-```ts
-const findings: Finding[] = [
-  {
-    icon: Brain,           // or Network, Zap, Target — pick the most fitting lucide icon
-    color: '#F97316',      // keep existing color scheme per tab slot
-    bgColor: '#FFF7ED',
-    title: '...',          // section heading from docx
-    description: [
-      '...',               // one string per bullet/paragraph
-      '...',
-    ],
-    competitor: '...',     // brand name: 'Check Point', 'Wiz', 'Palo Alto', etc.
-    url: 'https://...',    // reference URL from docx
-    urlDisplay: '...',     // short display form (domain + path, no https://)
-    screenshot: imgZeroTrust,  // keep existing import alias for the tab slot
-  },
-  // ... repeat for tabs 2–4
-];
-```
-
-### Color scheme per tab (keep consistent)
-
-| Tab # | `color` | `bgColor` | Icon suggestion |
-|---|---|---|---|
-| 1 | `#F97316` | `#FFF7ED` | `Brain` |
-| 2 | `#8B5CF6` | `#F5F3FF` | `Network` |
-| 3 | `#0EA5E9` | `#F0F9FF` | `Zap` |
-| 4 | `#F59E0B` | `#FEF3C7` | `Target` |
-
-> Only change icon/color if the topic meaningfully shifts (e.g. a new category replaces an old one).
-
-### Import aliases (do not change these names)
-
-```ts
-import imgZeroTrust            from '../../../imports/sum_tab_1.png';
-import imgZeroTrustInfographic from '../../../imports/sum_tab_2.png';
-import imgZeroTrustService     from '../../../imports/sum_tab_3.png';
-import imgStrategicCTA         from '../../../imports/sum_tab_4.png';
-```
-
-The import aliases are referenced throughout the JSX — do not rename them. Only the file they point to changes (handled by replacing `sum_tab_N.png` on disk in Step 2).
-
-### What to update vs. what to leave alone
-
-| Element | Update? |
-|---|---|
-| `title` string | Yes — use docx section heading |
-| `description[]` strings | Yes — use docx bullet/paragraph text |
-| `competitor` string | Yes — brand shown in docx |
-| `url` / `urlDisplay` | Yes — reference URL from docx |
-| `screenshot` import alias | No — alias stays, only the .png file on disk changes |
-| `icon` / `color` / `bgColor` | Only if topic category fundamentally changes |
-| Component JSX / layout | No — do not restructure the slide |
+- Four findings exactly.
+- Every DOCX section appears once; all supplied hyperlinks are represented.
+- All embedded images are reviewed, and every image used by the slide exists and imports successfully.
+- Run an esbuild/TypeScript syntax check on `slide-competitive-findings.tsx`.
+- Do not carry forward the previous month’s Check Point report, Wiz threat hub, PQC tester or AI-summary tabs unless they are present in the new DOCX.
 
 ---
 
@@ -505,6 +456,7 @@ Each vendor's `MetricData` has three sub-arrays:
 
 ## FILE 10 — Cyberglossary Keywords, Traffic, Value & Pages (Slide 30)
 
+**Source file:** `Fortinet_Content_Tracker_-_2026_-_Cyberglossary_competitor_analysis*.csv`  
 **Target file:** `src/app/components/presentation/slide-cyberglossary-keywords.tsx`  
 **Target constant:** `const DATA: Record<string, VendorMetrics>`  
 **Target constant:** `const MONTHS = [...]` (local, format `'YYYY-MM'`)
@@ -531,10 +483,22 @@ Each vendor entry has type `VendorMetrics = { keywords: number[]; traffic: numbe
 5. Update hardcoded month references in all four `renderInsights()` branches (keywords, traffic, value, pages). These often say `"in [Month]"` — update to the new latest month.
 6. Update any hardcoded numeric values in insight text (e.g. `"dropped from 60 to 41"`) to match the new latest data point.
 
+**CSV row → metric mapping:**
+
+| CSV row label | `VendorMetrics` field |
+|---|---|
+| `Organic Keywords (k)` | `keywords` |
+| `Organic Traffic (k)` | `traffic` |
+| `Traffic Value ($k)` | `value` |
+| `# of pages` | `pages` |
+
+The CSV is arranged as horizontal vendor blocks: Fortinet, CISCO, HPE, Palo Alto, Checkpoint, Force Point, CrowdStrike. The slide tracks six vendors only, so **ignore the Force Point block**. Within each vendor block, use the month columns beginning at `2025 Dec` and ending at the newest month; ignore `Avg of Jul- Dec 2025` and `Trendline`. Strip thousands separators and store the displayed integer as-is because the source rows are already labeled in thousands where applicable.
+
 ---
 
 ## FILE 11 — Cyberglossary Backlinks & Referring Domains (Slide 32)
 
+**Source file:** `Fortinet_Content_Tracker_-_2026_-_Cyberglossary_competitor_analysis*.csv`  
 **Target file:** `src/app/components/presentation/slide-cyberglossary-backlinks.tsx`  
 **Target constant:** `const DATA: Record<string, VendorMetrics>`  
 **Target constant:** `const MONTHS = [...]` (local, format `'YYYY-MM'`)
@@ -554,6 +518,31 @@ Same as FILE 10 above: `fortinet`, `cisco`, `hpe`, `paloalto`, `checkpoint`, `cr
 1. Append new `'YYYY-MM'` to local `MONTHS`.
 2. Append new values to `backlinks` and `domains` arrays for each vendor.
 3. Update `formatMonth` map, `subtitle`, `SlideFooter source`, and insight card text.
+
+**CSV row → metric mapping:**
+
+| CSV location / row label | `VendorMetrics` field |
+|---|---|
+| Main vendor-block table → `Backlinks(k)` | `backlinks` |
+| Main vendor-block table → `Referring Domains` | `domains` |
+| Lower standalone `Backlinks` table | validation copy of `backlinks`; do not append twice |
+
+Use the same six tracked vendors and month-column rules as FILE 10. Ignore Force Point. The lower standalone backlinks table duplicates the backlinks row from the main table and is provided only as a cross-check. Backlinks are already expressed in thousands; store the integer shown in the CSV (for example, `98` means 98K). Referring domains are raw counts; strip commas (for example, `"15,356"` → `15356`).
+
+---
+
+### FILE 11A — Cyberglossary Global Rank & Domain Authority
+
+**Source file:** `Fortinet_Content_Tracker_-_2026_-_Cyberglossary_competitor_analysis*.csv`  
+**Target file:** `src/app/components/presentation/slide-cyberglossary-ranking.tsx`  
+**Target constants:** `MONTHS`, `RANK_DATA`, `DA`
+
+| CSV row label | Target |
+|---|---|
+| `Ahrefs Rank` | Append the newest month to each tracked vendor in `RANK_DATA` |
+| `Domain Authority` | Replace each tracked vendor's scalar value in `DA` with the newest month |
+
+Use Fortinet, CISCO, HPE, Palo Alto, Checkpoint and CrowdStrike; ignore Force Point. For `Ahrefs Rank`, lower is better. Strip thousands separators before writing. Extend `MONTHS` and `formatMonth`, replace hardcoded latest array indices with `MONTHS.length - 1`, and update insight copy, subtitle and footer to the newest month. Unlike the `Competitions__URLs_-_Summary.csv` described in FILE 2, this competitor-analysis CSV **does include Domain Authority**, so `DA` must be refreshed from its latest-month cells.
 
 ---
 
@@ -746,6 +735,249 @@ This slide tracks **Fortinet-only** backlink counts as reported by five differen
 
 ---
 
+## FILE 17 — `Fortinet_Competetiors_by_category_-_Jul___Aug_2026_-_Competition_Metrics_-_Jul_to_Oct2026*.csv`
+
+**Purpose:** refreshed-basis (Jul-26 methodology) competitor metrics per category. Feeds the four chart constants in FILE 7 for the categories below, plus the two 3-month slides (Network Security, SecOps).
+
+### CSV layout
+Stacked blocks. Each block = one *vendor-name row* (e.g. `Fortinet · Check Point · cisco · IBM · Orca Security`) then a header row `<Category>, 2026 Jul, 2026 Aug, 2026 Sep, 2026 Oct, Trend`, then 7 metric rows. Each vendor occupies 6 columns (4 months + Trend + spacer). Parse by walking the vendor-name row, **never by fixed column index**.
+
+| CSV metric row | TypeScript constant (chart tab) |
+|---|---|
+| `Total  Keywords` (two spaces) | `TOTAL_KEYWORDS_*` (Total Keywords) |
+| `Organic Traffic` | `CUMULATIVE_TRAFFIC_*` (Cumulative Traffic) |
+| `KWs Ranking on Page 1` | `PAGE_ONE_KEYWORDS_*` / `PAGE_ONE_KW_ABS` (Page 1 Keywords) |
+| `KWs Ranking on AIO` | `AIO_DATA_*` (AIO) |
+| `SV`, `KWs Ranking on Top 3  position`, `Average Ranking Position` | **not used** |
+
+### CSV block → slide file
+| CSV block title | Slide file | Slide # | Constants |
+|---|---|---|---|
+| `NGFW/Firewall` | `slide-ngfw.tsx` | 19 | `TOTAL_KEYWORDS_ABS`, `PAGE_ONE_KW_ABS`, `CUMULATIVE_TRAFFIC_ABS`, `AIO_DATA_ABS` |
+| `SD WAN` | `slide-sdwan-metrics.tsx` | 20 | `*_DATA_INITIAL` (4 constants) |
+| `OT Security` | `slide-ot-security.tsx` | 21 | `*_DATA_INITIAL` |
+| `SASE` | `slide-dashboard.tsx` | 22 | `*_DATA_INITIAL` |
+| `Zero Trust (OR) ZTNA` | `slide-zero-trust.tsx` | 23 | `*_DATA_INITIAL` |
+| `Cloud Security` | `slide-cloud-security.tsx` | 24 | `*_DATA_INITIAL` (only IBM + Orca come from this file — see source rule) |
+| `Network Security` | `slide-network-security.tsx` | — | `TOTAL_KEYWORDS_DATA`, `TRAFFIC_DATA`, `PAGE_ONE_DATA`, `AIO_DATA` (+ `MONTHS`, `latestIdx`) |
+| `SECOPS` | `slide-secops.tsx` | — | `TOTAL_KEYWORDS_DATA`, `TRAFFIC_DATA`, `PAGE_ONE_DATA`, `AIO_DATA` (+ `MONTHS`) |
+
+### CSV vendor label → TypeScript key
+`Fortinet→fortinet` · `cisco→cisco` · `Check Point→checkpoint` · `Palo Alto→paloalto` · `HPE→hpe` · `Cato Networks→catonetworks` · `Force Point→forcepoint` · `Zscaler→zscaler` · `Dragos→dragos` · `IBM→ibm` · `Akamai→akamai` · `Orca Security→orca` · `Imperva→imperva` · `Crowd Strike→crowdstrike` · `Redcanary→redcanary` · `Secopsolution→secopsolution` · `Splunk→splunk`.
+
+### ⚠️ SOURCE RULE — which file feeds which vendor (data-basis conflict)
+Ahrefs changed the keyword basis in **Jul-26** (e.g. NGFW Fortinet 900 → 1,522). The deck holds a *mixed-basis* series by design. **Do not restate Jul–Sep.** Instead, for every vendor/constant:
+
+1. Compare the deck's last three values (Jul/Aug/Sep-26) with this file's Jul/Aug/Sep columns for that vendor.
+2. **Match → this file is that vendor's source: append its Oct value.**
+3. **No match / vendor absent from this file → the vendor is sourced from `Fortinet_Competition_Raw_Data_-_Category*.csv` (FILE 7).** Append that file's `2026 Oct` value for the same vendor/category (row labels there: `Total  Keywords`, `Cumulative traffic*`, `No. of KWs Ranking on Page 1`, `AIO`; category labels carry a `(> SV 50)` suffix, vendor `Cato Network`, `Checkpoint`, `Crowdstrike`, `Sentinelone`).
+4. Missing/`Nil`/blank Oct → `null`, never `0`.
+
+Resulting split (Oct-26 run): *this file* → NGFW (Fortinet, Cisco, Palo Alto, Check Point, Zscaler), SD-WAN (Fortinet, Cisco, HPE, Palo Alto, Cato), OT (Fortinet, Dragos, IBM), SASE (Fortinet, HPE, Palo Alto, Check Point, Cato, Zscaler), Zero Trust (Fortinet, Palo Alto, Akamai), Cloud (IBM, Orca). *Category raw file* → everything else, and all of Ransomware / AI Cybersecurity / Quantum Security (slides 25–27 have no row in this file).
+
+### Data-quality gates (apply BEFORE writing)
+- **Duplicate-column check:** if two vendors have identical Oct values across all 7 rows, one is a paste error. Oct-26: NGFW `Force Point` Oct = Fortinet Oct (1296 / 247690 / 16564 / 880 / 1270 / 899 / 3) → write `null` for Forcepoint Oct.
+- **Uniform-collapse check:** if *every* vendor in a block drops >70 % MoM, treat it as a probable partial or methodology-shifted export. Oct-26: SECOPS Fortinet 255→66, Palo Alto 634→102, Splunk 442→65. Per stakeholder direction, **append the supplied Oct values to `slide-secops.tsx`**, but add explicit “validate before presenting” language to the insight cards and Notes summary.
+- **Step-change check:** flag any vendor/metric with |MoM| > 35 % (and prior value ≥ 10) in the Notes section. Oct-26 flags: OT (Fortinet/IBM/Dragos all −37 % to −49 %), SASE (Palo Alto +184 %, Fortinet +57 %), AI Cybersecurity (Cisco/Palo Alto/HPE back to pre-Jul-26 levels). Still append the value (it is what the source says) but add a “validate before presenting” clause to the insight text.
+- **Restatement check:** if a Sep value already in the deck differs from this file’s Sep column (Oct-26: OT Fortinet traffic Sep 4,935 vs CSV 2,820), restate the deck cell to the CSV value and list it in the summary.
+
+### Per-slide mechanics (same as FILE 7 steps 3–6)
+Append `'2026-10'` to `MONTHS`; bump `latestIndex` (`MONTHS.length - 1`); subtitle → `(… – Oct 2026)`; update the comment `// … to Oct 2026 (N months)` and the “Edit … Metrics Data (…)” heading; rewrite the 8 data-driven insight cards (Fortinet + Competition × 4 tabs) so every number/month name is the Oct figure — include Oct MoM %. Do **not** touch the two keyword-gap (Priority Keywords) cards — they come from FILE 4.
+
+---
+
+## FILE 18 — `Fortinet_Content_Tracker_-_2026_-_Top_50_KW_2026*.csv`
+
+**Target file:** `src/app/components/presentation/slide-top50kw-summary.tsx` (Top 50 Keyword Tracking slide, 7 tabs)
+**Source:** SEMrush, 5 vendors × Dec-25 … latest month (11 values for Oct-26). Position `101` = not ranking in top 100 (keep as `101`, **not** `null`).
+
+| CSV region | Target constant | Fields |
+|---|---|---|
+| Top block (rows 3–8, label col F: `# of keywords on page 1 / 2 / 3 / position 1`) | `SUMMARY_DATA[vendor]` | `page1`, `page2`, `page3`, `pos1` — tab *Keyword Summary* |
+| Category blocks `NGFW/Firewall`, `Network Security`, `Zero Trust / ZTNA`, `Cloud Security`, `SD WAN & SASE` (labels `# of keywords on page 1`, `# of keywords on position 1`) | `CATEGORY_DATA.ngfw / network / ztna / cloud / sdwan [vendor]` | `page1`, `pos1` |
+| Row table starting `Sl.No, Category, Keyword, MSV, KD, …` (48 rows) | `KEYWORDS: KWRow[]` — match by `id` = Sl.No | `msv`, `kd`, and the five arrays `fortinet`, `paloalto`, `checkpoint`, `cisco`, `hpe` |
+
+Vendor column groups (left→right, 13 cols each): Fortinet → Palo Alto → Check Point → Cisco → HPE. Each group = 11 month values then `Trendline` then spacer.
+
+**Update rules**
+1. **Append** the Oct value to every array (never insert). Verify first that the CSV’s Dec–Sep values equal the deck’s existing arrays (Oct-26 run: 0 differences) — if they differ, restate and list.
+2. `msv` / `kd` **are refreshed every month** in this sheet — overwrite from CSV. Keep the deck’s `cat` label spelling (`OT Security`, `DLP`…) even if the CSV casing differs, because the category dropdown groups on it.
+3. Update `MONTHS`, `MONTH_LABELS`, `MONTH_SHORT`, `fmt` map, `MONTH_PILL_LABELS`.
+4. Replace every hardcoded `[9]` index with `[L]` where `const L = MONTHS.length - 1` (summary tab), and default `monthIdx` to `MONTHS.length - 1`. Use `MONTHS.length` (not `10`) in “average per month” maths.
+5. Rewrite `insights` (summary tab, 4 metrics × 3 cards) and `CATEGORY_INSIGHTS` (5 categories × 2 metrics × 3 cards). Every “peak”, “low”, “since” claim must be checked against the full 11-month array — do not copy old claims forward.
+6. Subtitle + footer → `Dec 2025 – Oct 2026`.
+7. Flag in Notes: suspicious MSV outliers (Oct-26: `malware protection` 1,830,000; `What is a data breach` 110,000; `5g network security` 12,100) — written as supplied.
+
+---
+
+## FILE 19 — `…Performance_Tracker_Traffic__-_Articles*.csv`
+
+**Target file:** `src/app/components/presentation/slide-articles-pages-traffic.tsx`
+**Target constants:** `MONTHS` (Dec-25 start), `formatMonth` map, `GA_DATA`, `GSC_DATA` (each `{ total, branded, nonBranded }`).
+
+| CSV row (top block, label cols C/D) | Constant |
+|---|---|
+| `Source - GA` → `Branded Traffic` | `GA_DATA.branded` |
+| `Non Branded Traffic` | `GA_DATA.nonBranded` |
+| `Total Traffic` (first one, under GA) | `GA_DATA.total` |
+| `Source - GSC` → `Branded Traffic` | `GSC_DATA.branded` |
+| `Non Branded Traffic` | `GSC_DATA.nonBranded` |
+| `Total Traffic` (second one, under GSC) | `GSC_DATA.total` |
+
+Values have thousands separators (`"1,035"`) — strip commas. Month columns are `2025 Dec … 2026 Oct` immediately right of `Avg of Jul- Dec 2025` (ignore the `Over all Traffic …` columns further right and the per-URL rows below row ~12).
+Append one value per array, add `'2026-10'`/`'Oct-26'`, change “Sep 2026” in insight strings to “Oct 2026”, and update subtitle/footer. Hardcoded facts in insight text (e.g. “May peak of 809”, “from 1,334”) are historical — keep unless the peak changes.
+
+---
+
+## FILE 20 — `…Performance_Tracker_Organic__-_Product_Pages*.csv`
+
+**Target file:** `src/app/components/presentation/slide-product-pages-traffic.tsx`
+**Target constants:** `MONTHS` (Jul-25 start, 15→16 entries), `formatMonth`, `GA_DATA`, `GSC_DATA`.
+
+| CSV row | Constant |
+|---|---|
+| `Source - GA` → `Branded Traffic` | `GA_DATA.branded` |
+| `Non Branded Traffic` | `GA_DATA.nonBranded` |
+| `Total Traffic` | `GA_DATA.total` |
+| `Source - GSC` → `Branded Clicks` | `GSC_DATA.branded` |
+| `Non Branded Clicks` | `GSC_DATA.nonBranded` |
+| `Total Clicks` | `GSC_DATA.total` |
+
+The CSV only has Dec-25 → Oct-26 columns; the deck’s Jul–Nov 2025 values are historical — **append only the new month**. Insight code references `GSC_DATA.total[13]`/`branded[13]` as “previous month” — after appending, change those to `[14]` (= Sep) so “from X in Sep” stays correct.
+
+---
+
+## FILE 21 — `…Performance_Tracker_Organic__-_CyberGlossary*.csv`
+
+**Target file:** `src/app/components/presentation/slide-cyberglossary-traffic.tsx` (shared by FILES 21–23; `MONTHS` Jul-25 start)
+
+| CSV row (label col H) | Constant | Slide tab |
+|---|---|---|
+| `Source - GA` block: `Branded Traffic` / `Non Branded Traffic` / `Total Organic Traffic` | `GA_DATA.branded / nonBranded / total` | Organic traffic |
+| `Source - GSC` block: `Branded Traffic` / `Non Branded Traffic` / `Total Traffic` | `GSC_DATA.branded / nonBranded / total` | Click – GSC |
+
+Append Oct to both objects; add `'2026-10'` to `MONTHS` and `formatMonth`; swap “Sep 2026” → “Oct 2026” in insight strings; GSC insights use `length - 2` for “previous month”, so reword “in Aug” → “in Sep”.
+
+---
+
+## FILE 22 — `…Performance_Tracker_Bing_Clicks__-_CyberGlossary*.csv`
+
+**Target constant:** `BING_DATA` (`slide-cyberglossary-traffic.tsx`). Columns here start at `2025 Jul` (matches `MONTHS`).
+
+| CSV row (label col G) | Field |
+|---|---|
+| `Branded` | `branded` |
+| `Non Branded` | `nonBranded` |
+| `Over All CG Pages Clicks` | `total` — **use this row, not `Total  Clicks`** (the deck’s Sep value 4,772 = Over-All row; `Total Clicks` differs by a few clicks) |
+
+Quality gate: branded + non-branded must equal `Over All`. Oct-26: 4,188 + 130 = 4,318 ✔. Flag when Branded % > 95 % (Oct-26 = 97 % → non-branded 130 vs ~1,050 normal looks incomplete; append as supplied but note it).
+
+---
+
+## FILE 23 — `…Performance_Tracker_Direct__-_CyberGlossary*.csv`
+
+**Target constants (same slide):** `DIRECT_DATA` and `DIRECT_GL_DATA`.
+
+1. `DIRECT_DATA.total` ← row `Total Direct Traffic` (columns `2025 Dec … 2026 Oct`; Jul–Nov 2025 are historical). The CSV has **no branded/non-branded split** → append `null` to `nonBranded` and `branded`.
+2. `DIRECT_GL_DATA` (tab *Direct traffic – Gain & Loss*) = **top 10 URLs by absolute gain, previous month → latest month**, built from the URL-level rows (header row starts `Sno, Web page, Page Type…`; URL in col E, keyword = `Target Keyword` col H; use the last two month columns). Fields: `{ url, keyword, prev, curr, change, pct }` (`prev`/`curr` replace the old `jun`/`jul`). Check `Σ prev` and `Σ curr` over **all** URL rows equals the `Total Direct Traffic` of those two months (Oct-26: 18,470 / 17,990 ✔).
+3. Update the tab header (“Sep 2026 → Oct 2026”), both column headers, and the footer string (`Sep–Oct 2026`).
+4. Hardcoded numbers in the *Direct* insight cards (e.g. `18470`, `17260`) are literals — replace with the new latest/previous values.
+
+---
+
+## FILE 24 — International pages (Direct + Organic)
+
+**Target file:** `src/app/components/presentation/slide-international-pages-traffic.tsx`
+**Constants:** `MONTHS`, `formatMonth`, `ORGANIC_COUNTRIES`, `DIRECT_COUNTRIES` (each `{ id, name, color, data[] }`).
+
+| CSV file | Rows used | Constant |
+|---|---|---|
+| `…International_Pages__Direct_Traffic_*.csv` | summary rows `BR, CN, DE, FR, IT, JP, KR, LAT, TW, Total` (cols D = country, month columns `2025 Dec … 2026 Oct`) | `DIRECT_COUNTRIES` (match by `id`, lowercase) |
+| `…International_Pages__Organic_Traffic_*.csv` (the version whose header ends `2026 Oct`) | same row labels | `ORGANIC_COUNTRIES` |
+
+Append **one** Oct value per country; leave the 3,000+ URL rows alone. Integrity check: sum of the 8 non-CN countries must equal `Total` (Oct-26 direct 10,234 ✔, organic 55,486 ✔).
+Insight cards use hardcoded indices (`data[14]`, `data[12]`, `data[13]`, `data[11]`) — after appending, “latest” = index 15; keep Jun = 11, Jul = 12, Aug = 13, Sep = 14, and add Sep as the “previous” reference in the MoM sentence.
+
+---
+
+## DEFAULT FILE-TO-SLIDE ROUTING CHEAT-SHEET (Oct-26 batch)
+
+| CSV | → slide file |
+|---|---|
+| Competitors_by_category (Jul→Oct) | `slide-ngfw`, `slide-sdwan-metrics`, `slide-ot-security`, `slide-dashboard` (SASE), `slide-zero-trust`, `slide-cloud-security` (IBM/Orca), `slide-network-security`, `slide-secops` |
+| Competition_Raw_Data_-_Category | `slide-cloud-security`, `slide-ransomware`, `slide-ai-cybersecurity`, `slide-quantum-security` + legacy vendors on slides 19–23 |
+| Top_50_KW_2026 | `slide-top50kw-summary` |
+| Performance_Tracker_Traffic_-_Articles | `slide-articles-pages-traffic` |
+| Performance_Tracker_Organic_-_Product_Pages | `slide-product-pages-traffic` |
+| Performance_Tracker_Organic_-_CyberGlossary | `slide-cyberglossary-traffic` (GA + GSC tabs) |
+| Performance_Tracker_Bing_Clicks_-_CyberGlossary | `slide-cyberglossary-traffic` (Bing tab) |
+| Performance_Tracker_Direct_-_CyberGlossary | `slide-cyberglossary-traffic` (Direct + Gain/Loss tabs) |
+| International_Pages (Direct / Organic) | `slide-international-pages-traffic` |
+| Cyberglossary_competitor_analysis | `slide-cyberglossary-ranking` (Ahrefs Rank + DA) + `slide-cyberglossary-keywords` (organic keywords, traffic, value, pages) + `slide-cyberglossary-backlinks` (backlinks, referring domains) |
+
+
+---
+
+## FILE 25–32 — EXACT CSV LOCATIONS FOR THE REMAINING FILES (Oct-26 run)
+
+These files were already described by FILES 1–16, but the *row/column locations* and target slides below were verified against the real exports. Use them instead of guessing.
+
+### 25 — `Fortinet_Competition_Raw_Data_-_All*.csv` (FILE 1, 2 data blocks per section)
+Months run `2025 Jul … 2026 Oct` (16 columns). Values carry suffixes (`4.6M`, `862k`, `3.69 M`, `1,234`) → convert to integers (`k`×1e3, `M`×1e6). Vendor labels have trailing spaces (`Fortinet `, `Check Point `).
+
+| Block (row label) | Month columns | Target |
+|---|---|---|
+| `Pages` / `Organic Pages` rows (incl. **Force Point**) | C–R | `slide-organic-pages-overview.tsx` `DATA` (deck starts Dec-25 → append only Oct; `cato`=Cato Networks, `forcepoint` present) |
+| `Country: US` → `Overall Traffic` | C–R | `seo-data.ts` `ORGANIC_TRAFFIC` |
+| same rows, `Branded Traffic` block | U–AJ | `BRANDED_TRAFFIC` |
+| same rows, `Non Branded Traffic` block | AM–BB | `NON_BRANDED_TRAFFIC` |
+| `Location : WW` → `3rd Slide` rows (Overall / Branded / Non-Branded, same column layout) | C–R / U–AJ / AM–BB | `slide-traffic-overview-tabs-ww.tsx` `ORGANIC/BRANDED/NON_BRANDED_TRAFFIC_WW` |
+| `5TH Slide` → `Total Organic Keywords` | C–R | `seo-data.ts` `ORGANIC_KEYWORDS` (consumed by `slide-opportunities.tsx`) |
+| `Page 1 Keywords` | U–AJ | `PAGE_ONE_KEYWORDS` |
+
+Also bump `TRAFFIC_MONTHS` and `KEYWORD_MONTHS` (seo-data.ts) with `'2026-10'`, and rewrite insight strings in `slide-traffic-overview-tabs.tsx`, `slide-traffic-overview-tabs-ww.tsx`, `slide-opportunities.tsx` (`latestIndex` 14 → 15, subtitle). Verify Jul–Sep in the CSV equal the deck before appending (Oct-26: all matched).
+Check: Branded + Non-branded = Overall (Oct-26 Fortinet US 60,474 + 914,912 = 975,386 ✔). Flag a >40 % one-month swing in Fortinet branded (Oct-26: 108,786 → 60,474).
+
+### 26 — `Fortinet_Content_Tracker_-_2026_-_Competiton_Organic.csv` (FILE 8)
+Contains **two** WW blocks: `Source - Semrush` (rows ~31–39) and `Source - Ahref` (rows ~60–68, label `Overall Organic …`). `slide-organic-traffic-performance.tsx` is sourced from the **Ahrefs** block (Dec-25 = col D … Oct-26 = col N). Append only Oct; `Wiz.io` row = `wiz`, `Cato Networks` = `cato`. The `US Organic Pages` block (rows ~14–22) equals the Pages block in FILE 25. Replace hardcoded `[9]` indices with `[MONTHS.length - 1]`/`L`. The `Backlinks` table at the bottom is Apr-26 only — ignore.
+
+### 27 — `Fortinet_Competition_Raw_Data_-_Backlink*.csv` → `slide-backlinks.tsx` (not FILE 16)
+Two stacked tables, `Referring Domains` (rows 5–13) and `Backlinks` (rows 15–23), 16 month columns `2025 Jul … 2026 Oct`, 9 vendors (`Cato Networks`→`cato`, `Checkpoint`→`checkpoint`). Append Oct to `REFERRING_DOMAINS_DATA_INITIAL` and `BACKLINKS_DATA_INITIAL` (`MONTH_KEYS` + `latestIndex`), integers as-is. Oct-26 note: every vendor’s referring domains jump +4 % … +41 % in one month → likely a SEMrush index refresh; mention it in the insight.
+
+### 28 — `Fortinet_Competition_Raw_Data_-_LLM_Metrics*.csv` (FILES 12, 13, 14)
+One sheet, five regions:
+| Region | Location | Target |
+|---|---|---|
+| `Visibility %` / `Share of Voice %` / `Citation %` (Profound) | rows 4–11 / 17–24 / 29–36, cols B–M = `2025 Nov … 2026 Oct` (12) | `slide-profund-metrics.tsx` — append one value (1 decimal, strip `%`); extend `MONTHS`, `MONTH_KEYS`, `MONTH_LABELS_LONG`, `formatMonth`; **3M/6M offsets must be `MONTHS.length - 3 / - 6`**, `latestIndex = MONTHS.length - 1` |
+| `AIO Keywords` / `AIO Traffic` (SEMrush) | right-hand block, vendor names in col O, months P–AE = `2025 Jul … 2026 Oct` (16); rows 5–13 / 17–25; thousands separators | `slide-ai-overview.tsx` `AIO_KEYWORDS_DATA_INITIAL`, `AIO_TRAFFIC_DATA_INITIAL` (+`MONTH_KEYS`, `MONTHS_LABELS`, `formatMonth`, `latestIndex`) |
+| Category AIO score blocks (`Secure Access Service Edge`, `OT Security`, `ZTNA`, `Cloud Security`, `SecOps`, `Firewall`, `Quantum Security`, `AI Cybersecurity`), cols P–AA = `Nov … Oct` | each block = `Top performer` row + `Fortinet` row | `slide-category-performance.tsx` |
+
+**Category block decoding rule** (non-obvious): `Top performer` = `"XX (score%)"`, XX ∈ FT / PA / CS / CO. If XX = FT, the next row holds the best *competitor* as `"PA (score%)"` and Fortinet = top; otherwise the next row is Fortinet’s plain score and `top` = the leader’s score. Append `{ period:'2026-10', fortinet, top, <competitorKey> }` (SASE/OT/ZTNA/Quantum `paloAlto`; Firewall `paloalto` + `cisco: undefined`; AI `crowdstrike`; Cloud & SecOps none). Also refresh the “Top Performers” legend text and the “Snapshot” header. Beware typos in the sheet (`FT (96..7%)`) — parse with a numeric regex.
+Sanity flag: Cloud Security leader 44.8 unchanged Aug–Oct → confirm export refreshed.
+
+### 29 — `Fortinet_Content_Tracker_-_2026_-_Featured_Snippets_and_AI_Overview.csv` (FILE 15)
+Only the first table matters: `Website Featured Snippets`, header `Dec 2025 … 2026 Oct` in cols E–O (11), vendor rows 14–22 (`catonetworks`→`cato`). The three lower tables (`AI Keywords`, `AI Traffic`, `Traffic to KW`) duplicate FILE 28 — do not use. Append Oct to `SNIPPET_DATA`; replace hardcoded `latestIdx = 9` by `MONTH_KEYS.length - 1`.
+⚠ Oct-26: Fortinet 13 → 0, category total 30 → 1. Append as supplied (0 = genuine zero) but state in an insight card that the Aug→Oct slide is uniform and should be validated in SEMrush; guard divisions by `rankings[1].value`.
+
+### 30 — `Fortinet_Content_Tracker_-_2026_-_Competiton_Page_Speed_Monitoring.csv` (FILE 9)
+Blocks `Desktop` (rows 10–12) and `Mobile` (rows 15–17): rows = `Performance`, `Accessibility`, `Speed Index`; each vendor occupies 14 columns, 11 month values (`2025 Dec … 2026 Oct`) after an `Avg of Aug-…` column: Fortinet C–M, Cisco Q–AA, HPE AE–AO, Paloaltonetworks AS–BC, Checkpoint BG–BQ, Crowdstrike BU–CE. Append Oct to `DESKTOP`/`MOBILE`, `MONTHS`, `formatMonth`, subtitle/footer, and **re-read every static claim in `renderInsights()`** (e.g. “at or below 25 every month”, “Sep is the slowest”) — Oct-26 broke two of them.
+
+### 31 — `Fortinet_Content_Tracker_-_2026_-_Bing__Google_and_Yahoo__Organic__Traffic.csv`
+| CSV block (col A label) | Target in `slide-organic-performance.tsx` |
+|---|---|
+| `Organic` → `Google/Bing/Yahoo – Sessions` / `– Users` (rows 8–13, `2025 Dec … 2026 Oct` in C–M) | `SEARCH_DATA.sessions / users` |
+| `US Clicks`, `US Impressions` (GSC, Bing, ratio) | `METRICS_DATA['us-clicks' / 'us-impressions']` |
+| `WW Clicks`, `WW Impressions` | `METRICS_DATA['ww-clicks' / 'ww-impressions']` |
+| `llm traffic` → `Chatgpt / Perplexity / Gemini / Claude – Sessions` | `AI_ENGINES[*].data` |
+| `No.of Backlinks` table (GSC, SEMRush, Ahrefs, Bing, Majestic) | `slide-fortinet-backlinks-by-source.tsx` `SOURCES` (FILE 16) |
+Append Oct to `MONTHS_8` (+`formatMonth`). The **AIO Metrics tab** (`AIO_COUNTRIES`, `MONTHS_7`) is fed by `…International_AIO_Traffic*.csv`, which has no Oct column yet — leave it at Sep and say so. Use `L = MONTHS_8.length - 1` instead of `[9]` in the insights. Oct-26 flags: GSC impressions −41 % US / −39 % WW while clicks rose (SERP-reporting change, not demand).
+
+### 32 — `Competitions__URLs_-_sep_2026_-_PAN_-_Cyberpedia_URLs*.csv` / `…_Summary*.csv`
+Oct column exists in the PAN URL list (`03 Oct 2026`, 804 URLs in the column) but the deck’s PAN total (809 / Sep 804) is **not reproducible** from raw URL counts (Sep column = 790). Without an Oct *Summary* row there is no trustworthy page count → **do not change** `slide-competitive-intel.tsx` / `slide-key-takeaways.tsx`; list under *Could Not Update* until the Summary tab for Oct is provided. `slide-cyberglossary-ranking.tsx` (global rank) needs the Ahrefs rank export, which is not in this batch.
+
+
+---
+
 ## MONTH FORMAT REFERENCE
 
 | Display label | TypeScript key |
@@ -790,7 +1022,12 @@ Process updates in this order to avoid dependency issues:
 16. All 8 category-chart slides (19–27) — update `MONTHS`, four data constants, `latestIndex` in each (FILE 7)
 17. All 8 keyword-gap slides (19–24, 26, 27) — replace `KEYWORD_GAP_DATA` (FILE 4)
 18. `slide-opportunities.tsx` — update untapped keyword constant (if file provided)
-19. `slide-competitive-findings.tsx` + `src/imports/sum_tab_1–4.png` — update Web Experience slide from docx (if docx provided)
+19. `slide-competitive-findings.tsx` + all extracted `src/imports/sum_tab_*.png` assets — update slide 46 Web Experience from DOCX (if provided)
+20. `slide-articles-pages-traffic.tsx`, `slide-product-pages-traffic.tsx` — FILES 19–20
+21. `slide-cyberglossary-traffic.tsx` — FILES 21–23 (GA, GSC, Bing, Direct, Direct Gain/Loss)
+22. `slide-international-pages-traffic.tsx` — FILE 24 (Direct + Organic)
+23. `slide-top50kw-summary.tsx` — FILE 18
+24. `slide-network-security.tsx` (and `slide-secops.tsx` once a complete export exists) — FILE 17
 
 ---
 
@@ -858,6 +1095,11 @@ After edits, verify:
 - [ ] No `undefined` values — every cell is either a number or `null`
 - [ ] Subtitle props and SlideFooter source strings updated in every edited file to reflect the new date range
 - [ ] Hardcoded month names in insight card `content` strings updated (search for old month name, e.g. "Aug 2026")
+- [ ] `slide-top50kw-summary.tsx` — every array in `SUMMARY_DATA`, `CATEGORY_DATA`, `KEYWORDS` has `MONTHS.length` entries; no hardcoded `[9]`/`/10` left
+- [ ] `slide-cyberglossary-traffic.tsx` — `GA_DATA`, `GSC_DATA`, `BING_DATA`, `DIRECT_DATA` arrays all have `MONTHS.length` entries; `DIRECT_GL_DATA` uses `prev`/`curr`
+- [ ] `slide-international-pages-traffic.tsx` — every country array has `MONTHS.length` entries; Σ countries = Total
+- [ ] Category slides — no duplicated-vendor columns (Forcepoint rule); SecOps partial-looking Oct values are appended with an explicit validation warning; `grep -rn "Sep 2026"` in the 9 category files returns nothing outside Priority-Keyword text
+- [ ] `grep -rn "2026-09'" src/app` — every remaining hit is a legitimate historical month, not a stale “latest” reference
 
 ---
 

@@ -30,88 +30,88 @@ const VENDORS = [
   { id: 'wiz',          name: 'Wiz',           color: '#06B6D4' },
 ];
 
-// Full data - Jul 2025 to Sep 2026 (14 months)
+// Full data - Jul-25 to Oct-26 (16 months)
 const TOTAL_KEYWORDS_DATA_INITIAL = {
-  fortinet:    [309, 362, 307, 288, 289, 295, 304, 293, 287, 273, 276, 266, 617, 591, 564],
-  cisco:       [316, 354, 315, 297, 308, 306, 314, 329, 317, 316, 310, 313, 757, 749, 718],
-  hpe:         [168, 185, 138, 127, 135, 128, 125, 124, 107,  75,  71,  87, 179, 187, 231],
-  paloalto:    [309, 357, 314, 283, 291, 309, 312, 306, 297, 305, 303, 310, 698, 670, 633],
-  checkpoint:  [222, 236,  91,  48,  65,  68,  79,  74,  71,  50,  48,  52,  46,  31,  29],
-  crowdstrike: [null, null, null, null, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0], // Data starts Nov 2025
-  catonetworks:[null, null, null, null, null, 185, 179, 132, 117, 82, 63, 55, 119, 121, 91], // Data starts Dec 2025
-  sentinelone: [null, null, null, null, null, 1, 2, 2, 1, 0, 0, 0, 0, 0, 0], // Data starts Dec 2025
-  wiz:         [null, null, null, null, null, null, null, null, 0, 0, 0, 0, 0, 0, 0], // Mar 2026 only
+  fortinet:    [309, 362, 307, 288, 289, 295, 304, 293, 287, 273, 276, 266, 617, 591, 564, 538],
+  cisco:       [316, 354, 315, 297, 308, 306, 314, 329, 317, 316, 310, 313, 757, 749, 718, 709],
+  hpe:         [168, 185, 138, 127, 135, 128, 125, 124, 107, 75, 71, 87, 179, 187, 231, 240],
+  paloalto:    [309, 357, 314, 283, 291, 309, 312, 306, 297, 305, 303, 310, 698, 670, 633, 589],
+  checkpoint:  [222, 236, 91, 48, 65, 68, 79, 74, 71, 50, 48, 52, 46, 31, 29, 39],
+  crowdstrike: [null, null, null, null, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0], // Data starts Nov 2025
+  catonetworks:[null, null, null, null, null, 185, 179, 132, 117, 82, 63, 55, 119, 121, 91, 80], // Data starts Dec 2025
+  sentinelone: [null, null, null, null, null, 1, 2, 2, 1, 0, 0, 0, 0, 0, 0, 0], // Data starts Dec 2025
+  wiz:         [null, null, null, null, null, null, null, null, 0, 0, 0, 0, 0, 0, 0, 0], // Mar 2026 only
 };
 
 const CUMULATIVE_TRAFFIC_DATA_INITIAL = {
-  fortinet:    [4029, 5416, 6311, 5961, 5984, 6055, 6196, 5974, 7113, 6425, 7282, 5618, 7963, 6714, 6284],
-  cisco:       [8246, 10236, 10316, 9702, 9574, 8833, 8824, 11169, 8474, 9640, 8257, 6583, 9156, 7931, 7129],
-  hpe:         [1674, 1545, 1737, 1584, 1554, 1538, 1138, 1061, 900, 790, 662, 644, 1284, 1285, 1329],
-  paloalto:    [7517, 7150, 7080, 6979, 7379, 8021, 8281, 8073, 8398, 8621, 7196, 6847, 8525, 7806, 6413],
-  checkpoint:  [ 217,  183,  163,   98,  262,  167,  215,  249, 209, 345, 273, 247, 249, 131, 176],
-  crowdstrike: [null, null, null, null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], // Data starts Nov 2025
-  catonetworks:[null, null, null, null, null, 1118, 1074, 1108, 964, 563, 506, 440, 753, 968, 453], // Data starts Dec 2025
-  sentinelone: [null, null, null, null, null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], // Data starts Dec 2025
-  wiz:         [null, null, null, null, null, null, null, null, 0, 0, 0, 0, 0, 0, 0], // Mar 2026 only
+  fortinet:    [4029, 5416, 6311, 5961, 5984, 6055, 6196, 5974, 7113, 6425, 7282, 5618, 7963, 6714, 6284, 6797],
+  cisco:       [8246, 10236, 10316, 9702, 9574, 8833, 8824, 11169, 8474, 9640, 8257, 6583, 9156, 7931, 7129, 7302],
+  hpe:         [1674, 1545, 1737, 1584, 1554, 1538, 1138, 1061, 900, 790, 662, 644, 1284, 1285, 1329, 1337],
+  paloalto:    [7517, 7150, 7080, 6979, 7379, 8021, 8281, 8073, 8398, 8621, 7196, 6847, 8525, 7806, 6413, 6167],
+  checkpoint:  [217, 183, 163, 98, 262, 167, 215, 249, 209, 345, 273, 247, 249, 131, 176, 171],
+  crowdstrike: [null, null, null, null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], // Data starts Nov 2025
+  catonetworks:[null, null, null, null, null, 1118, 1074, 1108, 964, 563, 506, 440, 753, 968, 453, 654], // Data starts Dec 2025
+  sentinelone: [null, null, null, null, null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], // Data starts Dec 2025
+  wiz:         [null, null, null, null, null, null, null, null, 0, 0, 0, 0, 0, 0, 0, 0], // Mar 2026 only
 };
 
 const PAGE_ONE_KEYWORDS_DATA_INITIAL = {
-  fortinet:    [205, 257, 271, 277, 282, 284, 292, 277, 276, 272, 270, 262, 611, 588, 562],
-  cisco:       [249, 278, 292, 284, 296, 289, 291, 309, 295, 306, 297, 301, 751, 744, 714],
-  hpe:         [ 89, 108, 110, 107, 124, 106, 105, 103,  88,  62,  61,  85, 177, 179, 223],
-  paloalto:    [236, 270, 286, 274, 277, 296, 302, 293, 285, 302, 297, 303, 684, 665, 628],
-  checkpoint:  [ 21,  16,  18,  16,  29,  22,  24,  24,  27,  34,  30,  36,  34,  22,  26],
-  crowdstrike: [null, null, null, null, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0], // Data starts Nov 2025
-  catonetworks:[null, null, null, null, null, 142, 135, 94, 88, 67, 47, 46, 115, 119, 88], // Data starts Dec 2025
-  sentinelone: [null, null, null, null, null, null, null, null, null, null, null, 0, 0, 0, 0], // No data in CSV
-  wiz:         [null, null, null, null, null, null, null, null, 0, 0, 0, 0, 0, 0, 0], // Mar 2026 only
+  fortinet:    [205, 257, 271, 277, 282, 284, 292, 277, 276, 272, 270, 262, 611, 588, 562, 534],
+  cisco:       [249, 278, 292, 284, 296, 289, 291, 309, 295, 306, 297, 301, 751, 744, 714, 702],
+  hpe:         [89, 108, 110, 107, 124, 106, 105, 103, 88, 62, 61, 85, 177, 179, 223, 237],
+  paloalto:    [236, 270, 286, 274, 277, 296, 302, 293, 285, 302, 297, 303, 684, 665, 628, 586],
+  checkpoint:  [21, 16, 18, 16, 29, 22, 24, 24, 27, 34, 30, 36, 34, 22, 26, 35],
+  crowdstrike: [null, null, null, null, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0], // Data starts Nov 2025
+  catonetworks:[null, null, null, null, null, 142, 135, 94, 88, 67, 47, 46, 115, 119, 88, 80], // Data starts Dec 2025
+  sentinelone: [null, null, null, null, null, null, null, null, null, null, null, 0, 0, 0, 0, 0], // No data in CSV
+  wiz:         [null, null, null, null, null, null, null, null, 0, 0, 0, 0, 0, 0, 0, 0], // Mar 2026 only
 };
 
 const AIO_DATA_INITIAL = {
-  fortinet:    [141, 198, 149, 142, 157, 160, 160, 155, 162, 161, 180, 176, 332, 292, 279],
-  cisco:       [146, 201, 154, 160, 164, 160, 158, 164, 174, 180, 189, 194, 383, 346, 341],
-  hpe:         [ 74, 112,  71,  62,  76,  81,  80,  76,  64,  38,  40,  56, 102, 100, 124],
-  paloalto:    [145, 201, 149, 144, 152, 162, 160, 155, 170, 174, 188, 193, 375, 324, 304],
-  checkpoint:  [113, 148,  44,  32,  54,  55,  62,  57,  55,  43,  41,  46,  39,  23,  17],
-  crowdstrike: [null, null, null, null, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0], // Data starts Nov 2025
-  catonetworks:[null, null, null, null, null, 107, 108, 89, 82, 57, 47, 41, 65, 71, 47], // Data starts Dec 2025
-  sentinelone: [null, null, null, null, null, 1, 2, 2, 1, 0, 0, 0, 0, 0, 0], // Data starts Dec 2025
-  wiz:         [null, null, null, null, null, null, null, null, 0, 0, 0, 0, 0, 0, 0], // Mar 2026 only
+  fortinet:    [141, 198, 149, 142, 157, 160, 160, 155, 162, 161, 180, 176, 332, 292, 279, 303],
+  cisco:       [146, 201, 154, 160, 164, 160, 158, 164, 174, 180, 189, 194, 383, 346, 341, 357],
+  hpe:         [74, 112, 71, 62, 76, 81, 80, 76, 64, 38, 40, 56, 102, 100, 124, 152],
+  paloalto:    [145, 201, 149, 144, 152, 162, 160, 155, 170, 174, 188, 193, 375, 324, 304, 324],
+  checkpoint:  [113, 148, 44, 32, 54, 55, 62, 57, 55, 43, 41, 46, 39, 23, 17, 23],
+  crowdstrike: [null, null, null, null, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0], // Data starts Nov 2025
+  catonetworks:[null, null, null, null, null, 107, 108, 89, 82, 57, 47, 41, 65, 71, 47, 38], // Data starts Dec 2025
+  sentinelone: [null, null, null, null, null, 1, 2, 2, 1, 0, 0, 0, 0, 0, 0, 0], // Data starts Dec 2025
+  wiz:         [null, null, null, null, null, null, null, null, 0, 0, 0, 0, 0, 0, 0, 0], // Mar 2026 only
 };
 
-const MONTHS = ['2025-07', '2025-08', '2025-09', '2025-10', '2025-11', '2025-12', '2026-01', '2026-02', '2026-03', '2026-04', '2026-05', '2026-06', '2026-07', '2026-08', '2026-09'];
+const MONTHS = ['2025-07', '2025-08', '2025-09', '2025-10', '2025-11', '2025-12', '2026-01', '2026-02', '2026-03', '2026-04', '2026-05', '2026-06', '2026-07', '2026-08', '2026-09', '2026-10'];
 
 // Format function for month display
 const formatMonth = (monthKey: string) => {
   const [year, month] = monthKey.split('-');
   const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  return `${monthNames[parseInt(month) - 1]} ${year}`;
+  return `${monthNames[parseInt(month) - 1]}-${year.slice(2)}`;
 };
 
 type TabType = 'keywords' | 'page-one' | 'traffic' | 'aio' | 'keyword-gap';
 
 const KEYWORD_GAP_DATA = {
   tofu: [
-    { keyword: "sd-wan", sv: 6900, kd: 62, fortinet: 1, cisco: 1, paloalto: null, checkpoint: null, crowdstrike: null },
+    { keyword: "sd-wan", sv: 6900, kd: 62, fortinet: 1, cisco: 1, paloalto: 1, checkpoint: null, crowdstrike: null },
     { keyword: "what is sd-wan", sv: 1300, kd: 30, fortinet: 1, cisco: 1, paloalto: 1, checkpoint: 1, crowdstrike: null },
     { keyword: "sd wan defined", sv: 100, kd: 35, fortinet: 1, cisco: 1, paloalto: 1, checkpoint: null, crowdstrike: null },
-    { keyword: "sd wan meaning", sv: 1000, kd: 28, fortinet: 1, cisco: 1, paloalto: null, checkpoint: 1, crowdstrike: null },
-    { keyword: "software defined wan", sv: 600, kd: 37, fortinet: 3, cisco: 1, paloalto: 1, checkpoint: null, crowdstrike: null },
+    { keyword: "sd wan meaning", sv: 1000, kd: 28, fortinet: 1, cisco: 1, paloalto: 1, checkpoint: 1, crowdstrike: null },
+    { keyword: "software defined wan", sv: 600, kd: 37, fortinet: 4, cisco: 1, paloalto: 1, checkpoint: null, crowdstrike: null },
   ],
   mofu: [
-    { keyword: "sd wan software", sv: 350, kd: 44, fortinet: null, cisco: 1, paloalto: 1, checkpoint: null, crowdstrike: null },
-    { keyword: "sd wan device", sv: 200, kd: 40, fortinet: 1, cisco: 4, paloalto: 1, checkpoint: null, crowdstrike: null },
-    { keyword: "secure sd wan", sv: 250, kd: 10, fortinet: 1, cisco: 6, paloalto: 1, checkpoint: null, crowdstrike: null },
-    { keyword: "sd-wan software", sv: 150, kd: 45, fortinet: null, cisco: 2, paloalto: 1, checkpoint: null, crowdstrike: null },
-    { keyword: "sd wan security", sv: 700, kd: 2, fortinet: 5, cisco: 1, paloalto: 1, checkpoint: null, crowdstrike: null },
+    { keyword: "sd wan software", sv: 350, kd: 44, fortinet: 1, cisco: 1, paloalto: 3, checkpoint: null, crowdstrike: null },
+    { keyword: "sd wan device", sv: 200, kd: 40, fortinet: 1, cisco: 1, paloalto: 1, checkpoint: null, crowdstrike: null },
+    { keyword: "secure sd wan", sv: 250, kd: 10, fortinet: 1, cisco: null, paloalto: 1, checkpoint: null, crowdstrike: null },
+    { keyword: "sd-wan software", sv: 150, kd: 45, fortinet: 1, cisco: 1, paloalto: 3, checkpoint: null, crowdstrike: null },
+    { keyword: "sd wan security", sv: 700, kd: 2, fortinet: 1, cisco: 3, paloalto: 1, checkpoint: null, crowdstrike: null },
   ],
   bofu: [
-    { keyword: "sd-wan solutions", sv: 600, kd: 33, fortinet: 13, cisco: 6, paloalto: 7, checkpoint: 23, crowdstrike: null },
+    { keyword: "sd-wan solutions", sv: 600, kd: 33, fortinet: 1, cisco: 1, paloalto: null, checkpoint: null, crowdstrike: null },
     { keyword: "sd wan service", sv: 350, kd: 1, fortinet: 1, cisco: 7, paloalto: 1, checkpoint: null, crowdstrike: null },
     { keyword: "sd wan services", sv: 300, kd: 12, fortinet: 1, cisco: 1, paloalto: 1, checkpoint: null, crowdstrike: null },
-    { keyword: "sd-wan platform", sv: 40, kd: 31, fortinet: 10, cisco: 3, paloalto: null, checkpoint: null, crowdstrike: null },
-    { keyword: "sd-wan vendors", sv: 150, kd: 2, fortinet: null, cisco: 9, paloalto: null, checkpoint: 11, crowdstrike: null },
-    { keyword: "sd-wan providers", sv: 200, kd: 2, fortinet: null, cisco: null, paloalto: null, checkpoint: 9, crowdstrike: null },
+    { keyword: "sd-wan platform", sv: 40, kd: 31, fortinet: 5, cisco: 1, paloalto: 11, checkpoint: null, crowdstrike: null },
+    { keyword: "sd-wan vendors", sv: 150, kd: 2, fortinet: null, cisco: 1, paloalto: 8, checkpoint: null, crowdstrike: null },
+    { keyword: "sd-wan providers", sv: 200, kd: 2, fortinet: null, cisco: 1, paloalto: null, checkpoint: 9, crowdstrike: null },
   ],
 };
 
@@ -297,13 +297,13 @@ export function SlideSDWANMetrics({ onNavigateHome }: { onNavigateHome?: () => v
               icon={TrendingUp}
               type="success"
               title="Fortinet"
-              content="From Jul 2025 to Sep 2026, keywords grew 309 → 564 (+82.5%), all of it from the Jul 2026 step (266 → 617), easing to 564 since; still trails Cisco 718 and Palo Alto 633."
+              content="From Jul-25 to Oct-26, keywords grew 309 → 538 (+74.1%), trailing Cisco 709 and Palo Alto 589; Jul-26 data refresh step 266 → 617; Oct MoM −4.6% (564 → 538)."
             />
             <InsightCard
               icon={TrendingUp}
               type="success"
               title="Competitions"
-              content="From Jul 2025 to Sep 2026, Cisco grew 316 → 718 (+127.2%), Palo Alto grew 309 → 633 (+104.9%), both also lifted by the Jul 2026 refresh."
+              content="From Jul-25 to Oct-26, Cisco grew 316 → 709 (+124.4%), Palo Alto grew 309 → 589 (+90.6%); Oct MoM: Cisco −1.3%, Palo Alto −7.0%."
             />
           </InsightsSection>
         );
@@ -314,13 +314,13 @@ export function SlideSDWANMetrics({ onNavigateHome }: { onNavigateHome?: () => v
               icon={TrendingUp}
               type="success"
               title="Fortinet"
-              content="From Jul 2025 to Sep 2026, rankings grew 205 → 562 (+174.1%), driven by the Jul-26 jump (262 → 611), trailing Cisco 714 and Palo Alto 628."
+              content="From Jul-25 to Oct-26, page-1 keywords grew 205 → 534 (+160.5%), trailing Cisco 702 and Palo Alto 586; Jul-26 data refresh step 262 → 611; Oct MoM −5.0% (562 → 534)."
             />
             <InsightCard
               icon={TrendingUp}
               type="success"
               title="Competitions"
-              content="From Jul 2025 to Sep 2026, Cisco grew 249 → 714 (+186.7%), Palo Alto grew 236 → 628 (+166.1%), both also stepping up in Jul-26."
+              content="From Jul-25 to Oct-26, Cisco grew 249 → 702 (+181.9%), Palo Alto grew 236 → 586 (+148.3%); Oct MoM: Cisco −1.7%, Palo Alto −6.7%."
             />
           </InsightsSection>
         );
@@ -331,13 +331,13 @@ export function SlideSDWANMetrics({ onNavigateHome }: { onNavigateHome?: () => v
               icon={TrendingUp}
               type="success"
               title="Fortinet"
-              content="From Jul 2025 to Sep 2026, traffic grew 4,029 → 6,284 (+56.0%), peaking at 7,963 in Jul-26; trails Cisco 7,129 while Palo Alto 6,413 is close behind."
+              content="From Jul-25 to Oct-26, traffic grew 4,029 → 6,797 (+68.7%), trailing Cisco 7,302; Jul-26 data refresh step 5,618 → 7,963; Oct MoM +8.2% (6,284 → 6,797)."
             />
             <InsightCard
               icon={TrendingDown}
               type="error"
               title="Competitions"
-              content="From Jul 2025 to Sep 2026, Cisco declined 8,246 → 7,129 (−13.5%), Palo Alto declined 7,517 → 6,413 (−14.7%), despite Jul-26 bumps; Cisco has led Fortinet in traffic every month."
+              content="From Jul-25 to Oct-26, Cisco declined 8,246 → 7,302 (−11.4%), Palo Alto declined 7,517 → 6,167 (−18.0%); Oct MoM: Cisco +2.4%, Palo Alto −3.8%."
             />
           </InsightsSection>
         );
@@ -348,13 +348,13 @@ export function SlideSDWANMetrics({ onNavigateHome }: { onNavigateHome?: () => v
               icon={TrendingUp}
               type="success"
               title="Fortinet"
-              content="From Jul 2025 to Sep 2026, AIO grew 141 → 279 (+97.9%), doubling at the Jul-26 step (176 → 332) and easing since, trailing Cisco 341 and Palo Alto 304."
+              content="From Jul-25 to Oct-26, AIO keywords grew 141 → 303 (+114.9%), trailing Cisco 357 and Palo Alto 324; Jul-26 data refresh step 176 → 332; Oct MoM +8.6% (279 → 303)."
             />
             <InsightCard
               icon={TrendingUp}
               type="success"
               title="Competitions"
-              content="From Jul 2025 to Sep 2026, Cisco grew 146 → 341 (+133.6%), Palo Alto grew 145 → 304 (+109.7%), both lifted by the Jul-26 step."
+              content="From Jul-25 to Oct-26, Cisco grew 146 → 357 (+144.5%), Palo Alto grew 145 → 324 (+123.4%); Oct MoM: Cisco +4.7%, Palo Alto +6.6%."
             />
           </InsightsSection>
         );
@@ -365,13 +365,13 @@ export function SlideSDWANMetrics({ onNavigateHome }: { onNavigateHome?: () => v
               icon={TrendingUp}
               type="success"
               title="Fortinet"
-              content="Ranks #1 for 4 of 5 TOFU terms (sd-wan, what is sd-wan, defined, meaning) plus 'sd wan service', 'sd wan services', 'sd wan device' and 'secure sd wan' — strong core and service-intent coverage."
+              content="Fortinet ranks #1 across four of five TOFU terms, all five MOFU terms and the three highest-volume BOFU solution/service terms."
             />
             <InsightCard
               icon={Target}
               type="warning"
               title="Competitions"
-              content="Fortinet is #13 for 'sd-wan solutions' (SV 600; Cisco #6, Palo Alto #7) and unranked for 'sd wan software', 'sd-wan software', 'sd-wan vendors' and 'sd-wan providers' — Cisco and Palo Alto hold the software terms; Cisco and Check Point hold vendors/providers."
+              content="The remaining commercial gaps are vendor/provider discovery: Fortinet is absent for 'sd-wan vendors' and 'sd-wan providers', while Cisco ranks #1 for both. 'sd-wan platform' is the next upgrade opportunity at #5."
             />
           </InsightsSection>
         );
@@ -381,7 +381,7 @@ export function SlideSDWANMetrics({ onNavigateHome }: { onNavigateHome?: () => v
   };
 
   const getPerformanceSummary = () => {
-    const latestIndex = 14; // Sep 2026
+    const latestIndex = 15; // Oct 2026
     let dataSource: Record<string, number[]>;
     let formatValue: (val: number) => string;
 
@@ -499,7 +499,7 @@ export function SlideSDWANMetrics({ onNavigateHome }: { onNavigateHome?: () => v
     <SlideContainer slideNumber={20} onNavigateHome={onNavigateHome} source="Ahrefs">
       <SlideHeader
         title="SD-WAN"
-        subtitle="(Jul 2025 – Sep 2026)"
+        subtitle="(Jul-25 – Oct-26)"
       />
       
       {!isEditing ? (
@@ -628,7 +628,7 @@ export function SlideSDWANMetrics({ onNavigateHome }: { onNavigateHome?: () => v
       ) : (
         <div className="flex-1 overflow-auto">
           <div className="bg-white border border-gray-200 rounded-lg p-6">
-            <h3 className="text-sm font-bold text-gray-900 mb-4">Edit SD-WAN Metrics Data (Jul 2025 – Sep 2026)</h3>
+            <h3 className="text-sm font-bold text-gray-900 mb-4">Edit SD-WAN Metrics Data (Jul-25 – Oct-26)</h3>
             <div className="space-y-6">
               {VENDORS.map((vendor) => (
                 <div key={vendor.id} className="bg-gray-50 rounded-lg p-4 border border-gray-200">

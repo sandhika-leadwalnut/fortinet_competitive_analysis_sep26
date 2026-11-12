@@ -6,50 +6,48 @@ import {
   SlideFooter,
 } from './design-system';
 
-// Missing Keywords Data (Sep 2026) — Source: SEMrush Keyword Gap Tool
+// Missing Keywords Data (Oct 2026) — Source: SEMrush Keyword Gap Tool
 const missingKeywordsData = [
-  { keyword: 'data loss protection', intent: 'Informational', volume: 2900, kd: 47, ft: 0, pa: 29, cp: 17, cisco: 27, cs: 3 },
-  { keyword: 'cloud native security', intent: 'Informational', volume: 2400, kd: 42, ft: 0, pa: 1, cp: 77, cisco: 65, cs: 24 },
-  { keyword: 'cspm tools', intent: 'Commercial', volume: 1300, kd: 41, ft: 0, pa: 5, cp: 17, cisco: 46, cs: 28 },
+  { keyword: 'application security posture management', intent: 'Informational', volume: 1600, kd: 34, ft: 0, pa: 3, cp: 71, cisco: 40, cs: 10 },
+  { keyword: 'prompt injection attack', intent: 'Informational', volume: 1300, kd: 63, ft: 0, pa: 2, cp: 34, cisco: 27, cs: 5 },
   { keyword: 'cloud security monitoring', intent: 'Informational', volume: 1000, kd: 19, ft: 0, pa: 21, cp: 77, cisco: 43, cs: 31 },
-  { keyword: 'generative ai security', intent: 'Informational', volume: 1000, kd: 32, ft: 0, pa: 3, cp: 8, cisco: 51, cs: 19 },
-  { keyword: 'cloud web security', intent: 'Informational', volume: 720, kd: 55, ft: 0, pa: 7, cp: 29, cisco: 45, cs: 28 },
-  { keyword: 'prompt injections', intent: 'Informational', volume: 720, kd: 74, ft: 0, pa: 6, cp: 20, cisco: 21, cs: 8 },
-  { keyword: 'waf rules', intent: 'Informational', volume: 590, kd: 38, ft: 0, pa: 16, cp: 10, cisco: 42, cs: 13 },
-  { keyword: 'web application firewall software', intent: 'Informational', volume: 590, kd: 75, ft: 0, pa: 5, cp: 30, cisco: 1, cs: 17 },
-  { keyword: 'cloud web application firewall', intent: 'Commercial, Informational', volume: 480, kd: 61, ft: 0, pa: 80, cp: 33, cisco: 4, cs: 19 },
-  { keyword: 'cybersecurity assessments', intent: 'Informational', volume: 480, kd: 40, ft: 0, pa: 7, cp: 55, cisco: 70, cs: 35 },
-  { keyword: 'cloud based endpoint security', intent: 'Informational', volume: 390, kd: 33, ft: 0, pa: 3, cp: 23, cisco: 8, cs: 64 },
+  { keyword: 'cloud waf', intent: 'Commercial, Informational', volume: 1000, kd: 57, ft: 0, pa: 15, cp: 23, cisco: 9, cs: 34 },
+  { keyword: 'managed detection and response services', intent: 'Commercial, Informational', volume: 1000, kd: 56, ft: 0, pa: 1, cp: 13, cisco: 7, cs: 28 },
+  { keyword: 'cloud iam', intent: 'Informational', volume: 880, kd: 55, ft: 0, pa: 51, cp: 78, cisco: 59, cs: 58 },
+  { keyword: 'generative ai cybersecurity', intent: '', volume: 720, kd: 45, ft: 0, pa: 1, cp: 13, cisco: 17, cs: 11 },
+  { keyword: 'machine learning in cybersecurity', intent: 'Informational', volume: 720, kd: 55, ft: 0, pa: 10, cp: 25, cisco: 2, cs: 1 },
+  { keyword: 'siem monitoring', intent: 'Informational', volume: 590, kd: 53, ft: 0, pa: 14, cp: 77, cisco: 8, cs: 5 },
+  { keyword: 'cloud web application firewall', intent: 'Commercial, Informational', volume: 480, kd: 65, ft: 0, pa: 11, cp: 68, cisco: 2, cs: 14 },
+  { keyword: 'cloud threat detection', intent: 'Informational', volume: 390, kd: 27, ft: 0, pa: 3, cp: 46, cisco: 5, cs: 7 },
+  { keyword: 'network segmentation solutions', intent: 'Informational', volume: 260, kd: 45, ft: 0, pa: 6, cp: 55, cisco: 3, cs: 17 },
+  { keyword: 'cloud based endpoint protection', intent: 'Informational', volume: 210, kd: 30, ft: 0, pa: 12, cp: 27, cisco: 3, cs: 1 },
+  { keyword: 'agentic systems security frameworks', intent: 'Informational', volume: 140, kd: 21, ft: 0, pa: 7, cp: 24, cisco: 44, cs: 52 },
+  { keyword: 'what is healthcare cybersecurity', intent: 'Informational', volume: 140, kd: 38, ft: 0, pa: 15, cp: 17, cisco: 53, cs: 7 },
 ];
 
-// Untapped Keywords Data (Sep 2026) — Source: SEMrush Keyword Gap Tool
+// Untapped Keywords Data (Oct 2026) — Source: SEMrush Keyword Gap Tool
 const untappedKeywordsData = [
-  { keyword: 'cybersecurity tips', intent: 'Informational', volume: 450000, kd: 48, ft: 0, pa: 0, cp: 12, cisco: 0, cs: 0 },
-  { keyword: 'cloud migration', intent: 'Informational', volume: 5400, kd: 43, ft: 0, pa: 43, cp: 0, cisco: 30, cs: 0 },
-  { keyword: 'ai risk management', intent: 'Informational', volume: 3600, kd: 73, ft: 0, pa: 5, cp: 0, cisco: 0, cs: 0 },
-  { keyword: 'security operations center', intent: 'Informational', volume: 3600, kd: 50, ft: 0, pa: 5, cp: 0, cisco: 0, cs: 0 },
-  { keyword: 'behavioral segmentation', intent: 'Informational', volume: 2900, kd: 40, ft: 0, pa: 0, cp: 0, cisco: 13, cs: 0 },
-  { keyword: 'ai observability', intent: 'Informational', volume: 2400, kd: 51, ft: 0, pa: 31, cp: 0, cisco: 0, cs: 0 },
-  { keyword: 'ai monitoring', intent: 'Informational', volume: 1300, kd: 52, ft: 0, pa: 0, cp: 0, cisco: 0, cs: 6 },
+  { keyword: 'security operations center', intent: 'Informational', volume: 3600, kd: 63, ft: 0, pa: 5, cp: 9, cisco: 0, cs: 22 },
+  { keyword: 'network security assessment', intent: 'Informational', volume: 1900, kd: 17, ft: 0, pa: 0, cp: 81, cisco: 0, cs: 64 },
+  { keyword: 'data security compliance', intent: 'Informational', volume: 1600, kd: 41, ft: 0, pa: 7, cp: 0, cisco: 0, cs: 35 },
+  { keyword: 'data security platform', intent: 'Informational', volume: 1600, kd: 42, ft: 0, pa: 2, cp: 0, cisco: 0, cs: 0 },
   { keyword: 'cloud security monitoring', intent: 'Informational', volume: 1000, kd: 19, ft: 0, pa: 21, cp: 77, cisco: 43, cs: 31 },
-  { keyword: 'cloud security threats', intent: 'Informational', volume: 880, kd: 35, ft: 0, pa: 19, cp: 0, cisco: 0, cs: 14 },
-  { keyword: 'cloud security managed services', intent: 'Informational', volume: 720, kd: 19, ft: 0, pa: 0, cp: 35, cisco: 53, cs: 13 },
-  { keyword: 'security operations services', intent: 'Navigational', volume: 590, kd: 50, ft: 0, pa: 6, cp: 0, cisco: 0, cs: 0 },
+  { keyword: 'network security company', intent: 'Commercial', volume: 1000, kd: 34, ft: 0, pa: 0, cp: 2, cisco: 4, cs: 0 },
+  { keyword: 'managed cloud security', intent: 'Informational', volume: 880, kd: 10, ft: 0, pa: 0, cp: 0, cisco: 0, cs: 2 },
+  { keyword: 'managed sd wan', intent: 'Informational', volume: 880, kd: 13, ft: 0, pa: 8, cp: 0, cisco: 14, cs: 0 },
+  { keyword: 'network security best practices', intent: 'Commercial', volume: 880, kd: 22, ft: 0, pa: 0, cp: 0, cisco: 7, cs: 0 },
+  { keyword: 'cloud security products', intent: 'Commercial, Informational', volume: 720, kd: 18, ft: 0, pa: 2, cp: 39, cisco: 7, cs: 0 },
+  { keyword: 'data security software', intent: 'Commercial, Informational', volume: 720, kd: 44, ft: 0, pa: 7, cp: 0, cisco: 0, cs: 0 },
 ];
 
-// Weak Keywords Data (Sep 2026) — Source: SEMrush Keyword Gap Tool
+// Weak Keywords Data (Oct 2026) — Source: SEMrush Keyword Gap Tool
 const multiCompetitorData = [
-  { keyword: 'vulnerability management', intent: 'Informational', volume: 6600, kd: 26, ft: 56, pa: 30, cp: 50, cisco: 34, cs: 10 },
-  { keyword: 'cyber threat intelligence', intent: 'Informational', volume: 5400, kd: 51, ft: 25, pa: 1, cp: 4, cisco: 3, cs: 5 },
-  { keyword: 'prompt injection', intent: 'Informational', volume: 5400, kd: 72, ft: 45, pa: 5, cp: 33, cisco: 25, cs: 8 },
-  { keyword: 'data security in cloud', intent: 'Informational', volume: 390, kd: 43, ft: 58, pa: 18, cp: 44, cisco: 23, cs: 4 },
-  { keyword: 'cloud native application security', intent: 'Informational', volume: 320, kd: 36, ft: 51, pa: 1, cp: 14, cisco: 23, cs: 9 },
-  { keyword: 'network security products', intent: 'Informational', volume: 260, kd: 40, ft: 31, pa: 2, cp: 3, cisco: 4, cs: 9 },
-  { keyword: 'secure cloud infrastructure', intent: 'Informational', volume: 210, kd: 15, ft: 24, pa: 12, cp: 9, cisco: 5, cs: 22 },
-  { keyword: 'edr security solutions', intent: 'Informational', volume: 170, kd: 54, ft: 15, pa: 8, cp: 9, cisco: 6, cs: 3 },
-  { keyword: 'types of cloud security', intent: 'Commercial, Informational', volume: 170, kd: 35, ft: 16, pa: 2, cp: 3, cisco: 9, cs: 12 },
-  { keyword: 'what is cloud data security', intent: 'Informational', volume: 170, kd: 41, ft: 64, pa: 4, cp: 24, cisco: 35, cs: 3 },
-  { keyword: 'cloud incident response framework', intent: 'Informational', volume: 50, kd: 23, ft: 54, pa: 3, cp: 36, cisco: 52, cs: 14 },
+  { keyword: 'ransomware', intent: 'Informational', volume: 18100, kd: 91, ft: 81, pa: 36, cp: 13, cisco: 8, cs: 17 },
+  { keyword: 'cnapp', intent: 'Informational', volume: 5400, kd: 49, ft: 50, pa: 22, cp: 7, cisco: 15, cs: 29 },
+  { keyword: 'cloud network security', intent: 'Informational', volume: 2400, kd: 32, ft: 67, pa: 56, cp: 5, cisco: 41, cs: 33 },
+  { keyword: 'network segregation', intent: 'Informational', volume: 1300, kd: 22, ft: 40, pa: 18, cp: 13, cisco: 4, cs: 31 },
+  { keyword: 'xdr software', intent: 'Informational', volume: 480, kd: 33, ft: 16, pa: 4, cp: 15, cisco: 12, cs: 6 },
+  { keyword: 'cybersecurity for hospitals', intent: 'Informational', volume: 170, kd: 46, ft: 67, pa: 6, cp: 11, cisco: 27, cs: 57 },
 ];
 
 export function SlideKeywordGap({ onNavigateHome }: { onNavigateHome?: () => void }) {
@@ -90,7 +88,7 @@ export function SlideKeywordGap({ onNavigateHome }: { onNavigateHome?: () => voi
   const IconComponent = getTabIcon();
 
   return (
-    <SlideContainer slideNumber={22} onNavigateHome={onNavigateHome}>
+    <SlideContainer slideNumber={45} onNavigateHome={onNavigateHome}>
       <SlideHeader 
         title="Keyword Gap" 
       />
@@ -255,7 +253,7 @@ export function SlideKeywordGap({ onNavigateHome }: { onNavigateHome?: () => voi
         </div>
       </div>
 
-      <SlideFooter source="Source: SEMrush Keyword Gap Tool · Sep 2026" />
+      <SlideFooter source="Source: SEMrush Keyword Gap Tool · Oct 2026" />
     </SlideContainer>
   );
 }
